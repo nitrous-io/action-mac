@@ -1,0 +1,5 @@
+// Prefix header for all source files of the 'ActionMac' target in the 'ActionMac' project
+
+#ifdef __OBJC__
+  #import <Cocoa/Cocoa.h>
+#endif
