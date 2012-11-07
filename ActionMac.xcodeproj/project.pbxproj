@@ -12,6 +12,9 @@
 		E92BF33C164253AE00862CF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E92BF33B164253AE00862CF4 /* main.m */; };
 		E92BF344164253AE00862CF4 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = E92BF343164253AE00862CF4 /* rb_main.rb */; };
 		E92BF346164253AE00862CF4 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = E92BF345164253AE00862CF4 /* AppDelegate.rb */; };
+		E982FC41164AC00D00CA54BA /* SpecHelper.rb in Resources */ = {isa = PBXBuildFile; fileRef = E982FC40164AC00D00CA54BA /* SpecHelper.rb */; };
+		E982FC45164AC09800CA54BA /* Rakefile in Resources */ = {isa = PBXBuildFile; fileRef = E982FC44164AC09800CA54BA /* Rakefile */; };
+		E982FC47164AC11100CA54BA /* DummySpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E982FC46164AC11100CA54BA /* DummySpec.rb */; };
 		E9E19FDE164259B80058706D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E19FDD164259B80058706D /* MainMenu.xib */; };
 		E9E1A01716425CD40058706D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9E19FE2164259D30058706D /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
@@ -33,6 +36,9 @@
 		E92BF33B164253AE00862CF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E92BF343164253AE00862CF4 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		E92BF345164253AE00862CF4 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
+		E982FC40164AC00D00CA54BA /* SpecHelper.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = SpecHelper.rb; sourceTree = "<group>"; };
+		E982FC44164AC09800CA54BA /* Rakefile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Rakefile; sourceTree = "<group>"; };
+		E982FC46164AC11100CA54BA /* DummySpec.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = DummySpec.rb; sourceTree = "<group>"; };
 		E9E19FDD164259B80058706D /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		E9E19FE1164259D30058706D /* ActionMac-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ActionMac-Info.plist"; sourceTree = "<group>"; };
 		E9E19FE2164259D30058706D /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -56,6 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				E9E19FCC1642586D0058706D /* app */,
+				E982FC3F164ABFF800CA54BA /* spec */,
+				E982FC44164AC09800CA54BA /* Rakefile */,
 				E92BF32D164253AD00862CF4 /* Frameworks */,
 				E92BF32B164253AD00862CF4 /* Products */,
 			);
@@ -76,6 +84,15 @@
 				E92BF330164253AD00862CF4 /* MacRuby.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E982FC3F164ABFF800CA54BA /* spec */ = {
+			isa = PBXGroup;
+			children = (
+				E982FC40164AC00D00CA54BA /* SpecHelper.rb */,
+				E982FC46164AC11100CA54BA /* DummySpec.rb */,
+			);
+			path = spec;
 			sourceTree = "<group>";
 		};
 		E9E19FCC1642586D0058706D /* app */ = {
@@ -212,6 +229,9 @@
 				E92BF346164253AE00862CF4 /* AppDelegate.rb in Resources */,
 				E9E19FDE164259B80058706D /* MainMenu.xib in Resources */,
 				E9E1A01716425CD40058706D /* InfoPlist.strings in Resources */,
+				E982FC41164AC00D00CA54BA /* SpecHelper.rb in Resources */,
+				E982FC45164AC09800CA54BA /* Rakefile in Resources */,
+				E982FC47164AC11100CA54BA /* DummySpec.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +309,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+					/Library/Frameworks,
 				);
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -306,6 +327,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+					/Library/Frameworks,
 				);
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
