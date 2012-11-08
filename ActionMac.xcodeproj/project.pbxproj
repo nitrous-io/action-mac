@@ -7,16 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E918B3EA164B820600D53509 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E918B3E9164B820600D53509 /* MacRuby.framework */; };
+		E918B3F0164B96D100D53509 /* status-item-icon-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = E918B3EC164B96D100D53509 /* status-item-icon-highlighted.png */; };
+		E918B3F1164B96D100D53509 /* status-item-icon-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E918B3ED164B96D100D53509 /* status-item-icon-highlighted@2x.png */; };
+		E918B3F2164B96D100D53509 /* status-item-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E918B3EE164B96D100D53509 /* status-item-icon.png */; };
+		E918B3F3164B96D100D53509 /* status-item-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E918B3EF164B96D100D53509 /* status-item-icon@2x.png */; };
 		E92BF32F164253AD00862CF4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92BF32E164253AD00862CF4 /* Cocoa.framework */; };
-		E92BF331164253AD00862CF4 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92BF330164253AD00862CF4 /* MacRuby.framework */; };
 		E92BF33C164253AE00862CF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E92BF33B164253AE00862CF4 /* main.m */; };
 		E92BF344164253AE00862CF4 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = E92BF343164253AE00862CF4 /* rb_main.rb */; };
-		E92BF346164253AE00862CF4 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = E92BF345164253AE00862CF4 /* AppDelegate.rb */; };
+		E92BF346164253AE00862CF4 /* AIOAppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = E92BF345164253AE00862CF4 /* AIOAppDelegate.rb */; };
 		E982FC41164AC00D00CA54BA /* SpecHelper.rb in Resources */ = {isa = PBXBuildFile; fileRef = E982FC40164AC00D00CA54BA /* SpecHelper.rb */; };
 		E982FC45164AC09800CA54BA /* Rakefile in Resources */ = {isa = PBXBuildFile; fileRef = E982FC44164AC09800CA54BA /* Rakefile */; };
 		E982FC47164AC11100CA54BA /* DummySpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E982FC46164AC11100CA54BA /* DummySpec.rb */; };
 		E9E19FDE164259B80058706D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E19FDD164259B80058706D /* MainMenu.xib */; };
 		E9E1A01716425CD40058706D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9E19FE2164259D30058706D /* InfoPlist.strings */; };
+		E9FC0073164B597300579161 /* AIOMainController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9FC0072164B597300579161 /* AIOMainController.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,12 +35,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E918B3E9164B820600D53509 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
+		E918B3EC164B96D100D53509 /* status-item-icon-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon-highlighted.png"; sourceTree = "<group>"; };
+		E918B3ED164B96D100D53509 /* status-item-icon-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon-highlighted@2x.png"; sourceTree = "<group>"; };
+		E918B3EE164B96D100D53509 /* status-item-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon.png"; sourceTree = "<group>"; };
+		E918B3EF164B96D100D53509 /* status-item-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon@2x.png"; sourceTree = "<group>"; };
 		E92BF32A164253AD00862CF4 /* ActionMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActionMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92BF32E164253AD00862CF4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		E92BF330164253AD00862CF4 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = DEVELOPER_DIR; };
 		E92BF33B164253AE00862CF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E92BF343164253AE00862CF4 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
-		E92BF345164253AE00862CF4 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
+		E92BF345164253AE00862CF4 /* AIOAppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOAppDelegate.rb; sourceTree = "<group>"; };
 		E982FC40164AC00D00CA54BA /* SpecHelper.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = SpecHelper.rb; sourceTree = "<group>"; };
 		E982FC44164AC09800CA54BA /* Rakefile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Rakefile; sourceTree = "<group>"; };
 		E982FC46164AC11100CA54BA /* DummySpec.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = DummySpec.rb; sourceTree = "<group>"; };
@@ -43,6 +52,7 @@
 		E9E19FE1164259D30058706D /* ActionMac-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ActionMac-Info.plist"; sourceTree = "<group>"; };
 		E9E19FE2164259D30058706D /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		E9E19FE616425A030058706D /* ActionMac-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ActionMac-Prefix.pch"; sourceTree = "<group>"; };
+		E9FC0072164B597300579161 /* AIOMainController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOMainController.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,14 +60,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E918B3EA164B820600D53509 /* MacRuby.framework in Frameworks */,
 				E92BF32F164253AD00862CF4 /* Cocoa.framework in Frameworks */,
-				E92BF331164253AD00862CF4 /* MacRuby.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E918B3EB164B96D100D53509 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				E918B3EC164B96D100D53509 /* status-item-icon-highlighted.png */,
+				E918B3ED164B96D100D53509 /* status-item-icon-highlighted@2x.png */,
+				E918B3EE164B96D100D53509 /* status-item-icon.png */,
+				E918B3EF164B96D100D53509 /* status-item-icon@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		E92BF31F164253AD00862CF4 = {
 			isa = PBXGroup;
 			children = (
@@ -80,8 +101,8 @@
 		E92BF32D164253AD00862CF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E918B3E9164B820600D53509 /* MacRuby.framework */,
 				E92BF32E164253AD00862CF4 /* Cocoa.framework */,
-				E92BF330164253AD00862CF4 /* MacRuby.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,7 +125,7 @@
 				E9E19FD6164259220058706D /* views */,
 				E9E19FD4164259220058706D /* nibs */,
 				E9E19FDF164259D30058706D /* resources */,
-				E92BF345164253AE00862CF4 /* AppDelegate.rb */,
+				E92BF345164253AE00862CF4 /* AIOAppDelegate.rb */,
 				E92BF343164253AE00862CF4 /* rb_main.rb */,
 				E92BF33B164253AE00862CF4 /* main.m */,
 				E9E19FE616425A030058706D /* ActionMac-Prefix.pch */,
@@ -115,6 +136,7 @@
 		E9E19FCE164259220058706D /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E9FC0072164B597300579161 /* AIOMainController.rb */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -151,6 +173,7 @@
 		E9E19FDF164259D30058706D /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				E918B3EB164B96D100D53509 /* images */,
 				E9E19FE1164259D30058706D /* ActionMac-Info.plist */,
 				E9E19FE2164259D30058706D /* InfoPlist.strings */,
 			);
@@ -226,12 +249,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E92BF344164253AE00862CF4 /* rb_main.rb in Resources */,
-				E92BF346164253AE00862CF4 /* AppDelegate.rb in Resources */,
+				E92BF346164253AE00862CF4 /* AIOAppDelegate.rb in Resources */,
 				E9E19FDE164259B80058706D /* MainMenu.xib in Resources */,
 				E9E1A01716425CD40058706D /* InfoPlist.strings in Resources */,
 				E982FC41164AC00D00CA54BA /* SpecHelper.rb in Resources */,
 				E982FC45164AC09800CA54BA /* Rakefile in Resources */,
 				E982FC47164AC11100CA54BA /* DummySpec.rb in Resources */,
+				E9FC0073164B597300579161 /* AIOMainController.rb in Resources */,
+				E918B3F0164B96D100D53509 /* status-item-icon-highlighted.png in Resources */,
+				E918B3F1164B96D100D53509 /* status-item-icon-highlighted@2x.png in Resources */,
+				E918B3F2164B96D100D53509 /* status-item-icon.png in Resources */,
+				E918B3F3164B96D100D53509 /* status-item-icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
