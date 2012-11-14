@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E918B3EA164B820600D53509 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E918B3E9164B820600D53509 /* MacRuby.framework */; };
+		E904BC5E165115B600DA5436 /* AIOBooleanToNumberTransformer.rb in Resources */ = {isa = PBXBuildFile; fileRef = E904BC5D165115B600DA5436 /* AIOBooleanToNumberTransformer.rb */; };
 		E918B3F0164B96D100D53509 /* status-item-icon-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = E918B3EC164B96D100D53509 /* status-item-icon-highlighted.png */; };
 		E918B3F1164B96D100D53509 /* status-item-icon-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E918B3ED164B96D100D53509 /* status-item-icon-highlighted@2x.png */; };
 		E918B3F2164B96D100D53509 /* status-item-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E918B3EE164B96D100D53509 /* status-item-icon.png */; };
@@ -15,13 +15,21 @@
 		E92BF32F164253AD00862CF4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92BF32E164253AD00862CF4 /* Cocoa.framework */; };
 		E92BF33C164253AE00862CF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E92BF33B164253AE00862CF4 /* main.m */; };
 		E92BF344164253AE00862CF4 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = E92BF343164253AE00862CF4 /* rb_main.rb */; };
-		E92BF346164253AE00862CF4 /* AIOAppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = E92BF345164253AE00862CF4 /* AIOAppDelegate.rb */; };
-		E982FC41164AC00D00CA54BA /* SpecHelper.rb in Resources */ = {isa = PBXBuildFile; fileRef = E982FC40164AC00D00CA54BA /* SpecHelper.rb */; };
-		E982FC45164AC09800CA54BA /* Rakefile in Resources */ = {isa = PBXBuildFile; fileRef = E982FC44164AC09800CA54BA /* Rakefile */; };
-		E982FC47164AC11100CA54BA /* DummySpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E982FC46164AC11100CA54BA /* DummySpec.rb */; };
+		E92BF346164253AE00862CF4 /* AIOApplicationController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E92BF345164253AE00862CF4 /* AIOApplicationController.rb */; };
+		E988E24C1653699E00772174 /* AIOWelcomeViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E988E24B1653699E00772174 /* AIOWelcomeViewController.rb */; };
+		E988E24E165369A600772174 /* AIOSignInViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E988E24D165369A600772174 /* AIOSignInViewController.rb */; };
+		E988E250165369AF00772174 /* AIOSignUpViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E988E24F165369AF00772174 /* AIOSignUpViewController.rb */; };
+		E988E25216536B8800772174 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E988E25116536B8800772174 /* WelcomeView.xib */; };
+		E988E25416536B9000772174 /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E988E25316536B9000772174 /* SignInView.xib */; };
+		E988E25616536B9900772174 /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E988E25516536B9800772174 /* SignUpView.xib */; };
+		E9987DFF164BADDC00B762FE /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = E9987DFE164BADDC00B762FE /* SSKeychain.m */; };
+		E9987E01164BADE900B762FE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9987E00164BADE900B762FE /* Security.framework */; };
+		E9B0BA861653F35800F695D6 /* AIOSignUpView.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B0BA851653F35800F695D6 /* AIOSignUpView.rb */; };
+		E9BC81171650FB0200A21D88 /* AIOWelcomeWindowController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9BC81161650FB0200A21D88 /* AIOWelcomeWindowController.rb */; };
+		E9BC812C1650FC2700A21D88 /* WelcomeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9BC81281650FC2700A21D88 /* WelcomeWindow.xib */; };
+		E9BF1AAF1653EE840067DFC9 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BF1AAE1653EE840067DFC9 /* MacRuby.framework */; };
 		E9E19FDE164259B80058706D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E19FDD164259B80058706D /* MainMenu.xib */; };
 		E9E1A01716425CD40058706D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9E19FE2164259D30058706D /* InfoPlist.strings */; };
-		E9FC0073164B597300579161 /* AIOMainController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9FC0072164B597300579161 /* AIOMainController.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E918B3E9164B820600D53509 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
+		E904BC5D165115B600DA5436 /* AIOBooleanToNumberTransformer.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOBooleanToNumberTransformer.rb; sourceTree = "<group>"; };
+		E904BC61165116FB00DA5436 /* AIOBooleanToNumberTransformerSpec.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOBooleanToNumberTransformerSpec.rb; sourceTree = "<group>"; };
 		E918B3EC164B96D100D53509 /* status-item-icon-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon-highlighted.png"; sourceTree = "<group>"; };
 		E918B3ED164B96D100D53509 /* status-item-icon-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon-highlighted@2x.png"; sourceTree = "<group>"; };
 		E918B3EE164B96D100D53509 /* status-item-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon.png"; sourceTree = "<group>"; };
@@ -44,15 +53,26 @@
 		E92BF32E164253AD00862CF4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E92BF33B164253AE00862CF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E92BF343164253AE00862CF4 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
-		E92BF345164253AE00862CF4 /* AIOAppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOAppDelegate.rb; sourceTree = "<group>"; };
+		E92BF345164253AE00862CF4 /* AIOApplicationController.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOApplicationController.rb; sourceTree = "<group>"; };
 		E982FC40164AC00D00CA54BA /* SpecHelper.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = SpecHelper.rb; sourceTree = "<group>"; };
 		E982FC44164AC09800CA54BA /* Rakefile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Rakefile; sourceTree = "<group>"; };
-		E982FC46164AC11100CA54BA /* DummySpec.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = DummySpec.rb; sourceTree = "<group>"; };
+		E988E24B1653699E00772174 /* AIOWelcomeViewController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOWelcomeViewController.rb; sourceTree = "<group>"; };
+		E988E24D165369A600772174 /* AIOSignInViewController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOSignInViewController.rb; sourceTree = "<group>"; };
+		E988E24F165369AF00772174 /* AIOSignUpViewController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOSignUpViewController.rb; sourceTree = "<group>"; };
+		E988E25116536B8800772174 /* WelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
+		E988E25316536B9000772174 /* SignInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInView.xib; sourceTree = "<group>"; };
+		E988E25516536B9800772174 /* SignUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
+		E9987DFD164BADDC00B762FE /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSKeychain.h; path = vendor/submodules/sskeychain/SSKeychain.h; sourceTree = "<group>"; };
+		E9987DFE164BADDC00B762FE /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSKeychain.m; path = vendor/submodules/sskeychain/SSKeychain.m; sourceTree = "<group>"; };
+		E9987E00164BADE900B762FE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E9B0BA851653F35800F695D6 /* AIOSignUpView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOSignUpView.rb; sourceTree = "<group>"; };
+		E9BC81161650FB0200A21D88 /* AIOWelcomeWindowController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOWelcomeWindowController.rb; sourceTree = "<group>"; };
+		E9BC81281650FC2700A21D88 /* WelcomeWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeWindow.xib; sourceTree = "<group>"; };
+		E9BF1AAE1653EE840067DFC9 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
 		E9E19FDD164259B80058706D /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		E9E19FE1164259D30058706D /* ActionMac-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ActionMac-Info.plist"; sourceTree = "<group>"; };
 		E9E19FE2164259D30058706D /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		E9E19FE616425A030058706D /* ActionMac-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ActionMac-Prefix.pch"; sourceTree = "<group>"; };
-		E9FC0072164B597300579161 /* AIOMainController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOMainController.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E918B3EA164B820600D53509 /* MacRuby.framework in Frameworks */,
+				E9BF1AAF1653EE840067DFC9 /* MacRuby.framework in Frameworks */,
+				E9987E01164BADE900B762FE /* Security.framework in Frameworks */,
 				E92BF32F164253AD00862CF4 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E904BC60165116DD00DA5436 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				E904BC61165116FB00DA5436 /* AIOBooleanToNumberTransformerSpec.rb */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 		E918B3EB164B96D100D53509 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +114,7 @@
 				E9E19FCC1642586D0058706D /* app */,
 				E982FC3F164ABFF800CA54BA /* spec */,
 				E982FC44164AC09800CA54BA /* Rakefile */,
+				E9987DFA164BADBA00B762FE /* vendor */,
 				E92BF32D164253AD00862CF4 /* Frameworks */,
 				E92BF32B164253AD00862CF4 /* Products */,
 			);
@@ -101,8 +131,9 @@
 		E92BF32D164253AD00862CF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E918B3E9164B820600D53509 /* MacRuby.framework */,
+				E9BF1AAE1653EE840067DFC9 /* MacRuby.framework */,
 				E92BF32E164253AD00862CF4 /* Cocoa.framework */,
+				E9987E00164BADE900B762FE /* Security.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,10 +141,57 @@
 		E982FC3F164ABFF800CA54BA /* spec */ = {
 			isa = PBXGroup;
 			children = (
+				E904BC60165116DD00DA5436 /* lib */,
 				E982FC40164AC00D00CA54BA /* SpecHelper.rb */,
-				E982FC46164AC11100CA54BA /* DummySpec.rb */,
 			);
 			path = spec;
+			sourceTree = "<group>";
+		};
+		E9987DFA164BADBA00B762FE /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				E9987DFC164BADC500B762FE /* SSKeychain */,
+			);
+			name = vendor;
+			sourceTree = "<group>";
+		};
+		E9987DFC164BADC500B762FE /* SSKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				E9987DFD164BADDC00B762FE /* SSKeychain.h */,
+				E9987DFE164BADDC00B762FE /* SSKeychain.m */,
+			);
+			name = SSKeychain;
+			sourceTree = "<group>";
+		};
+		E9B0BA841653F34700F695D6 /* welcome */ = {
+			isa = PBXGroup;
+			children = (
+				E9B0BA851653F35800F695D6 /* AIOSignUpView.rb */,
+			);
+			path = welcome;
+			sourceTree = "<group>";
+		};
+		E9BC81151650FB0200A21D88 /* welcome */ = {
+			isa = PBXGroup;
+			children = (
+				E9BC81161650FB0200A21D88 /* AIOWelcomeWindowController.rb */,
+				E988E24B1653699E00772174 /* AIOWelcomeViewController.rb */,
+				E988E24D165369A600772174 /* AIOSignInViewController.rb */,
+				E988E24F165369AF00772174 /* AIOSignUpViewController.rb */,
+			);
+			path = welcome;
+			sourceTree = "<group>";
+		};
+		E9BC81241650FC2700A21D88 /* welcome */ = {
+			isa = PBXGroup;
+			children = (
+				E9BC81281650FC2700A21D88 /* WelcomeWindow.xib */,
+				E988E25116536B8800772174 /* WelcomeView.xib */,
+				E988E25316536B9000772174 /* SignInView.xib */,
+				E988E25516536B9800772174 /* SignUpView.xib */,
+			);
+			path = welcome;
 			sourceTree = "<group>";
 		};
 		E9E19FCC1642586D0058706D /* app */ = {
@@ -125,7 +203,6 @@
 				E9E19FD6164259220058706D /* views */,
 				E9E19FD4164259220058706D /* nibs */,
 				E9E19FDF164259D30058706D /* resources */,
-				E92BF345164253AE00862CF4 /* AIOAppDelegate.rb */,
 				E92BF343164253AE00862CF4 /* rb_main.rb */,
 				E92BF33B164253AE00862CF4 /* main.m */,
 				E9E19FE616425A030058706D /* ActionMac-Prefix.pch */,
@@ -136,7 +213,8 @@
 		E9E19FCE164259220058706D /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E9FC0072164B597300579161 /* AIOMainController.rb */,
+				E92BF345164253AE00862CF4 /* AIOApplicationController.rb */,
+				E9BC81151650FB0200A21D88 /* welcome */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -144,6 +222,7 @@
 		E9E19FD0164259220058706D /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				E904BC5D165115B600DA5436 /* AIOBooleanToNumberTransformer.rb */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -159,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				E9E19FDD164259B80058706D /* MainMenu.xib */,
+				E9BC81241650FC2700A21D88 /* welcome */,
 			);
 			path = nibs;
 			sourceTree = "<group>";
@@ -166,6 +246,7 @@
 		E9E19FD6164259220058706D /* views */ = {
 			isa = PBXGroup;
 			children = (
+				E9B0BA841653F34700F695D6 /* welcome */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -231,6 +312,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = E92BF31F164253AD00862CF4;
 			productRefGroup = E92BF32B164253AD00862CF4 /* Products */;
@@ -249,17 +331,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				E92BF344164253AE00862CF4 /* rb_main.rb in Resources */,
-				E92BF346164253AE00862CF4 /* AIOAppDelegate.rb in Resources */,
+				E92BF346164253AE00862CF4 /* AIOApplicationController.rb in Resources */,
 				E9E19FDE164259B80058706D /* MainMenu.xib in Resources */,
 				E9E1A01716425CD40058706D /* InfoPlist.strings in Resources */,
-				E982FC41164AC00D00CA54BA /* SpecHelper.rb in Resources */,
-				E982FC45164AC09800CA54BA /* Rakefile in Resources */,
-				E982FC47164AC11100CA54BA /* DummySpec.rb in Resources */,
-				E9FC0073164B597300579161 /* AIOMainController.rb in Resources */,
 				E918B3F0164B96D100D53509 /* status-item-icon-highlighted.png in Resources */,
 				E918B3F1164B96D100D53509 /* status-item-icon-highlighted@2x.png in Resources */,
 				E918B3F2164B96D100D53509 /* status-item-icon.png in Resources */,
 				E918B3F3164B96D100D53509 /* status-item-icon@2x.png in Resources */,
+				E9BC81171650FB0200A21D88 /* AIOWelcomeWindowController.rb in Resources */,
+				E9BC812C1650FC2700A21D88 /* WelcomeWindow.xib in Resources */,
+				E904BC5E165115B600DA5436 /* AIOBooleanToNumberTransformer.rb in Resources */,
+				E988E24C1653699E00772174 /* AIOWelcomeViewController.rb in Resources */,
+				E988E24E165369A600772174 /* AIOSignInViewController.rb in Resources */,
+				E988E250165369AF00772174 /* AIOSignUpViewController.rb in Resources */,
+				E988E25216536B8800772174 /* WelcomeView.xib in Resources */,
+				E988E25416536B9000772174 /* SignInView.xib in Resources */,
+				E988E25616536B9900772174 /* SignUpView.xib in Resources */,
+				E9B0BA861653F35800F695D6 /* AIOSignUpView.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E92BF33C164253AE00862CF4 /* main.m in Sources */,
+				E9987DFF164BADDC00B762FE /* SSKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

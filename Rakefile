@@ -2,8 +2,11 @@ require 'rake'
 require 'rake/testtask'
 
 Rake::TestTask.new do |t|
-  t.libs << File.dirname(__FILE__) << 'app' << 'spec'
-  t.test_files = FileList['spec/**/*Spec.rb']
+  dir = File.dirname(__FILE__)
+  t.libs << dir << 'spec'
+  t.libs.concat Dir.glob("#{dir}/app/**/*/")
+
+  t.pattern = 'spec/**/*Spec.rb'
   t.verbose = true
 end
 

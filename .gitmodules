@@ -1,0 +1,3 @@
+[submodule "vendor/submodules/sskeychain"]
+	path = vendor/submodules/sskeychain
+	url = git@github.com:action-io/sskeychain.git
