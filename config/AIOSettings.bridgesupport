@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<!DOCTYPE signatures SYSTEM "file://localhost/System/Library/DTDs/BridgeSupport.dtd">
+<signatures version='1.0'>
+<enum name='DEVELOPMENT' value='0'/>
+<enum name='PRODUCTION' value='3'/>
+<enum name='STAGING' value='2'/>
+<enum name='TEST' value='1'/>
+<function name='AIOSettings'>
+<retval type='@'/>
+</function>
+<function name='aio_initialize_settings'/>
+</signatures>

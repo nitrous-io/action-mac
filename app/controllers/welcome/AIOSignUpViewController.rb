@@ -10,7 +10,7 @@ class AIOSignUpViewController < NSViewController
   end
 
   def open_web_page
-    NSWorkspace.sharedWorkspace.openURL NSURL.URLWithString('https://www.action.io/')
+    NSWorkspace.sharedWorkspace.openURL NSURL.URLWithString(AIOSettings.sign_up_url)
     @timer = nil
   end
 

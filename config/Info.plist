@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>GIT_VERSION</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -30,5 +30,11 @@
 	<string>NSApplication</string>
 	<key>LSUIElement</key>
 	<false/>
+	<key>AIO_ENV</key>
+	<string>${AIO_ENV}</string>
+	<key>AIO_HOST</key>
+	<string>${AIO_HOST}</string>
+	<key>AIO_SIGN_UP_URL</key>
+	<string>${AIO_SIGN_UP_URL}</string>
 </dict>
 </plist>
