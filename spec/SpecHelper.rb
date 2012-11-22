@@ -1,10 +1,13 @@
 require 'rubygems'
-gem 'minitest'
+gem 'mac_bacon'
+gem 'mocha-on-bacon'
 
-require 'minitest/spec'
-require 'minitest/autorun'
-require 'minitest/pride'
+dir = File.dirname(__FILE__)
+$: << dir << "#{dir}/.."
+$:.concat Dir.glob("#{dir}/../app/**/*/")
 
-module Kernel
-  alias_method :context, :describe
+module Bacon
+  class Context
+    alias_method :context, :describe
+  end
 end

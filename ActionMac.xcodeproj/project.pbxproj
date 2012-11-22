@@ -70,6 +70,8 @@
 		E90FD702165DFCF900B09052 /* InfoPlist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoPlist.h; sourceTree = "<group>"; };
 		E90FD703165DFF5400B09052 /* AIOSettings.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOSettings.rb; sourceTree = "<group>"; };
 		E90FD705165E039A00B09052 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		E90FD707165E051300B09052 /* .gems */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gems; sourceTree = "<group>"; };
+		E90FD70B165E0CBD00B09052 /* AIOApplicationControllerSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOApplicationControllerSpec.rb; sourceTree = "<group>"; };
 		E918B3EC164B96D100D53509 /* status-item-icon-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon-highlighted.png"; sourceTree = "<group>"; };
 		E918B3ED164B96D100D53509 /* status-item-icon-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon-highlighted@2x.png"; sourceTree = "<group>"; };
 		E918B3EE164B96D100D53509 /* status-item-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon.png"; sourceTree = "<group>"; };
@@ -132,6 +134,14 @@
 			path = config;
 			sourceTree = "<group>";
 		};
+		E90FD70A165E0CBD00B09052 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E90FD70B165E0CBD00B09052 /* AIOApplicationControllerSpec.rb */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
 		E918B3EB164B96D100D53509 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +160,7 @@
 				E90FD6F4165DD94600B09052 /* config */,
 				E982FC3F164ABFF800CA54BA /* spec */,
 				E982FC44164AC09800CA54BA /* Rakefile */,
+				E90FD707165E051300B09052 /* .gems */,
 				E9987DFA164BADBA00B762FE /* vendor */,
 				E92BF32D164253AD00862CF4 /* Frameworks */,
 				E92BF32B164253AD00862CF4 /* Products */,
@@ -178,6 +189,7 @@
 		E982FC3F164ABFF800CA54BA /* spec */ = {
 			isa = PBXGroup;
 			children = (
+				E90FD70A165E0CBD00B09052 /* controllers */,
 				E904BC60165116DD00DA5436 /* lib */,
 				E982FC40164AC00D00CA54BA /* SpecHelper.rb */,
 			);

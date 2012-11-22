@@ -1,14 +1,18 @@
 require 'rake'
 require 'rake/testtask'
 
-Rake::TestTask.new do |t|
-  dir = File.dirname(__FILE__)
-  t.libs << dir << 'spec'
-  t.libs.concat Dir.glob("#{dir}/app/**/*/")
+desc 'Run all tests'
+task :test do
+  require 'rubygems'
+  require 'mac_bacon'
 
-  t.pattern = 'spec/**/*Spec.rb'
-  t.verbose = true
+  dir = File.dirname(__FILE__)
+  files = Dir.glob("#{dir}/spec/**/*Spec.rb")
+  files.each { |f| load f }
+
+  Bacon.extend Bacon::TestUnitOutput
+  Bacon.run
 end
 
-desc 'Run all tests'
 task default: :test
+

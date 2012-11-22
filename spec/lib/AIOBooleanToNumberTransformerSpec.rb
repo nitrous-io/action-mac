@@ -1,4 +1,5 @@
-require 'SpecHelper'
+require 'spec/SpecHelper'
+
 require 'AIOBooleanToNumberTransformer'
 
 describe AIOBooleanToNumberTransformer do
@@ -7,28 +8,28 @@ describe AIOBooleanToNumberTransformer do
   end
 
   it 'is a subclass of NSValueTransformer' do
-    @transformer.must_be_kind_of NSValueTransformer
+    @transformer.should.be.kind_of? NSValueTransformer
   end
 
-  describe 'transformation' do
+  context 'transformation' do
     it 'converts false to 0' do
-      @transformer.transformedValue(false).must_equal 0
+      @transformer.transformedValue(false).should.equal 0
     end
 
     it 'converts true to 1' do
-      @transformer.transformedValue(true).must_equal 1
+      @transformer.transformedValue(true).should.equal 1
     end
   end
 
-  describe 'reverse transformation' do
+  context 'reverse transformation' do
     it 'converts 0 to false' do
-      @transformer.reverseTransformedValue(0).must_equal false
+      @transformer.reverseTransformedValue(0).should.equal false
     end
 
     it 'converts non-zero to true' do
-      @transformer.reverseTransformedValue(1).must_equal true
-      @transformer.reverseTransformedValue(2).must_equal true
-      @transformer.reverseTransformedValue(-1).must_equal true
+      @transformer.reverseTransformedValue(1).should.equal true
+      @transformer.reverseTransformedValue(2).should.equal true
+      @transformer.reverseTransformedValue(-1).should.equal true
     end
   end
 end
