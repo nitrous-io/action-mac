@@ -1,6 +1,9 @@
 require 'rubygems'
 gem 'mac_bacon'
-gem 'mocha-on-bacon'
+gem 'facon'
+
+require 'mac_bacon'
+require 'facon'
 
 dir = File.dirname(__FILE__)
 $: << dir << "#{dir}/.."
@@ -11,3 +14,10 @@ module Bacon
     alias_method :context, :describe
   end
 end
+
+module Facon
+  module Mockable
+    alias_method :stub, :stub!
+  end
+end
+

@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		E90FD6FB165DFC9A00B09052 /* GitVersion */ = {
+		E90FD6FB165DFC9A00B09052 /* GenerateInfoPlistHeader */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = E90FD6FC165DFC9A00B09052 /* Build configuration list for PBXAggregateTarget "GitVersion" */;
+			buildConfigurationList = E90FD6FC165DFC9A00B09052 /* Build configuration list for PBXAggregateTarget "GenerateInfoPlistHeader" */;
 			buildPhases = (
-				E90FD6FF165DFCA700B09052 /* ShellScript */,
+				E90FD6FF165DFCA700B09052 /* Run Script */,
 			);
 			dependencies = (
 			);
-			name = GitVersion;
+			name = GenerateInfoPlistHeader;
 			productName = GenerateGitVersion;
 		};
 /* End PBXAggregateTarget section */
@@ -32,6 +32,10 @@
 		E92BF33C164253AE00862CF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E92BF33B164253AE00862CF4 /* main.m */; };
 		E92BF344164253AE00862CF4 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = E92BF343164253AE00862CF4 /* rb_main.rb */; };
 		E92BF346164253AE00862CF4 /* AIOApplicationController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E92BF345164253AE00862CF4 /* AIOApplicationController.rb */; };
+		E93058A9165F73CB00794635 /* AIOAPI.rb in Resources */ = {isa = PBXBuildFile; fileRef = E93058A8165F73CB00794635 /* AIOAPI.rb */; };
+		E93058B7166384FE00794635 /* AIOAPI+Mac.rb in Resources */ = {isa = PBXBuildFile; fileRef = E93058B6166384FE00794635 /* AIOAPI+Mac.rb */; };
+		E93058B91663950600794635 /* AIOConstants.rb in Resources */ = {isa = PBXBuildFile; fileRef = E93058B81663950600794635 /* AIOConstants.rb */; };
+		E96BC69C165F35840016A467 /* environment.rb in Resources */ = {isa = PBXBuildFile; fileRef = E96BC69B165F35840016A467 /* environment.rb */; };
 		E988E24C1653699E00772174 /* AIOWelcomeViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E988E24B1653699E00772174 /* AIOWelcomeViewController.rb */; };
 		E988E24E165369A600772174 /* AIOSignInViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E988E24D165369A600772174 /* AIOSignInViewController.rb */; };
 		E988E250165369AF00772174 /* AIOSignUpViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E988E24F165369AF00772174 /* AIOSignUpViewController.rb */; };
@@ -48,19 +52,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E90FD700165DFCD600B09052 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E92BF321164253AD00862CF4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E90FD6FB165DFC9A00B09052;
-			remoteInfo = GitVersion;
-		};
 		E92BF333164253AE00862CF4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E92BF321164253AD00862CF4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E92BF329164253AD00862CF4;
 			remoteInfo = ActionMac;
+		};
+		E9480E0D165E1C3800FE5B81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E92BF321164253AD00862CF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E90FD6FB165DFC9A00B09052;
+			remoteInfo = GenerateInfoPlistHeader;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -71,7 +75,7 @@
 		E90FD703165DFF5400B09052 /* AIOSettings.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOSettings.rb; sourceTree = "<group>"; };
 		E90FD705165E039A00B09052 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		E90FD707165E051300B09052 /* .gems */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gems; sourceTree = "<group>"; };
-		E90FD70B165E0CBD00B09052 /* AIOApplicationControllerSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOApplicationControllerSpec.rb; sourceTree = "<group>"; };
+		E90FD70E165E143500B09052 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E918B3EC164B96D100D53509 /* status-item-icon-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon-highlighted.png"; sourceTree = "<group>"; };
 		E918B3ED164B96D100D53509 /* status-item-icon-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon-highlighted@2x.png"; sourceTree = "<group>"; };
 		E918B3EE164B96D100D53509 /* status-item-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon.png"; sourceTree = "<group>"; };
@@ -81,6 +85,14 @@
 		E92BF33B164253AE00862CF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E92BF343164253AE00862CF4 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		E92BF345164253AE00862CF4 /* AIOApplicationController.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOApplicationController.rb; sourceTree = "<group>"; };
+		E93058A7165F73BD00794635 /* AIOAPISpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOAPISpec.rb; sourceTree = "<group>"; };
+		E93058A8165F73CB00794635 /* AIOAPI.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOAPI.rb; sourceTree = "<group>"; };
+		E93058B6166384FE00794635 /* AIOAPI+Mac.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = "AIOAPI+Mac.rb"; sourceTree = "<group>"; };
+		E93058B81663950600794635 /* AIOConstants.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOConstants.rb; sourceTree = "<group>"; };
+		E9480E0B165E1BD000FE5B81 /* InfoPlist-development.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InfoPlist-development.h"; sourceTree = "<group>"; };
+		E9480E0C165E1BD000FE5B81 /* InfoPlist-production.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InfoPlist-production.h"; sourceTree = "<group>"; };
+		E96BC698165E27E20016A467 /* FakeAIOSettings.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = FakeAIOSettings.rb; sourceTree = "<group>"; };
+		E96BC69B165F35840016A467 /* environment.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = environment.rb; sourceTree = "<group>"; };
 		E982FC40164AC00D00CA54BA /* SpecHelper.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = SpecHelper.rb; sourceTree = "<group>"; };
 		E982FC44164AC09800CA54BA /* Rakefile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = Rakefile; sourceTree = "<group>"; };
 		E988E24B1653699E00772174 /* AIOWelcomeViewController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOWelcomeViewController.rb; sourceTree = "<group>"; };
@@ -119,6 +131,7 @@
 		E904BC60165116DD00DA5436 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				E93058A7165F73BD00794635 /* AIOAPISpec.rb */,
 				E904BC61165116FB00DA5436 /* AIOBooleanToNumberTransformerSpec.rb */,
 			);
 			path = lib;
@@ -129,17 +142,13 @@
 			children = (
 				E9E19FE1164259D30058706D /* Info.plist */,
 				E90FD702165DFCF900B09052 /* InfoPlist.h */,
+				E9480E0B165E1BD000FE5B81 /* InfoPlist-development.h */,
+				E9480E0C165E1BD000FE5B81 /* InfoPlist-production.h */,
 				E90FD703165DFF5400B09052 /* AIOSettings.rb */,
+				E93058B81663950600794635 /* AIOConstants.rb */,
+				E96BC69B165F35840016A467 /* environment.rb */,
 			);
 			path = config;
-			sourceTree = "<group>";
-		};
-		E90FD70A165E0CBD00B09052 /* controllers */ = {
-			isa = PBXGroup;
-			children = (
-				E90FD70B165E0CBD00B09052 /* AIOApplicationControllerSpec.rb */,
-			);
-			path = controllers;
 			sourceTree = "<group>";
 		};
 		E918B3EB164B96D100D53509 /* images */ = {
@@ -161,6 +170,7 @@
 				E982FC3F164ABFF800CA54BA /* spec */,
 				E982FC44164AC09800CA54BA /* Rakefile */,
 				E90FD707165E051300B09052 /* .gems */,
+				E90FD70E165E143500B09052 /* README.md */,
 				E9987DFA164BADBA00B762FE /* vendor */,
 				E92BF32D164253AD00862CF4 /* Frameworks */,
 				E92BF32B164253AD00862CF4 /* Products */,
@@ -186,10 +196,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E96BC697165E27E20016A467 /* support */ = {
+			isa = PBXGroup;
+			children = (
+				E96BC698165E27E20016A467 /* FakeAIOSettings.rb */,
+			);
+			path = support;
+			sourceTree = "<group>";
+		};
 		E982FC3F164ABFF800CA54BA /* spec */ = {
 			isa = PBXGroup;
 			children = (
-				E90FD70A165E0CBD00B09052 /* controllers */,
+				E96BC697165E27E20016A467 /* support */,
 				E904BC60165116DD00DA5436 /* lib */,
 				E982FC40164AC00D00CA54BA /* SpecHelper.rb */,
 			);
@@ -271,6 +289,8 @@
 		E9E19FD0164259220058706D /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				E93058A8165F73CB00794635 /* AIOAPI.rb */,
+				E93058B6166384FE00794635 /* AIOAPI+Mac.rb */,
 				E904BC5D165115B600DA5436 /* AIOBooleanToNumberTransformer.rb */,
 			);
 			path = lib;
@@ -313,11 +333,12 @@
 /* Begin PBXLegacyTarget section */
 		E92BF332164253AE00862CF4 /* Deployment */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "--compile --embed";
+			buildArgumentsString = "--compile --embed --gem oauth2";
 			buildConfigurationList = E92BF34C164253AE00862CF4 /* Build configuration list for PBXLegacyTarget "Deployment" */;
 			buildPhases = (
 			);
 			buildToolPath = /usr/local/bin/macruby_deploy;
+			buildWorkingDirectory = "";
 			dependencies = (
 				E92BF334164253AE00862CF4 /* PBXTargetDependency */,
 			);
@@ -339,7 +360,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				E90FD701165DFCD600B09052 /* PBXTargetDependency */,
+				E9480E0E165E1C3800FE5B81 /* PBXTargetDependency */,
 			);
 			name = ActionMac;
 			productName = ActionMac;
@@ -352,7 +373,7 @@
 		E92BF321164253AD00862CF4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = E92BF324164253AD00862CF4 /* Build configuration list for PBXProject "ActionMac" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -369,7 +390,7 @@
 			targets = (
 				E92BF329164253AD00862CF4 /* ActionMac */,
 				E92BF332164253AE00862CF4 /* Deployment */,
-				E90FD6FB165DFC9A00B09052 /* GitVersion */,
+				E90FD6FB165DFC9A00B09052 /* GenerateInfoPlistHeader */,
 			);
 		};
 /* End PBXProject section */
@@ -397,24 +418,29 @@
 				E988E25616536B9900772174 /* SignUpView.xib in Resources */,
 				E9B0BA861653F35800F695D6 /* AIOSignUpView.rb in Resources */,
 				E90FD704165DFF5400B09052 /* AIOSettings.rb in Resources */,
+				E96BC69C165F35840016A467 /* environment.rb in Resources */,
+				E93058A9165F73CB00794635 /* AIOAPI.rb in Resources */,
+				E93058B7166384FE00794635 /* AIOAPI+Mac.rb in Resources */,
+				E93058B91663950600794635 /* AIOConstants.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E90FD6FF165DFCA700B09052 /* ShellScript */ = {
+		E90FD6FF165DFCA700B09052 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "git=\"/usr/bin/env git\"\nversion=`$git describe --always`\necho \"#define GIT_VERSION $version\" > config/InfoPlist.h\ntouch config/Info.plist";
+			shellScript = "git=\"/usr/bin/env git\"\ndate=`date`\necho \"/* Generated at $date */\" > config/InfoPlist.h\n\nversion=`$git describe --always`\necho \"#define AIO_VERSION $version\" >> config/InfoPlist.h\n\nif [ $AIO_ENV == 'production' ]; then\n  echo \"#define AIO_BUNDLE_ID io.action.mac-app\" >> config/InfoPlist.h\nelse\n  echo \"#define AIO_BUNDLE_ID io.action.mac-app-$AIO_ENV\" >> config/InfoPlist.h\nfi\n\ncat \"config/InfoPlist-$AIO_ENV.h\" >> config/InfoPlist.h\n\ntouch config/Info.plist";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -431,15 +457,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E90FD701165DFCD600B09052 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E90FD6FB165DFC9A00B09052 /* GitVersion */;
-			targetProxy = E90FD700165DFCD600B09052 /* PBXContainerItemProxy */;
-		};
 		E92BF334164253AE00862CF4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E92BF329164253AD00862CF4 /* ActionMac */;
 			targetProxy = E92BF333164253AE00862CF4 /* PBXContainerItemProxy */;
+		};
+		E9480E0E165E1C3800FE5B81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E90FD6FB165DFC9A00B09052 /* GenerateInfoPlistHeader */;
+			targetProxy = E9480E0D165E1C3800FE5B81 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -447,6 +473,8 @@
 		E90FD6FD165DFC9A00B09052 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				AIO_ENV = development;
+				COMBINE_HIDPI_IMAGES = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -454,6 +482,8 @@
 		E90FD6FE165DFC9A00B09052 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				AIO_ENV = production;
+				COMBINE_HIDPI_IMAGES = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -510,6 +540,7 @@
 				AIO_HOST = "https://dev.action.io:5000";
 				AIO_SIGN_UP_URL = "https://dev.action.io:5000/";
 				ARCHS = x86_64;
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
@@ -533,6 +564,7 @@
 				AIO_HOST = "https://www.action.io";
 				AIO_SIGN_UP_URL = "https://www.action.io/";
 				ARCHS = x86_64;
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
@@ -552,25 +584,28 @@
 		E92BF34D164253AE00862CF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 			};
 			name = Debug;
 		};
 		E92BF34E164253AE00862CF4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E90FD6FC165DFC9A00B09052 /* Build configuration list for PBXAggregateTarget "GitVersion" */ = {
+		E90FD6FC165DFC9A00B09052 /* Build configuration list for PBXAggregateTarget "GenerateInfoPlistHeader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E90FD6FD165DFC9A00B09052 /* Debug */,
 				E90FD6FE165DFC9A00B09052 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E92BF324164253AD00862CF4 /* Build configuration list for PBXProject "ActionMac" */ = {
 			isa = XCConfigurationList;

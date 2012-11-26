@@ -1,11 +1,40 @@
 class AIOSignInViewController < NSViewController
+  attr_accessor :loading, :username, :password
+
   def init
     if super.initWithNibName 'SignInView', bundle: nil
+      @loading = false
       self
     end
   end
 
   def did_click_sign_in_button(sender)
+    self.loading = true
+    Dispatch::Queue.concurrent.async do
+      begin
+        api = NSApp.delegate.api
+        api.obtain_access_token @username, @password
+        api.write_access_token_to_keychain
+      rescue => e
+        err_msg = e.message.lines.first.strip
+        if err_msg.include? 'invalid_resource_owner'
+          err_msg = 'The username or password you entered is incorrect.'
+        elsif e.kind_of? AIOAPI::KeychainError
+          err_msg = 'Could not access keychain. Is your keychain locked?'
+        end
+        Dispatch::Queue.main.sync do
+          NSBeginCriticalAlertSheet 'Error', 'Okay', nil, nil, self.view.window, nil, nil, nil, nil, "%@", err_msg
+        end
+      else
+        Dispatch::Queue.main.sync do
+          app_controller = NSApp.delegate
+          app_controller.close_welcome_window
+          app_controller.setup_status_item
+        end
+      ensure
+        self.loading = false
+      end
+    end
   end
 
   def did_click_go_back_button(sender)

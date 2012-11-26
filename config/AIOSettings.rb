@@ -1,9 +1,14 @@
 require 'ostruct'
 
 info = NSBundle.mainBundle.infoDictionary
+env = info['AIOEnv']
 
-AIOSettings = OpenStruct.new
+AIOSettings = OpenStruct.new(
+  env: env,
+  host: info['AIOHost'],
+  sign_up_url: info['AIOSignUpURL'],
+  oauth_client_id: info['AIOOAuthClientID'],
+  oauth_client_secret: info['AIOOAuthClientSecret'],
+  keychain_service_name: info['CFBundleName'] + (env != 'production' ? " (#{env})" : '')
+) unless defined?(AIOSettings)
 
-AIOSettings.env  = info['AIO_ENV']
-AIOSettings.host = info['AIO_HOST']
-AIOSettings.sign_up_url = info['AIO_SIGN_UP_URL']

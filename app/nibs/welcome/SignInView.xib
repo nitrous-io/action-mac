@@ -15,10 +15,12 @@
 			<string>NSButton</string>
 			<string>NSButtonCell</string>
 			<string>NSCustomObject</string>
+			<string>NSProgressIndicator</string>
 			<string>NSSecureTextField</string>
 			<string>NSSecureTextFieldCell</string>
 			<string>NSTextField</string>
 			<string>NSTextFieldCell</string>
+			<string>NSUserDefaultsController</string>
 			<string>NSView</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
@@ -141,7 +143,7 @@
 										<string key="NSFrame">{{143, 163}, {163, 22}}</string>
 										<reference key="NSSuperview" ref="166948569"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="475951899"/>
+										<reference key="NSNextKeyView" ref="567592644"/>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSSecureTextFieldCell" key="NSCell" id="336948027">
 											<int key="NSCellFlags">342884416</int>
@@ -256,6 +258,17 @@
 										</object>
 										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									</object>
+									<object class="NSProgressIndicator" id="567592644">
+										<reference key="NSNextResponder" ref="166948569"/>
+										<int key="NSvFlags">268</int>
+										<string key="NSFrame">{{143, 138}, {16, 16}}</string>
+										<reference key="NSSuperview" ref="166948569"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="475951899"/>
+										<string key="NSReuseIdentifierKey">_NS:945</string>
+										<int key="NSpiFlags">20746</int>
+										<double key="NSMaxValue">100</double>
+									</object>
 								</array>
 								<string key="NSFrame">{{1, 1}, {324, 258}}</string>
 								<reference key="NSSuperview" ref="946281620"/>
@@ -295,6 +308,9 @@
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="946281620"/>
 			</object>
+			<object class="NSUserDefaultsController" id="369654567">
+				<bool key="NSSharedInstance">YES</bool>
+			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<array class="NSMutableArray" key="connectionRecords">
@@ -308,11 +324,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
+						<string key="label">did_click_forgot_password_button:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="475951899"/>
+					</object>
+					<int key="connectionID">25</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
 						<string key="label">did_click_sign_in_button:</string>
 						<reference key="source" ref="1001"/>
 						<reference key="destination" ref="332706905"/>
 					</object>
-					<int key="connectionID">20</int>
+					<int key="connectionID">26</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -320,15 +344,231 @@
 						<reference key="source" ref="1001"/>
 						<reference key="destination" ref="268756220"/>
 					</object>
-					<int key="connectionID">21</int>
+					<int key="connectionID">27</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">did_click_forgot_password_button:</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="475951899"/>
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: self.loading</string>
+						<reference key="source" ref="268756220"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="268756220"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: self.loading</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">self.loading</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
 					</object>
-					<int key="connectionID">24</int>
+					<int key="connectionID">66</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: self.loading</string>
+						<reference key="source" ref="332706905"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="948398404">
+							<reference key="NSSource" ref="332706905"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: self.loading</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">self.loading</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">54</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled2: self.username</string>
+						<reference key="source" ref="332706905"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="322196349">
+							<reference key="NSSource" ref="332706905"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled2: self.username</string>
+							<string key="NSBinding">enabled2</string>
+							<string key="NSKeyPath">self.username</string>
+							<dictionary key="NSOptions">
+								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
+								<integer value="-1" key="NSNoSelectionPlaceholder"/>
+								<integer value="-1" key="NSNotApplicablePlaceholder"/>
+								<integer value="-1" key="NSNullPlaceholder"/>
+								<string key="NSValueTransformerName">NSIsNotNil</string>
+							</dictionary>
+							<reference key="NSPreviousConnector" ref="948398404"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">60</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled3: self.password</string>
+						<reference key="source" ref="332706905"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="332706905"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled3: self.password</string>
+							<string key="NSBinding">enabled3</string>
+							<string key="NSKeyPath">self.password</string>
+							<dictionary key="NSOptions">
+								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
+								<integer value="-1" key="NSNoSelectionPlaceholder"/>
+								<integer value="-1" key="NSNotApplicablePlaceholder"/>
+								<integer value="-1" key="NSNullPlaceholder"/>
+								<string key="NSValueTransformerName">NSIsNotNil</string>
+							</dictionary>
+							<reference key="NSPreviousConnector" ref="322196349"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">63</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: self.username</string>
+						<reference key="source" ref="704079221"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="704079221"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: self.username</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">self.username</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">32</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: self.loading</string>
+						<reference key="source" ref="704079221"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="704079221"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: self.loading</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">self.loading</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">40</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: self.password</string>
+						<reference key="source" ref="670708235"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="670708235"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: self.password</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">self.password</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">33</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: self.loading</string>
+						<reference key="source" ref="670708235"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="670708235"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: self.loading</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">self.loading</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">43</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: self.loading</string>
+						<reference key="source" ref="475951899"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="475951899"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: self.loading</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">self.loading</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">55</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">animate: self.loading</string>
+						<reference key="source" ref="567592644"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="567592644"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">animate: self.loading</string>
+							<string key="NSBinding">animate</string>
+							<string key="NSKeyPath">self.loading</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">35</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: self.loading</string>
+						<reference key="source" ref="567592644"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="567592644"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: self.loading</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">self.loading</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">38</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -393,6 +633,7 @@
 							<reference ref="670708235"/>
 							<reference ref="503531833"/>
 							<reference ref="475951899"/>
+							<reference ref="567592644"/>
 						</array>
 						<reference key="parent" ref="623893369"/>
 					</object>
@@ -484,6 +725,16 @@
 						<reference key="object" ref="886151057"/>
 						<reference key="parent" ref="475951899"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">34</int>
+						<reference key="object" ref="567592644"/>
+						<reference key="parent" ref="946281620"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">50</int>
+						<reference key="object" ref="369654567"/>
+						<reference key="parent" ref="0"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -503,7 +754,9 @@
 				<string key="22.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="23.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="34.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="50.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -513,7 +766,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">24</int>
+			<int key="maxID">66</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -536,6 +789,25 @@
 						</object>
 						<object class="IBActionInfo" key="did_click_sign_in_button:">
 							<string key="name">did_click_sign_in_button:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="loading">id</string>
+						<string key="password">id</string>
+						<string key="username">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="loading">
+							<string key="name">loading</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="password">
+							<string key="name">password</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="username">
+							<string key="name">username</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>

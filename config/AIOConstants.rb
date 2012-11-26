@@ -1,0 +1,2 @@
+KAIOUsernameKey = 'username'
+

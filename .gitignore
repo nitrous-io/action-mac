@@ -1,6 +1,7 @@
 # App
 Pods/
 config/InfoPlist.h
+config/InfoPlist-production.h
 
 # Xcode
 build/*

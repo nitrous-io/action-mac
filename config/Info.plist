@@ -7,15 +7,15 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>io.action.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>AIO_BUNDLE_ID</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>Action.IO for Mac</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>GIT_VERSION</string>
+	<string>AIO_VERSION</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -29,12 +29,16 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>LSUIElement</key>
-	<false/>
-	<key>AIO_ENV</key>
+	<true/>
+	<key>AIOEnv</key>
 	<string>${AIO_ENV}</string>
-	<key>AIO_HOST</key>
+	<key>AIOHost</key>
 	<string>${AIO_HOST}</string>
-	<key>AIO_SIGN_UP_URL</key>
+	<key>AIOSignUpURL</key>
 	<string>${AIO_SIGN_UP_URL}</string>
+	<key>AIOOAuthClientID</key>
+	<string>AIO_OAUTH_CLIENT_ID</string>
+	<key>AIOOAuthClientSecret</key>
+	<string>AIO_OAUTH_CLIENT_SECRET</string>
 </dict>
 </plist>
