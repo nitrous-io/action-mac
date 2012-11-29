@@ -1,9 +1,11 @@
 class AIOApplicationController
-  attr_accessor :window, :menu
-  attr_reader :api, :welcome_window_controller, :status_item
+  attr_accessor :window, :menu_controller
+  attr_reader :api, :welcome_window_controller
 
   def applicationDidFinishLaunching(notification)
     @api = AIOAPI.new
+    addObserver self, forKeyPath: 'api.token', options: 0, context: nil
+
     begin
       @api.read_access_token_from_keychain
     rescue AIOAPI::KeychainError => e
@@ -11,11 +13,11 @@ class AIOApplicationController
       NSApp.terminate self
     end
 
-    if @api.token
-      setup_status_item
-    else
-      show_welcome_window
-    end
+    show_welcome_window unless @api.token
+  end
+
+  def finalize
+    removeObserver self, forKeyPath: 'api.token'
   end
 
   def show_welcome_window
@@ -30,12 +32,25 @@ class AIOApplicationController
     @welcome_window_controller = nil
   end
 
-  def setup_status_item
-    @status_item = NSStatusBar.systemStatusBar.statusItemWithLength NSVariableStatusItemLength
-    @status_item.setHighlightMode true
-    @status_item.setImage NSImage.imageNamed('status-item-icon')
-    @status_item.setAlternateImage NSImage.imageNamed('status-item-icon-highlighted')
-    @status_item.setToolTip 'Action.IO'
-    @status_item.setMenu @menu
+  def show_menu_and_close_welcome_window
+    close_welcome_window if @welcome_window_controller
+    @menu_controller.setup_menu unless @menu_controller.status_item
+  end
+
+  def show_welcome_window_and_remove_menu
+    @menu_controller.teardown_menu if @menu_controller.status_item
+    show_welcome_window unless @welcome_window_controller
+  end
+
+  # observer
+  def observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+    val = object.valueForKeyPath keyPath
+    if keyPath == 'api.token'
+      if val.nil?
+        show_welcome_window_and_remove_menu
+      else
+        show_menu_and_close_welcome_window
+      end
+    end
   end
 end

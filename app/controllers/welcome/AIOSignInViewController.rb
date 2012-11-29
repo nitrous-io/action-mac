@@ -25,12 +25,6 @@ class AIOSignInViewController < NSViewController
         Dispatch::Queue.main.sync do
           NSBeginCriticalAlertSheet 'Error', 'Okay', nil, nil, self.view.window, nil, nil, nil, nil, "%@", err_msg
         end
-      else
-        Dispatch::Queue.main.sync do
-          app_controller = NSApp.delegate
-          app_controller.close_welcome_window
-          app_controller.setup_status_item
-        end
       ensure
         self.loading = false
       end
