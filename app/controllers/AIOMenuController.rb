@@ -15,4 +15,8 @@ class AIOMenuController
     NSStatusBar.systemStatusBar.removeStatusItem @status_item
     @status_item = nil
   end
+
+  def open_action_io_website(sender)
+    NSWorkspace.sharedWorkspace.openURL NSURL.URLWithString(AIOSettings.host + '/')
+  end
 end
