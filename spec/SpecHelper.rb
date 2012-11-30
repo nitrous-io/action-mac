@@ -6,8 +6,11 @@ require 'mac_bacon'
 require 'facon'
 
 dir = File.dirname(__FILE__)
-$: << dir << "#{dir}/.."
+$: << dir << "#{dir}/.." << "#{dir}/support" << "#{dir}/../config"
 $:.concat Dir.glob("#{dir}/../app/**/*/")
+$:.concat Dir.glob("#{dir}/../vendor/**/*/")
+
+require 'environment'
 
 module Bacon
   class Context

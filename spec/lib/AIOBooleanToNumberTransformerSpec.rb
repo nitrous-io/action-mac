@@ -1,4 +1,4 @@
-require 'spec/SpecHelper'
+require 'SpecHelper'
 
 require 'AIOBooleanToNumberTransformer'
 
