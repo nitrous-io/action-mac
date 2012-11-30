@@ -1,4 +1,5 @@
 framework 'Security'
+require_relative 'AIOAPI'
 
 class AIOAPI
   class KeychainError < StandardError; end
@@ -29,6 +30,17 @@ class AIOAPI
       end
       error = error_ptr[0]
       if error && error.code != ErrSecItemNotFound
+        raise KeychainError, error.localizedDescription
+      end
+    end
+  end
+
+  def remove_access_token_from_keychain
+    service = AIOSettings.keychain_service_name
+    if account = NSUserDefaults.standardUserDefaults.stringForKey(KAIOUsernameKey)
+      error_ptr = Pointer.new :object
+      SSKeychain.deletePasswordForService(service, account: account, error: error_ptr)
+      if error = error_ptr[0]
         raise KeychainError, error.localizedDescription
       end
     end

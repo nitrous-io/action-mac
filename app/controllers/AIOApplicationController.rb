@@ -9,8 +9,7 @@ class AIOApplicationController
     begin
       @api.read_access_token_from_keychain
     rescue AIOAPI::KeychainError => e
-      NSRunCriticalAlertPanel 'Error', 'Could not access keychain. Is your keychain locked?', 'Okay', nil, nil
-      NSApp.terminate self
+      show_keychain_error
     end
 
     show_welcome_window unless @api.token
@@ -45,12 +44,24 @@ class AIOApplicationController
   # observer
   def observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
     val = object.valueForKeyPath keyPath
-    if keyPath == 'api.token'
+    if object == self && keyPath == 'api.token'
       if val.nil?
-        show_welcome_window_and_remove_menu
+        begin
+          @api.remove_access_token_from_keychain
+        rescue AIOAPI::KeychainError => e
+          show_keychain_error
+        ensure
+          show_welcome_window_and_remove_menu
+        end
       else
         show_menu_and_close_welcome_window
       end
     end
+  end
+
+  private
+  def show_keychain_error
+    NSRunCriticalAlertPanel 'Error', 'Could not access keychain. Is your keychain locked?', 'Okay', nil, nil
+    NSApp.terminate self
   end
 end
