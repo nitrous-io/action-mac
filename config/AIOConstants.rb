@@ -1,2 +1,3 @@
 AIO_USERNAME_KEY = 'username'
+AIO_COLLECTION_CLASS_NAME = :AIOCollectionCocoa
 
