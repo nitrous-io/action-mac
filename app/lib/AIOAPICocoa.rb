@@ -1,5 +1,5 @@
 framework 'Security'
-require_relative 'AIOAPI'
+require 'AIOAPI'
 
 class AIOAPICocoa < AIOAPI
   class KeychainError < StandardError; end
