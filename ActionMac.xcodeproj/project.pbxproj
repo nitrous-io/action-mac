@@ -60,6 +60,7 @@
 		E988E25616536B9900772174 /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E988E25516536B9800772174 /* SignUpView.xib */; };
 		E9987DFF164BADDC00B762FE /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = E9987DFE164BADDC00B762FE /* SSKeychain.m */; };
 		E9987E01164BADE900B762FE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9987E00164BADE900B762FE /* Security.framework */; };
+		E9AC86AD166B9A6500D94D74 /* NSObject+AIO.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9AC86AC166B9A6500D94D74 /* NSObject+AIO.rb */; };
 		E9B0BA861653F35800F695D6 /* AIOSignUpView.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B0BA851653F35800F695D6 /* AIOSignUpView.rb */; };
 		E9BC81171650FB0200A21D88 /* AIOWelcomeWindowController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9BC81161650FB0200A21D88 /* AIOWelcomeWindowController.rb */; };
 		E9BC812C1650FC2700A21D88 /* WelcomeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9BC81281650FC2700A21D88 /* WelcomeWindow.xib */; };
@@ -139,7 +140,9 @@
 		E9987DFD164BADDC00B762FE /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		E9987DFE164BADDC00B762FE /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		E9987E00164BADE900B762FE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E9AC86AC166B9A6500D94D74 /* NSObject+AIO.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = "NSObject+AIO.rb"; sourceTree = "<group>"; };
 		E9B0BA851653F35800F695D6 /* AIOSignUpView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOSignUpView.rb; sourceTree = "<group>"; };
+		E9B6D0F5166E54140088AC85 /* NSObject+AIOSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = "NSObject+AIOSpec.rb"; sourceTree = "<group>"; };
 		E9BC81161650FB0200A21D88 /* AIOWelcomeWindowController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOWelcomeWindowController.rb; sourceTree = "<group>"; };
 		E9BC81281650FC2700A21D88 /* WelcomeWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeWindow.xib; sourceTree = "<group>"; };
 		E9BF1AAE1653EE840067DFC9 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
@@ -268,6 +271,7 @@
 		E982FC3F164ABFF800CA54BA /* spec */ = {
 			isa = PBXGroup;
 			children = (
+				E9B6D0F4166E54140088AC85 /* extensions */,
 				E946CCFD166B51D4000AE1E6 /* models */,
 				E96BC697165E27E20016A467 /* support */,
 				E904BC60165116DD00DA5436 /* lib */,
@@ -293,12 +297,28 @@
 			path = sskeychain;
 			sourceTree = "<group>";
 		};
+		E9AC86AB166B9A6500D94D74 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E9AC86AC166B9A6500D94D74 /* NSObject+AIO.rb */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		E9B0BA841653F34700F695D6 /* welcome */ = {
 			isa = PBXGroup;
 			children = (
 				E9B0BA851653F35800F695D6 /* AIOSignUpView.rb */,
 			);
 			path = welcome;
+			sourceTree = "<group>";
+		};
+		E9B6D0F4166E54140088AC85 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E9B6D0F5166E54140088AC85 /* NSObject+AIOSpec.rb */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 		E9BC81151650FB0200A21D88 /* welcome */ = {
@@ -329,6 +349,7 @@
 				E9E19FD2164259220058706D /* models */,
 				E9E19FCE164259220058706D /* controllers */,
 				E9E19FD0164259220058706D /* lib */,
+				E9AC86AB166B9A6500D94D74 /* extensions */,
 				E9E19FD6164259220058706D /* views */,
 				E9E19FD4164259220058706D /* nibs */,
 				E9E19FDF164259D30058706D /* resources */,
@@ -508,6 +529,7 @@
 				E946CD32166B8CCF000AE1E6 /* state-terminated.png in Resources */,
 				E946CD33166B8CCF000AE1E6 /* state-terminated@2x.png in Resources */,
 				E946CD35166B8E85000AE1E6 /* AIOStringToNSImageTransformer.rb in Resources */,
+				E9AC86AD166B9A6500D94D74 /* NSObject+AIO.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

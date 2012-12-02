@@ -60,7 +60,7 @@ class AIOMenuController
 
   private
   def add_box_menu_item(box)
-    Dispatch::Queue.main.sync do
+    main_thread do
       objects_ptr = Pointer.new :object
       if @box_menu_nib.instantiateNibWithOwner box, topLevelObjects: objects_ptr
         objects = objects_ptr[0]
@@ -76,7 +76,7 @@ class AIOMenuController
   end
 
   def remove_box_menu_item(box)
-    Dispatch::Queue.main.sync do
+    main_thread do
       if menu_item = @box_menu_item_mapping.delete(box)
         @menu.removeItem menu_item
       end

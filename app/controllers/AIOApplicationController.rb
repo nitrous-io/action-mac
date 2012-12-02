@@ -59,14 +59,18 @@ class AIOApplicationController
           begin
             @api.sign_out
           rescue AIOAPICocoa::KeychainError => e
-            show_keychain_error
+            main_thread do
+              show_keychain_error
+            end
           end
         end
       when 'api.signed_in'
-        if val
-          show_menu_and_close_welcome_window
-        else
-          show_welcome_window_and_remove_menu
+        main_thread do
+          if val
+            show_menu_and_close_welcome_window
+          else
+            show_welcome_window_and_remove_menu
+          end
         end
     end
   end
