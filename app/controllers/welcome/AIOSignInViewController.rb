@@ -13,8 +13,7 @@ class AIOSignInViewController < NSViewController
     Dispatch::Queue.concurrent.async do
       begin
         api = NSApp.delegate.api
-        api.obtain_access_token @username, @password
-        api.write_access_token_to_keychain
+        api.sign_in @username, @password
       rescue => e
         err_msg = e.message.lines.first.strip
         if err_msg.include? 'invalid_resource_owner'

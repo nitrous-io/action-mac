@@ -4,6 +4,29 @@ require 'AIOAPI'
 class AIOAPICocoa < AIOAPI
   class KeychainError < StandardError; end
 
+  attr_accessor :signed_in
+
+  def initialize
+    super
+    @signed_in = false
+  end
+
+  def sign_in(username=nil, password=nil)
+    if username && password
+      obtain_access_token username, password
+      write_access_token_to_keychain
+    else
+      read_access_token_from_keychain
+    end
+    self.signed_in = true
+  end
+
+  def sign_out
+    remove_access_token_from_keychain
+    self.signed_in = false
+  end
+
+  private
   def write_access_token_to_keychain
     if token
       defaults = NSUserDefaults.standardUserDefaults

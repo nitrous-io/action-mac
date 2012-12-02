@@ -5,9 +5,10 @@ class AIOApplicationController
   def applicationDidFinishLaunching(notification)
     @api = AIOAPICocoa.new
     addObserver self, forKeyPath: 'api.token', options: 0, context: nil
+    addObserver self, forKeyPath: 'api.signed_in', options: 0, context: nil
 
     begin
-      @api.read_access_token_from_keychain
+      @api.sign_in
     rescue AIOAPICocoa::KeychainError => e
       show_keychain_error
     end
@@ -17,6 +18,7 @@ class AIOApplicationController
 
   def finalize
     removeObserver self, forKeyPath: 'api.token'
+    removeObserver self, forKeyPath: 'api.signed_in'
   end
 
   def show_welcome_window
@@ -44,18 +46,21 @@ class AIOApplicationController
   # observer
   def observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
     val = object.valueForKeyPath keyPath
-    if object == self && keyPath == 'api.token'
-      if val.nil?
-        begin
-          @api.remove_access_token_from_keychain
-        rescue AIOAPICocoa::KeychainError => e
-          show_keychain_error
-        ensure
+    case keyPath
+      when 'api.token'
+        if val.nil?
+          begin
+            @api.sign_out
+          rescue AIOAPICocoa::KeychainError => e
+            show_keychain_error
+          end
+        end
+      when 'api.signed_in'
+        if val
+          show_menu_and_close_welcome_window
+        else
           show_welcome_window_and_remove_menu
         end
-      else
-        show_menu_and_close_welcome_window
-      end
     end
   end
 
