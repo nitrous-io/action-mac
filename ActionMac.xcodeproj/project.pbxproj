@@ -35,6 +35,18 @@
 		E93058A9165F73CB00794635 /* AIOAPI.rb in Resources */ = {isa = PBXBuildFile; fileRef = E93058A8165F73CB00794635 /* AIOAPI.rb */; };
 		E93058B91663950600794635 /* AIOConstants.rb in Resources */ = {isa = PBXBuildFile; fileRef = E93058B81663950600794635 /* AIOConstants.rb */; };
 		E946CCFB166B5165000AE1E6 /* AIOCollectionCocoa.rb in Resources */ = {isa = PBXBuildFile; fileRef = E946CCF8166B5165000AE1E6 /* AIOCollectionCocoa.rb */; };
+		E946CD18166B6320000AE1E6 /* AIOBox.rb in Resources */ = {isa = PBXBuildFile; fileRef = E946CD16166B6320000AE1E6 /* AIOBox.rb */; };
+		E946CD19166B6320000AE1E6 /* AIOBoxCollection.rb in Resources */ = {isa = PBXBuildFile; fileRef = E946CD17166B6320000AE1E6 /* AIOBoxCollection.rb */; };
+		E946CD1B166B6E6E000AE1E6 /* BoxMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E946CD1A166B6E6E000AE1E6 /* BoxMenu.xib */; };
+		E946CD2C166B8CCF000AE1E6 /* state-default.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD24166B8CCF000AE1E6 /* state-default.png */; };
+		E946CD2D166B8CCF000AE1E6 /* state-default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD25166B8CCF000AE1E6 /* state-default@2x.png */; };
+		E946CD2E166B8CCF000AE1E6 /* state-running.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD26166B8CCF000AE1E6 /* state-running.png */; };
+		E946CD2F166B8CCF000AE1E6 /* state-running@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD27166B8CCF000AE1E6 /* state-running@2x.png */; };
+		E946CD30166B8CCF000AE1E6 /* state-stopped.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD28166B8CCF000AE1E6 /* state-stopped.png */; };
+		E946CD31166B8CCF000AE1E6 /* state-stopped@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD29166B8CCF000AE1E6 /* state-stopped@2x.png */; };
+		E946CD32166B8CCF000AE1E6 /* state-terminated.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD2A166B8CCF000AE1E6 /* state-terminated.png */; };
+		E946CD33166B8CCF000AE1E6 /* state-terminated@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD2B166B8CCF000AE1E6 /* state-terminated@2x.png */; };
+		E946CD35166B8E85000AE1E6 /* AIOStringToNSImageTransformer.rb in Resources */ = {isa = PBXBuildFile; fileRef = E946CD34166B8E85000AE1E6 /* AIOStringToNSImageTransformer.rb */; };
 		E96795851667182B00703E49 /* AIOMenuController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E96795841667182B00703E49 /* AIOMenuController.rb */; };
 		E967959116686F7D00703E49 /* AIOCollection.rb in Resources */ = {isa = PBXBuildFile; fileRef = E967958F16686F7D00703E49 /* AIOCollection.rb */; };
 		E967959216686F7D00703E49 /* AIOModel.rb in Resources */ = {isa = PBXBuildFile; fileRef = E967959016686F7D00703E49 /* AIOModel.rb */; };
@@ -96,6 +108,18 @@
 		E946CCFE166B51D4000AE1E6 /* AIOCollectionCocoaSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOCollectionCocoaSpec.rb; sourceTree = "<group>"; };
 		E946CCFF166B51D4000AE1E6 /* AIOCollectionSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOCollectionSpec.rb; sourceTree = "<group>"; };
 		E946CD00166B51D4000AE1E6 /* AIOModelSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOModelSpec.rb; sourceTree = "<group>"; };
+		E946CD16166B6320000AE1E6 /* AIOBox.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOBox.rb; sourceTree = "<group>"; };
+		E946CD17166B6320000AE1E6 /* AIOBoxCollection.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOBoxCollection.rb; sourceTree = "<group>"; };
+		E946CD1A166B6E6E000AE1E6 /* BoxMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoxMenu.xib; sourceTree = "<group>"; };
+		E946CD24166B8CCF000AE1E6 /* state-default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "state-default.png"; sourceTree = "<group>"; };
+		E946CD25166B8CCF000AE1E6 /* state-default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "state-default@2x.png"; sourceTree = "<group>"; };
+		E946CD26166B8CCF000AE1E6 /* state-running.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "state-running.png"; sourceTree = "<group>"; };
+		E946CD27166B8CCF000AE1E6 /* state-running@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "state-running@2x.png"; sourceTree = "<group>"; };
+		E946CD28166B8CCF000AE1E6 /* state-stopped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "state-stopped.png"; sourceTree = "<group>"; };
+		E946CD29166B8CCF000AE1E6 /* state-stopped@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "state-stopped@2x.png"; sourceTree = "<group>"; };
+		E946CD2A166B8CCF000AE1E6 /* state-terminated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "state-terminated.png"; sourceTree = "<group>"; };
+		E946CD2B166B8CCF000AE1E6 /* state-terminated@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "state-terminated@2x.png"; sourceTree = "<group>"; };
+		E946CD34166B8E85000AE1E6 /* AIOStringToNSImageTransformer.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOStringToNSImageTransformer.rb; sourceTree = "<group>"; };
 		E9480E0B165E1BD000FE5B81 /* InfoPlist-development.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InfoPlist-development.h"; sourceTree = "<group>"; };
 		E9480E0C165E1BD000FE5B81 /* InfoPlist-production.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InfoPlist-production.h"; sourceTree = "<group>"; };
 		E96795841667182B00703E49 /* AIOMenuController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOMenuController.rb; sourceTree = "<group>"; };
@@ -165,6 +189,14 @@
 		E918B3EB164B96D100D53509 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E946CD24166B8CCF000AE1E6 /* state-default.png */,
+				E946CD25166B8CCF000AE1E6 /* state-default@2x.png */,
+				E946CD26166B8CCF000AE1E6 /* state-running.png */,
+				E946CD27166B8CCF000AE1E6 /* state-running@2x.png */,
+				E946CD28166B8CCF000AE1E6 /* state-stopped.png */,
+				E946CD29166B8CCF000AE1E6 /* state-stopped@2x.png */,
+				E946CD2A166B8CCF000AE1E6 /* state-terminated.png */,
+				E946CD2B166B8CCF000AE1E6 /* state-terminated@2x.png */,
 				E918B3EC164B96D100D53509 /* status-item-icon-highlighted.png */,
 				E918B3ED164B96D100D53509 /* status-item-icon-highlighted@2x.png */,
 				E918B3EE164B96D100D53509 /* status-item-icon.png */,
@@ -323,6 +355,7 @@
 				E93058A8165F73CB00794635 /* AIOAPI.rb */,
 				E96795A7166B497200703E49 /* AIOAPICocoa.rb */,
 				E904BC5D165115B600DA5436 /* AIOBooleanToNumberTransformer.rb */,
+				E946CD34166B8E85000AE1E6 /* AIOStringToNSImageTransformer.rb */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -333,6 +366,8 @@
 				E967959016686F7D00703E49 /* AIOModel.rb */,
 				E967958F16686F7D00703E49 /* AIOCollection.rb */,
 				E946CCF8166B5165000AE1E6 /* AIOCollectionCocoa.rb */,
+				E946CD16166B6320000AE1E6 /* AIOBox.rb */,
+				E946CD17166B6320000AE1E6 /* AIOBoxCollection.rb */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -340,8 +375,9 @@
 		E9E19FD4164259220058706D /* nibs */ = {
 			isa = PBXGroup;
 			children = (
-				E9E19FDD164259B80058706D /* MainMenu.xib */,
 				E9BC81241650FC2700A21D88 /* welcome */,
+				E9E19FDD164259B80058706D /* MainMenu.xib */,
+				E946CD1A166B6E6E000AE1E6 /* BoxMenu.xib */,
 			);
 			path = nibs;
 			sourceTree = "<group>";
@@ -460,6 +496,18 @@
 				E967959216686F7D00703E49 /* AIOModel.rb in Resources */,
 				E96795A8166B497200703E49 /* AIOAPICocoa.rb in Resources */,
 				E946CCFB166B5165000AE1E6 /* AIOCollectionCocoa.rb in Resources */,
+				E946CD18166B6320000AE1E6 /* AIOBox.rb in Resources */,
+				E946CD19166B6320000AE1E6 /* AIOBoxCollection.rb in Resources */,
+				E946CD1B166B6E6E000AE1E6 /* BoxMenu.xib in Resources */,
+				E946CD2C166B8CCF000AE1E6 /* state-default.png in Resources */,
+				E946CD2D166B8CCF000AE1E6 /* state-default@2x.png in Resources */,
+				E946CD2E166B8CCF000AE1E6 /* state-running.png in Resources */,
+				E946CD2F166B8CCF000AE1E6 /* state-running@2x.png in Resources */,
+				E946CD30166B8CCF000AE1E6 /* state-stopped.png in Resources */,
+				E946CD31166B8CCF000AE1E6 /* state-stopped@2x.png in Resources */,
+				E946CD32166B8CCF000AE1E6 /* state-terminated.png in Resources */,
+				E946CD33166B8CCF000AE1E6 /* state-terminated@2x.png in Resources */,
+				E946CD35166B8E85000AE1E6 /* AIOStringToNSImageTransformer.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

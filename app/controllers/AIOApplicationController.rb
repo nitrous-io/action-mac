@@ -1,9 +1,12 @@
 class AIOApplicationController
   attr_accessor :window, :menu_controller
   attr_reader :api, :welcome_window_controller
+  attr_reader :boxes
 
   def applicationDidFinishLaunching(notification)
     @api = AIOAPICocoa.new
+    initialize_collections
+
     addObserver self, forKeyPath: 'api.token', options: 0, context: nil
     addObserver self, forKeyPath: 'api.signed_in', options: 0, context: nil
 
@@ -19,6 +22,10 @@ class AIOApplicationController
   def finalize
     removeObserver self, forKeyPath: 'api.token'
     removeObserver self, forKeyPath: 'api.signed_in'
+  end
+
+  def initialize_collections
+    @boxes = AIOBoxCollection.new @api
   end
 
   def show_welcome_window

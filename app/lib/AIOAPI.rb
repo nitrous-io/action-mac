@@ -27,7 +27,10 @@ class AIOAPI
     response = e.response
     if response.status == 401 # token is invalid. destroy it.
       self.token = nil
+    else
+      raise e
     end
-    nil
+  rescue => e
+    raise e
   end
 end
