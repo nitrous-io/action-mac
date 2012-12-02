@@ -1,7 +1,7 @@
 framework 'Security'
 require_relative 'AIOAPI'
 
-class AIOAPI
+class AIOAPICocoa < AIOAPI
   class KeychainError < StandardError; end
 
   def write_access_token_to_keychain

@@ -19,7 +19,7 @@ class AIOSignInViewController < NSViewController
         err_msg = e.message.lines.first.strip
         if err_msg.include? 'invalid_resource_owner'
           err_msg = 'The username or password you entered is incorrect.'
-        elsif e.kind_of? AIOAPI::KeychainError
+        elsif e.kind_of? AIOAPICocoa::KeychainError
           err_msg = 'Could not access keychain. Is your keychain locked?'
         end
         Dispatch::Queue.main.sync do

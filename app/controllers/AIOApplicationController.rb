@@ -3,12 +3,12 @@ class AIOApplicationController
   attr_reader :api, :welcome_window_controller
 
   def applicationDidFinishLaunching(notification)
-    @api = AIOAPI.new
+    @api = AIOAPICocoa.new
     addObserver self, forKeyPath: 'api.token', options: 0, context: nil
 
     begin
       @api.read_access_token_from_keychain
-    rescue AIOAPI::KeychainError => e
+    rescue AIOAPICocoa::KeychainError => e
       show_keychain_error
     end
 
@@ -48,7 +48,7 @@ class AIOApplicationController
       if val.nil?
         begin
           @api.remove_access_token_from_keychain
-        rescue AIOAPI::KeychainError => e
+        rescue AIOAPICocoa::KeychainError => e
           show_keychain_error
         ensure
           show_welcome_window_and_remove_menu
