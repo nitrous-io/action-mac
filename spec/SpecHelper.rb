@@ -10,6 +10,7 @@ $: << dir << "#{dir}/.." << "#{dir}/support" << "#{dir}/../config"
 $:.concat Dir.glob("#{dir}/../app/**/*/")
 $:.concat Dir.glob("#{dir}/../vendor/**/*/")
 
+require 'FakeAIOSettings'
 require 'environment'
 
 module Bacon

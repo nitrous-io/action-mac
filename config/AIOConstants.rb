@@ -1,2 +1,2 @@
-KAIOUsernameKey = 'username'
+AIO_USERNAME_KEY = 'username'
 
