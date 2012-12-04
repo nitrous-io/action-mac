@@ -62,6 +62,8 @@
 		E9987E01164BADE900B762FE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9987E00164BADE900B762FE /* Security.framework */; };
 		E9AC86AD166B9A6500D94D74 /* NSObject+AIO.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9AC86AC166B9A6500D94D74 /* NSObject+AIO.rb */; };
 		E9B0BA861653F35800F695D6 /* AIOSignUpView.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B0BA851653F35800F695D6 /* AIOSignUpView.rb */; };
+		E9B6D0FA166E54940088AC85 /* AIOJob.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B6D0F8166E54940088AC85 /* AIOJob.rb */; };
+		E9B6D0FB166E54940088AC85 /* AIOJobManager.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B6D0F9166E54940088AC85 /* AIOJobManager.rb */; };
 		E9BC81171650FB0200A21D88 /* AIOWelcomeWindowController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9BC81161650FB0200A21D88 /* AIOWelcomeWindowController.rb */; };
 		E9BC812C1650FC2700A21D88 /* WelcomeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9BC81281650FC2700A21D88 /* WelcomeWindow.xib */; };
 		E9BF1AAF1653EE840067DFC9 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BF1AAE1653EE840067DFC9 /* MacRuby.framework */; };
@@ -143,6 +145,10 @@
 		E9AC86AC166B9A6500D94D74 /* NSObject+AIO.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = "NSObject+AIO.rb"; sourceTree = "<group>"; };
 		E9B0BA851653F35800F695D6 /* AIOSignUpView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOSignUpView.rb; sourceTree = "<group>"; };
 		E9B6D0F5166E54140088AC85 /* NSObject+AIOSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = "NSObject+AIOSpec.rb"; sourceTree = "<group>"; };
+		E9B6D0F6166E54730088AC85 /* AIOJobManagerSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOJobManagerSpec.rb; sourceTree = "<group>"; };
+		E9B6D0F7166E54730088AC85 /* AIOJobSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOJobSpec.rb; sourceTree = "<group>"; };
+		E9B6D0F8166E54940088AC85 /* AIOJob.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOJob.rb; sourceTree = "<group>"; };
+		E9B6D0F9166E54940088AC85 /* AIOJobManager.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOJobManager.rb; sourceTree = "<group>"; };
 		E9BC81161650FB0200A21D88 /* AIOWelcomeWindowController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOWelcomeWindowController.rb; sourceTree = "<group>"; };
 		E9BC81281650FC2700A21D88 /* WelcomeWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeWindow.xib; sourceTree = "<group>"; };
 		E9BF1AAE1653EE840067DFC9 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
@@ -171,6 +177,8 @@
 			children = (
 				E93058A7165F73BD00794635 /* AIOAPISpec.rb */,
 				E904BC61165116FB00DA5436 /* AIOBooleanToNumberTransformerSpec.rb */,
+				E9B6D0F6166E54730088AC85 /* AIOJobManagerSpec.rb */,
+				E9B6D0F7166E54730088AC85 /* AIOJobSpec.rb */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -375,6 +383,8 @@
 			children = (
 				E93058A8165F73CB00794635 /* AIOAPI.rb */,
 				E96795A7166B497200703E49 /* AIOAPICocoa.rb */,
+				E9B6D0F8166E54940088AC85 /* AIOJob.rb */,
+				E9B6D0F9166E54940088AC85 /* AIOJobManager.rb */,
 				E904BC5D165115B600DA5436 /* AIOBooleanToNumberTransformer.rb */,
 				E946CD34166B8E85000AE1E6 /* AIOStringToNSImageTransformer.rb */,
 			);
@@ -530,6 +540,8 @@
 				E946CD33166B8CCF000AE1E6 /* state-terminated@2x.png in Resources */,
 				E946CD35166B8E85000AE1E6 /* AIOStringToNSImageTransformer.rb in Resources */,
 				E9AC86AD166B9A6500D94D74 /* NSObject+AIO.rb in Resources */,
+				E9B6D0FA166E54940088AC85 /* AIOJob.rb in Resources */,
+				E9B6D0FB166E54940088AC85 /* AIOJobManager.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

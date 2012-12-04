@@ -1,11 +1,13 @@
 class AIOApplicationController
   attr_accessor :window, :menu_controller
-  attr_reader :api, :welcome_window_controller
+  attr_reader :api, :jobs, :welcome_window_controller
   attr_reader :boxes
 
   def applicationDidFinishLaunching(notification)
     @api = AIOAPICocoa.new
-    initialize_collections
+
+    @jobs = AIOJobManager.new
+    NSTimer.scheduledTimerWithTimeInterval JOB_PROCESSING_INTERVAL, target: self, selector: :process_jobs, userInfo: nil, repeats: true
 
     addObserver self, forKeyPath: 'api.token', options: 0, context: nil
     addObserver self, forKeyPath: 'api.signed_in', options: 0, context: nil
@@ -24,10 +26,6 @@ class AIOApplicationController
     removeObserver self, forKeyPath: 'api.signed_in'
   end
 
-  def initialize_collections
-    @boxes = AIOBoxCollection.new @api
-  end
-
   def show_welcome_window
     @welcome_window_controller = AIOWelcomeWindowController.new
     self.window = @welcome_window_controller.window
@@ -41,11 +39,13 @@ class AIOApplicationController
   end
 
   def show_menu_and_close_welcome_window
+    reset_collections
     close_welcome_window if @welcome_window_controller
     @menu_controller.setup_menu unless @menu_controller.status_item
   end
 
   def show_welcome_window_and_remove_menu
+    reset_collections
     @menu_controller.teardown_menu if @menu_controller.status_item
     show_welcome_window unless @welcome_window_controller
   end
@@ -79,5 +79,13 @@ class AIOApplicationController
   def show_keychain_error
     NSRunCriticalAlertPanel 'Error', 'Could not access keychain. Is your keychain locked?', 'Okay', nil, nil
     NSApp.terminate self
+  end
+
+  def reset_collections
+    @boxes = AIOBoxCollection.new @api
+  end
+
+  def process_jobs
+    @jobs.process_jobs
   end
 end

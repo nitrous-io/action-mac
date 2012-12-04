@@ -60,9 +60,12 @@ describe AIOJobManager do
       end
 
       context 'when a job with a same name does not exist' do
-        it 'adds the job' do
+        it 'adds and performs the job' do
+          @job3.should.receive :perform
           @manager.add @job3
+          @job4.should.receive :perform
           @manager.add @job4
+          @job5.should.receive :perform
           @manager.add @job5
           @manager.jobs.size.should.equal 4
           @manager.jobs.should.include @job1
