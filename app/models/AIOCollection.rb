@@ -40,7 +40,7 @@ class AIOCollection
   end
 
   def find_by_id(id)
-    models.select { |o| o.id == id }.first
+    models.find { |o| o.id == id }
   end
 
   def fetch

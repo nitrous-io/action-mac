@@ -64,7 +64,7 @@ class AIOMenuController
       objects_ptr = Pointer.new :object
       if @box_menu_nib.instantiateNibWithOwner box, topLevelObjects: objects_ptr
         objects = objects_ptr[0]
-        box_menu = objects.select { |o| o.kind_of? NSMenu }.first
+        box_menu = objects.find { |o| o.kind_of? NSMenu }
         menu_item = box_menu.itemAtIndex 0
         box_menu.removeAllItems
 
