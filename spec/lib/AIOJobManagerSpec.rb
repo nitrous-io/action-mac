@@ -23,19 +23,24 @@ describe AIOJobManager do
 
   describe '#find' do
     before do
-      @job1 = AIOJob.new('test-job') { 1 }
-      @manager.instance_variable_set :@jobs, [@job1]
+      @job1 = AIOJob.new('test-job') {}
+      @job2 = AIOJob.new('lol-job') {}
+      @job3 = AIOJob.new('test-job') {}
+      @job4 = AIOJob.new {}
+      @manager.instance_variable_set :@jobs, [@job1, @job2, @job3, @job4]
     end
 
-    context 'when a job with a given name exists' do
-      it 'returns the job' do
-        @manager.find('test-job').should.equal @job1
+    context 'when jobs with a given name exists' do
+      it 'returns an array containing the jobs' do
+        @manager.find('test-job').should.equal [@job1, @job3]
+        @manager.find('lol-job').should.equal [@job2]
+        @manager.find(nil).should.equal [@job4]
       end
     end
 
     context 'when a job with a given name does not exist' do
-      it 'returns nil' do
-        @manager.find('some-job').should.be.nil
+      it 'returns an empty array' do
+        @manager.find('some-job').should.equal []
       end
     end
   end
@@ -52,10 +57,74 @@ describe AIOJobManager do
       end
 
       context 'when a job with a same name exists' do
-        it 'does not add the job' do
-          @manager.add @job2
-          @manager.jobs.size.should.equal 1
-          @manager.jobs.should.include @job1
+        context 'when allow_dupe argument is not given' do
+          context 'if the other job is cancelled' do
+            before do
+              @job1.cancel!
+            end
+
+            it 'adds the job' do
+              @manager.add @job2
+              @manager.jobs.size.should.equal 2
+              @manager.jobs.should.include @job1
+              @manager.jobs.should.include @job2
+            end
+          end
+
+          context 'if the other job is not cancelled' do
+            it 'does not add the job' do
+              @manager.add @job2
+              @manager.jobs.size.should.equal 1
+              @manager.jobs.should.include @job1
+            end
+          end
+        end
+
+        context 'when allow_dupe argument is false' do
+          context 'if the other job is cancelled' do
+            before do
+              @job1.cancel!
+            end
+
+            it 'adds the job' do
+              @manager.add @job2, false
+              @manager.jobs.size.should.equal 2
+              @manager.jobs.should.include @job1
+              @manager.jobs.should.include @job2
+            end
+          end
+
+          context 'if the other job is not cancelled' do
+            it 'does not add the job' do
+              @manager.add @job2, false
+              @manager.jobs.size.should.equal 1
+              @manager.jobs.should.include @job1
+            end
+          end
+        end
+
+        context 'when allow_dupe argument is true' do
+          context 'if the other job is cancelled' do
+            before do
+              @job1.cancel!
+            end
+
+            it 'adds the job' do
+              @manager.add @job2, true
+              @manager.jobs.size.should.equal 2
+              @manager.jobs.should.include @job1
+              @manager.jobs.should.include @job2
+            end
+          end
+
+          context 'if the other job is not cancelled' do
+            it 'still adds the job' do
+              @manager.add @job2, true
+              @manager.jobs.size.should.equal 2
+              @manager.jobs.should.include @job1
+              @manager.jobs.should.include @job2
+            end
+          end
         end
       end
 
@@ -77,12 +146,46 @@ describe AIOJobManager do
     end
   end
 
+  describe '#cancel' do
+    before do
+      @job1 = AIOJob.new('job1') {}
+      @job2 = AIOJob.new('job2') {}
+      @job3 = AIOJob.new {}
+
+      @manager.instance_variable_set :@jobs, [@job1, @job2, @job3]
+    end
+
+    it 'cancels the job with a given name' do
+      @manager.cancel 'job2'
+      @job1.cancelled.should.equal false
+      @job2.cancelled.should.equal true
+      @job3.cancelled.should.equal false
+    end
+  end
+
+  describe '#cancel_all' do
+    before do
+      @job1 = AIOJob.new('job1') {}
+      @job2 = AIOJob.new('job2') {}
+      @job3 = AIOJob.new {}
+
+      @manager.instance_variable_set :@jobs, [@job1, @job2, @job3]
+    end
+
+    it 'cancels all jobs' do
+      @manager.cancel_all
+      @job1.cancelled.should.equal true
+      @job2.cancelled.should.equal true
+      @job3.cancelled.should.equal true
+    end
+  end
+
   describe '#process_jobs' do
     before do
       jobs = []
 
-      jobs << @non_running_job1 = AIOJob.new { sleep 10 }
-      jobs << @non_running_job2 = AIOJob.new { sleep 10 }
+      jobs << @non_running_job1 = AIOJob.new {}
+      jobs << @non_running_job2 = AIOJob.new {}
 
       jobs << @running_job1 = mass_set(AIOJob.new {}, running: true)
       jobs << @running_job2 = mass_set(AIOJob.new {}, running: true)
@@ -91,12 +194,12 @@ describe AIOJobManager do
       jobs << @non_running_cancelled_job2 = mass_set(AIOJob.new {}, cancelled: true)
       jobs << @running_cancelled_job = mass_set(AIOJob.new {}, cancelled: true, running: true)
 
-      jobs << @non_running_completed_job1 = mass_set(AIOJob.new { sleep 5 }, completed: true)
-      jobs << @non_running_completed_job2 = mass_set(AIOJob.new { sleep 5 }, completed: true)
+      jobs << @non_running_completed_job1 = mass_set(AIOJob.new {}, completed: true)
+      jobs << @non_running_completed_job2 = mass_set(AIOJob.new {}, completed: true)
       jobs << @running_completed_job = mass_set(AIOJob.new {}, completed: true, running: true)
 
-      jobs << @non_running_failed_job2 = mass_set(AIOJob.new { sleep 5 }, failed: true, last_error: StandardError.new)
-      jobs << @non_running_failed_job1 = mass_set(AIOJob.new { sleep 5 }, failed: true, last_error: StandardError.new)
+      jobs << @non_running_failed_job2 = mass_set(AIOJob.new {}, failed: true, last_error: StandardError.new)
+      jobs << @non_running_failed_job1 = mass_set(AIOJob.new {}, failed: true, last_error: StandardError.new)
       jobs << @running_failed_job = mass_set(AIOJob.new {}, failed: true, last_error: StandardError.new, running: true)
 
       jobs.each { |job| job.stub :perform }

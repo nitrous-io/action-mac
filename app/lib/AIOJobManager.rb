@@ -9,15 +9,29 @@ class AIOJobManager
   end
 
   def find(name)
-    @jobs.find { |j| j.name == name }
+    @jobs.select { |j| j.name == name }
   end
 
-  def add(job)
+  def add(job, allow_dupe=false)
     @mutex.synchronize do
-      if job.name.nil? || find(job.name).nil?
+      if allow_dupe || job.name.nil? || find(job.name).all?(&:cancelled)
         @jobs << job
         job.perform
       end
+    end
+  end
+
+  def cancel(name)
+    @mutex.synchronize do
+      if job = @jobs.find { |j| j.name == name }
+        job.cancel!
+      end
+    end
+  end
+
+  def cancel_all
+    @mutex.synchronize do
+      @jobs.each &:cancel!
     end
   end
 
