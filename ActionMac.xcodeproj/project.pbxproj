@@ -65,6 +65,7 @@
 		E9B6D0FB166E54940088AC85 /* AIOJobManager.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B6D0F9166E54940088AC85 /* AIOJobManager.rb */; };
 		E9B6D101166F18A10088AC85 /* Kernel+AIO.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B6D100166F18A10088AC85 /* Kernel+AIO.rb */; };
 		E9B6D105166F4F840088AC85 /* AIOObserver.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B6D104166F4F840088AC85 /* AIOObserver.rb */; };
+		E9B6D108166F53970088AC85 /* AIOSignInView.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B6D107166F53970088AC85 /* AIOSignInView.rb */; };
 		E9BC81171650FB0200A21D88 /* AIOWelcomeWindowController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9BC81161650FB0200A21D88 /* AIOWelcomeWindowController.rb */; };
 		E9BC812C1650FC2700A21D88 /* WelcomeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9BC81281650FC2700A21D88 /* WelcomeWindow.xib */; };
 		E9BF1AAF1653EE840067DFC9 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BF1AAE1653EE840067DFC9 /* MacRuby.framework */; };
@@ -152,6 +153,7 @@
 		E9B6D103166F18AB0088AC85 /* Kernel+AIOSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = "Kernel+AIOSpec.rb"; sourceTree = "<group>"; };
 		E9B6D104166F4F840088AC85 /* AIOObserver.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOObserver.rb; sourceTree = "<group>"; };
 		E9B6D106166F4F920088AC85 /* AIOObserverSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOObserverSpec.rb; sourceTree = "<group>"; };
+		E9B6D107166F53970088AC85 /* AIOSignInView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOSignInView.rb; sourceTree = "<group>"; };
 		E9BC81161650FB0200A21D88 /* AIOWelcomeWindowController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOWelcomeWindowController.rb; sourceTree = "<group>"; };
 		E9BC81281650FC2700A21D88 /* WelcomeWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeWindow.xib; sourceTree = "<group>"; };
 		E9BF1AAE1653EE840067DFC9 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
@@ -320,6 +322,7 @@
 		E9B0BA841653F34700F695D6 /* welcome */ = {
 			isa = PBXGroup;
 			children = (
+				E9B6D107166F53970088AC85 /* AIOSignInView.rb */,
 				E9B0BA851653F35800F695D6 /* AIOSignUpView.rb */,
 			);
 			path = welcome;
@@ -548,6 +551,7 @@
 				E9B6D0FB166E54940088AC85 /* AIOJobManager.rb in Resources */,
 				E9B6D101166F18A10088AC85 /* Kernel+AIO.rb in Resources */,
 				E9B6D105166F4F840088AC85 /* AIOObserver.rb in Resources */,
+				E9B6D108166F53970088AC85 /* AIOSignInView.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
