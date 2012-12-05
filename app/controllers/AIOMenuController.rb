@@ -25,9 +25,10 @@ class AIOMenuController
     app_controller.addObserver self, forKeyPath: 'boxes.content',
       options: NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld, context: nil
 
-    Dispatch::Queue.concurrent.async do
+    boxes_fetch_job = AIOJob.new 'boxes.fetch' do
       app_controller.boxes.fetch
     end
+    app_controller.jobs.add boxes_fetch_job
   end
 
   def teardown_menu

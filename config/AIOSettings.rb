@@ -9,6 +9,7 @@ AIOSettings = OpenStruct.new(
   sign_up_url: info['AIOSignUpURL'],
   oauth_client_id: info['AIOOAuthClientID'],
   oauth_client_secret: info['AIOOAuthClientSecret'],
-  keychain_service_name: info['CFBundleName'] + (env != 'production' ? " (#{env})" : '')
+  keychain_service_name: info['CFBundleName'] + (env != 'production' ? " (#{env})" : ''),
+  debug: env == 'development'
 ) unless defined?(AIOSettings)
 

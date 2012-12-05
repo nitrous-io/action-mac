@@ -39,13 +39,13 @@ class AIOApplicationController
   end
 
   def show_menu_and_close_welcome_window
-    reset_collections
+    reset
     close_welcome_window if @welcome_window_controller
     @menu_controller.setup_menu unless @menu_controller.status_item
   end
 
   def show_welcome_window_and_remove_menu
-    reset_collections
+    reset
     @menu_controller.teardown_menu if @menu_controller.status_item
     show_welcome_window unless @welcome_window_controller
   end
@@ -83,6 +83,11 @@ class AIOApplicationController
 
   def reset_collections
     @boxes = AIOBoxCollection.new @api
+  end
+
+  def reset
+    @jobs.cancel_all
+    reset_collections
   end
 
   def process_jobs

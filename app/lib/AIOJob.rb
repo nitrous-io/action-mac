@@ -32,6 +32,7 @@ class AIOJob
       begin
         @task.call
       rescue => e
+        puts "Error: #{self}[#{name}] #{e.inspect}: #{e.message}" if AIOSettings.debug
         @mutex.synchronize do
           @last_error = e
           @failed = true
