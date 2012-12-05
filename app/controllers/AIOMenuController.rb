@@ -28,6 +28,7 @@ class AIOMenuController
     app_controller = NSApp.delegate
     observe(app_controller, 'boxes.content') { |v,c| boxes_content_did_change v,c }
 
+    fetch_current_user
     fetch_boxes
   end
 
@@ -44,6 +45,14 @@ class AIOMenuController
   end
 
   private
+  def fetch_current_user
+    app_controller = NSApp.delegate
+    current_user_fetch_job = AIOJob.new 'current_user.fetch' do
+      app_controller.current_user.fetch
+    end
+    app_controller.jobs.add current_user_fetch_job
+  end
+
   def fetch_boxes
     app_controller = NSApp.delegate
     boxes_fetch_job = AIOJob.new 'boxes.fetch' do

@@ -24,6 +24,7 @@
 		E904BC5E165115B600DA5436 /* AIOBooleanToNumberTransformer.rb in Resources */ = {isa = PBXBuildFile; fileRef = E904BC5D165115B600DA5436 /* AIOBooleanToNumberTransformer.rb */; };
 		E90FD704165DFF5400B09052 /* AIOSettings.rb in Resources */ = {isa = PBXBuildFile; fileRef = E90FD703165DFF5400B09052 /* AIOSettings.rb */; };
 		E90FD706165E039A00B09052 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90FD705165E039A00B09052 /* WebKit.framework */; };
+		E914D2DF166F69AC009486CB /* AIOPusher.rb in Resources */ = {isa = PBXBuildFile; fileRef = E914D2DE166F69AC009486CB /* AIOPusher.rb */; };
 		E918B3F0164B96D100D53509 /* status-item-icon-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = E918B3EC164B96D100D53509 /* status-item-icon-highlighted.png */; };
 		E918B3F1164B96D100D53509 /* status-item-icon-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E918B3ED164B96D100D53509 /* status-item-icon-highlighted@2x.png */; };
 		E918B3F2164B96D100D53509 /* status-item-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E918B3EE164B96D100D53509 /* status-item-icon.png */; };
@@ -58,6 +59,9 @@
 		E988E25216536B8800772174 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E988E25116536B8800772174 /* WelcomeView.xib */; };
 		E988E25416536B9000772174 /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E988E25316536B9000772174 /* SignInView.xib */; };
 		E988E25616536B9900772174 /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E988E25516536B9800772174 /* SignUpView.xib */; };
+		E995769B166F898B0069C9B4 /* AIOUser.rb in Resources */ = {isa = PBXBuildFile; fileRef = E995769A166F898B0069C9B4 /* AIOUser.rb */; };
+		E995769F166FB3C70069C9B4 /* pusher.min.js in Resources */ = {isa = PBXBuildFile; fileRef = E914D2E2166F6C61009486CB /* pusher.min.js */; };
+		E99576A0166FB3CA0069C9B4 /* aio.js in Resources */ = {isa = PBXBuildFile; fileRef = E914D2E5166F6E14009486CB /* aio.js */; };
 		E9987DFF164BADDC00B762FE /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = E9987DFE164BADDC00B762FE /* SSKeychain.m */; };
 		E9987E01164BADE900B762FE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9987E00164BADE900B762FE /* Security.framework */; };
 		E9B0BA861653F35800F695D6 /* AIOSignUpView.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B0BA851653F35800F695D6 /* AIOSignUpView.rb */; };
@@ -97,6 +101,9 @@
 		E90FD705165E039A00B09052 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		E90FD707165E051300B09052 /* .gems */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gems; sourceTree = "<group>"; };
 		E90FD70E165E143500B09052 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		E914D2DE166F69AC009486CB /* AIOPusher.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOPusher.rb; sourceTree = "<group>"; };
+		E914D2E2166F6C61009486CB /* pusher.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = pusher.min.js; sourceTree = "<group>"; };
+		E914D2E5166F6E14009486CB /* aio.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = aio.js; sourceTree = "<group>"; };
 		E918B3EC164B96D100D53509 /* status-item-icon-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon-highlighted.png"; sourceTree = "<group>"; };
 		E918B3ED164B96D100D53509 /* status-item-icon-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon-highlighted@2x.png"; sourceTree = "<group>"; };
 		E918B3EE164B96D100D53509 /* status-item-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon.png"; sourceTree = "<group>"; };
@@ -141,6 +148,7 @@
 		E988E25116536B8800772174 /* WelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
 		E988E25316536B9000772174 /* SignInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInView.xib; sourceTree = "<group>"; };
 		E988E25516536B9800772174 /* SignUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
+		E995769A166F898B0069C9B4 /* AIOUser.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOUser.rb; sourceTree = "<group>"; };
 		E9987DFD164BADDC00B762FE /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		E9987DFE164BADDC00B762FE /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		E9987E00164BADE900B762FE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -201,6 +209,15 @@
 				E96BC69B165F35840016A467 /* environment.rb */,
 			);
 			path = config;
+			sourceTree = "<group>";
+		};
+		E914D2E1166F6C17009486CB /* web */ = {
+			isa = PBXGroup;
+			children = (
+				E914D2E5166F6E14009486CB /* aio.js */,
+				E914D2E2166F6C61009486CB /* pusher.min.js */,
+			);
+			path = web;
 			sourceTree = "<group>";
 		};
 		E918B3EB164B96D100D53509 /* images */ = {
@@ -393,6 +410,7 @@
 				E9B6D0F8166E54940088AC85 /* AIOJob.rb */,
 				E9B6D0F9166E54940088AC85 /* AIOJobManager.rb */,
 				E9B6D104166F4F840088AC85 /* AIOObserver.rb */,
+				E914D2DE166F69AC009486CB /* AIOPusher.rb */,
 				E904BC5D165115B600DA5436 /* AIOBooleanToNumberTransformer.rb */,
 				E946CD34166B8E85000AE1E6 /* AIOStringToNSImageTransformer.rb */,
 			);
@@ -405,6 +423,7 @@
 				E967959016686F7D00703E49 /* AIOModel.rb */,
 				E967958F16686F7D00703E49 /* AIOCollection.rb */,
 				E946CCF8166B5165000AE1E6 /* AIOCollectionCocoa.rb */,
+				E995769A166F898B0069C9B4 /* AIOUser.rb */,
 				E946CD16166B6320000AE1E6 /* AIOBox.rb */,
 				E946CD17166B6320000AE1E6 /* AIOBoxCollection.rb */,
 			);
@@ -433,6 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				E918B3EB164B96D100D53509 /* images */,
+				E914D2E1166F6C17009486CB /* web */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -552,6 +572,10 @@
 				E9B6D101166F18A10088AC85 /* Kernel+AIO.rb in Resources */,
 				E9B6D105166F4F840088AC85 /* AIOObserver.rb in Resources */,
 				E9B6D108166F53970088AC85 /* AIOSignInView.rb in Resources */,
+				E914D2DF166F69AC009486CB /* AIOPusher.rb in Resources */,
+				E995769B166F898B0069C9B4 /* AIOUser.rb in Resources */,
+				E99576A0166FB3CA0069C9B4 /* aio.js in Resources */,
+				E995769F166FB3C70069C9B4 /* pusher.min.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

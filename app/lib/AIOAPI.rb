@@ -1,8 +1,7 @@
-require 'json'
 require 'oauth2'
 
 class AIOAPI
-  SCOPES = 'public boxes public_keys user'
+  SCOPES = 'public boxes public_keys user push'
   API_PATH_PREFIX = '/api/v0'
 
   attr_reader :client

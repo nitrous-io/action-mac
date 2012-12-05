@@ -4,8 +4,9 @@ class AIOApplicationController
   include AIOObserver
 
   attr_accessor :window, :menu_controller
-  attr_reader :api, :jobs, :welcome_window_controller
-  attr_reader :boxes
+  attr_accessor :api, :current_user, :boxes
+  attr_reader :jobs, :pusher
+  attr_reader :welcome_window_controller
 
   def applicationDidFinishLaunching(notification)
     @api = AIOAPICocoa.new
@@ -13,8 +14,11 @@ class AIOApplicationController
     @jobs = AIOJobManager.new
     NSTimer.scheduledTimerWithTimeInterval JOB_PROCESSING_INTERVAL, target: self, selector: :process_jobs, userInfo: nil, repeats: true
 
+    @pusher = AIOPusher.new
+
     observe(self, 'api.token') { |v,c| api_token_did_change v,c }
     observe(self, 'api.signed_in') { |v,c| api_signed_in_did_change v,c }
+    observe(self, 'current_user.id') { |v,c| current_user_id_did_change v,c }
 
     begin
       @api.sign_in
@@ -28,6 +32,7 @@ class AIOApplicationController
   def finalize
     stop_observing self, 'api.token'
     stop_observing self, 'api.signed_in'
+    stop_observing self, 'current_user.id'
   end
 
   def show_welcome_window
@@ -40,18 +45,6 @@ class AIOApplicationController
   def close_welcome_window
     @welcome_window_controller.close
     @welcome_window_controller = nil
-  end
-
-  def show_menu_and_close_welcome_window
-    reset
-    close_welcome_window if @welcome_window_controller
-    @menu_controller.setup_menu unless @menu_controller.status_item
-  end
-
-  def show_welcome_window_and_remove_menu
-    reset
-    @menu_controller.teardown_menu if @menu_controller.status_item
-    show_welcome_window unless @welcome_window_controller
   end
 
   private
@@ -69,10 +62,23 @@ class AIOApplicationController
 
   def api_signed_in_did_change(value, change)
     Dispatch::Queue.main.async do
+      reset
       if value
-        show_menu_and_close_welcome_window
+        close_welcome_window if @welcome_window_controller
+        @menu_controller.setup_menu unless @menu_controller.status_item
       else
-        show_welcome_window_and_remove_menu
+        @menu_controller.teardown_menu if @menu_controller.status_item
+        show_welcome_window unless @welcome_window_controller
+      end
+    end
+  end
+
+  def current_user_id_did_change(value, change)
+    Dispatch::Queue.main.async do
+      if value
+        @pusher.connect
+      else
+        @pusher.disconnect
       end
     end
   end
@@ -84,7 +90,8 @@ class AIOApplicationController
   end
 
   def reset_collections
-    @boxes = AIOBoxCollection.new @api
+    self.boxes = AIOBoxCollection.new @api
+    self.current_user = AIOUser.new @api
   end
 
   def reset

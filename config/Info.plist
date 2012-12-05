@@ -38,5 +38,7 @@
 	<string>AIO_OAUTH_CLIENT_ID</string>
 	<key>AIOOAuthClientSecret</key>
 	<string>AIO_OAUTH_CLIENT_SECRET</string>
+	<key>AIOPusherKey</key>
+	<string>AIO_PUSHER_KEY</string>
 </dict>
 </plist>

@@ -10,6 +10,7 @@ AIOSettings = OpenStruct.new(
   oauth_client_id: info['AIOOAuthClientID'],
   oauth_client_secret: info['AIOOAuthClientSecret'],
   keychain_service_name: info['CFBundleName'] + (env != 'production' ? " (#{env})" : ''),
+  pusher_key: info['AIOPusherKey'],
   debug: env == 'development'
 ) unless defined?(AIOSettings)
 
