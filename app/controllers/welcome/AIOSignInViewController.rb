@@ -21,7 +21,7 @@ class AIOSignInViewController < NSViewController
         elsif e.kind_of? AIOAPICocoa::KeychainError
           err_msg = 'Could not access keychain. Is your keychain locked?'
         end
-        main_thread do
+        Dispatch::Queue.main.async do
           NSBeginCriticalAlertSheet 'Error', 'Okay', nil, nil, self.view.window, nil, nil, nil, nil, "%@", err_msg
         end
       ensure

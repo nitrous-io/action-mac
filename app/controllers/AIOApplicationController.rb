@@ -60,7 +60,7 @@ class AIOApplicationController
       begin
         @api.sign_out
       rescue AIOAPICocoa::KeychainError => e
-        main_thread do
+        Dispatch::Queue.main.async do
           show_keychain_error
         end
       end
@@ -68,7 +68,7 @@ class AIOApplicationController
   end
 
   def api_signed_in_did_change(value, change)
-    main_thread do
+    Dispatch::Queue.main.async do
       if value
         show_menu_and_close_welcome_window
       else
