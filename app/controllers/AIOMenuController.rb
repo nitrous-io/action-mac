@@ -1,4 +1,8 @@
+require 'AIOObserver'
+
 class AIOMenuController
+  include AIOObserver
+
   BOXES_MENU_SEPARATOR_TAG = 80435
 
   attr_accessor :menu
@@ -22,13 +26,9 @@ class AIOMenuController
     @status_item.setMenu @menu
 
     app_controller = NSApp.delegate
-    app_controller.addObserver self, forKeyPath: 'boxes.content',
-      options: NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld, context: nil
+    observe(app_controller, 'boxes.content') { |v,c| boxes_content_did_change v,c }
 
-    boxes_fetch_job = AIOJob.new 'boxes.fetch' do
-      app_controller.boxes.fetch
-    end
-    app_controller.jobs.add boxes_fetch_job
+    fetch_boxes
   end
 
   def teardown_menu
@@ -36,32 +36,35 @@ class AIOMenuController
     @status_item = nil
 
     app_controller = NSApp.delegate
-    app_controller.removeObserver self, forKeyPath: 'boxes.content'
+    stop_observing app_controller, 'boxes.content'
   end
 
   def open_action_io_website(sender)
     open_url AIOSettings.host + '/'
   end
 
-  # observer
-  def observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
-    if change[NSKeyValueChangeOldKey] != change[NSKeyValueChangeNewKey]
-      if keyPath == 'boxes.content'
-        case change[NSKeyValueChangeKindKey]
-          when NSKeyValueChangeInsertion
-            change[NSKeyValueChangeNewKey].each do |added_box|
-              add_box_menu_item added_box
-            end
-          when NSKeyValueChangeRemoval
-            change[NSKeyValueChangeOldKey].each do |removed_box|
-              remove_box_menu_item removed_box
-            end
+  private
+  def fetch_boxes
+    app_controller = NSApp.delegate
+    boxes_fetch_job = AIOJob.new 'boxes.fetch' do
+      app_controller.boxes.fetch
+    end
+    app_controller.jobs.add boxes_fetch_job
+  end
+
+  def boxes_content_did_change(value, change)
+    case change[NSKeyValueChangeKindKey]
+      when NSKeyValueChangeInsertion
+        change[NSKeyValueChangeNewKey].each do |added_box|
+          add_box_menu_item added_box
         end
-      end
+      when NSKeyValueChangeRemoval
+        change[NSKeyValueChangeOldKey].each do |removed_box|
+          remove_box_menu_item removed_box
+        end
     end
   end
 
-  private
   def add_box_menu_item(box)
     main_thread do
       objects_ptr = Pointer.new :object

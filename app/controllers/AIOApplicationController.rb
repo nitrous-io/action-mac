@@ -1,4 +1,8 @@
+require 'AIOObserver'
+
 class AIOApplicationController
+  include AIOObserver
+
   attr_accessor :window, :menu_controller
   attr_reader :api, :jobs, :welcome_window_controller
   attr_reader :boxes
@@ -9,8 +13,8 @@ class AIOApplicationController
     @jobs = AIOJobManager.new
     NSTimer.scheduledTimerWithTimeInterval JOB_PROCESSING_INTERVAL, target: self, selector: :process_jobs, userInfo: nil, repeats: true
 
-    addObserver self, forKeyPath: 'api.token', options: NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld, context: nil
-    addObserver self, forKeyPath: 'api.signed_in', options: NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld, context: nil
+    observe(self, 'api.token') { |v,c| api_token_did_change v,c }
+    observe(self, 'api.signed_in') { |v,c| api_signed_in_did_change v,c }
 
     begin
       @api.sign_in
@@ -22,8 +26,8 @@ class AIOApplicationController
   end
 
   def finalize
-    removeObserver self, forKeyPath: 'api.token'
-    removeObserver self, forKeyPath: 'api.signed_in'
+    stop_observing self, 'api.token'
+    stop_observing self, 'api.signed_in'
   end
 
   def show_welcome_window
@@ -50,29 +54,25 @@ class AIOApplicationController
     show_welcome_window unless @welcome_window_controller
   end
 
-  # observer
-  def observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
-    if change[NSKeyValueChangeOldKey] != change[NSKeyValueChangeNewKey]
-      val = object.valueForKeyPath keyPath
-      case keyPath
-        when 'api.token'
-          if val.nil?
-            begin
-              @api.sign_out
-            rescue AIOAPICocoa::KeychainError => e
-              main_thread do
-                show_keychain_error
-              end
-            end
-          end
-        when 'api.signed_in'
-          main_thread do
-            if val
-              show_menu_and_close_welcome_window
-            else
-              show_welcome_window_and_remove_menu
-            end
-          end
+  private
+  def api_token_did_change(value, change)
+    if value.nil?
+      begin
+        @api.sign_out
+      rescue AIOAPICocoa::KeychainError => e
+        main_thread do
+          show_keychain_error
+        end
+      end
+    end
+  end
+
+  def api_signed_in_did_change(value, change)
+    main_thread do
+      if value
+        show_menu_and_close_welcome_window
+      else
+        show_welcome_window_and_remove_menu
       end
     end
   end
