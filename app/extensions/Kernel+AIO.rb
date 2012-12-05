@@ -1,4 +1,4 @@
-class NSObject
+module Kernel
   def main_thread(&block)
     main = Dispatch::Queue.main
     if Dispatch::Queue.current.label == main.label

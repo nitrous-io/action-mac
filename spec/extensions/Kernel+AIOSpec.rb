@@ -1,7 +1,7 @@
 require 'SpecHelper'
-require 'NSObject+AIO'
+require 'Kernel+AIO'
 
-describe 'NSObject+AIO' do
+describe 'Kernel+AIO' do
   describe '#main_thread' do
     context 'when already on main thread' do
       before do
