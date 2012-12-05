@@ -18,7 +18,7 @@ class AIOAPICocoa < AIOAPI
     else
       read_access_token_from_keychain
     end
-    self.signed_in = true
+    self.signed_in = !self.token.nil?
   end
 
   def sign_out

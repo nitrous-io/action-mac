@@ -1,3 +1,5 @@
 AIO_USERNAME_KEY = 'username'
 AIO_COLLECTION_CLASS_NAME = :AIOCollectionCocoa
 JOB_PROCESSING_INTERVAL = 5.0 #seconds
+AIO_SIGN_UP_PATH = '/'
+AIO_FORGOT_PASSWORD_PATH = '/users/password/new'

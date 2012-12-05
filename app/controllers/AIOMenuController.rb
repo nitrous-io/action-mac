@@ -40,21 +40,23 @@ class AIOMenuController
   end
 
   def open_action_io_website(sender)
-    NSWorkspace.sharedWorkspace.openURL NSURL.URLWithString(AIOSettings.host + '/')
+    open_url AIOSettings.host + '/'
   end
 
   # observer
   def observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
-    if keyPath == 'boxes.content'
-      case change[NSKeyValueChangeKindKey]
-        when NSKeyValueChangeInsertion
-          change[NSKeyValueChangeNewKey].each do |added_box|
-            add_box_menu_item added_box
-          end
-        when NSKeyValueChangeRemoval
-          change[NSKeyValueChangeOldKey].each do |removed_box|
-            remove_box_menu_item removed_box
-          end
+    if change[NSKeyValueChangeOldKey] != change[NSKeyValueChangeNewKey]
+      if keyPath == 'boxes.content'
+        case change[NSKeyValueChangeKindKey]
+          when NSKeyValueChangeInsertion
+            change[NSKeyValueChangeNewKey].each do |added_box|
+              add_box_menu_item added_box
+            end
+          when NSKeyValueChangeRemoval
+            change[NSKeyValueChangeOldKey].each do |removed_box|
+              remove_box_menu_item removed_box
+            end
+        end
       end
     end
   end

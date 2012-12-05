@@ -34,8 +34,6 @@
 	<string>${AIO_ENV}</string>
 	<key>AIOHost</key>
 	<string>${AIO_HOST}</string>
-	<key>AIOSignUpURL</key>
-	<string>${AIO_SIGN_UP_URL}</string>
 	<key>AIOOAuthClientID</key>
 	<string>AIO_OAUTH_CLIENT_ID</string>
 	<key>AIOOAuthClientSecret</key>

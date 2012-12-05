@@ -9,8 +9,8 @@ class AIOApplicationController
     @jobs = AIOJobManager.new
     NSTimer.scheduledTimerWithTimeInterval JOB_PROCESSING_INTERVAL, target: self, selector: :process_jobs, userInfo: nil, repeats: true
 
-    addObserver self, forKeyPath: 'api.token', options: 0, context: nil
-    addObserver self, forKeyPath: 'api.signed_in', options: 0, context: nil
+    addObserver self, forKeyPath: 'api.token', options: NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld, context: nil
+    addObserver self, forKeyPath: 'api.signed_in', options: NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld, context: nil
 
     begin
       @api.sign_in
@@ -27,7 +27,7 @@ class AIOApplicationController
   end
 
   def show_welcome_window
-    @welcome_window_controller = AIOWelcomeWindowController.new
+    @welcome_window_controller ||= AIOWelcomeWindowController.new
     self.window = @welcome_window_controller.window
     window.makeKeyAndOrderFront nil
     window.orderFrontRegardless
@@ -52,26 +52,28 @@ class AIOApplicationController
 
   # observer
   def observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
-    val = object.valueForKeyPath keyPath
-    case keyPath
-      when 'api.token'
-        if val.nil?
-          begin
-            @api.sign_out
-          rescue AIOAPICocoa::KeychainError => e
-            main_thread do
-              show_keychain_error
+    if change[NSKeyValueChangeOldKey] != change[NSKeyValueChangeNewKey]
+      val = object.valueForKeyPath keyPath
+      case keyPath
+        when 'api.token'
+          if val.nil?
+            begin
+              @api.sign_out
+            rescue AIOAPICocoa::KeychainError => e
+              main_thread do
+                show_keychain_error
+              end
             end
           end
-        end
-      when 'api.signed_in'
-        main_thread do
-          if val
-            show_menu_and_close_welcome_window
-          else
-            show_welcome_window_and_remove_menu
+        when 'api.signed_in'
+          main_thread do
+            if val
+              show_menu_and_close_welcome_window
+            else
+              show_welcome_window_and_remove_menu
+            end
           end
-        end
+      end
     end
   end
 

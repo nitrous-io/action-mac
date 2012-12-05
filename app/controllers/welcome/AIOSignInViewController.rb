@@ -35,5 +35,6 @@ class AIOSignInViewController < NSViewController
   end
 
   def did_click_forgot_password_button(sender)
+    open_url AIOSettings.host + AIO_FORGOT_PASSWORD_PATH
   end
 end

@@ -46,6 +46,7 @@
 						<string key="NSFrame">{{375, 12}, {91, 32}}</string>
 						<reference key="NSSuperview" ref="390297707"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="505335883">
 							<int key="NSCellFlags">67108864</int>
@@ -60,7 +61,7 @@
 							<int key="NSButtonFlags">-2038284288</int>
 							<int key="NSButtonFlags2">129</int>
 							<string key="NSAlternateContents"/>
-							<string key="NSKeyEquivalent"/>
+							<string type="base64-UTF8" key="NSKeyEquivalent">DQ</string>
 							<int key="NSPeriodicDelay">200</int>
 							<int key="NSPeriodicInterval">25</int>
 						</object>
@@ -80,6 +81,7 @@
 										<string key="NSFrame">{{15, 177}, {294, 68}}</string>
 										<reference key="NSSuperview" ref="331502770"/>
 										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="807453669"/>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSTextFieldCell" key="NSCell" id="762071103">
 											<int key="NSCellFlags">67108864</int>
@@ -323,6 +325,14 @@ cnRseS4</string>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">AIOSignUpView</string>
+					<string key="superclassName">NSView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/AIOSignUpView.h</string>
+					</object>
+				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">AIOSignUpViewController</string>
 					<string key="superclassName">NSViewController</string>
