@@ -7,4 +7,8 @@ class NSObject
       main.sync &block
     end
   end
+
+  def concurrent_queue(&block)
+    Dispatch::Queue.concurrent.async &block
+  end
 end

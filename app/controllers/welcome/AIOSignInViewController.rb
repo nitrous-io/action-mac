@@ -10,7 +10,7 @@ class AIOSignInViewController < NSViewController
 
   def did_click_sign_in_button(sender)
     self.loading = true
-    Dispatch::Queue.concurrent.async do
+    concurrent_queue do
       begin
         api = NSApp.delegate.api
         api.sign_in @username, @password
