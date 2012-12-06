@@ -402,10 +402,10 @@
 		E9E19FCE164259220058706D /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E9BC81151650FB0200A21D88 /* welcome */,
 				E99576AA1670A5690069C9B4 /* AIOAppDelegate.rb */,
 				E92BF345164253AE00862CF4 /* AIOAppController.rb */,
 				E96795841667182B00703E49 /* AIOStatusMenuController.rb */,
-				E9BC81151650FB0200A21D88 /* welcome */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
