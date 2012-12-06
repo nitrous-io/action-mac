@@ -21,12 +21,6 @@ end
 
 # Cocoa-specific
 class AIOBox
-  def self.keyPathsForValuesAffectingState_description
-    NSSet.setWithArray %w(state)
-  end
-
-  def self.keyPathsForValuesAffectingState_image
-    NSSet.setWithArray %w(state)
-  end
+  dependent_property :state_description, [:state]
+  dependent_property :state_image, [:state]
 end if RUBY_ENGINE == 'macruby' || RUBY_ENGINE == 'rubymotion'
-

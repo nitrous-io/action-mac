@@ -1,6 +1,8 @@
 require 'rubygems'
 require 'AIOConstants'
 require 'AIOSettings'
+require 'Kernel+AIO'
+require 'NSObject+AIO'
 
 # preload some autoloaded libraries to be thread-safe
 require 'faraday'
