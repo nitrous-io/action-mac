@@ -1,14 +1,13 @@
 require 'AIOObserver'
 
-class AIOMenuController
+class AIOStatusMenuController
   include AIOObserver
 
   BOXES_MENU_SEPARATOR_TAG = 80435
 
   attr_accessor :menu
-  attr_reader :status_item
 
-  def awakeFromNib
+  def initialize
     @box_menu_nib = NSNib.alloc.initWithNibNamed 'BoxMenu', bundle: nil
     @box_menu_item_mapping = {}
   end
@@ -25,8 +24,7 @@ class AIOMenuController
     @status_item.setToolTip 'Action.IO'
     @status_item.setMenu @menu
 
-    app_controller = NSApp.delegate
-    observe(app_controller, 'boxes.content') { |v,c| boxes_content_did_change v,c }
+    observe(AIOApp, 'boxes.content') { |v,c| boxes_content_did_change v,c }
 
     fetch_current_user
     fetch_boxes
@@ -36,8 +34,7 @@ class AIOMenuController
     NSStatusBar.systemStatusBar.removeStatusItem @status_item
     @status_item = nil
 
-    app_controller = NSApp.delegate
-    stop_observing app_controller, 'boxes.content'
+    stop_observing AIOApp, 'boxes.content'
   end
 
   def open_action_io_website(sender)
@@ -46,19 +43,15 @@ class AIOMenuController
 
   private
   def fetch_current_user
-    app_controller = NSApp.delegate
-    current_user_fetch_job = AIOJob.new 'current_user.fetch' do
-      app_controller.current_user.fetch
+    AIOApp.jobs.add_new 'current_user.fetch' do
+      AIOApp.current_user.fetch
     end
-    app_controller.jobs.add current_user_fetch_job
   end
 
   def fetch_boxes
-    app_controller = NSApp.delegate
-    boxes_fetch_job = AIOJob.new 'boxes.fetch' do
-      app_controller.boxes.fetch
+    AIOApp.jobs.add_new 'boxes.fetch' do
+      AIOApp.boxes.fetch
     end
-    app_controller.jobs.add boxes_fetch_job
   end
 
   def boxes_content_did_change(value, change)

@@ -16,7 +16,7 @@ class AIOSignUpViewController < NSViewController
 
   def did_click_go_back_button(sender)
     @timer.invalidate if @timer
-    NSApp.delegate.welcome_window_controller.show_welcome_view
+    AIOApp.welcome_window_controller.show_welcome_view
   end
 
   def did_click_reopen_page_button(sender)

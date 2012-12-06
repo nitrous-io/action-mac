@@ -146,6 +146,31 @@ describe AIOJobManager do
     end
   end
 
+  describe '#add_new' do
+    it 'creates a job and adds the job' do
+      task = -> {}
+      @manager.should.receive :add do |job, allow_dupe|
+        job.should.be.instance_of AIOJob
+        job.task.should.equal task
+        allow_dupe.should.equal true
+      end
+      @manager.add_new 'test-job', true, &task
+    end
+
+    context 'when allow_dupe argument is missing' do
+      it 'creates a job and adds it with allow_dupe=false' do
+        task = -> {}
+        mock_job = mock 'job'
+        @manager.should.receive :add do |job, allow_dupe|
+          job.should.be.instance_of AIOJob
+          job.task.should.equal task
+          allow_dupe.should.equal false
+        end
+        @manager.add_new 'test-job', &task
+      end
+    end
+  end
+
   describe '#cancel' do
     before do
       @job1 = AIOJob.new('job1') {}

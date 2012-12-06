@@ -5,7 +5,7 @@ class AIOCollectionCocoa < AIOCollection
 
   def initialize(api)
     super
-    @content = []
+    self.content = []
   end
 
   def models

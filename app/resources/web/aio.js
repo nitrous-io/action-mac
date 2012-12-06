@@ -39,7 +39,6 @@
 
   , connect: function() {
       self.log('AIOPusher: connecting...');
-      self.log(location.href);
       if(!self.pusher) {
         self.pusher = new Pusher(self.pusherKey, {
           encrypted: true
@@ -87,8 +86,8 @@
   }
 
   , disconnect: function() {
-      self.bridge.log_('AIOPusher: disconnecting...');
       if(self.pusher) {
+        self.bridge.log_('AIOPusher: disconnecting...');
         self.pusher.disconnect();
       }
       self.pusher = null;

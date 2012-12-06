@@ -3,7 +3,7 @@ class AIOSignInViewController < NSViewController
 
   def init
     if super.initWithNibName 'SignInView', bundle: nil
-      @loading = false
+      self.loading = false
       self
     end
   end
@@ -12,8 +12,7 @@ class AIOSignInViewController < NSViewController
     self.loading = true
     concurrent_queue do
       begin
-        api = NSApp.delegate.api
-        api.sign_in @username, @password
+        AIOApp.api.sign_in @username, @password
       rescue => e
         err_msg = e.message.lines.first.strip
         if err_msg.include? 'invalid_resource_owner'
@@ -31,7 +30,7 @@ class AIOSignInViewController < NSViewController
   end
 
   def did_click_go_back_button(sender)
-    NSApp.delegate.welcome_window_controller.show_welcome_view
+    AIOApp.welcome_window_controller.show_welcome_view
   end
 
   def did_click_forgot_password_button(sender)

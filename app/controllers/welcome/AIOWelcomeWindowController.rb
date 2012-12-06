@@ -1,12 +1,11 @@
 class AIOWelcomeWindowController < NSWindowController
-  attr_reader :welcome_view_controller, :sign_in_view_controller, :sign_up_view_controller
-  attr_accessor :closing_should_terminate_app
+  attr_accessor :welcome_view_controller, :sign_in_view_controller, :sign_up_view_controller
 
   def init
     if super.initWithWindowNibName 'WelcomeWindow'
-      @welcome_view_controller = AIOWelcomeViewController.new
-      @sign_in_view_controller = AIOSignInViewController.new
-      @sign_up_view_controller = AIOSignUpViewController.new
+      self.welcome_view_controller = AIOWelcomeViewController.new
+      self.sign_in_view_controller = AIOSignInViewController.new
+      self.sign_up_view_controller = AIOSignUpViewController.new
       @closing_should_terminate_app = true
       show_welcome_view
       self

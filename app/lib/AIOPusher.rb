@@ -25,10 +25,13 @@ class AIOPusher
 
   include AIOObserver
 
+  attr_accessor :ready
   attr_accessor :connected
 
   def initialize
-    @connected = false
+    self.ready = false
+    self.connected = false
+
     @web_view = WebView.alloc.initWithFrame NSZeroRect, frameName: nil, groupName: nil
     @bridge = Bridge.new
 
@@ -56,9 +59,9 @@ class AIOPusher
 
   def connect
     Dispatch::Queue.main.async do
-      app_controller = NSApp.delegate
-      eval_js('aio').setValue app_controller.current_user.id, forKey: 'userId'
-      eval_js('aio').setValue app_controller.api.token.token, forKey: 'oAuthToken'
+      aio = eval_js 'aio'
+      aio.setValue AIOApp.current_user.id, forKey: 'userId'
+      aio.setValue AIOApp.api.token.token, forKey: 'oAuthToken'
       eval_js 'aio.connect()'
     end
   end
@@ -81,8 +84,7 @@ class AIOPusher
 
   def aio_box_updated(notification)
     if box_attrs = JSON.parse(notification.userInfo[:data])['box']
-      app_controller = NSApp.delegate
-      if box = app_controller.boxes.find_by_id(box_attrs['id'])
+      if box = AIOApp.boxes.find_by_id(box_attrs['id'])
         box.update_attributes box_attrs
       end
     end
@@ -102,11 +104,14 @@ class AIOPusher
       Dispatch::Queue.main.async do
         eval_js pusher_js
         eval_js aio_js
+
         aio = eval_js 'aio'
         aio.setValue AIOSettings.env, forKey: 'env'
         aio.setValue @bridge, forKey: 'bridge'
         aio.setValue AIOSettings.pusher_key, forKey: 'pusherKey'
         eval_js 'aio.initialize()'
+
+        self.ready = true
       end
     end
   end

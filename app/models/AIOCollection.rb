@@ -16,7 +16,7 @@ class AIOCollection
   attr_accessor :api
 
   def initialize(api)
-    @api = api
+    self.api = api
   end
 
   def models

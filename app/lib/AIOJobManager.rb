@@ -21,6 +21,11 @@ class AIOJobManager
     end
   end
 
+  def add_new(name, allow_dupe=false, &task)
+    job = AIOJob.new name, &task
+    add job, allow_dupe
+  end
+
   def cancel(name)
     @mutex.synchronize do
       if job = @jobs.find { |j| j.name == name }
