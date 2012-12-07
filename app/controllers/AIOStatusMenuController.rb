@@ -21,8 +21,10 @@ class AIOStatusMenuController
 
     observe(AIOApp, 'boxes.content') { |v,c| boxes_content_did_change v,c }
 
-    fetch_current_user
-    fetch_boxes
+    AIOApp.jobs.add_new do
+      AIOApp.current_user.fetch
+      fetch_boxes
+    end
   end
 
   def teardown_menu
@@ -37,12 +39,6 @@ class AIOStatusMenuController
   end
 
   private
-  def fetch_current_user
-    AIOApp.jobs.add_new 'current_user.fetch' do
-      AIOApp.current_user.fetch
-    end
-  end
-
   def fetch_boxes
     AIOApp.jobs.add_new 'boxes.fetch' do
       AIOApp.boxes.fetch

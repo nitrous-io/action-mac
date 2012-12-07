@@ -1,3 +1,4 @@
+framework 'Foundation'
 framework 'Cocoa'
 
 # Load all the Ruby project files.
