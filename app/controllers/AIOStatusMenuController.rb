@@ -21,7 +21,7 @@ class AIOStatusMenuController
 
     observe(AIOApp, 'boxes.content') { |v,c| boxes_content_did_change v,c }
 
-    AIOApp.jobs.add_new do
+    AIOApp.jobs.add_new 'current_user.fetch' do
       AIOApp.current_user.fetch
       fetch_boxes
     end
@@ -35,7 +35,7 @@ class AIOStatusMenuController
   end
 
   def open_action_io_website(sender)
-    AIOApp.jobs.add_new 'open_website' do
+    concurrent_queue do
       AIOApp.api.sign_in_to_actionio_web_app_and_open '/'
     end
   end

@@ -13,13 +13,11 @@ class AIOCollection
     end
   end
 
-  attr_accessor :api
-
-  def initialize(api)
-    self.api = api
+  def models
+    raise NotImplementedError
   end
 
-  def models
+  def api
     raise NotImplementedError
   end
 
@@ -44,7 +42,7 @@ class AIOCollection
   end
 
   def fetch
-    if response = @api.request(:get, @@resource_path)
+    if response = api.request(:get, @@resource_path)
       model_attrs = response.parsed[@@json_root]
       new_ids = model_attrs.map { |o| o['id'] }
 

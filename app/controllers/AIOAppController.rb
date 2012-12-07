@@ -105,8 +105,8 @@ class AIOAppController
   end
 
   def reset_collections
-    self.boxes = AIOBoxCollection.new @api
-    self.current_user = AIOUser.new @api
+    self.boxes = AIOBoxCollection.new
+    self.current_user = AIOUser.new
   end
 
   def reset

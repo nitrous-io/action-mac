@@ -52,7 +52,7 @@
 						<object class="NSMenu" key="NSSubmenu" id="1047921540">
 							<string key="NSTitle">name</string>
 							<array class="NSMutableArray" key="NSMenuItems">
-								<object class="NSMenuItem" id="323957859">
+								<object class="NSMenuItem" id="61157161">
 									<reference key="NSMenu" ref="1047921540"/>
 									<string key="NSTitle">Open Shell...</string>
 									<string key="NSKeyEquiv"/>
@@ -60,7 +60,7 @@
 									<reference key="NSOnImage" ref="469545071"/>
 									<reference key="NSMixedImage" ref="318561862"/>
 								</object>
-								<object class="NSMenuItem" id="1053194057">
+								<object class="NSMenuItem" id="232666456">
 									<reference key="NSMenu" ref="1047921540"/>
 									<string key="NSTitle">Open Web IDE...</string>
 									<string key="NSKeyEquiv"/>
@@ -68,7 +68,7 @@
 									<reference key="NSOnImage" ref="469545071"/>
 									<reference key="NSMixedImage" ref="318561862"/>
 								</object>
-								<object class="NSMenuItem" id="995749073">
+								<object class="NSMenuItem" id="1052764126">
 									<reference key="NSMenu" ref="1047921540"/>
 									<bool key="NSIsDisabled">YES</bool>
 									<bool key="NSIsSeparator">YES</bool>
@@ -82,6 +82,40 @@
 									<reference key="NSMenu" ref="1047921540"/>
 									<bool key="NSIsDisabled">YES</bool>
 									<string key="NSTitle">State: state</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="469545071"/>
+									<reference key="NSMixedImage" ref="318561862"/>
+								</object>
+								<object class="NSMenuItem" id="885521609">
+									<reference key="NSMenu" ref="1047921540"/>
+									<bool key="NSIsDisabled">YES</bool>
+									<bool key="NSIsSeparator">YES</bool>
+									<string key="NSTitle"/>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="469545071"/>
+									<reference key="NSMixedImage" ref="318561862"/>
+								</object>
+								<object class="NSMenuItem" id="323957164">
+									<reference key="NSMenu" ref="1047921540"/>
+									<string key="NSTitle">Start</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="469545071"/>
+									<reference key="NSMixedImage" ref="318561862"/>
+								</object>
+								<object class="NSMenuItem" id="270474623">
+									<reference key="NSMenu" ref="1047921540"/>
+									<string key="NSTitle">Restart</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="469545071"/>
+									<reference key="NSMixedImage" ref="318561862"/>
+								</object>
+								<object class="NSMenuItem" id="186749615">
+									<reference key="NSMenu" ref="1047921540"/>
+									<string key="NSTitle">Shut Down</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="469545071"/>
@@ -107,7 +141,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">open_shell:</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="323957859"/>
+						<reference key="destination" ref="61157161"/>
 					</object>
 					<int key="connectionID">52</int>
 				</object>
@@ -115,16 +149,40 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">open_web_ide:</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="1053194057"/>
+						<reference key="destination" ref="232666456"/>
 					</object>
 					<int key="connectionID">53</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">restart:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="270474623"/>
+					</object>
+					<int key="connectionID">79</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">start:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="323957164"/>
+					</object>
+					<int key="connectionID">80</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">shut_down:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="186749615"/>
+					</object>
+					<int key="connectionID">81</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">image: box.state_image</string>
 						<reference key="source" ref="1012650773"/>
 						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector" id="1070272023">
+						<object class="NSNibBindingConnector" key="connector" id="866527198">
 							<reference key="NSSource" ref="1012650773"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">image: box.state_image</string>
@@ -150,7 +208,7 @@
 							<string key="NSLabel">title: box.name</string>
 							<string key="NSBinding">title</string>
 							<string key="NSKeyPath">box.name</string>
-							<reference key="NSPreviousConnector" ref="1070272023"/>
+							<reference key="NSPreviousConnector" ref="866527198"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -194,27 +252,11 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: box.can_access_box</string>
-						<reference key="source" ref="323957859"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector" id="341001081">
-							<reference key="NSSource" ref="323957859"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">enabled: box.can_access_box</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">box.can_access_box</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">33</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">hidden: box.can_access_box</string>
-						<reference key="source" ref="323957859"/>
+						<reference key="source" ref="61157161"/>
 						<reference key="destination" ref="1001"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="323957859"/>
+							<reference key="NSSource" ref="61157161"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">hidden: box.can_access_box</string>
 							<string key="NSBinding">hidden</string>
@@ -223,35 +265,18 @@
 								<string key="NS.key.0">NSValueTransformerName</string>
 								<string key="NS.object.0">NSNegateBoolean</string>
 							</object>
-							<reference key="NSPreviousConnector" ref="341001081"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">46</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: box.can_access_box</string>
-						<reference key="source" ref="1053194057"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector" id="184107264">
-							<reference key="NSSource" ref="1053194057"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">enabled: box.can_access_box</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">box.can_access_box</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">43</int>
+					<int key="connectionID">77</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">hidden: box.can_access_box</string>
-						<reference key="source" ref="1053194057"/>
+						<reference key="source" ref="232666456"/>
 						<reference key="destination" ref="1001"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="1053194057"/>
+							<reference key="NSSource" ref="232666456"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">hidden: box.can_access_box</string>
 							<string key="NSBinding">hidden</string>
@@ -260,19 +285,18 @@
 								<string key="NS.key.0">NSValueTransformerName</string>
 								<string key="NS.object.0">NSNegateBoolean</string>
 							</object>
-							<reference key="NSPreviousConnector" ref="184107264"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">45</int>
+					<int key="connectionID">78</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">hidden: box.can_access_box</string>
-						<reference key="source" ref="995749073"/>
+						<reference key="source" ref="1052764126"/>
 						<reference key="destination" ref="1001"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="995749073"/>
+							<reference key="NSSource" ref="1052764126"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">hidden: box.can_access_box</string>
 							<string key="NSBinding">hidden</string>
@@ -285,6 +309,86 @@
 						</object>
 					</object>
 					<int key="connectionID">51</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: box.can_start</string>
+						<reference key="source" ref="323957164"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="323957164"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: box.can_start</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">box.can_start</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">74</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: box.can_restart</string>
+						<reference key="source" ref="270474623"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="270474623"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: box.can_restart</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">box.can_restart</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">75</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: box.can_shut_down</string>
+						<reference key="source" ref="186749615"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="186749615"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: box.can_shut_down</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">box.can_shut_down</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">76</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: box.can_perform_action</string>
+						<reference key="source" ref="885521609"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="885521609"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: box.can_perform_action</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">box.can_perform_action</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">65</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -334,9 +438,13 @@
 						<reference key="object" ref="1047921540"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="136427792"/>
-							<reference ref="323957859"/>
-							<reference ref="1053194057"/>
-							<reference ref="995749073"/>
+							<reference ref="61157161"/>
+							<reference ref="232666456"/>
+							<reference ref="1052764126"/>
+							<reference ref="323957164"/>
+							<reference ref="270474623"/>
+							<reference ref="186749615"/>
+							<reference ref="885521609"/>
 						</array>
 						<reference key="parent" ref="1012650773"/>
 					</object>
@@ -347,17 +455,37 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">30</int>
-						<reference key="object" ref="323957859"/>
+						<reference key="object" ref="61157161"/>
 						<reference key="parent" ref="1047921540"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">31</int>
-						<reference key="object" ref="1053194057"/>
+						<reference key="object" ref="232666456"/>
 						<reference key="parent" ref="1047921540"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">32</int>
-						<reference key="object" ref="995749073"/>
+						<reference key="object" ref="1052764126"/>
+						<reference key="parent" ref="1047921540"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">54</int>
+						<reference key="object" ref="323957164"/>
+						<reference key="parent" ref="1047921540"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">55</int>
+						<reference key="object" ref="270474623"/>
+						<reference key="parent" ref="1047921540"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">56</int>
+						<reference key="object" ref="186749615"/>
+						<reference key="parent" ref="1047921540"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">57</int>
+						<reference key="object" ref="885521609"/>
 						<reference key="parent" ref="1047921540"/>
 					</object>
 				</array>
@@ -371,6 +499,10 @@
 				<string key="30.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="31.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="32.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="54.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="55.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="56.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="57.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
@@ -378,7 +510,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">53</int>
+			<int key="maxID">81</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

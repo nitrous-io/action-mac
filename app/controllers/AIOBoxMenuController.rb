@@ -14,8 +14,26 @@ class AIOBoxMenuController
   end
 
   def open_web_ide(sender)
-    AIOApp.jobs.add_new 'open_web_ide' do
+    concurrent_queue do
       AIOApp.api.sign_in_to_actionio_web_app_and_open @box.web_ide_path
+    end
+  end
+
+  def start(sender)
+    concurrent_queue do
+      @box.start
+    end
+  end
+
+  def restart(sender)
+    concurrent_queue do
+      @box.restart
+    end
+  end
+
+  def shut_down(sender)
+    concurrent_queue do
+      @box.shut_down
     end
   end
 end

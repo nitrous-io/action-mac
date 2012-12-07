@@ -5,7 +5,7 @@ require 'AIOModel'
 describe AIOCollectionCocoa do
   before do
     @api = mock 'api'
-    @collection = AIOCollectionCocoa.new @api
+    @collection = AIOCollectionCocoa.new
   end
 
   it 'is a subclass of AIOCollection' do

@@ -19,7 +19,8 @@ end
 describe AIOCollection do
   before do
     @api = mock 'api'
-    @collection = TestCollection.new @api
+    @collection = TestCollection.new
+    @collection.stub(:api).and_return @api
   end
 
   describe '.model' do
@@ -40,22 +41,26 @@ describe AIOCollection do
     end
   end
 
-  describe 'constructor' do
-    it 'takes in an api instance and sets @api' do
-      @collection.api.should.equal @api
+  describe '#api' do
+    context 'when not overridden' do
+      before do
+        @collection = AIOCollection.new
+      end
+
+      it 'raises NotImplementedError' do
+        -> { @collection.api }.should.raise NotImplementedError
+      end
     end
   end
 
   describe '#models' do
     context 'when not overridden' do
       before do
-        @collection = AIOCollection.new @api
+        @collection = AIOCollection.new
       end
 
       it 'raises NotImplementedError' do
-        -> {
-          @collection.models
-        }.should.raise NotImplementedError
+        -> { @collection.models }.should.raise NotImplementedError
       end
     end
   end

@@ -14,7 +14,18 @@ class AIOModel
     end
   end
 
+  def api
+    raise NotImplementedError
+  end
+
   def <=>(other_obj)
     id <=> other_obj.id
   end
 end
+
+class AIOModel
+  def api
+    AIOApp.api
+  end
+end if RUBY_ENGINE == 'macruby' || RUBY_ENGINE == 'rubymotion'
+
