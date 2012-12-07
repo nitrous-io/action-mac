@@ -1,7 +1,7 @@
 require 'oauth2'
 
 class AIOAPI
-  SCOPES = 'public boxes public_keys user push'
+  SCOPES = 'public boxes public_keys user push web'
   API_PATH_PREFIX = '/api/v0'
 
   attr_reader :client
@@ -19,7 +19,7 @@ class AIOAPI
     self.token = @client.password.get_token(username, password, parse: :json, scope: SCOPES)
   end
 
-  def request(verb, path, options={})
+  def request(verb, path)
     return unless @token
     response = @token.request verb.to_sym, "#{API_PATH_PREFIX}#{path}", parse: :json
   rescue OAuth2::Error => e
@@ -31,5 +31,11 @@ class AIOAPI
     end
   rescue => e
     raise e
+  end
+
+  def obtain_sign_in_token
+    if response = request(:get, '/user/sign_in_token')
+      response.parsed['sign_in_token']
+    end
   end
 end

@@ -70,4 +70,29 @@ describe AIOAPI do
       end
     end
   end
+
+  describe '#obtain_sign_in_token' do
+    context 'when token is absent' do
+      before do
+        @api.token = nil
+      end
+
+      it 'does nothing' do
+        @api.obtain_sign_in_token.should.be.nil
+      end
+    end
+
+    context 'when token is present' do
+      before do
+        response = mock 'response', parsed: {
+          'sign_in_token' => 'some_sign_in_token'
+        }
+        @api.stub(:request).with(:get, '/user/sign_in_token').and_return response
+      end
+
+      it 'requests for token and returns it' do
+        @api.obtain_sign_in_token.should.equal 'some_sign_in_token'
+      end
+    end
+  end
 end

@@ -1,5 +1,6 @@
 framework 'Security'
 require 'AIOAPI'
+require 'cgi'
 
 class AIOAPICocoa < AIOAPI
   class KeychainError < StandardError; end
@@ -24,6 +25,14 @@ class AIOAPICocoa < AIOAPI
   def sign_out
     remove_access_token_from_keychain
     self.signed_in = false
+  end
+
+  def sign_in_to_actionio_web_app_and_open(url='/')
+    if token = obtain_sign_in_token
+      Dispatch::Queue.main.async do
+        open_url "#{AIOSettings.host}/users/sign_in_with_token?sign_in_token=#{CGI.escape token}&redirect_to=#{CGI.escape url}"
+      end
+    end
   end
 
   private

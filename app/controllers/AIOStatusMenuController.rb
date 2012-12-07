@@ -8,7 +8,7 @@ class AIOStatusMenuController
   attr_accessor :menu
 
   def initialize
-    @box_menu_nib = NSNib.alloc.initWithNibNamed 'BoxMenu', bundle: nil
+    @box_controller_mapping = {} # box to box menu controller mapping
   end
 
   def setup_menu
@@ -60,25 +60,22 @@ class AIOStatusMenuController
 
   def add_box_menu_item(box)
     Dispatch::Queue.main.async do
-      objects_ptr = Pointer.new :object
-      if @box_menu_nib.instantiateNibWithOwner box, topLevelObjects: objects_ptr
-        objects = objects_ptr[0]
-        nib_menu = objects.find { |o| o.kind_of? NSMenu }
-        menu_item = nib_menu.itemAtIndex 0
-        menu_item.setRepresentedObject box
-        nib_menu.removeAllItems
-
+      box_menu_controller = AIOBoxMenuController.new box
+      @box_menu_nib ||= NSNib.alloc.initWithNibNamed 'BoxMenu', bundle: nil
+      if @box_menu_nib.instantiateNibWithOwner box_menu_controller, topLevelObjects: nil
+        menu_item = box_menu_controller.menu_item
+        menu_item.menu.removeAllItems
         insertion_index = @menu.indexOfItemWithTag BOXES_MENU_SEPARATOR_TAG
         @menu.insertItem menu_item, atIndex: insertion_index
+        @box_controller_mapping[box] = box_menu_controller
       end
     end
   end
 
   def remove_box_menu_item(box)
     Dispatch::Queue.main.async do
-      if menu_item = @menu.itemAtIndex(@menu.indexOfItemWithRepresentedObject box)
-        menu_item.setRepresentedObject nil
-        @menu.removeItem menu_item
+      if box_menu_controller = @box_controller_mapping.delete(box)
+        @menu.removeItem box_menu_controller.menu_item
       end
     end
   end
