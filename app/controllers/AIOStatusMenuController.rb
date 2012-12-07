@@ -35,7 +35,9 @@ class AIOStatusMenuController
   end
 
   def open_action_io_website(sender)
-    open_url AIOSettings.host + '/'
+    AIOApp.jobs.add_new 'open_website' do
+      AIOApp.api.sign_in_to_actionio_web_app_and_open '/'
+    end
   end
 
   private

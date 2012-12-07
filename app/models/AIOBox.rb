@@ -26,7 +26,7 @@ class AIOBox < AIOModel
     "ssh://action@#{@host}:#{@port}" if @host && @port
   end
 
-  def web_ide_uri
+  def web_ide_path
     "/app#/boxes/#{@id}/ide" if @id
   end
 end
@@ -36,6 +36,6 @@ class AIOBox
   dependent_property :state_description,  [:state]
   dependent_property :state_image,        [:state]
   dependent_property :can_access_box,     [:state]
-  dependent_property :ssh_uri,     [:host, :port]
-  dependent_property :web_ide_uri, [:id]
+  dependent_property :ssh_uri,            [:host, :port]
+  dependent_property :web_ide_path,       [:id]
 end if RUBY_ENGINE == 'macruby' || RUBY_ENGINE == 'rubymotion'

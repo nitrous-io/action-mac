@@ -14,8 +14,8 @@ class AIOBoxMenuController
   end
 
   def open_web_ide(sender)
-    AIOApp.jobs.add_new 'open_shell' do
-      AIOApp.api.sign_in_to_actionio_web_app_and_open @box.web_ide_uri
+    AIOApp.jobs.add_new 'open_web_ide' do
+      AIOApp.api.sign_in_to_actionio_web_app_and_open @box.web_ide_path
     end
   end
 end
