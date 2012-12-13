@@ -72,6 +72,11 @@
 		E9975D071678779300A6950A /* AIOPreferencesWindowController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9975D061678779300A6950A /* AIOPreferencesWindowController.rb */; };
 		E9975D0E1678968D00A6950A /* AIOAccountPreferencesViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9975D0C1678968D00A6950A /* AIOAccountPreferencesViewController.rb */; };
 		E9975D0F1678968D00A6950A /* AIOGeneralPreferencesViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9975D0D1678968D00A6950A /* AIOGeneralPreferencesViewController.rb */; };
+		E9975D4F1679A8F600A6950A /* ssh-key.png in Resources */ = {isa = PBXBuildFile; fileRef = E9975D4D1679A8F600A6950A /* ssh-key.png */; };
+		E9975D501679A8F600A6950A /* ssh-key@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9975D4E1679A8F600A6950A /* ssh-key@2x.png */; };
+		E9975D541679A94B00A6950A /* AIOSSHKeysPreferencesViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9975D531679A94A00A6950A /* AIOSSHKeysPreferencesViewController.rb */; };
+		E9975D561679BFAC00A6950A /* SSHKeysPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9975D551679BFAC00A6950A /* SSHKeysPreferencesView.xib */; };
+		E9975D5E1679D9A400A6950A /* AIOSSHKeyPair.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9975D5D1679D9A400A6950A /* AIOSSHKeyPair.rb */; };
 		E9987DFF164BADDC00B762FE /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = E9987DFE164BADDC00B762FE /* SSKeychain.m */; };
 		E9987E01164BADE900B762FE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9987E00164BADE900B762FE /* Security.framework */; };
 		E9B0BA861653F35800F695D6 /* AIOSignUpView.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B0BA851653F35800F695D6 /* AIOSignUpView.rb */; };
@@ -170,6 +175,12 @@
 		E9975D061678779300A6950A /* AIOPreferencesWindowController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOPreferencesWindowController.rb; sourceTree = "<group>"; };
 		E9975D0C1678968D00A6950A /* AIOAccountPreferencesViewController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOAccountPreferencesViewController.rb; sourceTree = "<group>"; };
 		E9975D0D1678968D00A6950A /* AIOGeneralPreferencesViewController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOGeneralPreferencesViewController.rb; sourceTree = "<group>"; };
+		E9975D4D1679A8F600A6950A /* ssh-key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ssh-key.png"; sourceTree = "<group>"; };
+		E9975D4E1679A8F600A6950A /* ssh-key@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ssh-key@2x.png"; sourceTree = "<group>"; };
+		E9975D531679A94A00A6950A /* AIOSSHKeysPreferencesViewController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOSSHKeysPreferencesViewController.rb; sourceTree = "<group>"; };
+		E9975D551679BFAC00A6950A /* SSHKeysPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSHKeysPreferencesView.xib; sourceTree = "<group>"; };
+		E9975D5B1679CA0C00A6950A /* AIOSSHKeyPairSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOSSHKeyPairSpec.rb; sourceTree = "<group>"; };
+		E9975D5D1679D9A400A6950A /* AIOSSHKeyPair.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOSSHKeyPair.rb; sourceTree = "<group>"; };
 		E9987DFD164BADDC00B762FE /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		E9987DFE164BADDC00B762FE /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		E9987E00164BADE900B762FE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -216,6 +227,7 @@
 				E9B6D0F6166E54730088AC85 /* AIOJobManagerSpec.rb */,
 				E9B6D0F7166E54730088AC85 /* AIOJobSpec.rb */,
 				E9B6D106166F4F920088AC85 /* AIOObserverSpec.rb */,
+				E9975D5B1679CA0C00A6950A /* AIOSSHKeyPairSpec.rb */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -258,6 +270,8 @@
 				E918B3ED164B96D100D53509 /* status-item-icon-highlighted@2x.png */,
 				E918B3EE164B96D100D53509 /* status-item-icon.png */,
 				E918B3EF164B96D100D53509 /* status-item-icon@2x.png */,
+				E9975D4D1679A8F600A6950A /* ssh-key.png */,
+				E9975D4E1679A8F600A6950A /* ssh-key@2x.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -341,6 +355,7 @@
 				E9975D061678779300A6950A /* AIOPreferencesWindowController.rb */,
 				E9975D0D1678968D00A6950A /* AIOGeneralPreferencesViewController.rb */,
 				E9975D0C1678968D00A6950A /* AIOAccountPreferencesViewController.rb */,
+				E9975D531679A94A00A6950A /* AIOSSHKeysPreferencesViewController.rb */,
 			);
 			path = preferences;
 			sourceTree = "<group>";
@@ -414,8 +429,9 @@
 			isa = PBXGroup;
 			children = (
 				E9D4D9B716773AA300F4EF18 /* PreferencesWindow.xib */,
-				E9975D0116785E8000A6950A /* GeneralPreferencesView.xib */,
 				E9975D031678732500A6950A /* AccountPreferencesView.xib */,
+				E9975D0116785E8000A6950A /* GeneralPreferencesView.xib */,
+				E9975D551679BFAC00A6950A /* SSHKeysPreferencesView.xib */,
 			);
 			path = preferences;
 			sourceTree = "<group>";
@@ -459,6 +475,7 @@
 				E9B6D0F9166E54940088AC85 /* AIOJobManager.rb */,
 				E9B6D104166F4F840088AC85 /* AIOObserver.rb */,
 				E914D2DE166F69AC009486CB /* AIOPusher.rb */,
+				E9975D5D1679D9A400A6950A /* AIOSSHKeyPair.rb */,
 				E904BC5D165115B600DA5436 /* AIOBooleanToNumberTransformer.rb */,
 				E946CD34166B8E85000AE1E6 /* AIOStringToNSImageTransformer.rb */,
 			);
@@ -636,6 +653,11 @@
 				E9975D071678779300A6950A /* AIOPreferencesWindowController.rb in Resources */,
 				E9975D0E1678968D00A6950A /* AIOAccountPreferencesViewController.rb in Resources */,
 				E9975D0F1678968D00A6950A /* AIOGeneralPreferencesViewController.rb in Resources */,
+				E9975D4F1679A8F600A6950A /* ssh-key.png in Resources */,
+				E9975D501679A8F600A6950A /* ssh-key@2x.png in Resources */,
+				E9975D541679A94B00A6950A /* AIOSSHKeysPreferencesViewController.rb in Resources */,
+				E9975D561679BFAC00A6950A /* SSHKeysPreferencesView.xib in Resources */,
+				E9975D5E1679D9A400A6950A /* AIOSSHKeyPair.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

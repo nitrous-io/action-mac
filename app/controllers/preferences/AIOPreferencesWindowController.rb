@@ -1,11 +1,9 @@
 class AIOPreferencesWindowController < NSWindowController
   attr_accessor :toolbar, :empty_view
-  attr_accessor :general_preferences_view_controller, :account_preferences_view_controller
+  attr_accessor :general_preferences_view_controller, :account_preferences_view_controller, :ssh_keys_preferences_view_controller
 
   def init
     if super.initWithWindowNibName 'PreferencesWindow'
-      self.general_preferences_view_controller = AIOGeneralPreferencesViewController.new
-      self.account_preferences_view_controller = AIOAccountPreferencesViewController.new
       self
     end
   end
@@ -16,11 +14,21 @@ class AIOPreferencesWindowController < NSWindowController
   end
 
   def show_general_preferences_view(sender)
-    show_view_controller @general_preferences_view_controller
+    show_view_controller(
+      self.general_preferences_view_controller ||= AIOGeneralPreferencesViewController.new
+    )
   end
 
   def show_account_preferences_view(sender)
-    show_view_controller @account_preferences_view_controller
+    show_view_controller(
+      self.account_preferences_view_controller ||= AIOAccountPreferencesViewController.new
+    )
+  end
+
+  def show_ssh_keys_preferences_view(sender)
+    show_view_controller(
+      self.ssh_keys_preferences_view_controller ||= AIOSSHKeysPreferencesViewController.new
+    )
   end
 
   private

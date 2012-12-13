@@ -2,7 +2,10 @@
 
 ## Install Gems
 
-`while read -r line; do macgem install $line; done < .gems`
+```
+$ sudo chown -R $USER:admin /Library/Ruby/Gems/MacRuby
+$ while read -r line; do macgem install $line; done < .gems
+```
 
 You also need to install a fork of `facon` manually.
 

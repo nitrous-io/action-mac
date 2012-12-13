@@ -97,14 +97,38 @@
 							<bool key="NSToolbarIsUserRemovable">YES</bool>
 							<int key="NSToolbarItemVisibilityPriority">0</int>
 						</object>
+						<object class="NSToolbarItem" key="DA0DD620-8D5C-4B9B-A458-9C50EB9BCFCC" id="238423772">
+							<object class="NSMutableString" key="NSToolbarItemIdentifier">
+								<characters key="NS.bytes">DA0DD620-8D5C-4B9B-A458-9C50EB9BCFCC</characters>
+							</object>
+							<string key="NSToolbarItemLabel">SSH Keys</string>
+							<string key="NSToolbarItemPaletteLabel">SSH Keys</string>
+							<string key="NSToolbarItemToolTip"/>
+							<nil key="NSToolbarItemView"/>
+							<object class="NSCustomResource" key="NSToolbarItemImage">
+								<string key="NSClassName">NSImage</string>
+								<string key="NSResourceName">ssh-key</string>
+							</object>
+							<nil key="NSToolbarItemTarget"/>
+							<nil key="NSToolbarItemAction"/>
+							<string key="NSToolbarItemMinSize">{0, 0}</string>
+							<string key="NSToolbarItemMaxSize">{0, 0}</string>
+							<bool key="NSToolbarItemEnabled">YES</bool>
+							<bool key="NSToolbarItemAutovalidates">YES</bool>
+							<int key="NSToolbarItemTag">-1</int>
+							<bool key="NSToolbarIsUserRemovable">YES</bool>
+							<int key="NSToolbarItemVisibilityPriority">0</int>
+						</object>
 					</dictionary>
-					<array key="NSToolbarIBAllowedItems">
+					<array class="NSMutableArray" key="NSToolbarIBAllowedItems">
 						<reference ref="847091935"/>
 						<reference ref="483664301"/>
+						<reference ref="238423772"/>
 					</array>
-					<array key="NSToolbarIBDefaultItems">
+					<array class="NSMutableArray" key="NSToolbarIBDefaultItems">
 						<reference ref="847091935"/>
 						<reference ref="483664301"/>
+						<reference ref="238423772"/>
 					</array>
 					<array key="NSToolbarIBSelectableItems" id="0"/>
 				</object>
@@ -165,6 +189,14 @@
 					</object>
 					<int key="connectionID">22</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">show_ssh_keys_preferences_view:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="238423772"/>
+					</object>
+					<int key="connectionID">24</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -212,6 +244,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="847091935"/>
 							<reference ref="483664301"/>
+							<reference ref="238423772"/>
 						</array>
 						<reference key="parent" ref="189314137"/>
 					</object>
@@ -223,6 +256,11 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">9</int>
 						<reference key="object" ref="847091935"/>
+						<reference key="parent" ref="528170646"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">23</int>
+						<reference key="object" ref="238423772"/>
 						<reference key="parent" ref="528170646"/>
 					</object>
 				</array>
@@ -239,6 +277,9 @@
 				<string key="10.designableToolbarItemIdentifier">AccountPreferences</string>
 				<boolean value="YES" key="10.toolbarItem.selectable"/>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="23.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="23.designableToolbarItemIdentifier">SSHKeysPreferences</string>
+				<boolean value="YES" key="23.toolbarItem.selectable"/>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="9.designableToolbarItemIdentifier">GeneralPreferences</string>
@@ -248,7 +289,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">22</int>
+			<int key="maxID">24</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -258,6 +299,7 @@
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="show_account_preferences_view:">id</string>
 						<string key="show_general_preferences_view:">id</string>
+						<string key="show_ssh_keys_preferences_view:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="show_account_preferences_view:">
@@ -268,11 +310,16 @@
 							<string key="name">show_general_preferences_view:</string>
 							<string key="candidateClassName">id</string>
 						</object>
+						<object class="IBActionInfo" key="show_ssh_keys_preferences_view:">
+							<string key="name">show_ssh_keys_preferences_view:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="account_preferences_view_controller">id</string>
 						<string key="empty_view">id</string>
 						<string key="general_preferences_view_controller">id</string>
+						<string key="ssh_keys_preferences_view_controller">id</string>
 						<string key="toolbar">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -286,6 +333,10 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="general_preferences_view_controller">
 							<string key="name">general_preferences_view_controller</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="ssh_keys_preferences_view_controller">
+							<string key="name">ssh_keys_preferences_view_controller</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="toolbar">
@@ -307,6 +358,7 @@
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NSPreferencesGeneral">{32, 32}</string>
 			<string key="NSUser">{32, 32}</string>
+			<string key="ssh-key">{32, 32}</string>
 		</dictionary>
 		<bool key="IBDocument.UseAutolayout">YES</bool>
 	</data>

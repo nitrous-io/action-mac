@@ -1,9 +1,8 @@
 require 'rubygems'
-gem 'mac_bacon'
-gem 'facon'
 
 require 'mac_bacon'
 require 'facon'
+require 'fakefs/safe'
 
 dir = File.dirname(__FILE__)
 $: << dir << "#{dir}/.." << "#{dir}/support" << "#{dir}/../config"
