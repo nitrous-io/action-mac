@@ -67,6 +67,11 @@
 		E99576AF1670D0030069C9B4 /* NSObject+AIO.rb in Resources */ = {isa = PBXBuildFile; fileRef = E99576AE1670D0030069C9B4 /* NSObject+AIO.rb */; };
 		E99576B51670F4B30069C9B4 /* AIOBoxMenuController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E99576B41670F4B30069C9B4 /* AIOBoxMenuController.rb */; };
 		E99576B91672155B0069C9B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99576B81672155B0069C9B4 /* Foundation.framework */; };
+		E9975D0216785E8000A6950A /* GeneralPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9975D0116785E8000A6950A /* GeneralPreferencesView.xib */; };
+		E9975D041678732500A6950A /* AccountPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9975D031678732500A6950A /* AccountPreferencesView.xib */; };
+		E9975D071678779300A6950A /* AIOPreferencesWindowController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9975D061678779300A6950A /* AIOPreferencesWindowController.rb */; };
+		E9975D0E1678968D00A6950A /* AIOAccountPreferencesViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9975D0C1678968D00A6950A /* AIOAccountPreferencesViewController.rb */; };
+		E9975D0F1678968D00A6950A /* AIOGeneralPreferencesViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9975D0D1678968D00A6950A /* AIOGeneralPreferencesViewController.rb */; };
 		E9987DFF164BADDC00B762FE /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = E9987DFE164BADDC00B762FE /* SSKeychain.m */; };
 		E9987E01164BADE900B762FE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9987E00164BADE900B762FE /* Security.framework */; };
 		E9B0BA861653F35800F695D6 /* AIOSignUpView.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B0BA851653F35800F695D6 /* AIOSignUpView.rb */; };
@@ -78,6 +83,7 @@
 		E9BC81171650FB0200A21D88 /* AIOWelcomeWindowController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9BC81161650FB0200A21D88 /* AIOWelcomeWindowController.rb */; };
 		E9BC812C1650FC2700A21D88 /* WelcomeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9BC81281650FC2700A21D88 /* WelcomeWindow.xib */; };
 		E9BF1AAF1653EE840067DFC9 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BF1AAE1653EE840067DFC9 /* MacRuby.framework */; };
+		E9D4D9B816773AA300F4EF18 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D4D9B716773AA300F4EF18 /* PreferencesWindow.xib */; };
 		E9E19FDE164259B80058706D /* App.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E19FDD164259B80058706D /* App.xib */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +165,11 @@
 		E99576AE1670D0030069C9B4 /* NSObject+AIO.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = "NSObject+AIO.rb"; sourceTree = "<group>"; };
 		E99576B41670F4B30069C9B4 /* AIOBoxMenuController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOBoxMenuController.rb; sourceTree = "<group>"; };
 		E99576B81672155B0069C9B4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E9975D0116785E8000A6950A /* GeneralPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralPreferencesView.xib; sourceTree = "<group>"; };
+		E9975D031678732500A6950A /* AccountPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountPreferencesView.xib; sourceTree = "<group>"; };
+		E9975D061678779300A6950A /* AIOPreferencesWindowController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOPreferencesWindowController.rb; sourceTree = "<group>"; };
+		E9975D0C1678968D00A6950A /* AIOAccountPreferencesViewController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOAccountPreferencesViewController.rb; sourceTree = "<group>"; };
+		E9975D0D1678968D00A6950A /* AIOGeneralPreferencesViewController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOGeneralPreferencesViewController.rb; sourceTree = "<group>"; };
 		E9987DFD164BADDC00B762FE /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		E9987DFE164BADDC00B762FE /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		E9987E00164BADE900B762FE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -175,6 +186,7 @@
 		E9BC81161650FB0200A21D88 /* AIOWelcomeWindowController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOWelcomeWindowController.rb; sourceTree = "<group>"; };
 		E9BC81281650FC2700A21D88 /* WelcomeWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeWindow.xib; sourceTree = "<group>"; };
 		E9BF1AAE1653EE840067DFC9 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
+		E9D4D9B716773AA300F4EF18 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
 		E9E19FDD164259B80058706D /* App.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = App.xib; sourceTree = "<group>"; };
 		E9E19FE1164259D30058706D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9E19FE616425A030058706D /* ActionMac-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ActionMac-Prefix.pch"; sourceTree = "<group>"; };
@@ -323,6 +335,16 @@
 			path = spec;
 			sourceTree = "<group>";
 		};
+		E9975D051678777900A6950A /* preferences */ = {
+			isa = PBXGroup;
+			children = (
+				E9975D061678779300A6950A /* AIOPreferencesWindowController.rb */,
+				E9975D0D1678968D00A6950A /* AIOGeneralPreferencesViewController.rb */,
+				E9975D0C1678968D00A6950A /* AIOAccountPreferencesViewController.rb */,
+			);
+			path = preferences;
+			sourceTree = "<group>";
+		};
 		E9987DFA164BADBA00B762FE /* vendor */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +410,16 @@
 			path = welcome;
 			sourceTree = "<group>";
 		};
+		E9D4D9B51677380100F4EF18 /* preferences */ = {
+			isa = PBXGroup;
+			children = (
+				E9D4D9B716773AA300F4EF18 /* PreferencesWindow.xib */,
+				E9975D0116785E8000A6950A /* GeneralPreferencesView.xib */,
+				E9975D031678732500A6950A /* AccountPreferencesView.xib */,
+			);
+			path = preferences;
+			sourceTree = "<group>";
+		};
 		E9E19FCC1642586D0058706D /* app */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				E9BC81151650FB0200A21D88 /* welcome */,
+				E9975D051678777900A6950A /* preferences */,
 				E99576AA1670A5690069C9B4 /* AIOAppDelegate.rb */,
 				E92BF345164253AE00862CF4 /* AIOAppController.rb */,
 				E96795841667182B00703E49 /* AIOStatusMenuController.rb */,
@@ -449,6 +482,7 @@
 			isa = PBXGroup;
 			children = (
 				E9BC81241650FC2700A21D88 /* welcome */,
+				E9D4D9B51677380100F4EF18 /* preferences */,
 				E9E19FDD164259B80058706D /* App.xib */,
 				E99576AC1670A8CC0069C9B4 /* StatusMenu.xib */,
 				E97537EA16724B050030B15B /* BoxMenu.xib */,
@@ -596,6 +630,12 @@
 				E99576AF1670D0030069C9B4 /* NSObject+AIO.rb in Resources */,
 				E99576B51670F4B30069C9B4 /* AIOBoxMenuController.rb in Resources */,
 				E97537EB16724B050030B15B /* BoxMenu.xib in Resources */,
+				E9D4D9B816773AA300F4EF18 /* PreferencesWindow.xib in Resources */,
+				E9975D0216785E8000A6950A /* GeneralPreferencesView.xib in Resources */,
+				E9975D041678732500A6950A /* AccountPreferencesView.xib in Resources */,
+				E9975D071678779300A6950A /* AIOPreferencesWindowController.rb in Resources */,
+				E9975D0E1678968D00A6950A /* AIOAccountPreferencesViewController.rb in Resources */,
+				E9975D0F1678968D00A6950A /* AIOGeneralPreferencesViewController.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,7 +654,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "git=\"/usr/bin/env git\"\ndate=`date`\necho \"/* Generated at $date */\" > config/InfoPlist.h\n\nversion=`$git describe --always`\necho \"#define AIO_VERSION $version\" >> config/InfoPlist.h\n\nif [ $AIO_ENV == 'production' ]; then\n  echo \"#define AIO_BUNDLE_ID io.action.mac-app\" >> config/InfoPlist.h\nelse\n  echo \"#define AIO_BUNDLE_ID io.action.mac-app-$AIO_ENV\" >> config/InfoPlist.h\nfi\n\ncat \"config/InfoPlist-$AIO_ENV.h\" >> config/InfoPlist.h\n\ntouch config/Info.plist";
+			shellScript = "git=\"/usr/bin/env git\"\ndate=`date`\necho \"/* Generated at $date */\" > config/InfoPlist.h\n\nversion=`$git describe --always`\necho \"#define AIO_GIT_HASH $version\" >> config/InfoPlist.h\n\nif [ $AIO_ENV == 'production' ]; then\n  echo \"#define AIO_BUNDLE_ID io.action.mac-app\" >> config/InfoPlist.h\nelse\n  echo \"#define AIO_BUNDLE_ID io.action.mac-app-$AIO_ENV\" >> config/InfoPlist.h\nfi\n\ncat \"config/InfoPlist-$AIO_ENV.h\" >> config/InfoPlist.h\n\ntouch config/Info.plist";
 		};
 /* End PBXShellScriptBuildPhase section */
 

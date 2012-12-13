@@ -3,7 +3,7 @@ require 'AIOObserver'
 class AIOAppController
   include AIOObserver
 
-  attr_accessor :status_menu_controller, :welcome_window_controller
+  attr_accessor :status_menu_controller, :welcome_window_controller, :preferences_window_controller
   attr_accessor :api, :pusher, :jobs
   attr_accessor :current_user, :boxes
 
@@ -15,7 +15,10 @@ class AIOAppController
     NSTimer.scheduledTimerWithTimeInterval JOB_PROCESSING_INTERVAL, target: self, selector: :process_jobs, userInfo: nil, repeats: true
     self.pusher = AIOPusher.new
 
-    observe(self, 'api.token'      ) { |v,c| sign_out_if_token_is_invalid  v,c }
+    self.boxes = AIOBoxCollection.new
+    self.current_user = AIOUser.new
+
+    observe(self, 'api.token'      ) { |v,c| sign_out_if_token_becomes_nil  v,c }
     observe(self, 'api.signed_in'  ) { |v,c| switch_view_on_sign_in_or_out v,c }
     observe(self, 'current_user.id') { |v,c| connect_to_pusher_when_ready  v,c }
     observe(self, 'pusher.ready'   ) { |v,c| connect_to_pusher_when_ready  v,c }
@@ -26,7 +29,7 @@ class AIOAppController
       show_keychain_error
     end
 
-    show_welcome_window unless @api.token
+    open_welcome_window unless @api.token
   end
 
   def finalize
@@ -36,7 +39,7 @@ class AIOAppController
     stop_observing self, 'pusher.ready'
   end
 
-  def show_welcome_window
+  def open_welcome_window
     self.welcome_window_controller = AIOWelcomeWindowController.new
     window = @welcome_window_controller.window
     window.makeKeyAndOrderFront nil
@@ -63,8 +66,21 @@ class AIOAppController
     end
   end
 
+  def open_preferences_window
+    self.preferences_window_controller ||= AIOPreferencesWindowController.new
+    window = @preferences_window_controller.window
+    window.makeKeyAndOrderFront nil
+    window.orderFrontRegardless
+  end
+
+  def close_preferences_window
+    if @preferences_window_controller
+      @preferences_window_controller.close
+    end
+  end
+
   private
-  def sign_out_if_token_is_invalid(value, change)
+  def sign_out_if_token_becomes_nil(value, change)
     if value.nil?
       begin
         @api.sign_out
@@ -84,7 +100,8 @@ class AIOAppController
         show_status_menu
       else
         remove_status_menu
-        show_welcome_window
+        close_preferences_window
+        open_welcome_window
       end
     end
   end
@@ -104,14 +121,10 @@ class AIOAppController
     NSApp.terminate self
   end
 
-  def reset_collections
-    self.boxes = AIOBoxCollection.new
-    self.current_user = AIOUser.new
-  end
-
   def reset
     @jobs.cancel_all
-    reset_collections
+    @boxes.clear
+    @current_user.clear
   end
 
   def process_jobs

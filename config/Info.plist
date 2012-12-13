@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>AIO_VERSION</string>
+	<string>1.0.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -38,6 +38,8 @@
 	<string>AIO_OAUTH_CLIENT_ID</string>
 	<key>AIOOAuthClientSecret</key>
 	<string>AIO_OAUTH_CLIENT_SECRET</string>
+	<key>AIOGitHash</key>
+	<string>AIO_GIT_HASH</string>
 	<key>AIOPusherKey</key>
 	<string>AIO_PUSHER_KEY</string>
 </dict>

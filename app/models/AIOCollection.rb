@@ -37,6 +37,10 @@ class AIOCollection
     models.delete_if { |o| objs.include? o }
   end
 
+  def clear
+    models.clear
+  end
+
   def find_by_id(id)
     models.find { |o| o.id == id }
   end

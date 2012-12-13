@@ -34,10 +34,14 @@ class AIOStatusMenuController
     stop_observing AIOApp, 'boxes.content'
   end
 
-  def open_action_io_website(sender)
+  def did_click_open_action_io_website_menu_item(sender)
     concurrent_queue do
       AIOApp.api.sign_in_to_actionio_web_app_and_open '/'
     end
+  end
+
+  def did_click_preferences_menu_item(sender)
+    AIOApp.open_preferences_window
   end
 
   private

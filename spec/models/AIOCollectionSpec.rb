@@ -115,6 +115,19 @@ describe AIOCollection do
     end
   end
 
+  describe '#clear' do
+    before do
+      @one = AIOModel.new id: 1
+      @two = AIOModel.new id: 2
+      @collection.models.concat [@one, @two]
+      @collection.clear
+    end
+
+    it 'removes all objects from models' do
+      @collection.models.should.be.empty
+    end
+  end
+
   describe '#find_by_id' do
     before do
       @one = AIOModel.new id: 1
