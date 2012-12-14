@@ -1,15 +1,15 @@
 class AIOCollection
   class << self
     def model(klass)
-      @@model = klass
+      define_method(:model) { klass }
     end
 
     def resource_path(path)
-      @@resource_path = path
+      define_method(:resource_path) { path }
     end
 
     def json_root(root)
-      @@json_root = root
+      define_method(:json_root) { root }
     end
   end
 
@@ -46,8 +46,8 @@ class AIOCollection
   end
 
   def fetch
-    if response = api.request(:get, @@resource_path)
-      model_attrs = response.parsed[@@json_root]
+    if response = api.request(:get, resource_path)
+      model_attrs = response.parsed[json_root]
       new_ids = model_attrs.map { |o| o['id'] }
 
       old_objects = models
@@ -58,11 +58,11 @@ class AIOCollection
       new_objects = []
 
       model_attrs.each do |attr|
-        unless model = find_by_id(attr['id'])
-          model = @@model.new
-          new_objects.push model
+        unless obj = find_by_id(attr['id'])
+          obj = model.new
+          new_objects.push obj
         end
-        model.update_attributes attr
+        obj.update_attributes attr
       end
 
       add_objects(new_objects)

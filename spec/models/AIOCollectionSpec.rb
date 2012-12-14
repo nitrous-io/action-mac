@@ -25,19 +25,19 @@ describe AIOCollection do
 
   describe '.model' do
     it 'sets the class for the model' do
-      TestCollection.class_variable_get(:@@model).should.equal TestModel
+      @collection.model.should.equal TestModel
     end
   end
 
   describe '.resource_path' do
     it 'sets the path for the resource' do
-      TestCollection.class_variable_get(:@@resource_path).should.equal '/boxes'
+      @collection.resource_path.should.equal '/boxes'
     end
   end
 
   describe '.json_root' do
     it 'sets name of the root for resources json"' do
-      TestCollection.class_variable_get(:@@json_root).should.equal 'boxes'
+      @collection.json_root.should.equal 'boxes'
     end
   end
 
