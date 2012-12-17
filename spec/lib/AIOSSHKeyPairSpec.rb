@@ -59,7 +59,7 @@ describe AIOSSHKeyPair do
 
   describe '#find_keys' do
     context 'when ~/.ssh directory does not exist' do
-      it 'sets public_key_path and private_key_path to be nil' do
+      it 'sets @public_key_path and @private_key_path to be nil' do
         @keypair.should.receive(:private_key_path=).with nil
         @keypair.should.receive(:public_key_path=).with nil
         @keypair.find_keys
@@ -73,7 +73,7 @@ describe AIOSSHKeyPair do
       end
 
       context 'when no keys exist' do
-        it 'sets public_key_path and private_key_path to be nil' do
+        it 'sets @public_key_path and @private_key_path to be nil' do
           @keypair.should.receive(:private_key_path=).with nil
           @keypair.should.receive(:public_key_path=).with nil
           @keypair.find_keys
@@ -84,12 +84,12 @@ describe AIOSSHKeyPair do
         before do
           FileUtils.touch File.join(@ssh_path, 'id_rsa')
           FileUtils.touch File.join(@ssh_path, 'id_rsa.pub')
-          @keypair.find_keys
         end
 
-        it 'sets public_key_path and private_key_path accordingly' do
-          @keypair.private_key_path.should.equal File.join(@ssh_path, 'id_rsa')
-          @keypair.public_key_path.should.equal File.join(@ssh_path, 'id_rsa.pub')
+        it 'sets @public_key_path and @private_key_path accordingly' do
+          @keypair.should.receive(:private_key_path=).with File.join(@ssh_path, 'id_rsa')
+          @keypair.should.receive(:public_key_path=).with File.join(@ssh_path, 'id_rsa.pub')
+          @keypair.find_keys
         end
       end
 
@@ -99,7 +99,7 @@ describe AIOSSHKeyPair do
           FileUtils.touch File.join(@ssh_path, 'id_dsa.pub')
         end
 
-        it 'sets public_key_path and private_key_path accordingly' do
+        it 'sets @public_key_path and @private_key_path accordingly' do
           @keypair.should.receive(:private_key_path=).with File.join(@ssh_path, 'id_dsa')
           @keypair.should.receive(:public_key_path=).with File.join(@ssh_path, 'id_dsa.pub')
           @keypair.find_keys
@@ -111,7 +111,7 @@ describe AIOSSHKeyPair do
           FileUtils.touch File.join(@ssh_path, 'id_rsa')
         end
 
-        it 'sets private_key_path accordingly and sets public_key_path to be nil' do
+        it 'sets @private_key_path accordingly and sets @public_key_path to be nil' do
           @keypair.should.receive(:private_key_path=).with File.join(@ssh_path, 'id_rsa')
           @keypair.should.receive(:public_key_path=).with nil
           @keypair.find_keys
@@ -123,7 +123,7 @@ describe AIOSSHKeyPair do
           FileUtils.touch File.join(@ssh_path, 'id_dsa')
         end
 
-        it 'sets private_key_path accordingly and sets public_key_path to be nil' do
+        it 'sets @private_key_path accordingly and sets @public_key_path to be nil' do
           @keypair.should.receive(:private_key_path=).with File.join(@ssh_path, 'id_dsa')
           @keypair.should.receive(:public_key_path=).with nil
           @keypair.find_keys

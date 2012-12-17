@@ -264,7 +264,7 @@
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="475951899"/>
 										<string key="NSReuseIdentifierKey">_NS:945</string>
-										<int key="NSpiFlags">20746</int>
+										<int key="NSpiFlags">28938</int>
 										<double key="NSMaxValue">100</double>
 									</object>
 								</array>
@@ -552,26 +552,6 @@
 						</object>
 					</object>
 					<int key="connectionID">35</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">hidden: self.loading</string>
-						<reference key="source" ref="567592644"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="567592644"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">hidden: self.loading</string>
-							<string key="NSBinding">hidden</string>
-							<string key="NSKeyPath">self.loading</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">38</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">

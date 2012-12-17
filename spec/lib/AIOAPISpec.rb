@@ -44,6 +44,11 @@ describe AIOAPI do
     context 'when token is present' do
       before { @api.token = mock 'token' }
 
+      it 'delegates request to the token object' do
+        @api.token.should.receive(:request).with :post, "#{AIOAPI::API_PATH_PREFIX}/public_keys", parse: :json, params: { name: 'some-name', key: 'some-key' }
+        @api.request :post, '/public_keys', params: { name: 'some-name', key: 'some-key' }
+      end
+
       context 'when an error occurs with response code 401' do
         before do
           response = mock 'response', parsed: '', body: '', :error= => nil, status: 401

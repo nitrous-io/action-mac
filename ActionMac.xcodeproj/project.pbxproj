@@ -77,6 +77,8 @@
 		E9975D541679A94B00A6950A /* AIOSSHKeysPreferencesViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9975D531679A94A00A6950A /* AIOSSHKeysPreferencesViewController.rb */; };
 		E9975D561679BFAC00A6950A /* SSHKeysPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9975D551679BFAC00A6950A /* SSHKeysPreferencesView.xib */; };
 		E9975D5E1679D9A400A6950A /* AIOSSHKeyPair.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9975D5D1679D9A400A6950A /* AIOSSHKeyPair.rb */; };
+		E9975D60167B4F8000A6950A /* AIOPublicKey.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9975D5F167B4F8000A6950A /* AIOPublicKey.rb */; };
+		E9975D62167B4F8400A6950A /* AIOPublicKeyCollection.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9975D61167B4F8400A6950A /* AIOPublicKeyCollection.rb */; };
 		E9987DFF164BADDC00B762FE /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = E9987DFE164BADDC00B762FE /* SSKeychain.m */; };
 		E9987E01164BADE900B762FE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9987E00164BADE900B762FE /* Security.framework */; };
 		E9B0BA861653F35800F695D6 /* AIOSignUpView.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B0BA851653F35800F695D6 /* AIOSignUpView.rb */; };
@@ -181,6 +183,8 @@
 		E9975D551679BFAC00A6950A /* SSHKeysPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSHKeysPreferencesView.xib; sourceTree = "<group>"; };
 		E9975D5B1679CA0C00A6950A /* AIOSSHKeyPairSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOSSHKeyPairSpec.rb; sourceTree = "<group>"; };
 		E9975D5D1679D9A400A6950A /* AIOSSHKeyPair.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOSSHKeyPair.rb; sourceTree = "<group>"; };
+		E9975D5F167B4F8000A6950A /* AIOPublicKey.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOPublicKey.rb; sourceTree = "<group>"; };
+		E9975D61167B4F8400A6950A /* AIOPublicKeyCollection.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOPublicKeyCollection.rb; sourceTree = "<group>"; };
 		E9987DFD164BADDC00B762FE /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		E9987DFE164BADDC00B762FE /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		E9987E00164BADE900B762FE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -491,6 +495,8 @@
 				E995769A166F898B0069C9B4 /* AIOUser.rb */,
 				E946CD16166B6320000AE1E6 /* AIOBox.rb */,
 				E946CD17166B6320000AE1E6 /* AIOBoxCollection.rb */,
+				E9975D5F167B4F8000A6950A /* AIOPublicKey.rb */,
+				E9975D61167B4F8400A6950A /* AIOPublicKeyCollection.rb */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -658,6 +664,8 @@
 				E9975D541679A94B00A6950A /* AIOSSHKeysPreferencesViewController.rb in Resources */,
 				E9975D561679BFAC00A6950A /* SSHKeysPreferencesView.xib in Resources */,
 				E9975D5E1679D9A400A6950A /* AIOSSHKeyPair.rb in Resources */,
+				E9975D60167B4F8000A6950A /* AIOPublicKey.rb in Resources */,
+				E9975D62167B4F8400A6950A /* AIOPublicKeyCollection.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

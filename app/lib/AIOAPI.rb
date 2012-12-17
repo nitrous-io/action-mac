@@ -19,9 +19,9 @@ class AIOAPI
     self.token = @client.password.get_token(username, password, parse: :json, scope: SCOPES)
   end
 
-  def request(verb, path)
+  def request(verb, path, options={})
     return unless @token
-    response = @token.request verb.to_sym, "#{API_PATH_PREFIX}#{path}", parse: :json
+    response = @token.request verb.to_sym, "#{API_PATH_PREFIX}#{path}", { parse: :json }.merge(options)
   rescue OAuth2::Error => e
     response = e.response
     if response.status == 401 # token is invalid. destroy it.

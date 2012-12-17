@@ -5,7 +5,7 @@ class AIOAppController
 
   attr_accessor :status_menu_controller, :welcome_window_controller, :preferences_window_controller
   attr_accessor :api, :pusher, :jobs, :ssh_key_pair
-  attr_accessor :current_user, :boxes
+  attr_accessor :current_user, :boxes, :public_keys
 
   def initialize
     Kernel.const_set :AIOApp, self
@@ -21,9 +21,10 @@ class AIOAppController
     end
 
     self.boxes = AIOBoxCollection.new
+    self.public_keys = AIOPublicKeyCollection.new
     self.current_user = AIOUser.new
 
-    observe(self, 'api.token'      ) { |v,c| sign_out_if_token_becomes_nil  v,c }
+    observe(self, 'api.token'      ) { |v,c| sign_out_if_token_becomes_nil v,c }
     observe(self, 'api.signed_in'  ) { |v,c| switch_view_on_sign_in_or_out v,c }
     observe(self, 'current_user.id') { |v,c| connect_to_pusher_when_ready  v,c }
     observe(self, 'pusher.ready'   ) { |v,c| connect_to_pusher_when_ready  v,c }
