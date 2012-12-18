@@ -19,7 +19,7 @@ class AIOPusher
     end
 
     def post_notification(name, message: message)
-      NSNotificationCenter.defaultCenter.postNotificationName name, object: self, userInfo: { data: message }
+      NSNotificationCenter.defaultCenter.postNotificationName 'AIOPusherNotification', object: self, userInfo: { name: name, message: message }
     end
   end
 
@@ -35,8 +35,7 @@ class AIOPusher
     @web_view = WebView.alloc.initWithFrame NSZeroRect, frameName: nil, groupName: nil
     @bridge = Bridge.new
 
-    NSNotificationCenter.defaultCenter.addObserver self, selector: 'aio_pusher:', name: 'aio:pusher', object: nil
-    NSNotificationCenter.defaultCenter.addObserver self, selector: 'aio_box_updated:', name: 'aio:box_updated', object: nil
+    NSNotificationCenter.defaultCenter.addObserver self, selector: 'pusher_did_notify:', name: 'AIOPusherNotification', object: @bridge
 
     @web_view.setFrameLoadDelegate self
     @web_view.mainFrame.loadHTMLString """
@@ -54,7 +53,7 @@ class AIOPusher
   end
 
   def finalize
-    NSNotificationCenter.defaultCenter.removeObserver self, name: 'aio:pusher', object: nil
+    NSNotificationCenter.defaultCenter.removeObserver self, name: 'AIOPusherNotification', object: @bridge
   end
 
   def connect
@@ -77,15 +76,17 @@ class AIOPusher
   end
 
   # callbacks
-  def aio_pusher(notification)
-    state = notification.userInfo[:data]
-    self.connected = state == 'connected'
-  end
-
-  def aio_box_updated(notification)
-    if box_attrs = JSON.parse(notification.userInfo[:data])['box']
-      if box = AIOApp.boxes.find_by_id(box_attrs['id'])
-        box.update_attributes box_attrs
+  def pusher_did_notify(notification)
+    data = notification.userInfo
+    message = data[:message]
+    case data[:name]
+    when 'aio:pusher'
+      self.connected = (message == 'connected')
+    when 'aio:box_updated'
+      if box_attrs = JSON.parse(message)['box']
+        if box = AIOApp.boxes.find_by_id(box_attrs['id'])
+          box.update_attributes box_attrs
+        end
       end
     end
   end
