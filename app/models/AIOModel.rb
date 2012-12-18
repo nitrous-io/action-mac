@@ -27,5 +27,5 @@ class AIOModel
   def api
     AIOApp.api
   end
-end if RUBY_ENGINE == 'macruby' || RUBY_ENGINE == 'rubymotion'
+end if RUBY_ENGINE == 'macruby'
 

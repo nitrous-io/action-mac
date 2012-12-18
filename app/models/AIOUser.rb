@@ -26,5 +26,5 @@ end
 # Cocoa-specific
 class AIOUser
   dependent_property :username_and_full_name, [:username, :full_name]
-end if RUBY_ENGINE == 'macruby' || RUBY_ENGINE == 'rubymotion'
+end if RUBY_ENGINE == 'macruby'
 

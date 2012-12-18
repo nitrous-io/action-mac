@@ -70,4 +70,4 @@ class AIOBox
   dependent_property :can_start,          [:state]
   dependent_property :can_restart,        [:state]
   dependent_property :can_shut_down,      [:state]
-end if RUBY_ENGINE == 'macruby' || RUBY_ENGINE == 'rubymotion'
+end if RUBY_ENGINE == 'macruby'

@@ -102,4 +102,4 @@ end
 class AIOSSHKeyPair
   dependent_property :public_key_md5_fingerprint, [:public_key]
   dependent_property :can_generate_keys,          [:private_key_path]
-end if RUBY_ENGINE == 'macruby' || RUBY_ENGINE == 'rubymotion'
+end if RUBY_ENGINE == 'macruby'

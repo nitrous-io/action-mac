@@ -67,4 +67,4 @@ class AIOJob
   def on_complete
     NSNotificationCenter.defaultCenter.postNotificationName 'AIOJobCompletionNotification', object: self
   end
-end if RUBY_ENGINE == 'macruby' || RUBY_ENGINE == 'rubymotion'
+end if RUBY_ENGINE == 'macruby'
