@@ -21,13 +21,13 @@ class AIOStatusMenuController
     @status_item.setMenu @menu
 
     observe(AIOApp, 'boxes.content') { |v,c| boxes_content_did_change v,c }
-    NSNotificationCenter.defaultCenter.addObserver self, selector: 'job_completed:', name: 'AIOJobCompleted', object: nil
+    NSNotificationCenter.defaultCenter.addObserver self, selector: 'job_completed:', name: 'AIOJobCompletionNotification', object: nil
 
     fetch_current_user
   end
 
   def teardown_menu
-    NSNotificationCenter.defaultCenter.removeObserver self, name: 'AIOJobCompleted', object: nil
+    NSNotificationCenter.defaultCenter.removeObserver self, name: 'AIOJobCompletionNotification', object: nil
     stop_observing AIOApp, 'boxes.content'
 
     NSStatusBar.systemStatusBar.removeStatusItem @status_item
