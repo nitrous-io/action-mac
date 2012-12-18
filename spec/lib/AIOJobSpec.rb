@@ -84,6 +84,7 @@ describe AIOJob do
     context 'when cancelled' do
       it 'does not run the task' do
         @job.cancel!
+        @job.should.not.receive :on_complete
         @job.perform
         @fruit.should.equal 'apple'
         @job.running.should.equal false
@@ -94,7 +95,8 @@ describe AIOJob do
     end
 
     context 'when not cancelled' do
-      it 'marks job as running, runs the task, and marks job as completed and no longer running' do
+      it 'marks job as running, runs the task, and marks job as completed and no longer running, and calls on_complete' do
+        @job.should.receive :on_complete
         @job.perform
         @fruit.should.equal 'orange'
         @job.running.should.equal false
@@ -112,7 +114,8 @@ describe AIOJob do
           end
         end
 
-        it 'marks job as running, runs the task, and marks job as completed and no longer running' do
+        it 'marks job as running, runs the task, and marks job as completed and no longer running, and calls on_complete' do
+          @job.should.receive :on_complete
           @job.instance_variable_set :@failed, false
           @job.perform
           @fruit.should.equal 'orange'
@@ -133,6 +136,7 @@ describe AIOJob do
         end
 
         it 'marks job as failed, and records last error' do
+          @job.should.not.receive :on_complete
           @job.perform
           @job.running.should.equal false
           @job.completed.should.equal false

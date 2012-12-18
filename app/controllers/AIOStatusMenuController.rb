@@ -5,6 +5,7 @@ class AIOStatusMenuController
 
   BOXES_MENU_SEPARATOR_TAG = 80435
 
+  attr_accessor :ssh_key_pair_window_controller
   attr_accessor :menu
 
   def initialize
@@ -20,18 +21,17 @@ class AIOStatusMenuController
     @status_item.setMenu @menu
 
     observe(AIOApp, 'boxes.content') { |v,c| boxes_content_did_change v,c }
+    NSNotificationCenter.defaultCenter.addObserver self, selector: 'job_completed:', name: 'AIOJobCompleted', object: nil
 
-    AIOApp.jobs.add_new 'current_user.fetch' do
-      AIOApp.current_user.fetch
-      fetch_boxes
-    end
+    fetch_current_user
   end
 
   def teardown_menu
+    NSNotificationCenter.defaultCenter.removeObserver self, name: 'AIOJobCompleted', object: nil
+    stop_observing AIOApp, 'boxes.content'
+
     NSStatusBar.systemStatusBar.removeStatusItem @status_item
     @status_item = nil
-
-    stop_observing AIOApp, 'boxes.content'
   end
 
   def did_click_open_action_io_website_menu_item(sender)
@@ -44,13 +44,25 @@ class AIOStatusMenuController
     AIOApp.open_preferences_window
   end
 
-  private
+  def fetch_current_user
+    AIOApp.jobs.add_new 'current_user.fetch' do
+      AIOApp.current_user.fetch
+    end
+  end
+
   def fetch_boxes
     AIOApp.jobs.add_new 'boxes.fetch' do
       AIOApp.boxes.fetch
     end
   end
 
+  def fetch_public_keys
+    AIOApp.jobs.add_new 'public_keys.fetch' do
+      AIOApp.public_keys.fetch
+    end
+  end
+
+  private
   def boxes_content_did_change(value, change)
     case change[NSKeyValueChangeKindKey]
       when NSKeyValueChangeInsertion
@@ -82,6 +94,43 @@ class AIOStatusMenuController
     Dispatch::Queue.main.async do
       if box_menu_controller = @box_controller_mapping.delete(box)
         @menu.removeItem box_menu_controller.menu_item
+      end
+    end
+  end
+
+  def check_whether_public_key_is_registered
+    ssh_key_pair = AIOApp.ssh_key_pair
+    ssh_key_pair.find_keys
+
+    if ssh_key_pair.private_key_path.nil?
+      Dispatch::Queue.main.async do
+        self.ssh_key_pair_window_controller = AIOSSHKeyPairWindowController.new
+        @ssh_key_pair_window_controller.show_generate_keypair_window
+      end
+      return
+    end
+    if ssh_key_pair.public_key_path
+      ssh_key_pair.read_public_key
+      md5_fingerprint = ssh_key_pair.public_key_md5_fingerprint
+      return if AIOApp.public_keys.models.find { |k| k.md5_fingerprint == md5_fingerprint }
+    end
+    Dispatch::Queue.main.async do
+      self.ssh_key_pair_window_controller = AIOSSHKeyPairWindowController.new
+      @ssh_key_pair_window_controller.show_register_keypair_window
+    end
+  end
+
+  def job_completed(notification)
+    job = notification.object
+    return if job.cancelled
+
+    case job.name
+    when 'current_user.fetch'
+      fetch_boxes
+      fetch_public_keys
+    when 'public_keys.fetch'
+      concurrent_queue do
+        check_whether_public_key_is_registered
       end
     end
   end

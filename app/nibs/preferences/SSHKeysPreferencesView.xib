@@ -96,7 +96,7 @@
 										<string key="NSFrame">{{5, 4}, {306, 17}}</string>
 										<reference key="NSSuperview" ref="850619667"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="682186024"/>
+										<reference key="NSNextKeyView" ref="456920106"/>
 										<string key="NSReuseIdentifierKey">_NS:1535</string>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSTextFieldCell" key="NSCell" id="373993395">
@@ -112,6 +112,35 @@
 											<reference key="NSControlView" ref="24522708"/>
 											<reference key="NSBackgroundColor" ref="898001870"/>
 											<reference key="NSTextColor" ref="1042325084"/>
+										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+									</object>
+									<object class="NSTextField" id="456920106">
+										<reference key="NSNextResponder" ref="850619667"/>
+										<int key="NSvFlags">268</int>
+										<string key="NSFrame">{{5, 4}, {306, 17}}</string>
+										<reference key="NSSuperview" ref="850619667"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="682186024"/>
+										<string key="NSReuseIdentifierKey">_NS:1535</string>
+										<bool key="NSEnabled">YES</bool>
+										<object class="NSTextFieldCell" key="NSCell" id="951273715">
+											<int key="NSCellFlags">68157504</int>
+											<int key="NSCellFlags2">272630784</int>
+											<string key="NSContents">Not Found</string>
+											<reference key="NSSupport" ref="26"/>
+											<string key="NSCellIdentifier">_NS:1535</string>
+											<reference key="NSControlView" ref="456920106"/>
+											<reference key="NSBackgroundColor" ref="898001870"/>
+											<object class="NSColor" key="NSTextColor" id="284529955">
+												<int key="NSColorSpace">6</int>
+												<string key="NSCatalogName">System</string>
+												<string key="NSColorName">disabledControlTextColor</string>
+												<object class="NSColor" key="NSColor">
+													<int key="NSColorSpace">3</int>
+													<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
+												</object>
+											</object>
 										</object>
 										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									</object>
@@ -189,7 +218,7 @@
 										<string key="NSFrame">{{5, 4}, {306, 17}}</string>
 										<reference key="NSSuperview" ref="17510976"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="19155592"/>
+										<reference key="NSNextKeyView" ref="562661558"/>
 										<string key="NSReuseIdentifierKey">_NS:1535</string>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSTextFieldCell" key="NSCell" id="205258277">
@@ -201,6 +230,27 @@
 											<reference key="NSControlView" ref="500470629"/>
 											<reference key="NSBackgroundColor" ref="898001870"/>
 											<reference key="NSTextColor" ref="1042325084"/>
+										</object>
+										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+									</object>
+									<object class="NSTextField" id="562661558">
+										<reference key="NSNextResponder" ref="17510976"/>
+										<int key="NSvFlags">268</int>
+										<string key="NSFrame">{{5, 4}, {306, 17}}</string>
+										<reference key="NSSuperview" ref="17510976"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="19155592"/>
+										<string key="NSReuseIdentifierKey">_NS:1535</string>
+										<bool key="NSEnabled">YES</bool>
+										<object class="NSTextFieldCell" key="NSCell" id="874276062">
+											<int key="NSCellFlags">68157504</int>
+											<int key="NSCellFlags2">272630784</int>
+											<string key="NSContents">Not Found</string>
+											<reference key="NSSupport" ref="26"/>
+											<string key="NSCellIdentifier">_NS:1535</string>
+											<reference key="NSControlView" ref="562661558"/>
+											<reference key="NSBackgroundColor" ref="898001870"/>
+											<reference key="NSTextColor" ref="284529955"/>
 										</object>
 										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									</object>
@@ -287,6 +337,7 @@
 						<string key="NSFrame">{{557, 21}, {25, 25}}</string>
 						<reference key="NSSuperview" ref="623893369"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:1598</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="353068555">
@@ -509,46 +560,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">hidden: delegate.controller.ssh_key_pair.public_key_path</string>
-						<reference key="source" ref="55802534"/>
-						<reference key="destination" ref="1004"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="55802534"/>
-							<reference key="NSDestination" ref="1004"/>
-							<string key="NSLabel">hidden: delegate.controller.ssh_key_pair.public_key_path</string>
-							<string key="NSBinding">hidden</string>
-							<string key="NSKeyPath">delegate.controller.ssh_key_pair.public_key_path</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSIsNil</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">154</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">hidden: delegate.controller.ssh_key_pair.public_key_path</string>
-						<reference key="source" ref="351566088"/>
-						<reference key="destination" ref="1004"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="351566088"/>
-							<reference key="NSDestination" ref="1004"/>
-							<string key="NSLabel">hidden: delegate.controller.ssh_key_pair.public_key_path</string>
-							<string key="NSBinding">hidden</string>
-							<string key="NSKeyPath">delegate.controller.ssh_key_pair.public_key_path</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSIsNil</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">157</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: delegate.controller.ssh_key_pair.public_key_path</string>
 						<reference key="source" ref="500470629"/>
 						<reference key="destination" ref="1004"/>
@@ -578,6 +589,46 @@
 						</object>
 					</object>
 					<int key="connectionID">173</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: delegate.controller.ssh_key_pair.private_key_path</string>
+						<reference key="source" ref="456920106"/>
+						<reference key="destination" ref="1004"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="456920106"/>
+							<reference key="NSDestination" ref="1004"/>
+							<string key="NSLabel">hidden: delegate.controller.ssh_key_pair.private_key_path</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">delegate.controller.ssh_key_pair.private_key_path</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSIsNotNil</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">186</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: delegate.controller.ssh_key_pair.public_key_path</string>
+						<reference key="source" ref="562661558"/>
+						<reference key="destination" ref="1004"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="562661558"/>
+							<reference key="NSDestination" ref="1004"/>
+							<string key="NSLabel">hidden: delegate.controller.ssh_key_pair.public_key_path</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">delegate.controller.ssh_key_pair.public_key_path</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSIsNotNil</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">192</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -654,6 +705,7 @@
 						<reference key="object" ref="601517059"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="24522708"/>
+							<reference ref="456920106"/>
 						</array>
 						<reference key="parent" ref="623893369"/>
 					</object>
@@ -722,6 +774,7 @@
 						<reference key="object" ref="351566088"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="500470629"/>
+							<reference ref="562661558"/>
 						</array>
 						<reference key="parent" ref="623893369"/>
 					</object>
@@ -761,6 +814,32 @@
 						<reference key="object" ref="485365871"/>
 						<reference key="parent" ref="623893369"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">181</int>
+						<reference key="object" ref="456920106"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="951273715"/>
+						</array>
+						<reference key="parent" ref="601517059"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">182</int>
+						<reference key="object" ref="951273715"/>
+						<reference key="parent" ref="456920106"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">187</int>
+						<reference key="object" ref="562661558"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="874276062"/>
+						</array>
+						<reference key="parent" ref="351566088"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">188</int>
+						<reference key="object" ref="874276062"/>
+						<reference key="parent" ref="562661558"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -784,6 +863,10 @@
 				<string key="134.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="135.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="170.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="181.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="182.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="187.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="188.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="82.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="83.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="88.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -794,7 +877,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">177</int>
+			<int key="maxID">192</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -817,20 +900,6 @@
 						</object>
 						<object class="IBActionInfo" key="did_click_rescan_button:">
 							<string key="name">did_click_rescan_button:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="generating">id</string>
-						<string key="registering">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="generating">
-							<string key="name">generating</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="registering">
-							<string key="name">registering</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>

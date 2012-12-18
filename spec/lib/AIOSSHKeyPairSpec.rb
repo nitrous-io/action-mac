@@ -52,7 +52,10 @@ describe AIOSSHKeyPair do
         @keypair.generate!
 
         File.read(private_key_path).should.equal 'some-private-key'
+        File.stat(private_key_path).mode.to_s(8)[2..5] == '0600'
+
         File.read(public_key_path).should.equal 'some-public-key'
+        File.stat(public_key_path).mode.to_s(8)[2..5] == '0600'
       end
     end
   end
@@ -175,9 +178,14 @@ describe AIOSSHKeyPair do
             File.open(File.join(@ssh_path, 'id_rsa'), 'w') { |f| f.write @private_key }
           end
 
-          it 'extracts public key from private key' do
+          it 'extracts public key from private key and writes it to file' do
+            public_key_path = File.join @ssh_path, 'id_rsa.pub'
+            @keypair.should.receive(:public_key_path=).once.with nil
+            @keypair.should.receive(:public_key_path=).once.with public_key_path
             @keypair.should.receive(:public_key=).with @public_key
             @keypair.read_public_key.should.equal @public_key
+            File.read(public_key_path).should.equal @public_key
+            File.stat(public_key_path).mode.to_s(8)[2..5] == '0600'
           end
         end
 
@@ -190,9 +198,14 @@ describe AIOSSHKeyPair do
           end
 
           context 'when passphrase is correct' do
-            it 'extracts public key form private key' do
+            it 'extracts public key form private key and writes it to file' do
+              public_key_path = File.join @ssh_path, 'id_rsa.pub'
+              @keypair.should.receive(:public_key_path=).once.with nil
+              @keypair.should.receive(:public_key_path=).once.with public_key_path
               @keypair.should.receive(:public_key=).with @public_key
               @keypair.read_public_key('foobarbaz').should.equal @public_key
+              File.read(public_key_path).should.equal @public_key
+              File.stat(public_key_path).mode.to_s(8)[2..5] == '0600'
             end
           end
 
@@ -219,6 +232,38 @@ describe AIOSSHKeyPair do
           @keypair.should.receive(:public_key=).with nil
           @keypair.read_public_key.should.be.nil
         end
+      end
+    end
+  end
+
+  describe '#public_key_md5_fingerprint' do
+    context 'when @public_key is nil' do
+      before do
+        @keypair.public_key = nil
+      end
+
+      it 'returns nil' do
+        @keypair.public_key_md5_fingerprint.should.be.nil
+      end
+    end
+
+    context 'when @public_key is invalid' do
+      before do
+        @keypair.public_key = 'invalid public key'
+      end
+
+      it 'returns nil' do
+        @keypair.public_key_md5_fingerprint.should.be.nil
+      end
+    end
+
+    context 'when @public_key is valid' do
+      before do
+        @keypair.public_key = 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAYQDHCDhLX+JlcAyoIPRAbUhRQtcb/Gkr4J6dj5VEthj//UT9KeTgSgZTgtHSKswz0jQT0Xp4VmRTkIbbSp8DspQ/CxG7C7UDkIg2DiX/Pr7SavrohGCROhBu3YVj6JXtq/E= foo@bar'
+      end
+
+      it 'returns an md5 fingerprint for the key' do
+        @keypair.public_key_md5_fingerprint.should.equal '1d:7e:a2:f9:ba:cc:50:5f:e5:cc:45:8d:0e:21:ac:87'
       end
     end
   end

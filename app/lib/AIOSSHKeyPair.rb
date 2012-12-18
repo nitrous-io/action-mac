@@ -20,9 +20,12 @@ class AIOSSHKeyPair
       File.open private_key_path, 'w' do |f|
         f.write keypair.private_key
       end
+      FileUtils.chmod 0600, private_key_path
+
       File.open public_key_path, 'w' do |f|
         f.write keypair.ssh_public_key
       end
+      FileUtils.chmod 0600, public_key_path
 
       self.private_key_path = private_key_path
       self.public_key_path = public_key_path
@@ -61,9 +64,24 @@ class AIOSSHKeyPair
         raise PassphraseRequiredError
       end
       keypair = SSHKey.new private_key_data, passphrase: passphrase, comment: comment_fragment
+
+      public_key_path = @private_key_path + '.pub'
+      File.open public_key_path, 'w' do |f|
+        f.write keypair.ssh_public_key
+      end
+      FileUtils.chmod 0600, public_key_path
+
+      self.public_key_path = public_key_path
       return self.public_key = keypair.ssh_public_key
     end
     self.public_key = nil
+  end
+
+  def public_key_md5_fingerprint
+    return unless @public_key
+    if key_fragment = @public_key[/\A\s*ssh-(rsa|dss)\s+([a-zA-Z0-9\+\/=]+)/, 2]
+      Digest::MD5.hexdigest(Base64.decode64 key_fragment).gsub(/(.{2})(?=.)/, '\1:\2')
+    end
   end
 
   def can_generate_keys
@@ -82,5 +100,6 @@ end
 
 # Cocoa-specific
 class AIOSSHKeyPair
-  dependent_property :can_generate_keys, [:private_key_path]
+  dependent_property :public_key_md5_fingerprint, [:public_key]
+  dependent_property :can_generate_keys,          [:private_key_path]
 end if RUBY_ENGINE == 'macruby' || RUBY_ENGINE == 'rubymotion'

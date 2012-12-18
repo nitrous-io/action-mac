@@ -47,8 +47,13 @@ class AIOJob
           @completed = true
           @running = false
         end
+        on_complete
       end
     end
+  end
+
+  protected
+  def on_complete
   end
 end
 
@@ -57,5 +62,9 @@ class AIOJob
   def self.async(&block)
     # use GCD instead of Thread
     Dispatch::Queue.concurrent.async &block
+  end
+
+  def on_complete
+    NSNotificationCenter.defaultCenter.postNotificationName 'AIOJobCompleted', object: self
   end
 end if RUBY_ENGINE == 'macruby' || RUBY_ENGINE == 'rubymotion'

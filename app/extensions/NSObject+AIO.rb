@@ -4,11 +4,8 @@ class NSObject
   end
 
   def self.dependent_property(name, dependencies)
-    metaclass = class << self; self; end
-    metaclass.instance_eval do
-      define_method :"keyPathsForValuesAffecting#{name.to_s.capitalize}" do
-        NSSet.setWithArray dependencies
-      end
+    define_singleton_method :"keyPathsForValuesAffecting#{name.to_s.capitalize}" do
+      NSSet.setWithArray dependencies
     end
   end
 end
