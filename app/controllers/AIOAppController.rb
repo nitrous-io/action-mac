@@ -4,12 +4,13 @@ class AIOAppController
   include AIOObserver
 
   attr_accessor :status_menu_controller, :welcome_window_controller, :preferences_window_controller
-  attr_accessor :api, :pusher, :jobs, :ssh_key_pair
+  attr_accessor :store, :api, :pusher, :jobs, :ssh_key_pair
   attr_accessor :current_user, :boxes, :public_keys
 
   def initialize
     Kernel.const_set :AIOApp, self
 
+    self.store = AIOKeyValueStore.new
     self.api = AIOAPICocoa.new
     self.jobs = AIOJobManager.new
     NSTimer.scheduledTimerWithTimeInterval JOB_PROCESSING_INTERVAL, target: self, selector: :process_jobs, userInfo: nil, repeats: true

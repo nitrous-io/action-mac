@@ -66,13 +66,24 @@ class AIOStatusMenuController
   def boxes_content_did_change(value, change)
     case change[NSKeyValueChangeKindKey]
       when NSKeyValueChangeInsertion
-        change[NSKeyValueChangeNewKey].each do |added_box|
-          add_box_menu_item added_box
-        end
+        add_new_items change
       when NSKeyValueChangeRemoval
-        change[NSKeyValueChangeOldKey].each do |removed_box|
-          remove_box_menu_item removed_box
-        end
+        remove_old_items change
+      when NSKeyValueChangeReplacement
+        remove_old_items change
+        add_new_items change
+    end
+  end
+
+  def add_new_items(change)
+    change[NSKeyValueChangeNewKey].each do |added_box|
+      add_box_menu_item added_box
+    end
+  end
+
+  def remove_old_items(change)
+    change[NSKeyValueChangeOldKey].each do |removed_box|
+      remove_box_menu_item removed_box
     end
   end
 
