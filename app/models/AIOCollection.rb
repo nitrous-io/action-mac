@@ -58,15 +58,15 @@ class AIOCollection
       new_objects = []
 
       model_attrs.each do |attr|
-        unless obj = find_by_id(attr['id'])
-          obj = model.new
-          new_objects.push obj
+        if obj = find_by_id(attr['id'])
+          obj.update_attributes attr
+        else
+          new_objects.push model.new(attr)
         end
-        obj.update_attributes attr
       end
 
-      add_objects(new_objects)
-      remove_objects(removed_objects)
+      add_objects new_objects
+      remove_objects removed_objects
     end
   end
 end

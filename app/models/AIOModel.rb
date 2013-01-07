@@ -2,7 +2,7 @@ class AIOModel
   attr_accessor :id
 
   def initialize(attrs={})
-    update_attributes(attrs)
+    update_attributes attrs
   end
 
   def update_attributes(attrs={})
