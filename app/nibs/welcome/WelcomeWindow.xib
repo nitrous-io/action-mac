@@ -47,7 +47,6 @@
 					<string key="NSFrameSize">{480, 334}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
-					<reference key="NSNextKeyView"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {2560, 1418}}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
@@ -121,7 +120,7 @@
 				<boolean value="YES" key="127.IBNSWindowAutoPositionCentersHorizontal"/>
 				<boolean value="NO" key="127.IBNSWindowAutoPositionCentersVertical"/>
 				<string key="127.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="127.NSWindowTemplate.visibleAtLaunch"/>
+				<boolean value="NO" key="127.NSWindowTemplate.visibleAtLaunch"/>
 				<string key="128.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>

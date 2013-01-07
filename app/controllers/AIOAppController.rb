@@ -16,9 +16,7 @@ class AIOAppController
     self.pusher = AIOPusher.new
 
     self.ssh_key_pair = AIOSSHKeyPair.new
-    concurrent_queue do
-      @ssh_key_pair.find_keys
-    end
+    concurrent_queue { @ssh_key_pair.find_keys }
 
     self.boxes = AIOBoxCollection.new
     self.public_keys = AIOPublicKeyCollection.new
@@ -47,9 +45,7 @@ class AIOAppController
 
   def open_welcome_window
     self.welcome_window_controller = AIOWelcomeWindowController.new
-    window = @welcome_window_controller.window
-    window.makeKeyAndOrderFront nil
-    window.orderFrontRegardless
+    @welcome_window_controller.show_window
   end
 
   def close_welcome_window
@@ -74,9 +70,7 @@ class AIOAppController
 
   def open_preferences_window
     self.preferences_window_controller ||= AIOPreferencesWindowController.new
-    window = @preferences_window_controller.window
-    window.makeKeyAndOrderFront nil
-    window.orderFrontRegardless
+    @preferences_window_controller.show_window
   end
 
   def close_preferences_window

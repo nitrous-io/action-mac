@@ -1,6 +1,8 @@
 class AIOPreferencesWindowController < NSWindowController
   attr_accessor :toolbar, :empty_view
-  attr_accessor :general_preferences_view_controller, :account_preferences_view_controller, :ssh_keys_preferences_view_controller
+  attr_accessor :general_preferences_view_controller,
+                :account_preferences_view_controller,
+                :ssh_keys_preferences_view_controller,
 
   def init
     if super.initWithWindowNibName 'PreferencesWindow'
@@ -11,6 +13,11 @@ class AIOPreferencesWindowController < NSWindowController
   def windowDidLoad
     self.toolbar.setSelectedItemIdentifier 'GeneralPreferences'
     show_general_preferences_view nil
+  end
+
+  def show_window
+    window.makeKeyAndOrderFront nil
+    NSApp.activateIgnoringOtherApps true
   end
 
   def show_general_preferences_view(sender)

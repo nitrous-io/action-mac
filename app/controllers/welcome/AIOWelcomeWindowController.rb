@@ -12,6 +12,11 @@ class AIOWelcomeWindowController < NSWindowController
     end
   end
 
+  def show_window
+    window.makeKeyAndOrderFront nil
+    NSApp.activateIgnoringOtherApps true
+  end
+
   def show_welcome_view
     window.setContentView @welcome_view_controller.view
   end

@@ -44,7 +44,7 @@ class AIOSSHKeyPairWindowController < NSWindowController
     window = self.window
     window.setContentView view
     window.makeKeyAndOrderFront nil
-    window.orderFrontRegardless
+    NSApp.activateIgnoringOtherApps true
   end
 
   def ignore_already_registered
