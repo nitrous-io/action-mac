@@ -59,6 +59,117 @@ describe AIOObserver do
       @obj2.foo = 'lala'
       foo.should.equal 3
     end
+
+    describe 'option "always"' do
+      context 'when not given' do
+        it 'does not notify when change[NSKeyValueChangeOldKey] and change[NSKeyValueChangeNewKey] have the same value' do
+          notification_received = false
+          @obj2.foo = 0
+          @obj.observe @obj2, 'foo' do |value, change|
+            notification_received = true
+          end
+          @obj2.foo = 0
+          notification_received.should.equal false
+        end
+      end
+
+      context 'when false' do
+        it 'does not notify when change[NSKeyValueChangeOldKey] and change[NSKeyValueChangeNewKey] have the same value' do
+          notification_received = false
+          @obj2.foo = 0
+          @obj.observe @obj2, 'foo' do |value, change|
+            notification_received = true
+          end
+          @obj2.foo = 0
+          notification_received.should.equal false
+        end
+      end
+
+      context 'when true' do
+        it 'notifies even when change[NSKeyValueChangeOldKey] and change[NSKeyValueChangeNewKey] have the same value' do
+          notification_received = false
+          @obj2.foo = 0
+          @obj.observe @obj2, 'foo', always: true do |value, change|
+            notification_received = true
+          end
+          @obj2.foo = 0
+          notification_received.should.equal true
+        end
+      end
+    end
+
+    describe 'option "initial"' do
+      context 'when not given' do
+        it 'does not send an initial notification' do
+          foo = 0
+          @obj2.foo = 1
+
+          foo.should.equal 0
+
+          @obj.observe @obj2, 'foo' do |value, change|
+            foo = value
+          end
+
+          foo.should.equal 0
+        end
+      end
+
+      context 'when false' do
+        it 'does not send an initial notification' do
+          foo = 0
+          @obj2.foo = 1
+
+          foo.should.equal 0
+
+          @obj.observe @obj2, 'foo', initial: false do |value, change|
+            foo = value
+          end
+
+          foo.should.equal 0
+        end
+      end
+
+      context 'when true' do
+        it 'sends an initial notification' do
+          foo = 0
+          @obj2.foo = 1
+
+          foo.should.equal 0
+
+          @obj.observe @obj2, 'foo', initial: true do |value, change|
+            foo = value
+          end
+
+          foo.should.equal 1
+        end
+
+        it 'does not affect prior observations on same target and keypath that has option initial: false' do
+          foo = 0
+          bar = 0
+          baz = 0
+
+          @obj2.foo = 1
+
+          foo.should.equal 0
+          bar.should.equal 0
+
+          @obj.observe @obj2, 'foo', initial: true do |value, change|
+            foo = value
+          end
+          foo.should.equal 1
+
+          @obj.observe @obj2, 'foo', initial: false do |value, change|
+            bar = value
+          end
+          bar.should.equal 0
+
+          @obj.observe @obj2, 'foo', initial: true do |value, change|
+            baz = value
+          end
+          baz.should.equal 1
+        end
+      end
+    end
   end
 
   describe '#stop_observing' do

@@ -1,22 +1,41 @@
 framework 'Foundation'
 
 module AIOObserver
-  def observe(target, key_path, &block)
-    @_aio_observer_callbacks ||= {}
-    if ((@_aio_observer_callbacks["#{target.object_id} #{key_path}"] ||= []) << block).count == 1
-      target.addObserver self, forKeyPath: key_path, options: NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld, context: nil
+  def observe(target, key_path, options={}, &block)
+    @_aio_observations ||= {}
+    observations_for_target = @_aio_observations[target.object_id] ||= {}
+    observations = observations_for_target[key_path] ||= []
+    observation = { callback: block, always: options[:always] || false }
+    observations << observation
+
+    if observations.count == 1
+      observing_options = NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
+      target.addObserver self, forKeyPath: key_path, options: observing_options, context: nil
+    end
+
+    if options[:initial]
+      observeValueForKeyPath key_path, ofObject: target, change: {
+        NSKeyValueChangeKindKey => NSKeyValueChangeSetting,
+        NSKeyValueChangeNewKey => target.valueForKeyPath(key_path)
+      }, context: nil
     end
   end
 
   def stop_observing(target, key_path)
     target.removeObserver self, forKeyPath: key_path
-    @_aio_observer_callbacks.delete "#{target.object_id} #{key_path}"
+    if @_aio_observations && (observations_for_target = @_aio_observations[target.object_id])
+      observations_for_target.delete key_path
+    end
   end
 
   def observeValueForKeyPath(key_path, ofObject: target, change: change, context: context)
-    if change[NSKeyValueChangeNewKey] != change[NSKeyValueChangeOldKey]
-      @_aio_observer_callbacks["#{target.object_id} #{key_path}"].each do |callback|
-        callback.call target.valueForKeyPath(key_path), change
+    if @_aio_observations && (observations_for_target = @_aio_observations[target.object_id])
+      if observations = observations_for_target[key_path]
+        observations.each do |observation|
+          if observation[:always] || change[NSKeyValueChangeNewKey] != change[NSKeyValueChangeOldKey]
+            observation[:callback].call target.valueForKeyPath(key_path), change
+          end
+        end
       end
     end
   end
