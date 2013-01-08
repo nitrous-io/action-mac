@@ -7,31 +7,45 @@ class AIOBoxSSHTunnels
 
   attr_accessor :box
   attr_accessor :local_tunnels, :remote_tunnels
+  attr_accessor :enabled
+  attr_accessor :state
 
   def initialize(box)
+    self.enabled = false
     self.box = box
-    load_tunnels
+    load_data
+    observe(self, 'enabled') { |v,c| enabled_did_change v,c }
     %w(local_tunnels remote_tunnels).each do |t|
       observe(self, t, initial: true) { |v,c| tunnels_array_did_change v,c }
     end
   end
 
   def finalize
+    stop_observing self, 'enabled'
     stop_observing self, 'local_tunnels'
     stop_observing self, 'remote_tunnels'
   end
 
-  def load_tunnels
+  private
+  def load_data
+    self.enabled = AIOApp.store.read(tunnels_enabled_key) || false
     self.local_tunnels  = parse_tunnels_hash_array(AIOApp.store.read local_tunnels_key)  || []
     self.remote_tunnels = parse_tunnels_hash_array(AIOApp.store.read remote_tunnels_key) || []
   end
 
   def save_tunnels
-    AIOApp.store.write "box:#{@box.id}:local_tunnels", tunnel_objects_to_hash_array(self.local_tunnels)
-    AIOApp.store.write "box:#{@box.id}:remote_tunnels", tunnel_objects_to_hash_array(self.remote_tunnels)
+    AIOApp.store.write local_tunnels_key, tunnel_objects_to_hash_array(self.local_tunnels)
+    AIOApp.store.write remote_tunnels_key, tunnel_objects_to_hash_array(self.remote_tunnels)
   end
 
-  private
+  def enabled_did_change(value, change)
+    AIOApp.store.write tunnels_enabled_key, self.enabled
+  end
+
+  def tunnels_enabled_key
+    "box:#{@box.id}:tunnels_enabled" if @box
+  end
+
   def local_tunnels_key
     "box:#{@box.id}:local_tunnels" if @box
   end
