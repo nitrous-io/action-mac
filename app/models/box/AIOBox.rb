@@ -1,6 +1,12 @@
 require 'AIOModel'
 
 class AIOBox < AIOModel
+  STATE_RUNNING = 'running'
+  STATE_STOPPED = 'stopped'
+  STATE_TERMINATED = 'terminated'
+  STATE_SUSPENDED = 'suspended'
+  STATE_DEFAULT = 'default'
+
   attr_accessor :name, :state, :host, :port
 
   def state_description
@@ -9,17 +15,19 @@ class AIOBox < AIOModel
 
   def state_image
     'state-' + case @state
-      when 'running', 'stopped', 'terminated'
-        @state
-      when 'suspended'
-        'stopped'
+      when STATE_RUNNING
+        'green'
+      when STATE_STOPPED, STATE_SUSPENDED
+        'red'
+      when STATE_TERMINATED
+        'gray'
       else
-        'default'
+        'yellow'
     end
   end
 
   def can_access_box
-    @state == 'running'
+    @state == STATE_RUNNING
   end
 
   def ssh_uri
@@ -35,15 +43,15 @@ class AIOBox < AIOModel
   end
 
   def can_start
-    @state == 'stopped'
+    @state == STATE_STOPPED
   end
 
   def can_restart
-    @state == 'running'
+    @state == STATE_RUNNING
   end
 
   def can_shut_down
-    @state == 'running'
+    @state == STATE_RUNNING
   end
 
   def start
