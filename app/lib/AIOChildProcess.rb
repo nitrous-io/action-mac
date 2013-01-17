@@ -1,19 +1,32 @@
 framework 'Foundation'
 
 class AIOChildProcess
-  DidWriteToStdoutNotification = 'AIOChildProcessDidWriteToStdoutNotification'
-  DidWriteToStderrNotification = 'AIOChildProcessDidWriteToStderrNotification'
-  DidTerminateNotification = 'AIOChildProcessDidTerminateNotification'
-
+  attr_accessor :delegate
   attr_reader :launched, :finished
 
   def initialize(path, arguments)
     @launched = false
     @finished = false
 
+    @path = path
+    @arguments = arguments
+  end
+
+  def finalize
+    NSNotificationCenter.defaultCenter.removeObserver self
+  end
+
+  def pid
+    @task.processIdentifier if @task
+  end
+
+  def launch
+    return if @launched
+    @launched = true
+
     @task = NSTask.alloc.init
-    @task.setLaunchPath path
-    @task.setArguments arguments
+    @task.setLaunchPath @path
+    @task.setArguments @arguments
 
     @stdin_pipe  = NSPipe.alloc.init
     @stdout_pipe = NSPipe.alloc.init
@@ -29,34 +42,65 @@ class AIOChildProcess
 
     @stdout_empty = false
     @stderr_empty = false
-  end
 
-  def launch
-    return if @launched
-    @launched = true
     notification_center = NSNotificationCenter.defaultCenter
     notification_center.addObserver self, selector: 'get_stdout:', name: NSFileHandleReadCompletionNotification, object: @stdout_handle
     notification_center.addObserver self, selector: 'get_stderr:', name: NSFileHandleReadCompletionNotification, object: @stderr_handle
     notification_center.addObserver self, selector: 'task_did_terminate:', name: NSTaskDidTerminateNotification, object: @task
 
-    @stdout_handle.readInBackgroundAndNotify
-    @stderr_handle.readInBackgroundAndNotify
-    @task.launch
+    NSThread.detachNewThreadSelector :run_task, toTarget: self, withObject: nil
   end
 
   def input(string)
-    data = string.dataUsingEncoding NSUTF8StringEncoding
-    @stdin_handle.writeData data
+    if @stdin_handle
+      data = string.dataUsingEncoding NSUTF8StringEncoding
+      @stdin_handle.writeData data
+    end
   end
 
   def terminate
-    @task.terminate
+    @task.terminate unless @finished
+  end
+
+  def kill
+    id = pid
+    if id && id != 0
+      begin
+        Process.kill 'KILL', id
+      rescue
+      end
+    end
   end
 
   private
+  def run_task
+    @stdout_handle.readInBackgroundAndNotify
+    @stderr_handle.readInBackgroundAndNotify
+
+    @task.launch
+
+    Dispatch::Queue.main.async do
+      if @delegate && @delegate.respond_to?(:child_process_did_launch)
+        @delegate.child_process_did_launch @task.processIdentifier
+      end
+    end
+
+    @task.waitUntilExit
+
+    runloop = NSRunLoop.currentRunLoop
+    while !@finished
+      runloop.runMode NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture
+    end
+  end
+
   def get_stdout(notification)
     if output = get_output_string(notification)
-      NSNotificationCenter.defaultCenter.postNotificationName DidWriteToStdoutNotification, object: self, userInfo: { data: output }
+      Dispatch::Queue.main.async do
+        if @delegate && @delegate.respond_to?(:child_process_did_write_to_stdout)
+          @delegate.child_process_did_write_to_stdout output
+        end
+      end
+
       @stdout_handle.readInBackgroundAndNotify
     else
       @stdout_empty = true
@@ -66,7 +110,12 @@ class AIOChildProcess
 
   def get_stderr(notification)
     if output = get_output_string(notification)
-      NSNotificationCenter.defaultCenter.postNotificationName DidWriteToStderrNotification, object: self, userInfo: { data: output }
+      Dispatch::Queue.main.async do
+        if @delegate && @delegate.respond_to?(:child_process_did_write_to_stderr)
+          @delegate.child_process_did_write_to_stderr output
+        end
+      end
+
       @stderr_handle.readInBackgroundAndNotify
     else
       @stderr_empty = true
@@ -85,12 +134,18 @@ class AIOChildProcess
 
   def finish
     if @stdout_empty && @stderr_empty && !@task.isRunning
-      @finished = true
       notification_center = NSNotificationCenter.defaultCenter
       notification_center.removeObserver self, name: NSFileHandleReadCompletionNotification, object: @stdout_handle
       notification_center.removeObserver self, name: NSFileHandleReadCompletionNotification, object: @stderr_handle
       notification_center.removeObserver self, name: NSTaskDidTerminateNotification, object: @task
-      notification_center.postNotificationName DidTerminateNotification, object: self, userInfo: { code: @task.terminationStatus }
+
+      Dispatch::Queue.main.async do
+        if @delegate && @delegate.respond_to?(:child_process_did_terminate)
+          @delegate.child_process_did_terminate @task.terminationStatus
+        end
+      end
+
+      @finished = true
     end
   end
 end
