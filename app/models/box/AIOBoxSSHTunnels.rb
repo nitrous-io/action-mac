@@ -52,15 +52,15 @@ class AIOBoxSSHTunnels
   end
 
   def tunnels_enabled_key
-    "box:#{@box.id}:tunnels_enabled" if @box
+    "user:#{AIOApp.current_user.id}:box:#{@box.id}:tunnels_enabled" if @box
   end
 
   def local_tunnels_key
-    "box:#{@box.id}:local_tunnels" if @box
+    "user:#{AIOApp.current_user.id}:box:#{@box.id}:local_tunnels" if @box
   end
 
   def remote_tunnels_key
-    "box:#{@box.id}:remote_tunnels" if @box
+    "user:#{AIOApp.current_user.id}:box:#{@box.id}:remote_tunnels" if @box
   end
 
   def parse_tunnels_hash_array(tunnels_array)
