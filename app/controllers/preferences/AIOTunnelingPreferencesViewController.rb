@@ -1,12 +1,8 @@
-require 'AIOObserver'
-
 class AIOTunnelingPreferencesViewController < NSViewController
-  include AIOObserver
-
   TAB_LOCAL_PORT_FORWARDING = 'LocalPortForwarding'
   TAB_REMOTE_PORT_FORWARDING = 'RemotePortForwarding'
 
-  attr_accessor :boxes_array_controller, :local_tunnels_array_controller, :remote_tunnels_array_controller
+  attr_accessor :local_tunnels_array_controller, :remote_tunnels_array_controller
   attr_accessor :local_tunnels_table_view, :remote_tunnels_table_view
   attr_accessor :selected_tab_identifier
 
@@ -16,10 +12,6 @@ class AIOTunnelingPreferencesViewController < NSViewController
       self.selected_tab_identifier = TAB_LOCAL_PORT_FORWARDING
       self
     end
-  end
-
-  def finalize
-    stop_observing self, 'boxes_array_controller.selectionIndex'
   end
 
   def add(sender)
