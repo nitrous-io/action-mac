@@ -4,10 +4,10 @@ class AIOKeyValueStore
   end
 
   def read(key)
-    @defaults.objectForKey(key) if key
+    @defaults.objectForKey("aio:#{key}") if key
   end
 
   def write(key, value)
-    @defaults.setObject(value, forKey: key) if key
+    @defaults.setObject(value, forKey: "aio:#{key}") if key
   end
 end

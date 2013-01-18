@@ -3,6 +3,8 @@ require 'AIOAPI'
 require 'cgi'
 
 class AIOAPICocoa < AIOAPI
+  UsernameKey = 'username'
+
   class KeychainError < StandardError; end
 
   attr_accessor :signed_in
@@ -38,22 +40,19 @@ class AIOAPICocoa < AIOAPI
   private
   def write_access_token_to_keychain
     if token
-      defaults = NSUserDefaults.standardUserDefaults
-      defaults.setObject username, forKey: AIO_USERNAME_KEY
+      AIOApp.store.write UsernameKey, @username
 
       error_ptr = Pointer.new :object
-      SSKeychain.setPassword token.token, forService: AIOSettings.keychain_service_name, account: username, error: error_ptr
+      SSKeychain.setPassword token.token, forService: AIOSettings.keychain_service_name, account: @username, error: error_ptr
       if error = error_ptr[0]
         raise KeychainError, error.localizedDescription
       end
-
-      defaults.synchronize
     end
   end
 
   def read_access_token_from_keychain
     service = AIOSettings.keychain_service_name
-    if account = NSUserDefaults.standardUserDefaults.stringForKey(AIO_USERNAME_KEY)
+    if account = AIOApp.store.read(UsernameKey)
       error_ptr = Pointer.new :object
       error = nil
       if token_string = SSKeychain.passwordForService(service, account: account, error: error_ptr)
@@ -69,7 +68,7 @@ class AIOAPICocoa < AIOAPI
 
   def remove_access_token_from_keychain
     service = AIOSettings.keychain_service_name
-    if account = NSUserDefaults.standardUserDefaults.stringForKey(AIO_USERNAME_KEY)
+    if account = AIOApp.store.read(UsernameKey)
       error_ptr = Pointer.new :object
       SSKeychain.deletePasswordForService(service, account: account, error: error_ptr)
       if error = error_ptr[0]
