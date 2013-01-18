@@ -7,17 +7,19 @@ class AIOBoxSSHTunnels
 
   attr_accessor :box
   attr_accessor :local_tunnels, :remote_tunnels
+  attr_accessor :ssh_tunnel_task
   attr_accessor :enabled
-  attr_accessor :state
 
   def initialize(box)
     self.enabled = false
     self.box = box
     load_data
-    observe(self, 'enabled') { |v,c| enabled_did_change v,c }
     %w(local_tunnels remote_tunnels).each do |t|
       observe(self, t, initial: true) { |v,c| tunnels_array_did_change v,c }
     end
+    observe(self, 'enabled', initial: true) { |v,c| enabled_did_change v,c }
+    self.ssh_tunnel_task = AIOSSHTunnelTask.new self
+    start_or_kill_ssh_tunnel_task
   end
 
   def finalize
@@ -39,7 +41,14 @@ class AIOBoxSSHTunnels
   end
 
   def enabled_did_change(value, change)
-    AIOApp.store.write tunnels_enabled_key, self.enabled
+    AIOApp.store.write tunnels_enabled_key, value
+    start_or_kill_ssh_tunnel_task
+  end
+
+  def start_or_kill_ssh_tunnel_task
+    if @ssh_tunnel_task
+      @enabled ? @ssh_tunnel_task.restart : @ssh_tunnel_task.kill
+    end
   end
 
   def tunnels_enabled_key
@@ -81,6 +90,7 @@ class AIOBoxSSHTunnels
         observe_tunnel_items change
     end
     save_tunnels
+    start_or_kill_ssh_tunnel_task
   end
 
   def observe_tunnel_items(change)
@@ -101,5 +111,6 @@ class AIOBoxSSHTunnels
 
   def tunnel_item_did_change(value, change)
     save_tunnels
+    start_or_kill_ssh_tunnel_task
   end
 end

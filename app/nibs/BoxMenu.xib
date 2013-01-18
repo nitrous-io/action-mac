@@ -40,6 +40,10 @@
 						<string key="NSTitle">name</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
+						<object class="NSCustomResource" key="NSImage" id="923792700">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">state-gray</string>
+						</object>
 						<object class="NSCustomResource" key="NSOnImage" id="469545071">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">NSMenuCheckmark</string>
@@ -86,6 +90,30 @@
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="469545071"/>
 									<reference key="NSMixedImage" ref="318561862"/>
+								</object>
+								<object class="NSMenuItem" id="683698313">
+									<reference key="NSMenu" ref="1047921540"/>
+									<string key="NSTitle">Tunneling</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSImage" ref="923792700"/>
+									<reference key="NSOnImage" ref="469545071"/>
+									<reference key="NSMixedImage" ref="318561862"/>
+									<string key="NSAction">submenuAction:</string>
+									<object class="NSMenu" key="NSSubmenu" id="354125429">
+										<string key="NSTitle">Tunneling</string>
+										<array class="NSMutableArray" key="NSMenuItems">
+											<object class="NSMenuItem" id="216573530">
+												<reference key="NSMenu" ref="354125429"/>
+												<bool key="NSIsDisabled">YES</bool>
+												<string key="NSTitle">state</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="469545071"/>
+												<reference key="NSMixedImage" ref="318561862"/>
+											</object>
+										</array>
+									</object>
 								</object>
 								<object class="NSMenuItem" id="885521609">
 									<reference key="NSMenu" ref="1047921540"/>
@@ -390,6 +418,62 @@
 					</object>
 					<int key="connectionID">65</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">image: box.ssh_tunnels.ssh_tunnel_task.state_image</string>
+						<reference key="source" ref="683698313"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="683698313"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">image: box.ssh_tunnels.ssh_tunnel_task.state_image</string>
+							<string key="NSBinding">image</string>
+							<string key="NSKeyPath">box.ssh_tunnels.ssh_tunnel_task.state_image</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">AIOStringToNSImageTransformer</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">100</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">title: box.ssh_tunnels.ssh_tunnel_task.state_description</string>
+						<reference key="source" ref="216573530"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="216573530"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">title: box.ssh_tunnels.ssh_tunnel_task.state_description</string>
+							<string key="NSBinding">title</string>
+							<string key="NSKeyPath">box.ssh_tunnels.ssh_tunnel_task.state_description</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">102</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: self</string>
+						<reference key="source" ref="216573530"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="216573530"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: self</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">self</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSIsNil</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">104</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -445,6 +529,7 @@
 							<reference ref="270474623"/>
 							<reference ref="186749615"/>
 							<reference ref="885521609"/>
+							<reference ref="683698313"/>
 						</array>
 						<reference key="parent" ref="1012650773"/>
 					</object>
@@ -488,6 +573,27 @@
 						<reference key="object" ref="885521609"/>
 						<reference key="parent" ref="1047921540"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">90</int>
+						<reference key="object" ref="683698313"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="354125429"/>
+						</array>
+						<reference key="parent" ref="1047921540"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">91</int>
+						<reference key="object" ref="354125429"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="216573530"/>
+						</array>
+						<reference key="parent" ref="683698313"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">92</int>
+						<reference key="object" ref="216573530"/>
+						<reference key="parent" ref="354125429"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -505,12 +611,15 @@
 				<string key="57.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="90.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="91.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="92.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">81</int>
+			<int key="maxID">104</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -574,6 +683,7 @@
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NSMenuCheckmark">{11, 11}</string>
 			<string key="NSMenuMixedState">{10, 3}</string>
+			<string key="state-gray">{16, 16}</string>
 		</dictionary>
 	</data>
 </archive>

@@ -62,7 +62,7 @@
 										<string key="NSFrameSize">{148, 463}</string>
 										<reference key="NSSuperview" ref="1034751626"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="365740770"/>
+										<reference key="NSNextKeyView" ref="250314895"/>
 										<string key="NSReuseIdentifierKey">_NS:13</string>
 										<bool key="NSEnabled">YES</bool>
 										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -226,7 +226,7 @@
 						<string key="NSFrame">{{21, 21}, {150, 481}}</string>
 						<reference key="NSSuperview" ref="623893369"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="250314895"/>
+						<reference key="NSNextKeyView" ref="1034751626"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<int key="NSsFlags">133682</int>
 						<reference key="NSVScroller" ref="365740770"/>
@@ -245,7 +245,6 @@
 						<string key="NSFrame">{{172, 10}, {415, 454}}</string>
 						<reference key="NSSuperview" ref="623893369"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="859986358"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<array class="NSMutableArray" key="NSTabViewItems">
 							<object class="NSTabViewItem" id="383928627">
@@ -268,7 +267,7 @@
 															<string key="NSFrameSize">{379, 352}</string>
 															<reference key="NSSuperview" ref="127141626"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="879673638"/>
+															<reference key="NSNextKeyView" ref="677962826"/>
 															<string key="NSReuseIdentifierKey">_NS:13</string>
 															<bool key="NSEnabled">YES</bool>
 															<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -452,7 +451,7 @@
 											<string key="NSFrame">{{7, 35}, {381, 370}}</string>
 											<reference key="NSSuperview" ref="859986358"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="677962826"/>
+											<reference key="NSNextKeyView" ref="127141626"/>
 											<string key="NSReuseIdentifierKey">_NS:9</string>
 											<int key="NSsFlags">133682</int>
 											<reference key="NSVScroller" ref="879673638"/>
@@ -579,7 +578,7 @@
 															<int key="NSvFlags">256</int>
 															<string key="NSFrameSize">{379, 352}</string>
 															<reference key="NSSuperview" ref="1029057497"/>
-															<reference key="NSNextKeyView" ref="314414463"/>
+															<reference key="NSNextKeyView" ref="700509148"/>
 															<string key="NSReuseIdentifierKey">_NS:13</string>
 															<bool key="NSEnabled">YES</bool>
 															<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -751,14 +750,13 @@
 											</array>
 											<string key="NSFrame">{{7, 35}, {381, 370}}</string>
 											<reference key="NSSuperview" ref="701112955"/>
-											<reference key="NSNextKeyView" ref="700509148"/>
+											<reference key="NSNextKeyView" ref="1029057497"/>
 											<string key="NSReuseIdentifierKey">_NS:9</string>
 											<int key="NSsFlags">133682</int>
 											<reference key="NSVScroller" ref="314414463"/>
 											<reference key="NSHScroller" ref="362108215"/>
 											<reference key="NSContentView" ref="1029057497"/>
 											<reference key="NSHeaderClipView" ref="700509148"/>
-											<reference key="NSCornerView" ref="440560821"/>
 											<bytes key="NSScrollAmts">QSAAAEEgAABBmAAAQZgAAA</bytes>
 											<double key="NSMinMagnification">0.25</double>
 											<double key="NSMaxMagnification">4</double>
@@ -864,16 +862,15 @@
 									<object class="NSButton" id="206553698">
 										<reference key="NSNextResponder" ref="142512498"/>
 										<int key="NSvFlags">268</int>
-										<string key="NSFrame">{{10, 12}, {159, 18}}</string>
+										<string key="NSFrame">{{10, 12}, {131, 18}}</string>
 										<reference key="NSSuperview" ref="142512498"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSButtonCell" key="NSCell" id="1036498179">
 											<int key="NSCellFlags">67108864</int>
 											<int key="NSCellFlags2">268435456</int>
-											<string key="NSContents">Enable SSH Tunneling</string>
+											<string key="NSContents">Enable Tunneling</string>
 											<reference key="NSSupport" ref="506143053"/>
 											<string key="NSCellIdentifier">_NS:9</string>
 											<reference key="NSControlView" ref="206553698"/>

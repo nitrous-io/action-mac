@@ -4,13 +4,14 @@ class AIOAppController
   include AIOObserver
 
   attr_accessor :status_menu_controller, :welcome_window_controller, :preferences_window_controller
-  attr_accessor :store, :api, :pusher, :jobs, :ssh_key_pair
+  attr_accessor :store, :task_manager, :api, :pusher, :jobs, :ssh_key_pair
   attr_accessor :current_user, :boxes, :public_keys
 
   def initialize
     Kernel.const_set :AIOApp, self
 
     self.store = AIOKeyValueStore.new
+    self.task_manager = AIOTaskManager.new
     self.api = AIOAPICocoa.new
     self.jobs = AIOJobManager.new
     NSTimer.scheduledTimerWithTimeInterval JOB_PROCESSING_INTERVAL, target: self, selector: :process_jobs, userInfo: nil, repeats: true
@@ -78,6 +79,10 @@ class AIOAppController
     if @preferences_window_controller
       @preferences_window_controller.close
     end
+  end
+
+  def application_will_terminate(notification)
+    @task_manager.kill_all if @task_manager
   end
 
   private

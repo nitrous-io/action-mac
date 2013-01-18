@@ -4,4 +4,8 @@ class AIOAppDelegate
   def applicationDidFinishLaunching(notification)
     self.controller = AIOAppController.new
   end
+
+  def applicationWillTerminate(notification)
+    @controller.application_will_terminate notification
+  end
 end
