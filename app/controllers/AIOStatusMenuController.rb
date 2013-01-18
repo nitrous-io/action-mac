@@ -12,6 +12,10 @@ class AIOStatusMenuController
     @box_controller_mapping = {} # box to box menu controller mapping
   end
 
+  def finalize
+    NSNotificationCenter.defaultCenter.removeObserver self
+  end
+
   def setup_menu
     @status_item = NSStatusBar.systemStatusBar.statusItemWithLength NSVariableStatusItemLength
     @status_item.setHighlightMode true
@@ -21,13 +25,13 @@ class AIOStatusMenuController
     @status_item.setMenu @menu
 
     observe(AIOApp, 'boxes.content') { |v,c| boxes_content_did_change v,c }
-    NSNotificationCenter.defaultCenter.addObserver self, selector: 'job_completed:', name: 'AIOJobCompletionNotification', object: nil
+    NSNotificationCenter.defaultCenter.addObserver self, selector: 'job_completed:', name: AIOJob::CompletionNotification, object: nil
 
     fetch_current_user
   end
 
   def teardown_menu
-    NSNotificationCenter.defaultCenter.removeObserver self, name: 'AIOJobCompletionNotification', object: nil
+    NSNotificationCenter.defaultCenter.removeObserver self, name: AIOJob::CompletionNotification, object: nil
     stop_observing AIOApp, 'boxes.content'
 
     NSStatusBar.systemStatusBar.removeStatusItem @status_item

@@ -1,4 +1,6 @@
 class AIOJob
+  CompletionNotification = 'AIOJobCompletionNotification'
+
   def self.async(&block)
     Thread.new &block
   end
@@ -65,6 +67,6 @@ class AIOJob
   end
 
   def on_complete
-    NSNotificationCenter.defaultCenter.postNotificationName 'AIOJobCompletionNotification', object: self
+    NSNotificationCenter.defaultCenter.postNotificationName CompletionNotification, object: self
   end
 end if RUBY_ENGINE == 'macruby'
