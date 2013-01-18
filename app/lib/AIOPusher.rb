@@ -4,6 +4,8 @@ require 'json'
 
 class AIOPusher
   class Bridge
+    attr_accessor :delegate
+
     def initialize
       # precompile
       respondsToSelector 'log:'
@@ -19,7 +21,9 @@ class AIOPusher
     end
 
     def post_notification(name, message: message)
-      NSNotificationCenter.defaultCenter.postNotificationName 'AIOPusherNotification', object: self, userInfo: { name: name, message: message }
+      if @delegate && @delegate.respond_to?(:pusher_did_notify)
+        @delegate.pusher_did_notify name, message
+      end
     end
   end
 
@@ -34,8 +38,7 @@ class AIOPusher
 
     @web_view = WebView.alloc.initWithFrame NSZeroRect, frameName: nil, groupName: nil
     @bridge = Bridge.new
-
-    NSNotificationCenter.defaultCenter.addObserver self, selector: 'pusher_did_notify:', name: 'AIOPusherNotification', object: @bridge
+    @bridge.delegate = self
 
     @web_view.setFrameLoadDelegate self
     @web_view.mainFrame.loadHTMLString """
@@ -53,7 +56,7 @@ class AIOPusher
   end
 
   def finalize
-    NSNotificationCenter.defaultCenter.removeObserver self, name: 'AIOPusherNotification', object: @bridge
+    @bridge.delegate = nil
   end
 
   def connect
@@ -76,10 +79,8 @@ class AIOPusher
   end
 
   # callbacks
-  def pusher_did_notify(notification)
-    data = notification.userInfo
-    message = data[:message]
-    case data[:name]
+  def pusher_did_notify(name, message)
+    case name
     when 'aio:pusher'
       self.connected = (message == 'connected')
     when 'aio:box_updated'
