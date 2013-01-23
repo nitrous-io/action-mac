@@ -70,6 +70,7 @@ end
 # Cocoa-specific
 class AIOBox
   attr_accessor :ssh_tunnels
+  attr_accessor :file_sync
 
   dependent_property :state_description,  [:state]
   dependent_property :state_image,        [:state]
@@ -84,5 +85,6 @@ class AIOBox
   def initialize(attrs={})
     super
     self.ssh_tunnels = AIOBoxSSHTunnels.new self
+    self.file_sync = AIOBoxFileSync.new self
   end
 end if RUBY_ENGINE == 'macruby'

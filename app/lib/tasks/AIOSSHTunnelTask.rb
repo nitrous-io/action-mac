@@ -8,7 +8,7 @@ class AIOSSHTunnelTask < AIOTask
   STATE_CONNECTED = 'connected'
   STATE_ERROR = 'error'
 
-  attr_accessor :ssh_tunnels, :child_process
+  attr_accessor :ssh_tunnels
   attr_accessor :state, :last_error_message
 
   dependent_property :state_description, [:state, :last_error_message, 'ssh_tunnels.enabled']
@@ -65,18 +65,18 @@ class AIOSSHTunnelTask < AIOTask
       '-o', 'ExitOnForwardFailure=yes', # exit on forward failure
       '-c', 'blowfish-cbc', # use blowfish cipher
       '-p', box.port.to_s,
-      "action@#{sanitize_hostname box.host}"
+      "action@#{sanitize box.host}"
     ]
 
     args.concat(@ssh_tunnels.local_tunnels.map do |tun|
       if tun.origin_port && tun.destination_host && tun.destination_port
-        ['-L', "#{tun.origin_port}/#{sanitize_hostname tun.destination_host}/#{tun.destination_port}"]
+        ['-L', "#{tun.origin_port}/#{sanitize tun.destination_host}/#{tun.destination_port}"]
       end
     end.flatten.compact)
 
     args.concat(@ssh_tunnels.remote_tunnels.map do |tun|
       if tun.origin_port && tun.destination_host && tun.destination_port
-        ['-R', "#{tun.origin_port}/#{sanitize_hostname tun.destination_host}/#{tun.destination_port}"]
+        ['-R', "#{tun.origin_port}/#{sanitize tun.destination_host}/#{tun.destination_port}"]
       end
     end.flatten.compact)
 
@@ -89,7 +89,6 @@ class AIOSSHTunnelTask < AIOTask
 
   def start
     if [STATE_DISCONNECTED, STATE_ERROR].include? @state
-      puts "start #{@ssh_tunnels.box.name}"
       self.state = STATE_CONNECTING
       self.last_error_message = nil
       super
@@ -164,7 +163,7 @@ class AIOSSHTunnelTask < AIOTask
   end
 
   # just in case, to prevent arbitrary command injection
-  def sanitize_hostname(hostname)
-    hostname.to_s.gsub /[^a-zA-Z0-9\-\.]/, ''
+  def sanitize(name)
+    name.to_s.gsub /[^a-zA-Z0-9\-\.]/, ''
   end
 end

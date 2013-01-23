@@ -3,7 +3,8 @@ class AIOPreferencesWindowController < NSWindowController
   attr_accessor :general_preferences_view_controller,
                 :account_preferences_view_controller,
                 :ssh_keys_preferences_view_controller,
-                :tunneling_preferences_view_controller
+                :tunneling_preferences_view_controller,
+                :file_sync_preferences_view_controller
 
   def init
     if super.initWithWindowNibName 'PreferencesWindow'
@@ -42,6 +43,12 @@ class AIOPreferencesWindowController < NSWindowController
   def show_tunneling_preferences_view(sender)
     show_view_controller(
       self.tunneling_preferences_view_controller ||= AIOTunnelingPreferencesViewController.new
+    )
+  end
+
+  def show_file_sync_preferences_view(sender)
+    show_view_controller(
+      self.file_sync_preferences_view_controller ||= AIOFileSyncPreferencesViewController.new
     )
   end
 

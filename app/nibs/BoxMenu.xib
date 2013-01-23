@@ -115,6 +115,30 @@
 										</array>
 									</object>
 								</object>
+								<object class="NSMenuItem" id="264506315">
+									<reference key="NSMenu" ref="1047921540"/>
+									<string key="NSTitle">File Sync</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSImage" ref="923792700"/>
+									<reference key="NSOnImage" ref="469545071"/>
+									<reference key="NSMixedImage" ref="318561862"/>
+									<string key="NSAction">submenuAction:</string>
+									<object class="NSMenu" key="NSSubmenu" id="569435396">
+										<string key="NSTitle">File Sync</string>
+										<array class="NSMutableArray" key="NSMenuItems">
+											<object class="NSMenuItem" id="355734611">
+												<reference key="NSMenu" ref="569435396"/>
+												<bool key="NSIsDisabled">YES</bool>
+												<string key="NSTitle">state</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="469545071"/>
+												<reference key="NSMixedImage" ref="318561862"/>
+											</object>
+										</array>
+									</object>
+								</object>
 								<object class="NSMenuItem" id="885521609">
 									<reference key="NSMenu" ref="1047921540"/>
 									<bool key="NSIsDisabled">YES</bool>
@@ -474,6 +498,62 @@
 					</object>
 					<int key="connectionID">104</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">image: box.file_sync.file_sync_task.state_image</string>
+						<reference key="source" ref="264506315"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="264506315"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">image: box.file_sync.file_sync_task.state_image</string>
+							<string key="NSBinding">image</string>
+							<string key="NSKeyPath">box.file_sync.file_sync_task.state_image</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">AIOStringToNSImageTransformer</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">119</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: self</string>
+						<reference key="source" ref="355734611"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="355734611"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">enabled: self</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">self</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSIsNil</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">109</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">title: box.file_sync.file_sync_task.state_description</string>
+						<reference key="source" ref="355734611"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="355734611"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">title: box.file_sync.file_sync_task.state_description</string>
+							<string key="NSBinding">title</string>
+							<string key="NSKeyPath">box.file_sync.file_sync_task.state_description</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">113</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -530,6 +610,7 @@
 							<reference ref="186749615"/>
 							<reference ref="885521609"/>
 							<reference ref="683698313"/>
+							<reference ref="264506315"/>
 						</array>
 						<reference key="parent" ref="1012650773"/>
 					</object>
@@ -594,12 +675,36 @@
 						<reference key="object" ref="216573530"/>
 						<reference key="parent" ref="354125429"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">105</int>
+						<reference key="object" ref="264506315"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="569435396"/>
+						</array>
+						<reference key="parent" ref="1047921540"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">106</int>
+						<reference key="object" ref="569435396"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="355734611"/>
+						</array>
+						<reference key="parent" ref="264506315"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">107</int>
+						<reference key="object" ref="355734611"/>
+						<reference key="parent" ref="569435396"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="-3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="105.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="106.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="107.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="30.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -619,7 +724,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">104</int>
+			<int key="maxID">119</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

@@ -31,8 +31,15 @@
 		E918B3F1164B96D100D53509 /* status-item-icon-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E918B3ED164B96D100D53509 /* status-item-icon-highlighted@2x.png */; };
 		E918B3F2164B96D100D53509 /* status-item-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E918B3EE164B96D100D53509 /* status-item-icon.png */; };
 		E918B3F3164B96D100D53509 /* status-item-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E918B3EF164B96D100D53509 /* status-item-icon@2x.png */; };
+		E91C4EC316A9541D00E4D417 /* AIOFileSyncPreferencesViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E91C4EC216A9541D00E4D417 /* AIOFileSyncPreferencesViewController.rb */; };
+		E91C4ECE16AD1E6300E4D417 /* AIOBoxFileSync.rb in Resources */ = {isa = PBXBuildFile; fileRef = E91C4ECD16AD1E6300E4D417 /* AIOBoxFileSync.rb */; };
+		E91C4ED116AD269300E4D417 /* AIOFileSyncTask.rb in Resources */ = {isa = PBXBuildFile; fileRef = E91C4ED016AD269300E4D417 /* AIOFileSyncTask.rb */; };
+		E91C4ED316AD53BA00E4D417 /* actionio-unison in Resources */ = {isa = PBXBuildFile; fileRef = E91C4ED216AD53BA00E4D417 /* actionio-unison */; };
 		E91F647916A4670000E797BC /* AIOTaskManager.rb in Resources */ = {isa = PBXBuildFile; fileRef = E91F647816A4670000E797BC /* AIOTaskManager.rb */; };
 		E91F647B16A4FB9400E797BC /* AIOTask.rb in Resources */ = {isa = PBXBuildFile; fileRef = E91F647A16A4FB9400E797BC /* AIOTask.rb */; };
+		E91F647E16A9448900E797BC /* sync@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91F647C16A9448800E797BC /* sync@2x.png */; };
+		E91F647F16A9448900E797BC /* sync.png in Resources */ = {isa = PBXBuildFile; fileRef = E91F647D16A9448900E797BC /* sync.png */; };
+		E91F648116A945B700E797BC /* FileSyncPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91F648016A945B700E797BC /* FileSyncPreferencesView.xib */; };
 		E92BF32F164253AD00862CF4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92BF32E164253AD00862CF4 /* Cocoa.framework */; };
 		E92BF33C164253AE00862CF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E92BF33B164253AE00862CF4 /* main.m */; };
 		E92BF344164253AE00862CF4 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = E92BF343164253AE00862CF4 /* rb_main.rb */; };
@@ -142,8 +149,15 @@
 		E918B3ED164B96D100D53509 /* status-item-icon-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon-highlighted@2x.png"; sourceTree = "<group>"; };
 		E918B3EE164B96D100D53509 /* status-item-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon.png"; sourceTree = "<group>"; };
 		E918B3EF164B96D100D53509 /* status-item-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon@2x.png"; sourceTree = "<group>"; };
+		E91C4EC216A9541D00E4D417 /* AIOFileSyncPreferencesViewController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOFileSyncPreferencesViewController.rb; sourceTree = "<group>"; };
+		E91C4ECD16AD1E6300E4D417 /* AIOBoxFileSync.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOBoxFileSync.rb; sourceTree = "<group>"; };
+		E91C4ED016AD269300E4D417 /* AIOFileSyncTask.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOFileSyncTask.rb; sourceTree = "<group>"; };
+		E91C4ED216AD53BA00E4D417 /* actionio-unison */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "actionio-unison"; sourceTree = "<group>"; };
 		E91F647816A4670000E797BC /* AIOTaskManager.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOTaskManager.rb; sourceTree = "<group>"; };
 		E91F647A16A4FB9400E797BC /* AIOTask.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOTask.rb; sourceTree = "<group>"; };
+		E91F647C16A9448800E797BC /* sync@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sync@2x.png"; sourceTree = "<group>"; };
+		E91F647D16A9448900E797BC /* sync.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sync.png; sourceTree = "<group>"; };
+		E91F648016A945B700E797BC /* FileSyncPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileSyncPreferencesView.xib; sourceTree = "<group>"; };
 		E92BF32A164253AD00862CF4 /* ActionMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActionMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92BF32E164253AD00862CF4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E92BF33B164253AE00862CF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -274,6 +288,7 @@
 				E91F647816A4670000E797BC /* AIOTaskManager.rb */,
 				E91F647A16A4FB9400E797BC /* AIOTask.rb */,
 				E90EF700169EB78600A819CC /* AIOSSHTunnelTask.rb */,
+				E91C4ED016AD269300E4D417 /* AIOFileSyncTask.rb */,
 			);
 			path = tasks;
 			sourceTree = "<group>";
@@ -318,6 +333,8 @@
 				E918B3EF164B96D100D53509 /* status-item-icon@2x.png */,
 				E9975D4D1679A8F600A6950A /* ssh-key.png */,
 				E9975D4E1679A8F600A6950A /* ssh-key@2x.png */,
+				E91F647D16A9448900E797BC /* sync.png */,
+				E91F647C16A9448800E797BC /* sync@2x.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -325,6 +342,7 @@
 		E91F647616A4606E00E797BC /* programs */ = {
 			isa = PBXGroup;
 			children = (
+				E91C4ED216AD53BA00E4D417 /* actionio-unison */,
 			);
 			path = programs;
 			sourceTree = "<group>";
@@ -409,6 +427,7 @@
 				E9975D0C1678968D00A6950A /* AIOAccountPreferencesViewController.rb */,
 				E9975D531679A94A00A6950A /* AIOSSHKeysPreferencesViewController.rb */,
 				E9A167F6168190FC00F31E69 /* AIOTunnelingPreferencesViewController.rb */,
+				E91C4EC216A9541D00E4D417 /* AIOFileSyncPreferencesViewController.rb */,
 			);
 			path = preferences;
 			sourceTree = "<group>";
@@ -491,6 +510,7 @@
 				E9A168031683200100F31E69 /* AIOBox.rb */,
 				E9A168041683200100F31E69 /* AIOBoxCollection.rb */,
 				E9A1680F1683205600F31E69 /* AIOBoxSSHTunnels.rb */,
+				E91C4ECD16AD1E6300E4D417 /* AIOBoxFileSync.rb */,
 			);
 			path = box;
 			sourceTree = "<group>";
@@ -551,6 +571,7 @@
 				E9975D0116785E8000A6950A /* GeneralPreferencesView.xib */,
 				E9975D551679BFAC00A6950A /* SSHKeysPreferencesView.xib */,
 				E9A167F21680754C00F31E69 /* TunnelingPreferencesView.xib */,
+				E91F648016A945B700E797BC /* FileSyncPreferencesView.xib */,
 			);
 			path = preferences;
 			sourceTree = "<group>";
@@ -653,7 +674,7 @@
 /* Begin PBXLegacyTarget section */
 		E92BF332164253AE00862CF4 /* Deployment */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "--compile --embed --gem oauth2";
+			buildArgumentsString = "--compile --embed --gem oauth2 --gem sshkey --gem rb-fsevent";
 			buildConfigurationList = E92BF34C164253AE00862CF4 /* Build configuration list for PBXLegacyTarget "Deployment" */;
 			buildPhases = (
 			);
@@ -799,6 +820,13 @@
 				E90EF701169EB78600A819CC /* AIOSSHTunnelTask.rb in Resources */,
 				E91F647916A4670000E797BC /* AIOTaskManager.rb in Resources */,
 				E91F647B16A4FB9400E797BC /* AIOTask.rb in Resources */,
+				E91F647E16A9448900E797BC /* sync@2x.png in Resources */,
+				E91F647F16A9448900E797BC /* sync.png in Resources */,
+				E91F648116A945B700E797BC /* FileSyncPreferencesView.xib in Resources */,
+				E91C4EC316A9541D00E4D417 /* AIOFileSyncPreferencesViewController.rb in Resources */,
+				E91C4ECE16AD1E6300E4D417 /* AIOBoxFileSync.rb in Resources */,
+				E91C4ED116AD269300E4D417 /* AIOFileSyncTask.rb in Resources */,
+				E91C4ED316AD53BA00E4D417 /* actionio-unison in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
