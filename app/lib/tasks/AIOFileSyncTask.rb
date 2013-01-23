@@ -28,7 +28,7 @@ class AIOFileSyncTask < AIOTask
     @run_once_more = false
     @mutex = Mutex.new
     box = file_sync.box
-    @local_path = File.join Dir.home, AIO_SYNC_FOLDER_NAME, sanitize(box.name)
+    @local_path = File.join Dir.home, FILE_SYNC_FOLDER_NAME, sanitize(box.name)
   end
 
   def state_description
@@ -62,7 +62,8 @@ class AIOFileSyncTask < AIOTask
     @should_stop_monitoring = false
     self.state = STATE_MONITORING
     NSThread.detachNewThreadSelector :watch_fsevent, toTarget: self, withObject: nil
-    Dispatch::Queue.main.async { start }
+    NSThread.detachNewThreadSelector :start_timer, toTarget: self, withObject: nil
+    do_sync
   end
 
   def stop_monitoring
@@ -70,10 +71,15 @@ class AIOFileSyncTask < AIOTask
     @mutex.synchronize do
       @run_once_more = false
       @should_stop_monitoring = true
-      @fsevent.stop if @fsevent
-      @fsevent = nil
+      stop_fsevent
+      stop_timer
       self.state = STATE_IDLE
     end
+  end
+
+  def do_sync
+    puts "do sync!"
+    Dispatch::Queue.main.async { start }
   end
 
   def initialize_child_process
@@ -166,9 +172,27 @@ class AIOFileSyncTask < AIOTask
     }
     @fsevent.watch @local_path, options do |directories|
       p directories
-      Dispatch::Queue.main.async { start }
+      do_sync
     end
     @fsevent.run unless @should_stop_monitoring
+  end
+
+  def stop_fsevent
+    @fsevent.stop if @fsevent
+    @fsevent = nil
+  end
+
+  def start_timer
+    @timer = NSTimer.scheduledTimerWithTimeInterval FILE_SYNC_INTERVAL, target: self, selector: :do_sync, userInfo: nil, repeats: true
+    runloop = NSRunLoop.currentRunLoop
+    while @timer
+      runloop.runMode NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture
+    end
+  end
+
+  def stop_timer
+    @timer.invalidate if @timer
+    @timer = nil
   end
 
   def process_output(text)

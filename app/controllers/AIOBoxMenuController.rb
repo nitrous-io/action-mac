@@ -36,4 +36,8 @@ class AIOBoxMenuController
       @box.shut_down
     end
   end
+
+  def file_sync_sync_now(sender)
+    @box.file_sync.file_sync_task.do_sync
+  end
 end
