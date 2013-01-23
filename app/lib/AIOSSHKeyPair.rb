@@ -8,6 +8,9 @@ class AIOSSHKeyPair
   attr_accessor :private_key_path, :public_key_path
   attr_accessor :public_key
 
+  dependent_property :public_key_md5_fingerprint, [:public_key]
+  dependent_property :can_generate_keys,          [:private_key_path]
+
   def generate!
     ssh_path = File.join Dir.home, '.ssh'
     private_key_path = File.join ssh_path, 'id_rsa'
@@ -97,9 +100,3 @@ class AIOSSHKeyPair
     "#{Etc.getlogin}@#{Socket.gethostname}"
   end
 end
-
-# Cocoa-specific
-class AIOSSHKeyPair
-  dependent_property :public_key_md5_fingerprint, [:public_key]
-  dependent_property :can_generate_keys,          [:private_key_path]
-end if RUBY_ENGINE == 'macruby'

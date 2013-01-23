@@ -1,6 +1,8 @@
 require 'AIOModel'
 
 class AIOUser < AIOModel
+  dependent_property :username_and_full_name, [:username, :full_name]
+
   attr_accessor :username, :email, :full_name
 
   def username_and_full_name
@@ -22,9 +24,3 @@ class AIOUser < AIOModel
     end
   end
 end
-
-# Cocoa-specific
-class AIOUser
-  dependent_property :username_and_full_name, [:username, :full_name]
-end if RUBY_ENGINE == 'macruby'
-

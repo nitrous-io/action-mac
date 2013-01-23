@@ -1,8 +1,7 @@
-require AIO_COLLECTION_CLASS_NAME.to_s
-collectionClass = Kernel.const_get AIO_COLLECTION_CLASS_NAME
+require 'AIOCollection'
 require 'AIOPublicKey'
 
-class AIOPublicKeyCollection < collectionClass
+class AIOPublicKeyCollection < AIOCollection
   model AIOPublicKey
   resource_path '/public_keys'
   json_root 'public_keys'

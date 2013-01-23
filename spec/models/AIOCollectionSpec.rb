@@ -10,10 +10,6 @@ class TestCollection < AIOCollection
   model TestModel
   resource_path '/boxes'
   json_root 'boxes'
-
-  def models
-    @content ||= []
-  end
 end
 
 describe AIOCollection do
@@ -21,6 +17,12 @@ describe AIOCollection do
     @api = mock 'api'
     @collection = TestCollection.new
     @collection.stub(:api).and_return @api
+  end
+
+  describe 'content property' do
+    it 'is empty by default' do
+      @collection.content.should.equal []
+    end
   end
 
   describe '.model' do
@@ -41,27 +43,10 @@ describe AIOCollection do
     end
   end
 
-  describe '#api' do
-    context 'when not overridden' do
-      before do
-        @collection = AIOCollection.new
-      end
-
-      it 'raises NotImplementedError' do
-        -> { @collection.api }.should.raise NotImplementedError
-      end
-    end
-  end
-
   describe '#models' do
-    context 'when not overridden' do
-      before do
-        @collection = AIOCollection.new
-      end
-
-      it 'raises NotImplementedError' do
-        -> { @collection.models }.should.raise NotImplementedError
-      end
+    it 'returns a mutable array proxy for the underlying content array' do
+      @collection.models.should.not.be.identical_to @collection.content
+      @collection.models.should.be.identical_to @collection.mutableArrayValueForKey('content')
     end
   end
 

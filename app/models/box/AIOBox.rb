@@ -8,6 +8,24 @@ class AIOBox < AIOModel
   STATE_DEFAULT = 'default'
 
   attr_accessor :name, :state, :host, :port
+  attr_accessor :ssh_tunnels
+  attr_accessor :file_sync
+
+  dependent_property :state_description,  [:state]
+  dependent_property :state_image,        [:state]
+  dependent_property :can_access_box,     [:state]
+  dependent_property :ssh_uri,            [:host, :port]
+  dependent_property :web_ide_path,       [:id]
+  dependent_property :can_perform_action, [:state]
+  dependent_property :can_start,          [:state]
+  dependent_property :can_restart,        [:state]
+  dependent_property :can_shut_down,      [:state]
+
+  def initialize(attrs={})
+    super
+    self.ssh_tunnels = AIOBoxSSHTunnels.new self
+    self.file_sync = AIOBoxFileSync.new self
+  end
 
   def state_description
     "State: #{@state.capitalize}" if @state
@@ -66,25 +84,3 @@ class AIOBox < AIOModel
     api.request :put, "/boxes/#{@id}/stop"
   end
 end
-
-# Cocoa-specific
-class AIOBox
-  attr_accessor :ssh_tunnels
-  attr_accessor :file_sync
-
-  dependent_property :state_description,  [:state]
-  dependent_property :state_image,        [:state]
-  dependent_property :can_access_box,     [:state]
-  dependent_property :ssh_uri,            [:host, :port]
-  dependent_property :web_ide_path,       [:id]
-  dependent_property :can_perform_action, [:state]
-  dependent_property :can_start,          [:state]
-  dependent_property :can_restart,        [:state]
-  dependent_property :can_shut_down,      [:state]
-
-  def initialize(attrs={})
-    super
-    self.ssh_tunnels = AIOBoxSSHTunnels.new self
-    self.file_sync = AIOBoxFileSync.new self
-  end
-end if RUBY_ENGINE == 'macruby'

@@ -46,7 +46,6 @@
 		E92BF346164253AE00862CF4 /* AIOAppController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E92BF345164253AE00862CF4 /* AIOAppController.rb */; };
 		E93058A9165F73CB00794635 /* AIOAPI.rb in Resources */ = {isa = PBXBuildFile; fileRef = E93058A8165F73CB00794635 /* AIOAPI.rb */; };
 		E93058B91663950600794635 /* AIOConstants.rb in Resources */ = {isa = PBXBuildFile; fileRef = E93058B81663950600794635 /* AIOConstants.rb */; };
-		E946CCFB166B5165000AE1E6 /* AIOCollectionCocoa.rb in Resources */ = {isa = PBXBuildFile; fileRef = E946CCF8166B5165000AE1E6 /* AIOCollectionCocoa.rb */; };
 		E946CD2C166B8CCF000AE1E6 /* state-yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD24166B8CCF000AE1E6 /* state-yellow.png */; };
 		E946CD2D166B8CCF000AE1E6 /* state-yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD25166B8CCF000AE1E6 /* state-yellow@2x.png */; };
 		E946CD2E166B8CCF000AE1E6 /* state-green.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD26166B8CCF000AE1E6 /* state-green.png */; };
@@ -58,7 +57,6 @@
 		E96795851667182B00703E49 /* AIOStatusMenuController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E96795841667182B00703E49 /* AIOStatusMenuController.rb */; };
 		E967959116686F7D00703E49 /* AIOCollection.rb in Resources */ = {isa = PBXBuildFile; fileRef = E967958F16686F7D00703E49 /* AIOCollection.rb */; };
 		E967959216686F7D00703E49 /* AIOModel.rb in Resources */ = {isa = PBXBuildFile; fileRef = E967959016686F7D00703E49 /* AIOModel.rb */; };
-		E96795A8166B497200703E49 /* AIOAPICocoa.rb in Resources */ = {isa = PBXBuildFile; fileRef = E96795A7166B497200703E49 /* AIOAPICocoa.rb */; };
 		E96BC69C165F35840016A467 /* environment.rb in Resources */ = {isa = PBXBuildFile; fileRef = E96BC69B165F35840016A467 /* environment.rb */; };
 		E97537EB16724B050030B15B /* BoxMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97537EA16724B050030B15B /* BoxMenu.xib */; };
 		E97991061689DB0C00E14608 /* AIOIntegerToStringTransformer.rb in Resources */ = {isa = PBXBuildFile; fileRef = E97991051689DB0C00E14608 /* AIOIntegerToStringTransformer.rb */; };
@@ -166,8 +164,6 @@
 		E93058A7165F73BD00794635 /* AIOAPISpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOAPISpec.rb; sourceTree = "<group>"; };
 		E93058A8165F73CB00794635 /* AIOAPI.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOAPI.rb; sourceTree = "<group>"; };
 		E93058B81663950600794635 /* AIOConstants.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOConstants.rb; sourceTree = "<group>"; };
-		E946CCF8166B5165000AE1E6 /* AIOCollectionCocoa.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOCollectionCocoa.rb; sourceTree = "<group>"; };
-		E946CCFE166B51D4000AE1E6 /* AIOCollectionCocoaSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOCollectionCocoaSpec.rb; sourceTree = "<group>"; };
 		E946CCFF166B51D4000AE1E6 /* AIOCollectionSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOCollectionSpec.rb; sourceTree = "<group>"; };
 		E946CD00166B51D4000AE1E6 /* AIOModelSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOModelSpec.rb; sourceTree = "<group>"; };
 		E946CD24166B8CCF000AE1E6 /* state-yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "state-yellow.png"; sourceTree = "<group>"; };
@@ -183,7 +179,6 @@
 		E96795841667182B00703E49 /* AIOStatusMenuController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOStatusMenuController.rb; sourceTree = "<group>"; };
 		E967958F16686F7D00703E49 /* AIOCollection.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOCollection.rb; sourceTree = "<group>"; };
 		E967959016686F7D00703E49 /* AIOModel.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOModel.rb; sourceTree = "<group>"; };
-		E96795A7166B497200703E49 /* AIOAPICocoa.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOAPICocoa.rb; sourceTree = "<group>"; };
 		E96BC698165E27E20016A467 /* FakeAIOSettings.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = FakeAIOSettings.rb; sourceTree = "<group>"; };
 		E96BC69B165F35840016A467 /* environment.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = environment.rb; sourceTree = "<group>"; };
 		E97537EA16724B050030B15B /* BoxMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoxMenu.xib; sourceTree = "<group>"; };
@@ -385,7 +380,6 @@
 		E946CCFD166B51D4000AE1E6 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				E946CCFE166B51D4000AE1E6 /* AIOCollectionCocoaSpec.rb */,
 				E946CCFF166B51D4000AE1E6 /* AIOCollectionSpec.rb */,
 				E946CD00166B51D4000AE1E6 /* AIOModelSpec.rb */,
 			);
@@ -614,7 +608,6 @@
 				E90EF6FF169EB24E00A819CC /* tasks */,
 				E9A167D91680717500F31E69 /* transformers */,
 				E93058A8165F73CB00794635 /* AIOAPI.rb */,
-				E96795A7166B497200703E49 /* AIOAPICocoa.rb */,
 				E9B6D0F8166E54940088AC85 /* AIOJob.rb */,
 				E9B6D0F9166E54940088AC85 /* AIOJobManager.rb */,
 				E914D2DE166F69AC009486CB /* AIOPusher.rb */,
@@ -631,7 +624,6 @@
 			children = (
 				E967959016686F7D00703E49 /* AIOModel.rb */,
 				E967958F16686F7D00703E49 /* AIOCollection.rb */,
-				E946CCF8166B5165000AE1E6 /* AIOCollectionCocoa.rb */,
 				E9A168081683200100F31E69 /* user */,
 				E9A168021683200100F31E69 /* box */,
 				E9A168051683200100F31E69 /* public_key */,
@@ -765,8 +757,6 @@
 				E96795851667182B00703E49 /* AIOStatusMenuController.rb in Resources */,
 				E967959116686F7D00703E49 /* AIOCollection.rb in Resources */,
 				E967959216686F7D00703E49 /* AIOModel.rb in Resources */,
-				E96795A8166B497200703E49 /* AIOAPICocoa.rb in Resources */,
-				E946CCFB166B5165000AE1E6 /* AIOCollectionCocoa.rb in Resources */,
 				E946CD2C166B8CCF000AE1E6 /* state-yellow.png in Resources */,
 				E946CD2D166B8CCF000AE1E6 /* state-yellow@2x.png in Resources */,
 				E946CD2E166B8CCF000AE1E6 /* state-green.png in Resources */,

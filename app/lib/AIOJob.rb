@@ -2,7 +2,7 @@ class AIOJob
   CompletionNotification = 'AIOJobCompletionNotification'
 
   def self.async(&block)
-    Thread.new &block
+    Dispatch::Queue.concurrent.async &block
   end
 
   attr_reader :name, :task, :cancelled, :running, :completed, :failed, :last_error
@@ -56,17 +56,6 @@ class AIOJob
 
   protected
   def on_complete
-  end
-end
-
-# Cocoa-specific
-class AIOJob
-  def self.async(&block)
-    # use GCD instead of Thread
-    Dispatch::Queue.concurrent.async &block
-  end
-
-  def on_complete
     NSNotificationCenter.defaultCenter.postNotificationName CompletionNotification, object: self
   end
-end if RUBY_ENGINE == 'macruby'
+end

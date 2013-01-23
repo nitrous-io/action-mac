@@ -1,8 +1,7 @@
-require AIO_COLLECTION_CLASS_NAME.to_s
-collectionClass = Kernel.const_get AIO_COLLECTION_CLASS_NAME
+require 'AIOCollection'
 require 'AIOBox'
 
-class AIOBoxCollection < collectionClass
+class AIOBoxCollection < AIOCollection
   model AIOBox
   resource_path '/boxes'
   json_root 'boxes'

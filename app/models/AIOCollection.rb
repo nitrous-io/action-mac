@@ -13,12 +13,19 @@ class AIOCollection
     end
   end
 
+  attr_accessor :content
+
+  def initialize
+    super
+    self.content = []
+  end
+
   def models
-    raise NotImplementedError
+    mutableArrayValueForKey 'content'
   end
 
   def api
-    raise NotImplementedError
+    AIOApp.api
   end
 
   def add_object(obj)

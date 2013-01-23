@@ -12,7 +12,7 @@ class AIOAppController
 
     self.store = AIOKeyValueStore.new
     self.task_manager = AIOTaskManager.new
-    self.api = AIOAPICocoa.new
+    self.api = AIOAPI.new
     self.jobs = AIOJobManager.new
 
     NSThread.detachNewThreadSelector :start_job_timer, toTarget: self, withObject: nil
@@ -33,7 +33,7 @@ class AIOAppController
 
     begin
       @api.sign_in
-    rescue AIOAPICocoa::KeychainError => e
+    rescue AIOAPI::KeychainError => e
       show_keychain_error
     end
 
@@ -93,7 +93,7 @@ class AIOAppController
     if value.nil?
       begin
         @api.sign_out
-      rescue AIOAPICocoa::KeychainError => e
+      rescue AIOAPI::KeychainError => e
         Dispatch::Queue.main.async do
           show_keychain_error
         end

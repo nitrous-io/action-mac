@@ -15,17 +15,10 @@ class AIOModel
   end
 
   def api
-    raise NotImplementedError
+    AIOApp.api
   end
 
   def <=>(other_obj)
     id <=> other_obj.id
   end
 end
-
-class AIOModel
-  def api
-    AIOApp.api
-  end
-end if RUBY_ENGINE == 'macruby'
-
