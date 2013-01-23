@@ -14,7 +14,9 @@ class AIOAppController
     self.task_manager = AIOTaskManager.new
     self.api = AIOAPICocoa.new
     self.jobs = AIOJobManager.new
-    NSTimer.scheduledTimerWithTimeInterval JOB_PROCESSING_INTERVAL, target: self, selector: :process_jobs, userInfo: nil, repeats: true
+
+    NSThread.detachNewThreadSelector :start_job_timer, toTarget: self, withObject: nil
+
     self.pusher = AIOPusher.new
 
     self.ssh_key_pair = AIOSSHKeyPair.new
@@ -39,6 +41,7 @@ class AIOAppController
   end
 
   def finalize
+    stop_job_timer
     stop_observing self, 'api.token'
     stop_observing self, 'api.signed_in'
     stop_observing self, 'current_user.id'
@@ -135,5 +138,18 @@ class AIOAppController
 
   def process_jobs
     @jobs.process_jobs
+  end
+
+  def start_job_timer
+    @job_timer = NSTimer.scheduledTimerWithTimeInterval JOB_PROCESSING_INTERVAL, target: self, selector: :process_jobs, userInfo: nil, repeats: true
+    runloop = NSRunLoop.currentRunLoop
+    while @job_timer
+      runloop.runMode NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture
+    end
+  end
+
+  def stop_job_timer
+    @job_timer.invalidate if @job_timer
+    @job_timer = nil
   end
 end
