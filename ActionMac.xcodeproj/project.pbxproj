@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		E902D68516B14C80007CFEE1 /* ActionAppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E902D68416B14C80007CFEE1 /* ActionAppIcon.icns */; };
 		E90EF6B7169AB99600A819CC /* AIOSSHTunnel.rb in Resources */ = {isa = PBXBuildFile; fileRef = E90EF6B6169AB99600A819CC /* AIOSSHTunnel.rb */; };
 		E90EF6D4169C11AD00A819CC /* AIOChildProcess.rb in Resources */ = {isa = PBXBuildFile; fileRef = E90EF6D3169C11AD00A819CC /* AIOChildProcess.rb */; };
 		E90EF701169EB78600A819CC /* AIOSSHTunnelTask.rb in Resources */ = {isa = PBXBuildFile; fileRef = E90EF700169EB78600A819CC /* AIOSSHTunnelTask.rb */; };
@@ -131,6 +132,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E902D68416B14C80007CFEE1 /* ActionAppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ActionAppIcon.icns; sourceTree = "<group>"; };
 		E90EF6B6169AB99600A819CC /* AIOSSHTunnel.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOSSHTunnel.rb; sourceTree = "<group>"; };
 		E90EF6D3169C11AD00A819CC /* AIOChildProcess.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOChildProcess.rb; sourceTree = "<group>"; };
 		E90EF6D5169D6CCA00A819CC /* AIOChildProcessSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOChildProcessSpec.rb; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				E982FC44164AC09800CA54BA /* Rakefile */,
 				E90FD707165E051300B09052 /* .gems */,
 				E90FD70E165E143500B09052 /* README.md */,
+				E902D68416B14C80007CFEE1 /* ActionAppIcon.icns */,
 				E9987DFA164BADBA00B762FE /* vendor */,
 				E92BF32D164253AD00862CF4 /* Frameworks */,
 				E92BF32B164253AD00862CF4 /* Products */,
@@ -817,6 +820,7 @@
 				E91C4ECE16AD1E6300E4D417 /* AIOBoxFileSync.rb in Resources */,
 				E91C4ED116AD269300E4D417 /* AIOFileSyncTask.rb in Resources */,
 				E91C4ED316AD53BA00E4D417 /* actionio-unison in Resources */,
+				E902D68516B14C80007CFEE1 /* ActionAppIcon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

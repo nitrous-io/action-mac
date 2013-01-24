@@ -2,10 +2,24 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AIOEnv</key>
+	<string>${AIO_ENV}</string>
+	<key>AIOGitHash</key>
+	<string>AIO_GIT_HASH</string>
+	<key>AIOHost</key>
+	<string>${AIO_HOST}</string>
+	<key>AIOOAuthClientID</key>
+	<string>AIO_OAUTH_CLIENT_ID</string>
+	<key>AIOOAuthClientSecret</key>
+	<string>AIO_OAUTH_CLIENT_SECRET</string>
+	<key>AIOPusherKey</key>
+	<string>AIO_PUSHER_KEY</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFile</key>
+	<string>ActionAppIcon</string>
 	<key>CFBundleIdentifier</key>
 	<string>AIO_BUNDLE_ID</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -24,25 +38,13 @@
 	<string>public.app-category.developer-tools</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
-	<key>NSMainNibFile</key>
-	<string>App</string>
-	<key>NSPrincipalClass</key>
-	<string>NSApplication</string>
 	<key>LSUIElement</key>
 	<true/>
 	<key>NSHighResolutionCapable</key>
 	<true/>
-	<key>AIOEnv</key>
-	<string>${AIO_ENV}</string>
-	<key>AIOHost</key>
-	<string>${AIO_HOST}</string>
-	<key>AIOOAuthClientID</key>
-	<string>AIO_OAUTH_CLIENT_ID</string>
-	<key>AIOOAuthClientSecret</key>
-	<string>AIO_OAUTH_CLIENT_SECRET</string>
-	<key>AIOGitHash</key>
-	<string>AIO_GIT_HASH</string>
-	<key>AIOPusherKey</key>
-	<string>AIO_PUSHER_KEY</string>
+	<key>NSMainNibFile</key>
+	<string>App</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
 </dict>
 </plist>
