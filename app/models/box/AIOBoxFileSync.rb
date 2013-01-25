@@ -10,8 +10,14 @@ class AIOBoxFileSync
     self.box = box
     load_data
     observe(self, 'enabled', initial: true) { |v,c| enabled_did_change v,c }
+    observe(@box, 'state',   initial: true) { |v,c| box_state_did_change v,c }
     self.file_sync_task = AIOFileSyncTask.new self
     start_or_kill_file_sync_task
+  end
+
+  def finalize
+    stop_observing self, 'enabled'
+    stop_observing @box, 'state'
   end
 
   private
@@ -24,9 +30,17 @@ class AIOBoxFileSync
     start_or_kill_file_sync_task
   end
 
+  def box_state_did_change(value, change)
+    start_or_kill_file_sync_task
+  end
+
   def start_or_kill_file_sync_task
     if @file_sync_task
-      @enabled ? @file_sync_task.start_monitoring : @file_sync_task.stop_monitoring
+      if @enabled && @box.state == AIOBox::STATE_RUNNING
+        @file_sync_task.start_monitoring
+      else
+        @file_sync_task.stop_monitoring
+      end
     end
   end
 

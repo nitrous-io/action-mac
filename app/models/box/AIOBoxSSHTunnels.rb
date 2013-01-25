@@ -18,14 +18,16 @@ class AIOBoxSSHTunnels
       observe(self, t, initial: true) { |v,c| tunnels_array_did_change v,c }
     end
     observe(self, 'enabled', initial: true) { |v,c| enabled_did_change v,c }
+    observe(@box, 'state',   initial: true) { |v,c| box_state_did_change v,c }
     self.ssh_tunnel_task = AIOSSHTunnelTask.new self
     start_or_kill_ssh_tunnel_task
   end
 
   def finalize
-    stop_observing self, 'enabled'
     stop_observing self, 'local_tunnels'
     stop_observing self, 'remote_tunnels'
+    stop_observing self, 'enabled'
+    stop_observing @box, 'state'
   end
 
   private
@@ -45,9 +47,17 @@ class AIOBoxSSHTunnels
     start_or_kill_ssh_tunnel_task
   end
 
+  def box_state_did_change(value, change)
+    start_or_kill_ssh_tunnel_task
+  end
+
   def start_or_kill_ssh_tunnel_task
     if @ssh_tunnel_task
-      @enabled ? @ssh_tunnel_task.restart : @ssh_tunnel_task.kill
+      if @enabled && @box.state == AIOBox::STATE_RUNNING
+        @ssh_tunnel_task.restart
+      else
+        @ssh_tunnel_task.kill
+      end
     end
   end
 

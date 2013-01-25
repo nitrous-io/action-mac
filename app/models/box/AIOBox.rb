@@ -20,6 +20,7 @@ class AIOBox < AIOModel
   dependent_property :can_start,          [:state]
   dependent_property :can_restart,        [:state]
   dependent_property :can_shut_down,      [:state]
+  dependent_property :can_run_tasks,      [:state]
 
   def initialize(attrs={})
     super
@@ -69,6 +70,10 @@ class AIOBox < AIOModel
   end
 
   def can_shut_down
+    @state == STATE_RUNNING
+  end
+
+  def can_run_tasks
     @state == STATE_RUNNING
   end
 
