@@ -6,6 +6,7 @@ class AIOBox < AIOModel
   STATE_TERMINATED = 'terminated'
   STATE_SUSPENDED = 'suspended'
   STATE_DEFAULT = 'default'
+  STATE_REMOVED = 'removed'
 
   attr_accessor :name, :state, :host, :port
   attr_accessor :ssh_tunnels
@@ -38,7 +39,7 @@ class AIOBox < AIOModel
         'green'
       when STATE_STOPPED, STATE_SUSPENDED
         'red'
-      when STATE_TERMINATED
+      when STATE_TERMINATED, STATE_REMOVED
         'gray'
       else
         'yellow'

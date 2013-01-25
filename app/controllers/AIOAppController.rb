@@ -133,7 +133,9 @@ class AIOAppController
   def reset
     @jobs.cancel_all
     @boxes.clear
+    @public_keys.clear
     @current_user.clear
+    @task_manager.kill_all
   end
 
   def process_jobs

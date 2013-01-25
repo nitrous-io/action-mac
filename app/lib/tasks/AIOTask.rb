@@ -26,6 +26,7 @@ class AIOTask
   def kill
     return unless @child_process
     puts "killing #{NSStringFromClass self.class} #{self}"
+    AIOApp.task_manager.remove self
     @child_process.delegate = nil
     @child_process.kill
     @child_process = nil
