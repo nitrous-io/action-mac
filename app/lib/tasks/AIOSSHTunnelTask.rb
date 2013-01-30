@@ -61,6 +61,8 @@ class AIOSSHTunnelTask < AIOTask
       '-g', # allow LAN connections
       '-o', 'TCPKeepAlive=yes', # use tcp keep alive
       '-o', 'ServerAliveInterval=60', # send keep alive packet to server every 60 sec
+      '-o', 'UserKnownHostsFile=/dev/null',
+      '-o', 'StrictHostKeyChecking=no', # no host key checking
       '-o', 'PreferredAuthentications=publickey', # pub key authentication only
       '-o', 'ExitOnForwardFailure=yes', # exit on forward failure
       '-c', 'blowfish-cbc', # use blowfish cipher

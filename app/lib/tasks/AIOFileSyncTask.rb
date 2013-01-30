@@ -96,7 +96,7 @@ class AIOFileSyncTask < AIOTask
       '-confirmbigdel=false', # don't ask about whole replica deletes
       '-log=false', # don't log
       '-rsrc=false', # don't sync resource fork
-      '-sshargs', '-o PreferredAuthentications=publickey -c blowfish-cbc',
+      '-sshargs', '-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o PreferredAuthentications=publickey -c blowfish-cbc',
       '-ignore', IGNORE_LIST,
       '-prefer', remote, # prefer remote when there's a conflict
     ]
