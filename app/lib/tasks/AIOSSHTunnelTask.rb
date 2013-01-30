@@ -103,6 +103,7 @@ class AIOSSHTunnelTask < AIOTask
   end
 
   def kill
+    @should_restart = false
     super
     self.state = STATE_DISCONNECTED
   end
