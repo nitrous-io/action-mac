@@ -27,6 +27,7 @@ class AIOFileSyncTask < AIOTask
     @should_stop_monitoring = false
     @run_once_more = false
     @should_retry = false
+    @should_ignore_archives = false
     @mutex = Mutex.new
     box = file_sync.box
     @local_path = File.join Dir.home, FILE_SYNC_FOLDER_NAME, sanitize(box.name)
@@ -104,7 +105,10 @@ class AIOFileSyncTask < AIOTask
 
     make_actionio_folder
 
-    args << '-ignorearchives' unless Dir.exists? @local_path
+    if @should_ignore_archives || !Dir.exists?(@local_path)
+      @should_ignore_archives = false
+      args << '-ignorearchives'
+    end
     FileUtils.mkdir_p @local_path
 
     resource_path = NSBundle.mainBundle.resourcePath.fileSystemRepresentation
@@ -210,6 +214,9 @@ class AIOFileSyncTask < AIOTask
     if match = text.match(/[Ee]rror:(.*)$/)
       self.state = STATE_ERROR
       self.last_error_message = match[1].strip.capitalize
+      if @last_error_message.include? 'Warning: inconsistent state'
+        @should_ignore_archives = true
+      end
       schedule_retry
     end if @state == STATE_SYNCING
   end
