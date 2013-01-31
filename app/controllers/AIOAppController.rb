@@ -7,6 +7,8 @@ class AIOAppController
   attr_accessor :store, :task_manager, :api, :pusher, :jobs, :ssh_key_pair
   attr_accessor :current_user, :boxes, :public_keys
 
+  dependent_property :connected, ['current_user.id', 'pusher.ready', 'boxes.last_fetch_error']
+
   def initialize
     Kernel.const_set :AIOApp, self
 
@@ -46,6 +48,10 @@ class AIOAppController
     stop_observing self, 'api.signed_in'
     stop_observing self, 'current_user.id'
     stop_observing self, 'pusher.ready'
+  end
+
+  def connected
+    g('current_user.id') && g('pusher.ready') && g('boxes.last_fetch_error').nil?
   end
 
   def open_welcome_window

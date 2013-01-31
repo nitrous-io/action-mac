@@ -13,7 +13,7 @@ class AIOCollection
     end
   end
 
-  attr_accessor :content
+  attr_accessor :content, :last_fetch_error
 
   def initialize
     super
@@ -53,27 +53,34 @@ class AIOCollection
   end
 
   def fetch
-    if response = api.request(:get, resource_path)
-      model_attrs = response.parsed[json_root]
-      new_ids = model_attrs.map { |o| o['id'] }
+    begin
+      if response = api.request(:get, resource_path)
+        model_attrs = response.parsed[json_root]
+        new_ids = model_attrs.map { |o| o['id'] }
 
-      old_objects = models
-      old_ids = old_objects.map(&:id)
-      deleted_ids = old_ids - new_ids
-      removed_objects = old_objects.select { |o| deleted_ids.include? o.id }
+        old_objects = models
+        old_ids = old_objects.map(&:id)
+        deleted_ids = old_ids - new_ids
+        removed_objects = old_objects.select { |o| deleted_ids.include? o.id }
 
-      new_objects = []
+        new_objects = []
 
-      model_attrs.each do |attr|
-        if obj = find_by_id(attr['id'])
-          obj.update_attributes attr
-        else
-          new_objects.push model.new(attr)
+        model_attrs.each do |attr|
+          if obj = find_by_id(attr['id'])
+            obj.update_attributes attr
+          else
+            new_objects.push model.new(attr)
+          end
         end
-      end
 
-      add_objects new_objects
-      remove_objects removed_objects
+        add_objects new_objects
+        remove_objects removed_objects
+      end
+    rescue => e
+      self.last_fetch_error = e
+      raise e
+    else
+      self.last_fetch_error = nil
     end
   end
 end

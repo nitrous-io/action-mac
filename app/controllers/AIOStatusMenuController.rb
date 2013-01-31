@@ -19,20 +19,24 @@ class AIOStatusMenuController
   def setup_menu
     @status_item = NSStatusBar.systemStatusBar.statusItemWithLength NSVariableStatusItemLength
     @status_item.setHighlightMode true
-    @status_item.setImage NSImage.imageNamed('status-item-icon')
+    @status_item.setImage NSImage.imageNamed('status-item-icon-gray')
     @status_item.setAlternateImage NSImage.imageNamed('status-item-icon-highlighted')
     @status_item.setToolTip 'Action.IO'
     @status_item.setMenu @menu
 
     observe(AIOApp, 'boxes.content') { |v,c| boxes_content_did_change v,c }
+    observe(AIOApp, 'connected'    ) { |v,c| update_status_item_image v,c }
     NSNotificationCenter.defaultCenter.addObserver self, selector: 'job_completed:', name: AIOJob::CompletionNotification, object: nil
 
     fetch_current_user
+    NSThread.detachNewThreadSelector :start_boxes_timer, toTarget: self, withObject: nil
   end
 
   def teardown_menu
     NSNotificationCenter.defaultCenter.removeObserver self, name: AIOJob::CompletionNotification, object: nil
+    stop_boxes_timer
     stop_observing AIOApp, 'boxes.content'
+    stop_observing AIOApp, 'connected'
 
     NSStatusBar.systemStatusBar.removeStatusItem @status_item
     @status_item = nil
@@ -67,6 +71,19 @@ class AIOStatusMenuController
   end
 
   private
+  def start_boxes_timer
+    @boxes_timer = NSTimer.scheduledTimerWithTimeInterval BOXES_FETCHING_INTERVAL, target: self, selector: :fetch_boxes, userInfo: nil, repeats: true
+    runloop = NSRunLoop.currentRunLoop
+    while @boxes_timer
+      runloop.runMode NSDefaultRunLoopMode, beforeDate: NSDate.distantFuture
+    end
+  end
+
+  def stop_boxes_timer
+    @boxes_timer.invalidate if @boxes_timer
+    @boxes_timer = nil
+  end
+
   def boxes_content_did_change(value, change)
     case change[NSKeyValueChangeKindKey]
       when NSKeyValueChangeInsertion
@@ -77,6 +94,10 @@ class AIOStatusMenuController
         remove_old_items change
         add_new_items change
     end
+  end
+
+  def update_status_item_image(value, change)
+    @status_item.setImage NSImage.imageNamed("status-item-icon#{'-gray' unless value}")
   end
 
   def add_new_items(change)

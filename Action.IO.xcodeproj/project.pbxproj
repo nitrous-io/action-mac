@@ -23,6 +23,8 @@
 /* Begin PBXBuildFile section */
 		E902D68516B14C80007CFEE1 /* ActionAppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E902D68416B14C80007CFEE1 /* ActionAppIcon.icns */; };
 		E90DD0EC16BA198E000B5A36 /* ActionFolderIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E90DD0EB16BA198E000B5A36 /* ActionFolderIcon.icns */; };
+		E90DD0F016BA2CDA000B5A36 /* status-item-icon-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = E90DD0EE16BA2CDA000B5A36 /* status-item-icon-gray.png */; };
+		E90DD0F116BA2CDA000B5A36 /* status-item-icon-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E90DD0EF16BA2CDA000B5A36 /* status-item-icon-gray@2x.png */; };
 		E90EF6B7169AB99600A819CC /* AIOSSHTunnel.rb in Resources */ = {isa = PBXBuildFile; fileRef = E90EF6B6169AB99600A819CC /* AIOSSHTunnel.rb */; };
 		E90EF6D4169C11AD00A819CC /* AIOChildProcess.rb in Resources */ = {isa = PBXBuildFile; fileRef = E90EF6D3169C11AD00A819CC /* AIOChildProcess.rb */; };
 		E90EF701169EB78600A819CC /* AIOSSHTunnelTask.rb in Resources */ = {isa = PBXBuildFile; fileRef = E90EF700169EB78600A819CC /* AIOSSHTunnelTask.rb */; };
@@ -135,6 +137,8 @@
 /* Begin PBXFileReference section */
 		E902D68416B14C80007CFEE1 /* ActionAppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ActionAppIcon.icns; sourceTree = "<group>"; };
 		E90DD0EB16BA198E000B5A36 /* ActionFolderIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ActionFolderIcon.icns; sourceTree = "<group>"; };
+		E90DD0EE16BA2CDA000B5A36 /* status-item-icon-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon-gray.png"; sourceTree = "<group>"; };
+		E90DD0EF16BA2CDA000B5A36 /* status-item-icon-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon-gray@2x.png"; sourceTree = "<group>"; };
 		E90EF6B6169AB99600A819CC /* AIOSSHTunnel.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOSSHTunnel.rb; sourceTree = "<group>"; };
 		E90EF6D3169C11AD00A819CC /* AIOChildProcess.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOChildProcess.rb; sourceTree = "<group>"; };
 		E90EF6D5169D6CCA00A819CC /* AIOChildProcessSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOChildProcessSpec.rb; sourceTree = "<group>"; };
@@ -330,6 +334,8 @@
 				E918B3ED164B96D100D53509 /* status-item-icon-highlighted@2x.png */,
 				E918B3EE164B96D100D53509 /* status-item-icon.png */,
 				E918B3EF164B96D100D53509 /* status-item-icon@2x.png */,
+				E90DD0EE16BA2CDA000B5A36 /* status-item-icon-gray.png */,
+				E90DD0EF16BA2CDA000B5A36 /* status-item-icon-gray@2x.png */,
 				E9975D4D1679A8F600A6950A /* ssh-key.png */,
 				E9975D4E1679A8F600A6950A /* ssh-key@2x.png */,
 				E91F647D16A9448900E797BC /* sync.png */,
@@ -825,6 +831,8 @@
 				E91C4ED316AD53BA00E4D417 /* actionio-unison in Resources */,
 				E902D68516B14C80007CFEE1 /* ActionAppIcon.icns in Resources */,
 				E90DD0EC16BA198E000B5A36 /* ActionFolderIcon.icns in Resources */,
+				E90DD0F016BA2CDA000B5A36 /* status-item-icon-gray.png in Resources */,
+				E90DD0F116BA2CDA000B5A36 /* status-item-icon-gray@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
