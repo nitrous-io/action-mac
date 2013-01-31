@@ -26,6 +26,7 @@ class AIOFileSyncTask < AIOTask
     self.state = STATE_IDLE
     @should_stop_monitoring = false
     @run_once_more = false
+    @should_retry = false
     @mutex = Mutex.new
     box = file_sync.box
     @local_path = File.join Dir.home, FILE_SYNC_FOLDER_NAME, sanitize(box.name)
@@ -98,7 +99,7 @@ class AIOFileSyncTask < AIOTask
       '-rsrc=false', # don't sync resource fork
       '-sshargs', '-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o PreferredAuthentications=publickey -c blowfish-cbc',
       '-ignore', IGNORE_LIST,
-      '-prefer', remote, # prefer remote when there's a conflict
+      '-prefer', remote # prefer remote when there's a conflict
     ]
 
     make_actionio_folder
@@ -115,6 +116,7 @@ class AIOFileSyncTask < AIOTask
 
   def start
     @mutex.synchronize do
+      @should_retry = false
       if @state == STATE_MONITORING || @state == STATE_ERROR
         puts "filesync: start unison #{@file_sync.box.name}"
         @run_once_more = false
@@ -128,7 +130,13 @@ class AIOFileSyncTask < AIOTask
     end
   end
 
+  def stop
+    @should_retry = false
+    super
+  end
+
   def kill
+    @should_retry = false
     super
     stop_monitoring
   end
@@ -202,12 +210,8 @@ class AIOFileSyncTask < AIOTask
     if match = text.match(/[Ee]rror:(.*)$/)
       self.state = STATE_ERROR
       self.last_error_message = match[1].strip.capitalize
+      schedule_retry
     end if @state == STATE_SYNCING
-  end
-
-  # just in case, to prevent arbitrary command injection
-  def sanitize(name)
-    name.to_s.gsub /[^a-zA-Z0-9\-\.]/, ''
   end
 
   def make_actionio_folder
@@ -217,5 +221,22 @@ class AIOFileSyncTask < AIOTask
       icon = NSImage.imageNamed 'ActionFolderIcon.icns'
       NSWorkspace.sharedWorkspace.setIcon icon, forFile: actionio_folder, options: 0
     end
+  end
+
+  def schedule_retry
+    puts 'scheduling retry for file sync'
+    @should_retry = true
+    Dispatch::Queue.main.after 10.0 do
+      if @should_retry
+        puts 'retrying file sync...'
+        @should_retry = false
+        start
+      end
+    end
+  end
+
+  # just in case, to prevent arbitrary command injection
+  def sanitize(name)
+    name.to_s.gsub /[^a-zA-Z0-9\-\.]/, ''
   end
 end

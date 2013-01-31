@@ -129,7 +129,9 @@ class AIOSSHTunnelTask < AIOTask
 
   protected
   def schedule_restart
+    puts 'scheduling restart for ssh tunneling'
     Dispatch::Queue.main.after 10.0 do
+      puts 'restarting ssh tunneling'
       restart if @should_restart
     end
   end
