@@ -3,6 +3,10 @@ Pods/
 config/InfoPlist.h
 config/InfoPlist-production.h
 
+# Bundler
+.bundle/bin
+vendor/bundle
+
 # Xcode
 build/*
 *.pbxuser

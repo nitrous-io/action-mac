@@ -1,4 +1,11 @@
 require 'rubygems'
+
+resource_path = NSBundle.mainBundle.resourcePath.fileSystemRepresentation
+ENV['BUNDLE_GEMFILE'] = File.join resource_path, 'Gemfile'
+
+require 'bundler'
+Bundler.require
+
 require 'AIOConstants'
 require 'AIOSettings'
 require 'Kernel+AIO'
@@ -20,4 +27,3 @@ require 'faraday/adapter/net_http'
 require 'json'
 require 'multi_json'
 MultiJson.adapter
-

@@ -4,7 +4,9 @@
 
 ```
 $ sudo chown -R $USER:admin /Library/Ruby/Gems/MacRuby
-$ while read -r line; do macgem install $line; done < .gems
+$ sudo curl https://raw.github.com/gist/4681824/macruby_deploy -o /usr/local/bin/macruby_deploy
+$ macgem install bundler -v 1.2.3 --format-executable
+$ macbundle install
 ```
 
 You also need to install a fork of `facon` manually.

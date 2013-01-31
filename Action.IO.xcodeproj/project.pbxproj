@@ -50,6 +50,8 @@
 		E92BF346164253AE00862CF4 /* AIOAppController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E92BF345164253AE00862CF4 /* AIOAppController.rb */; };
 		E93058A9165F73CB00794635 /* AIOAPI.rb in Resources */ = {isa = PBXBuildFile; fileRef = E93058A8165F73CB00794635 /* AIOAPI.rb */; };
 		E93058B91663950600794635 /* AIOConstants.rb in Resources */ = {isa = PBXBuildFile; fileRef = E93058B81663950600794635 /* AIOConstants.rb */; };
+		E93D276F16BA6039006C0A66 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = E93D276E16BA6039006C0A66 /* Gemfile.lock */; };
+		E93D277116BA6044006C0A66 /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = E93D277016BA6044006C0A66 /* Gemfile */; };
 		E946CD2C166B8CCF000AE1E6 /* state-yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD24166B8CCF000AE1E6 /* state-yellow.png */; };
 		E946CD2D166B8CCF000AE1E6 /* state-yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD25166B8CCF000AE1E6 /* state-yellow@2x.png */; };
 		E946CD2E166B8CCF000AE1E6 /* state-green.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD26166B8CCF000AE1E6 /* state-green.png */; };
@@ -146,7 +148,6 @@
 		E90FD702165DFCF900B09052 /* InfoPlist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoPlist.h; sourceTree = "<group>"; };
 		E90FD703165DFF5400B09052 /* AIOSettings.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOSettings.rb; sourceTree = "<group>"; };
 		E90FD705165E039A00B09052 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		E90FD707165E051300B09052 /* .gems */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gems; sourceTree = "<group>"; };
 		E90FD70E165E143500B09052 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E914D2DE166F69AC009486CB /* AIOPusher.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOPusher.rb; sourceTree = "<group>"; };
 		E914D2E2166F6C61009486CB /* pusher.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = pusher.min.js; sourceTree = "<group>"; };
@@ -172,6 +173,8 @@
 		E93058A7165F73BD00794635 /* AIOAPISpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOAPISpec.rb; sourceTree = "<group>"; };
 		E93058A8165F73CB00794635 /* AIOAPI.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOAPI.rb; sourceTree = "<group>"; };
 		E93058B81663950600794635 /* AIOConstants.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOConstants.rb; sourceTree = "<group>"; };
+		E93D276E16BA6039006C0A66 /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
+		E93D277016BA6044006C0A66 /* Gemfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		E946CCFF166B51D4000AE1E6 /* AIOCollectionSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOCollectionSpec.rb; sourceTree = "<group>"; };
 		E946CD00166B51D4000AE1E6 /* AIOModelSpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOModelSpec.rb; sourceTree = "<group>"; };
 		E946CD24166B8CCF000AE1E6 /* state-yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "state-yellow.png"; sourceTree = "<group>"; };
@@ -360,7 +363,8 @@
 				E90FD6F4165DD94600B09052 /* config */,
 				E982FC3F164ABFF800CA54BA /* spec */,
 				E982FC44164AC09800CA54BA /* Rakefile */,
-				E90FD707165E051300B09052 /* .gems */,
+				E93D277016BA6044006C0A66 /* Gemfile */,
+				E93D276E16BA6039006C0A66 /* Gemfile.lock */,
 				E90FD70E165E143500B09052 /* README.md */,
 				E902D68416B14C80007CFEE1 /* ActionAppIcon.icns */,
 				E9987DFA164BADBA00B762FE /* vendor */,
@@ -678,7 +682,7 @@
 /* Begin PBXLegacyTarget section */
 		E92BF332164253AE00862CF4 /* Deployment */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "--compile --embed --gem oauth2 --gem sshkey --gem rb-fsevent";
+			buildArgumentsString = "--compile --exclude-compile vendor --embed --gem bundler";
 			buildConfigurationList = E92BF34C164253AE00862CF4 /* Build configuration list for PBXLegacyTarget "Deployment" */;
 			buildPhases = (
 			);
@@ -735,8 +739,8 @@
 			projectRoot = "";
 			targets = (
 				E92BF329164253AD00862CF4 /* Action.IO */,
-				E92BF332164253AE00862CF4 /* Deployment */,
 				E90FD6FB165DFC9A00B09052 /* GenerateInfoPlistHeader */,
+				E92BF332164253AE00862CF4 /* Deployment */,
 			);
 		};
 /* End PBXProject section */
@@ -833,6 +837,8 @@
 				E90DD0EC16BA198E000B5A36 /* ActionFolderIcon.icns in Resources */,
 				E90DD0F016BA2CDA000B5A36 /* status-item-icon-gray.png in Resources */,
 				E90DD0F116BA2CDA000B5A36 /* status-item-icon-gray@2x.png in Resources */,
+				E93D276F16BA6039006C0A66 /* Gemfile.lock in Resources */,
+				E93D277116BA6044006C0A66 /* Gemfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,7 +870,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "ACTIONIO_SSH_PATH=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/actionio-ssh\"\nrm -f $ACTIONIO_SSH_PATH\nln -s /usr/bin/ssh $ACTIONIO_SSH_PATH";
+			shellScript = "RESOURCES_FOLDER_PATH=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\"\n\n# copy bundler bundle\nmkdir -p $RESOURCES_FOLDER_PATH/.bundle\nmkdir -p $RESOURCES_FOLDER_PATH/vendor\ncp -PR $SRCROOT/.bundle/config $RESOURCES_FOLDER_PATH/.bundle\ncp -PR $SRCROOT/vendor/bundle $RESOURCES_FOLDER_PATH/vendor\n\n# create a symlink for ssh\nACTIONIO_SSH_PATH=\"$RESOURCES_FOLDER_PATH/actionio-ssh\"\nrm -f $ACTIONIO_SSH_PATH\nln -s /usr/bin/ssh $ACTIONIO_SSH_PATH\n\n# codesign fsevent_watch\nFSEVENT_BIN_PATH=\"$RESOURCES_FOLDER_PATH/vendor/bundle/macruby/1.9.2/gems/rb-fsevent-0.9.3/bin/fsevent_watch\"\ncodesign -f -s \"Developer ID Application: Jihoon Kim\" $FSEVENT_BIN_PATH\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -935,6 +941,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
 		};
@@ -954,6 +961,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};
@@ -963,6 +971,7 @@
 				AIO_ENV = development;
 				AIO_HOST = "https://dev.action.io:5000";
 				ARCHS = x86_64;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -986,6 +995,7 @@
 				AIO_ENV = production;
 				AIO_HOST = "https://www.action.io";
 				ARCHS = x86_64;
+				CODE_SIGN_IDENTITY = "Developer ID Application: Jihoon Kim";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -999,6 +1009,7 @@
 				INFOPLIST_PREFIX_HEADER = config/InfoPlist.h;
 				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = Action.IO;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

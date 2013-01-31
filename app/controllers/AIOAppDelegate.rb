@@ -6,6 +6,6 @@ class AIOAppDelegate
   end
 
   def applicationWillTerminate(notification)
-    @controller.application_will_terminate notification
+    @controller.application_will_terminate(notification) if @controller
   end
 end
