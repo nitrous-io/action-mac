@@ -101,6 +101,8 @@ class AIOFileSyncTask < AIOTask
       '-prefer', remote, # prefer remote when there's a conflict
     ]
 
+    make_actionio_folder
+
     args << '-ignorearchives' unless Dir.exists? @local_path
     FileUtils.mkdir_p @local_path
 
@@ -206,5 +208,14 @@ class AIOFileSyncTask < AIOTask
   # just in case, to prevent arbitrary command injection
   def sanitize(name)
     name.to_s.gsub /[^a-zA-Z0-9\-\.]/, ''
+  end
+
+  def make_actionio_folder
+    actionio_folder = File.join Dir.home, FILE_SYNC_FOLDER_NAME
+    unless Dir.exists? actionio_folder
+      FileUtils.mkdir_p actionio_folder
+      icon = NSImage.imageNamed 'ActionFolderIcon.icns'
+      NSWorkspace.sharedWorkspace.setIcon icon, forFile: actionio_folder, options: 0
+    end
   end
 end
