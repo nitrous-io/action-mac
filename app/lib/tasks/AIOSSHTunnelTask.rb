@@ -142,6 +142,7 @@ class AIOSSHTunnelTask < AIOTask
       when /Entering interactive session/
         self.state = STATE_CONNECTED
         self.last_error_message = nil
+        AIOApp.notifier.notify @ssh_tunnels.box.name, nil, 'Tunnel connection established.'
       when /cannot listen to port/
         self.state = STATE_ERROR
         port = text[/cannot listen to port: (\d+)/, 1]
@@ -164,6 +165,10 @@ class AIOSSHTunnelTask < AIOTask
       when /Write failed: Broken pipe/
         self.state = STATE_ERROR
         self.last_error_message = 'Connection lost.'
+    end
+
+    if @last_error_message
+      AIOApp.notifier.notify @ssh_tunnels.box.name, nil, "Tunneling Error: #{@last_error_message}"
     end
   end
 

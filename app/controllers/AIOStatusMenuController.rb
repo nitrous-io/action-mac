@@ -25,7 +25,7 @@ class AIOStatusMenuController
     @status_item.setMenu @menu
 
     observe(AIOApp, 'boxes.content') { |v,c| boxes_content_did_change v,c }
-    observe(AIOApp, 'connected'    ) { |v,c| update_status_item_image v,c }
+    observe(AIOApp, 'connected'    ) { |v,c| connected_did_change v,c }
     NSNotificationCenter.defaultCenter.addObserver self, selector: 'job_completed:', name: AIOJob::CompletionNotification, object: nil
 
     fetch_current_user
@@ -96,8 +96,8 @@ class AIOStatusMenuController
     end
   end
 
-  def update_status_item_image(value, change)
-    @status_item.setImage NSImage.imageNamed("status-item-icon#{'-gray' unless value}")
+  def connected_did_change(connected, change)
+    @status_item.setImage NSImage.imageNamed("status-item-icon#{'-gray' unless connected}")
   end
 
   def add_new_items(change)

@@ -211,14 +211,24 @@ class AIOFileSyncTask < AIOTask
 
   def process_output(text)
     puts text
-    if match = text.match(/[Ee]rror:(.*)$/)
-      self.state = STATE_ERROR
-      self.last_error_message = match[1].strip.capitalize
-      if @last_error_message.include? 'Warning: inconsistent state'
-        @should_ignore_archives = true
+    if @state == STATE_SYNCING
+      if match = text.match(/[Ee]rror:(.*)$/)
+        self.state = STATE_ERROR
+        self.last_error_message = match[1].strip.capitalize
+        if @last_error_message.include?('Warning: inconsistent state') || @last_error_message.include?('on-disk archives are not identical')
+          puts 'file sync: should ignore archives'
+          @should_ignore_archives = true
+        end
+        if @last_error_message
+          AIOApp.notifier.notify @file_sync.box.name, nil, "File Sync Error: #{@last_error_message}"
+        end
+        schedule_retry
       end
-      schedule_retry
-    end if @state == STATE_SYNCING
+      if match = text.match(/Synchronization complete at .+ \(([\d,]) item transferred/)
+        file_count = match[1].to_i
+        AIOApp.notifier.notify @file_sync.box.name, nil, "Sync Complete: #{file_count} item#{file_count > 1 ? 's' : nil} transferred."
+      end
+    end
   end
 
   def make_actionio_folder

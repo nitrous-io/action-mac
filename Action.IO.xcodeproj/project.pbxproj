@@ -60,6 +60,7 @@
 		E946CD31166B8CCF000AE1E6 /* state-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD29166B8CCF000AE1E6 /* state-red@2x.png */; };
 		E946CD32166B8CCF000AE1E6 /* state-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD2A166B8CCF000AE1E6 /* state-gray.png */; };
 		E946CD33166B8CCF000AE1E6 /* state-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD2B166B8CCF000AE1E6 /* state-gray@2x.png */; };
+		E9675BC816BBCD1300954BF1 /* AIONotifier.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9675BC716BBCD1300954BF1 /* AIONotifier.rb */; };
 		E96795851667182B00703E49 /* AIOStatusMenuController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E96795841667182B00703E49 /* AIOStatusMenuController.rb */; };
 		E967959116686F7D00703E49 /* AIOCollection.rb in Resources */ = {isa = PBXBuildFile; fileRef = E967958F16686F7D00703E49 /* AIOCollection.rb */; };
 		E967959216686F7D00703E49 /* AIOModel.rb in Resources */ = {isa = PBXBuildFile; fileRef = E967959016686F7D00703E49 /* AIOModel.rb */; };
@@ -187,6 +188,7 @@
 		E946CD2B166B8CCF000AE1E6 /* state-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "state-gray@2x.png"; sourceTree = "<group>"; };
 		E9480E0B165E1BD000FE5B81 /* InfoPlist-development.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InfoPlist-development.h"; sourceTree = "<group>"; };
 		E9480E0C165E1BD000FE5B81 /* InfoPlist-production.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InfoPlist-production.h"; sourceTree = "<group>"; };
+		E9675BC716BBCD1300954BF1 /* AIONotifier.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIONotifier.rb; sourceTree = "<group>"; };
 		E96795841667182B00703E49 /* AIOStatusMenuController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOStatusMenuController.rb; sourceTree = "<group>"; };
 		E967958F16686F7D00703E49 /* AIOCollection.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOCollection.rb; sourceTree = "<group>"; };
 		E967959016686F7D00703E49 /* AIOModel.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOModel.rb; sourceTree = "<group>"; };
@@ -631,6 +633,7 @@
 				E90EF6B6169AB99600A819CC /* AIOSSHTunnel.rb */,
 				E97991091695A10600E14608 /* AIOKeyValueStore.rb */,
 				E90EF6D3169C11AD00A819CC /* AIOChildProcess.rb */,
+				E9675BC716BBCD1300954BF1 /* AIONotifier.rb */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -723,7 +726,7 @@
 		E92BF321164253AD00862CF4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = E92BF324164253AD00862CF4 /* Build configuration list for PBXProject "Action.IO" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -839,6 +842,7 @@
 				E90DD0F116BA2CDA000B5A36 /* status-item-icon-gray@2x.png in Resources */,
 				E93D276F16BA6039006C0A66 /* Gemfile.lock in Resources */,
 				E93D277116BA6044006C0A66 /* Gemfile in Resources */,
+				E9675BC816BBCD1300954BF1 /* AIONotifier.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -923,6 +927,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -937,6 +945,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
@@ -950,6 +959,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -958,6 +971,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;

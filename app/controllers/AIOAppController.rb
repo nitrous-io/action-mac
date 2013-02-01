@@ -4,7 +4,7 @@ class AIOAppController
   include AIOObserver
 
   attr_accessor :status_menu_controller, :welcome_window_controller, :preferences_window_controller
-  attr_accessor :store, :task_manager, :api, :pusher, :jobs, :ssh_key_pair
+  attr_accessor :store, :notifier, :task_manager, :api, :pusher, :jobs, :ssh_key_pair
   attr_accessor :current_user, :boxes, :public_keys
 
   dependent_property :connected, ['current_user.id', 'pusher.ready', 'boxes.last_fetch_error']
@@ -13,6 +13,7 @@ class AIOAppController
     Kernel.const_set :AIOApp, self
 
     self.store = AIOKeyValueStore.new
+    self.notifier = AIONotifier.new
     self.task_manager = AIOTaskManager.new
     self.api = AIOAPI.new
     self.jobs = AIOJobManager.new
