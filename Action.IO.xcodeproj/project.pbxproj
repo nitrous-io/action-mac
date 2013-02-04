@@ -685,7 +685,7 @@
 /* Begin PBXLegacyTarget section */
 		E92BF332164253AE00862CF4 /* Deployment */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "--compile --exclude-compile vendor --embed --gem bundler";
+			buildArgumentsString = "--compile --exclude-compile vendor --embed --gem bundler --codesign \"Developer ID Application: Jihoon Kim\"";
 			buildConfigurationList = E92BF34C164253AE00862CF4 /* Build configuration list for PBXLegacyTarget "Deployment" */;
 			buildPhases = (
 			);
