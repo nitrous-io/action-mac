@@ -48,6 +48,12 @@ class AIOStatusMenuController
     end
   end
 
+  def did_click_open_action_io_folder_menu_item(sender)
+    folder_path = File.join Dir.home, FILE_SYNC_FOLDER_NAME
+    folder_path_url = NSURL.fileURLWithPath folder_path, isDirectory: true
+    NSWorkspace.sharedWorkspace.openURL folder_path_url
+  end
+
   def did_click_preferences_menu_item(sender)
     AIOApp.open_preferences_window
   end
