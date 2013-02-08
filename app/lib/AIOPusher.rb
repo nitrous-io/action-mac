@@ -17,7 +17,7 @@ class AIOPusher
     end
 
     def log(string)
-      puts string if AIOSettings.debug
+      AIOLog string
     end
 
     def post_notification(name, message: message)

@@ -72,7 +72,7 @@ class AIOAPI
   private
   def write_access_token_to_keychain
     if token
-      AIOApp.store.write USERNAME_KEY, @username
+      AIOStore.write USERNAME_KEY, @username
 
       error_ptr = Pointer.new :object
       SSKeychain.setPassword token.token, forService: AIOSettings.keychain_service_name, account: @username, error: error_ptr
@@ -84,7 +84,7 @@ class AIOAPI
 
   def read_access_token_from_keychain
     service = AIOSettings.keychain_service_name
-    if account = AIOApp.store.read(USERNAME_KEY)
+    if account = AIOStore.read(USERNAME_KEY)
       error_ptr = Pointer.new :object
       error = nil
       if token_string = SSKeychain.passwordForService(service, account: account, error: error_ptr)
@@ -100,7 +100,7 @@ class AIOAPI
 
   def remove_access_token_from_keychain
     service = AIOSettings.keychain_service_name
-    if account = AIOApp.store.read(USERNAME_KEY)
+    if account = AIOStore.read(USERNAME_KEY)
       error_ptr = Pointer.new :object
       SSKeychain.deletePasswordForService(service, account: account, error: error_ptr)
       if error = error_ptr[0]

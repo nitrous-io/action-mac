@@ -84,7 +84,8 @@ class AIOSSHTunnelTask < AIOTask
 
     resource_path = NSBundle.mainBundle.resourcePath.fileSystemRepresentation
 
-    puts 'ssh ' + args.join(' ')
+    AIOLog 'ssh tunneling: running child process'
+    # AIOLog 'ssh ' + args.join(' ')
 
     AIOChildProcess.new "#{resource_path}/actionio-ssh", args
   end
@@ -129,15 +130,15 @@ class AIOSSHTunnelTask < AIOTask
 
   protected
   def schedule_restart
-    puts 'scheduling restart for ssh tunneling'
+    AIOLog 'scheduling restart for ssh tunneling'
     Dispatch::Queue.main.after 10.0 do
-      puts 'restarting ssh tunneling'
+      AIOLog 'restarting ssh tunneling'
       restart if @should_restart
     end
   end
 
   def process_output(text)
-    puts text
+    AIOLog text
     case text
       when /Entering interactive session/
         self.state = STATE_CONNECTED

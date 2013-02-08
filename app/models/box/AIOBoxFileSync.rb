@@ -22,11 +22,11 @@ class AIOBoxFileSync
 
   private
   def load_data
-    self.enabled = AIOApp.store.read(file_sync_enabled_key) || false
+    self.enabled = AIOStore.read(file_sync_enabled_key) || false
   end
 
   def enabled_did_change(value, change)
-    AIOApp.store.write file_sync_enabled_key, value
+    AIOStore.write file_sync_enabled_key, value
     start_or_kill_file_sync_task
   end
 

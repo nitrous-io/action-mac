@@ -6,12 +6,12 @@ class AIOTaskManager
   end
 
   def add(task)
-    puts "adding task: #{task}"
+    AIOLog "adding task: #{task}"
     @tasks << task if task.kind_of? AIOTask
   end
 
   def remove(task)
-    puts "removing task: #{task}"
+    AIOLog "removing task: #{task}"
     @tasks.delete task
   end
 

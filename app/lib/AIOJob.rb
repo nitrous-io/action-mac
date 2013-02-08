@@ -34,10 +34,8 @@ class AIOJob
       begin
         @task.call
       rescue => e
-        if AIOSettings.debug
-          puts "Error: #{self}[#{name}] #{e.inspect}: #{e.message}"
-          puts e.backtrace.join "\n"
-        end
+        AIOLog "Error: #{self}[#{name}] #{e.inspect}: #{e.message}"
+        AIOLog e.backtrace.join "\n"
 
         @mutex.synchronize do
           @last_error = e

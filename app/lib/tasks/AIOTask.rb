@@ -8,7 +8,7 @@ class AIOTask
   end
 
   def start
-    puts "starting #{NSStringFromClass self.class} #{self}"
+    AIOLog "starting #{NSStringFromClass self.class} #{self}"
     @child_process = initialize_child_process
     @child_process.delegate = self
 
@@ -19,13 +19,13 @@ class AIOTask
 
   def stop
     return unless @child_process
-    puts "stopping #{NSStringFromClass self.class} #{self}"
+    AIOLog "stopping #{NSStringFromClass self.class} #{self}"
     @child_process.terminate
   end
 
   def kill
     return unless @child_process
-    puts "killing #{NSStringFromClass self.class} #{self}"
+    AIOLog "killing #{NSStringFromClass self.class} #{self}"
     AIOApp.task_manager.remove self
     @child_process.delegate = nil
     @child_process.kill
@@ -42,11 +42,11 @@ class AIOTask
   end
 
   def child_process_did_write_to_stdout(text)
-    puts text
+    AIOLog text
   end
 
   def child_process_did_write_to_stderr(text)
-    puts text
+    AIOLog text
   end
 
   def child_process_did_terminate(code)

@@ -12,6 +12,5 @@ AIOSettings = OpenStruct.new(
   keychain_service_name: info['CFBundleName'] + (env != 'production' ? " (#{env})" : ''),
   pusher_key: info['AIOPusherKey'],
   version: "v#{info['CFBundleShortVersionString']} (#{info['AIOGitHash']})",
-  debug: env == 'development'
 ) unless defined?(AIOSettings)
 

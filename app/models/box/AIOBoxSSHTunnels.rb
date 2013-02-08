@@ -32,18 +32,18 @@ class AIOBoxSSHTunnels
 
   private
   def load_data
-    self.enabled = AIOApp.store.read(tunnels_enabled_key) || false
-    self.local_tunnels  = parse_tunnels_hash_array(AIOApp.store.read local_tunnels_key)  || []
-    self.remote_tunnels = parse_tunnels_hash_array(AIOApp.store.read remote_tunnels_key) || []
+    self.enabled = AIOStore.read(tunnels_enabled_key) || false
+    self.local_tunnels  = parse_tunnels_hash_array(AIOStore.read local_tunnels_key)  || []
+    self.remote_tunnels = parse_tunnels_hash_array(AIOStore.read remote_tunnels_key) || []
   end
 
   def save_tunnels
-    AIOApp.store.write local_tunnels_key, tunnel_objects_to_hash_array(self.local_tunnels)
-    AIOApp.store.write remote_tunnels_key, tunnel_objects_to_hash_array(self.remote_tunnels)
+    AIOStore.write local_tunnels_key, tunnel_objects_to_hash_array(self.local_tunnels)
+    AIOStore.write remote_tunnels_key, tunnel_objects_to_hash_array(self.remote_tunnels)
   end
 
   def enabled_did_change(value, change)
-    AIOApp.store.write tunnels_enabled_key, value
+    AIOStore.write tunnels_enabled_key, value
     start_or_kill_ssh_tunnel_task
   end
 

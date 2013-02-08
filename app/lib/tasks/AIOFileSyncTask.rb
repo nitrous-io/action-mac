@@ -60,7 +60,7 @@ class AIOFileSyncTask < AIOTask
   end
 
   def start_monitoring
-    puts "filesync: start_monitoring #{@file_sync.box.name}"
+    AIOLog "filesync: start_monitoring #{@file_sync.box.name}"
     @should_stop_monitoring = false
     self.state = STATE_MONITORING
     NSThread.detachNewThreadSelector :watch_fsevent, toTarget: self, withObject: nil
@@ -69,7 +69,7 @@ class AIOFileSyncTask < AIOTask
   end
 
   def stop_monitoring
-    puts "filesync: stop_monitoring #{@file_sync.box.name}"
+    AIOLog "filesync: stop_monitoring #{@file_sync.box.name}"
     @mutex.synchronize do
       @run_once_more = false
       @should_stop_monitoring = true
@@ -80,7 +80,7 @@ class AIOFileSyncTask < AIOTask
   end
 
   def do_sync
-    puts "do sync!"
+    AIOLog "do sync!"
     Dispatch::Queue.main.async { start }
   end
 
@@ -113,7 +113,8 @@ class AIOFileSyncTask < AIOTask
 
     resource_path = NSBundle.mainBundle.resourcePath.fileSystemRepresentation
 
-    puts 'filesync: unison ' + args.join(' ')
+    AIOLog 'filesync: running child process'
+    # AIOLog 'filesync: unison ' + args.join(' ')
 
     AIOChildProcess.new "#{resource_path}/actionio-unison", args
   end
@@ -122,13 +123,13 @@ class AIOFileSyncTask < AIOTask
     @mutex.synchronize do
       @should_retry = false
       if @state == STATE_MONITORING || @state == STATE_ERROR
-        puts "filesync: start unison #{@file_sync.box.name}"
+        AIOLog "filesync: start #{@file_sync.box.name}"
         @run_once_more = false
         self.state = STATE_SYNCING
         self.last_error_message = nil
         super
       elsif @state == STATE_SYNCING
-        puts "filesync: to run once more #{@file_sync.box.name}"
+        AIOLog "filesync: to run once more #{@file_sync.box.name}"
         @run_once_more = true
       end
     end
@@ -158,7 +159,7 @@ class AIOFileSyncTask < AIOTask
   end
 
   def child_process_did_terminate(code)
-    puts "filesync: child process did terminate #{@file_sync.box.name}"
+    AIOLog "filesync: child process did terminate #{@file_sync.box.name}"
     super
     if @should_stop_monitoring
       stop_monitoring
@@ -210,13 +211,13 @@ class AIOFileSyncTask < AIOTask
   end
 
   def process_output(text)
-    puts text
+    AIOLog text
     if @state == STATE_SYNCING
       if match = text.match(/[Ee]rror:(.*)$/)
         self.state = STATE_ERROR
         self.last_error_message = match[1].strip.capitalize
         if @last_error_message.include?('Warning: inconsistent state') || @last_error_message.include?('on-disk archives are not identical')
-          puts 'file sync: should ignore archives'
+          AIOLog 'file sync: should ignore archives'
           @should_ignore_archives = true
         end
         if @last_error_message
@@ -241,11 +242,11 @@ class AIOFileSyncTask < AIOTask
   end
 
   def schedule_retry
-    puts 'scheduling retry for file sync'
+    AIOLog 'scheduling retry for file sync'
     @should_retry = true
     Dispatch::Queue.main.after 10.0 do
       if @should_retry
-        puts 'retrying file sync...'
+        AIOLog 'retrying file sync...'
         @should_retry = false
         start
       end
