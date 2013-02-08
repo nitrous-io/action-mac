@@ -3,7 +3,7 @@ require 'AIOTask'
 require 'fileutils'
 require 'rb-fsevent'
 
-system 'killall -9 actionio-unison'
+system 'killall -9 actionio-unison &> /dev/null'
 
 class AIOFileSyncTask < AIOTask
   class NotSupportedError < StandardError; end

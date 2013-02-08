@@ -1,6 +1,6 @@
 require 'AIOTask'
 
-system 'killall -9 actionio-ssh'
+system 'killall -9 actionio-ssh &> /dev/null'
 
 class AIOSSHTunnelTask < AIOTask
   STATE_DISCONNECTED = 'disconnected'
