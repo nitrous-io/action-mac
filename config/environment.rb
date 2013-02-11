@@ -1,11 +1,5 @@
 require 'rubygems'
 
-resource_path = NSBundle.mainBundle.resourcePath.fileSystemRepresentation
-ENV['BUNDLE_GEMFILE'] = File.join resource_path, 'Gemfile'
-
-require 'bundler'
-Bundler.require
-
 require 'AIOConstants'
 require 'AIOKeyValueStore'
 Kernel.const_set :AIOStore, AIOKeyValueStore.new
@@ -21,6 +15,12 @@ def AIOLog(message=nil)
 end
 
 require 'AIOSettings'
+
+resource_path = NSBundle.mainBundle.resourcePath.fileSystemRepresentation
+ENV['BUNDLE_GEMFILE'] = File.join resource_path, 'Gemfile'
+
+require 'bundler'
+Bundler.require
 
 require 'Kernel+AIO'
 require 'NSObject+AIO'

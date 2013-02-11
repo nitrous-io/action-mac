@@ -43,7 +43,7 @@
 	<key>NSHighResolutionCapable</key>
 	<true/>
 	<key>NSMainNibFile</key>
-	<string>App</string>
+	<string>${AIO_MAIN_NIB}</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>

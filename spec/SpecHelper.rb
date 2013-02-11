@@ -10,7 +10,6 @@ $:.concat Dir.glob("#{dir}/../app/**/*/")
 $:.concat Dir.glob("#{dir}/../vendor/**/*/")
 
 require 'FakeAIOSettings'
-require 'environment'
 
 def mass_set(obj, attrs)
   attrs.each_pair do |k, v|

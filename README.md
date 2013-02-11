@@ -23,4 +23,4 @@ macbundle install
 
 ## Run Specs
 
-`macrake`
+`rake`

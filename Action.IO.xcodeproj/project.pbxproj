@@ -117,6 +117,118 @@
 		E9BC812C1650FC2700A21D88 /* WelcomeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9BC81281650FC2700A21D88 /* WelcomeWindow.xib */; };
 		E9BF1AAF1653EE840067DFC9 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BF1AAE1653EE840067DFC9 /* MacRuby.framework */; };
 		E9D4D9B816773AA300F4EF18 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D4D9B716773AA300F4EF18 /* PreferencesWindow.xib */; };
+		E9D6A3DB16C516C200E53F61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E92BF33B164253AE00862CF4 /* main.m */; };
+		E9D6A3DC16C516C200E53F61 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = E9987DFE164BADDC00B762FE /* SSKeychain.m */; };
+		E9D6A3DE16C516C200E53F61 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99576B81672155B0069C9B4 /* Foundation.framework */; };
+		E9D6A3DF16C516C200E53F61 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92BF32E164253AD00862CF4 /* Cocoa.framework */; };
+		E9D6A3E016C516C200E53F61 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BF1AAE1653EE840067DFC9 /* MacRuby.framework */; };
+		E9D6A3E116C516C200E53F61 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9987E00164BADE900B762FE /* Security.framework */; };
+		E9D6A3E216C516C200E53F61 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90FD705165E039A00B09052 /* WebKit.framework */; };
+		E9D6A3E516C516C200E53F61 /* AIOAppController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E92BF345164253AE00862CF4 /* AIOAppController.rb */; };
+		E9D6A3E616C516C200E53F61 /* App.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E19FDD164259B80058706D /* App.xib */; };
+		E9D6A3E716C516C200E53F61 /* status-item-icon-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = E918B3EC164B96D100D53509 /* status-item-icon-highlighted.png */; };
+		E9D6A3E816C516C200E53F61 /* status-item-icon-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E918B3ED164B96D100D53509 /* status-item-icon-highlighted@2x.png */; };
+		E9D6A3E916C516C200E53F61 /* status-item-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E918B3EE164B96D100D53509 /* status-item-icon.png */; };
+		E9D6A3EA16C516C200E53F61 /* status-item-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E918B3EF164B96D100D53509 /* status-item-icon@2x.png */; };
+		E9D6A3EB16C516C200E53F61 /* AIOWelcomeWindowController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9BC81161650FB0200A21D88 /* AIOWelcomeWindowController.rb */; };
+		E9D6A3EC16C516C200E53F61 /* WelcomeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9BC81281650FC2700A21D88 /* WelcomeWindow.xib */; };
+		E9D6A3ED16C516C200E53F61 /* AIOWelcomeViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E988E24B1653699E00772174 /* AIOWelcomeViewController.rb */; };
+		E9D6A3EE16C516C200E53F61 /* AIOSignInViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E988E24D165369A600772174 /* AIOSignInViewController.rb */; };
+		E9D6A3EF16C516C200E53F61 /* AIOSignUpViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E988E24F165369AF00772174 /* AIOSignUpViewController.rb */; };
+		E9D6A3F016C516C200E53F61 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E988E25116536B8800772174 /* WelcomeView.xib */; };
+		E9D6A3F116C516C200E53F61 /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E988E25316536B9000772174 /* SignInView.xib */; };
+		E9D6A3F216C516C200E53F61 /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E988E25516536B9800772174 /* SignUpView.xib */; };
+		E9D6A3F316C516C200E53F61 /* AIOSignUpView.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B0BA851653F35800F695D6 /* AIOSignUpView.rb */; };
+		E9D6A3F416C516C200E53F61 /* AIOSettings.rb in Resources */ = {isa = PBXBuildFile; fileRef = E90FD703165DFF5400B09052 /* AIOSettings.rb */; };
+		E9D6A3F516C516C200E53F61 /* environment.rb in Resources */ = {isa = PBXBuildFile; fileRef = E96BC69B165F35840016A467 /* environment.rb */; };
+		E9D6A3F616C516C200E53F61 /* AIOAPI.rb in Resources */ = {isa = PBXBuildFile; fileRef = E93058A8165F73CB00794635 /* AIOAPI.rb */; };
+		E9D6A3F716C516C200E53F61 /* AIOConstants.rb in Resources */ = {isa = PBXBuildFile; fileRef = E93058B81663950600794635 /* AIOConstants.rb */; };
+		E9D6A3F816C516C200E53F61 /* AIOStatusMenuController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E96795841667182B00703E49 /* AIOStatusMenuController.rb */; };
+		E9D6A3F916C516C200E53F61 /* AIOCollection.rb in Resources */ = {isa = PBXBuildFile; fileRef = E967958F16686F7D00703E49 /* AIOCollection.rb */; };
+		E9D6A3FA16C516C200E53F61 /* AIOModel.rb in Resources */ = {isa = PBXBuildFile; fileRef = E967959016686F7D00703E49 /* AIOModel.rb */; };
+		E9D6A3FB16C516C200E53F61 /* state-yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD24166B8CCF000AE1E6 /* state-yellow.png */; };
+		E9D6A3FC16C516C200E53F61 /* state-yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD25166B8CCF000AE1E6 /* state-yellow@2x.png */; };
+		E9D6A3FD16C516C200E53F61 /* state-green.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD26166B8CCF000AE1E6 /* state-green.png */; };
+		E9D6A3FE16C516C200E53F61 /* state-green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD27166B8CCF000AE1E6 /* state-green@2x.png */; };
+		E9D6A3FF16C516C200E53F61 /* state-red.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD28166B8CCF000AE1E6 /* state-red.png */; };
+		E9D6A40016C516C200E53F61 /* state-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD29166B8CCF000AE1E6 /* state-red@2x.png */; };
+		E9D6A40116C516C200E53F61 /* state-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD2A166B8CCF000AE1E6 /* state-gray.png */; };
+		E9D6A40216C516C200E53F61 /* state-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E946CD2B166B8CCF000AE1E6 /* state-gray@2x.png */; };
+		E9D6A40316C516C200E53F61 /* AIOJob.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B6D0F8166E54940088AC85 /* AIOJob.rb */; };
+		E9D6A40416C516C200E53F61 /* AIOJobManager.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B6D0F9166E54940088AC85 /* AIOJobManager.rb */; };
+		E9D6A40516C516C200E53F61 /* AIOSignInView.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B6D107166F53970088AC85 /* AIOSignInView.rb */; };
+		E9D6A40616C516C200E53F61 /* AIOPusher.rb in Resources */ = {isa = PBXBuildFile; fileRef = E914D2DE166F69AC009486CB /* AIOPusher.rb */; };
+		E9D6A40716C516C200E53F61 /* aio.js in Resources */ = {isa = PBXBuildFile; fileRef = E914D2E5166F6E14009486CB /* aio.js */; };
+		E9D6A40816C516C200E53F61 /* pusher.min.js in Resources */ = {isa = PBXBuildFile; fileRef = E914D2E2166F6C61009486CB /* pusher.min.js */; };
+		E9D6A40916C516C200E53F61 /* AIOAppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = E99576AA1670A5690069C9B4 /* AIOAppDelegate.rb */; };
+		E9D6A40A16C516C200E53F61 /* StatusMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E99576AC1670A8CC0069C9B4 /* StatusMenu.xib */; };
+		E9D6A40B16C516C200E53F61 /* AIOBoxMenuController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E99576B41670F4B30069C9B4 /* AIOBoxMenuController.rb */; };
+		E9D6A40C16C516C200E53F61 /* BoxMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97537EA16724B050030B15B /* BoxMenu.xib */; };
+		E9D6A40D16C516C200E53F61 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D4D9B716773AA300F4EF18 /* PreferencesWindow.xib */; };
+		E9D6A40E16C516C200E53F61 /* GeneralPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9975D0116785E8000A6950A /* GeneralPreferencesView.xib */; };
+		E9D6A40F16C516C200E53F61 /* AccountPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9975D031678732500A6950A /* AccountPreferencesView.xib */; };
+		E9D6A41016C516C200E53F61 /* AIOPreferencesWindowController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9975D061678779300A6950A /* AIOPreferencesWindowController.rb */; };
+		E9D6A41116C516C200E53F61 /* AIOAccountPreferencesViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9975D0C1678968D00A6950A /* AIOAccountPreferencesViewController.rb */; };
+		E9D6A41216C516C200E53F61 /* AIOGeneralPreferencesViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9975D0D1678968D00A6950A /* AIOGeneralPreferencesViewController.rb */; };
+		E9D6A41316C516C200E53F61 /* ssh-key.png in Resources */ = {isa = PBXBuildFile; fileRef = E9975D4D1679A8F600A6950A /* ssh-key.png */; };
+		E9D6A41416C516C200E53F61 /* ssh-key@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9975D4E1679A8F600A6950A /* ssh-key@2x.png */; };
+		E9D6A41516C516C200E53F61 /* AIOSSHKeysPreferencesViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9975D531679A94A00A6950A /* AIOSSHKeysPreferencesViewController.rb */; };
+		E9D6A41616C516C200E53F61 /* SSHKeysPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9975D551679BFAC00A6950A /* SSHKeysPreferencesView.xib */; };
+		E9D6A41716C516C200E53F61 /* AIOSSHKeyPair.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9975D5D1679D9A400A6950A /* AIOSSHKeyPair.rb */; };
+		E9D6A41816C516C200E53F61 /* AIOSSHKeyPairWindowController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A167CF167F8ED600F31E69 /* AIOSSHKeyPairWindowController.rb */; };
+		E9D6A41916C516C200E53F61 /* SSHKeyPairWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A167D1167F8EE400F31E69 /* SSHKeyPairWindow.xib */; };
+		E9D6A41A16C516C200E53F61 /* Kernel+AIO.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A167DA1680718B00F31E69 /* Kernel+AIO.rb */; };
+		E9D6A41B16C516C200E53F61 /* NSObject+AIO.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A167DB1680718B00F31E69 /* NSObject+AIO.rb */; };
+		E9D6A41C16C516C200E53F61 /* NSViewController+AIO.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A167DC1680718B00F31E69 /* NSViewController+AIO.rb */; };
+		E9D6A41D16C516C200E53F61 /* AIOBooleanToNumberTransformer.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A167E0168071A700F31E69 /* AIOBooleanToNumberTransformer.rb */; };
+		E9D6A41E16C516C200E53F61 /* AIOStringToNSImageTransformer.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A167E1168071A700F31E69 /* AIOStringToNSImageTransformer.rb */; };
+		E9D6A41F16C516C200E53F61 /* AIOObserver.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A167E4168071C100F31E69 /* AIOObserver.rb */; };
+		E9D6A42016C516C200E53F61 /* AIOSSHKeyPairUI.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A167E5168071C100F31E69 /* AIOSSHKeyPairUI.rb */; };
+		E9D6A42116C516C200E53F61 /* TunnelingPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9A167F21680754C00F31E69 /* TunnelingPreferencesView.xib */; };
+		E9D6A42216C516C200E53F61 /* AIOTunnelingPreferencesViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A167F6168190FC00F31E69 /* AIOTunnelingPreferencesViewController.rb */; };
+		E9D6A42316C516C200E53F61 /* AIOBox.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A168031683200100F31E69 /* AIOBox.rb */; };
+		E9D6A42416C516C200E53F61 /* AIOBoxCollection.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A168041683200100F31E69 /* AIOBoxCollection.rb */; };
+		E9D6A42516C516C200E53F61 /* AIOPublicKey.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A168061683200100F31E69 /* AIOPublicKey.rb */; };
+		E9D6A42616C516C200E53F61 /* AIOPublicKeyCollection.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A168071683200100F31E69 /* AIOPublicKeyCollection.rb */; };
+		E9D6A42716C516C200E53F61 /* AIOUser.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A168091683200100F31E69 /* AIOUser.rb */; };
+		E9D6A42816C516C200E53F61 /* AIOBoxSSHTunnels.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A1680F1683205600F31E69 /* AIOBoxSSHTunnels.rb */; };
+		E9D6A42916C516C200E53F61 /* AIOIntegerToStringTransformer.rb in Resources */ = {isa = PBXBuildFile; fileRef = E97991051689DB0C00E14608 /* AIOIntegerToStringTransformer.rb */; };
+		E9D6A42A16C516C200E53F61 /* AIOKeyValueStore.rb in Resources */ = {isa = PBXBuildFile; fileRef = E97991091695A10600E14608 /* AIOKeyValueStore.rb */; };
+		E9D6A42B16C516C200E53F61 /* AIOSSHTunnel.rb in Resources */ = {isa = PBXBuildFile; fileRef = E90EF6B6169AB99600A819CC /* AIOSSHTunnel.rb */; };
+		E9D6A42C16C516C200E53F61 /* AIOChildProcess.rb in Resources */ = {isa = PBXBuildFile; fileRef = E90EF6D3169C11AD00A819CC /* AIOChildProcess.rb */; };
+		E9D6A42D16C516C200E53F61 /* AIOSSHTunnelTask.rb in Resources */ = {isa = PBXBuildFile; fileRef = E90EF700169EB78600A819CC /* AIOSSHTunnelTask.rb */; };
+		E9D6A42E16C516C200E53F61 /* AIOTaskManager.rb in Resources */ = {isa = PBXBuildFile; fileRef = E91F647816A4670000E797BC /* AIOTaskManager.rb */; };
+		E9D6A42F16C516C200E53F61 /* AIOTask.rb in Resources */ = {isa = PBXBuildFile; fileRef = E91F647A16A4FB9400E797BC /* AIOTask.rb */; };
+		E9D6A43016C516C200E53F61 /* sync@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91F647C16A9448800E797BC /* sync@2x.png */; };
+		E9D6A43116C516C200E53F61 /* sync.png in Resources */ = {isa = PBXBuildFile; fileRef = E91F647D16A9448900E797BC /* sync.png */; };
+		E9D6A43216C516C200E53F61 /* FileSyncPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91F648016A945B700E797BC /* FileSyncPreferencesView.xib */; };
+		E9D6A43316C516C200E53F61 /* AIOFileSyncPreferencesViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E91C4EC216A9541D00E4D417 /* AIOFileSyncPreferencesViewController.rb */; };
+		E9D6A43416C516C200E53F61 /* AIOBoxFileSync.rb in Resources */ = {isa = PBXBuildFile; fileRef = E91C4ECD16AD1E6300E4D417 /* AIOBoxFileSync.rb */; };
+		E9D6A43516C516C200E53F61 /* AIOFileSyncTask.rb in Resources */ = {isa = PBXBuildFile; fileRef = E91C4ED016AD269300E4D417 /* AIOFileSyncTask.rb */; };
+		E9D6A43616C516C200E53F61 /* actionio-unison in Resources */ = {isa = PBXBuildFile; fileRef = E91C4ED216AD53BA00E4D417 /* actionio-unison */; };
+		E9D6A43716C516C200E53F61 /* ActionAppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E902D68416B14C80007CFEE1 /* ActionAppIcon.icns */; };
+		E9D6A43816C516C200E53F61 /* ActionFolderIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E90DD0EB16BA198E000B5A36 /* ActionFolderIcon.icns */; };
+		E9D6A43916C516C200E53F61 /* status-item-icon-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = E90DD0EE16BA2CDA000B5A36 /* status-item-icon-gray.png */; };
+		E9D6A43A16C516C200E53F61 /* status-item-icon-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E90DD0EF16BA2CDA000B5A36 /* status-item-icon-gray@2x.png */; };
+		E9D6A43B16C516C200E53F61 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = E93D276E16BA6039006C0A66 /* Gemfile.lock */; };
+		E9D6A43C16C516C200E53F61 /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = E93D277016BA6044006C0A66 /* Gemfile */; };
+		E9D6A43D16C516C200E53F61 /* AIONotifier.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9675BC716BBCD1300954BF1 /* AIONotifier.rb */; };
+		E9D6A44416C5174C00E53F61 /* Spec.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D6A3D116C5158B00E53F61 /* Spec.xib */; };
+		E9D6A44516C5193300E53F61 /* SpecAppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9D6A3CB16C5139F00E53F61 /* SpecAppDelegate.rb */; };
+		E9D6A44616C519C500E53F61 /* AIOCollectionSpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E946CCFF166B51D4000AE1E6 /* AIOCollectionSpec.rb */; };
+		E9D6A44716C519C500E53F61 /* AIOModelSpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E946CD00166B51D4000AE1E6 /* AIOModelSpec.rb */; };
+		E9D6A44816C519C500E53F61 /* FakeAIOSettings.rb in Resources */ = {isa = PBXBuildFile; fileRef = E96BC698165E27E20016A467 /* FakeAIOSettings.rb */; };
+		E9D6A44916C519C500E53F61 /* Kernel+AIOSpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A167E9168071F300F31E69 /* Kernel+AIOSpec.rb */; };
+		E9D6A44A16C519C500E53F61 /* AIOObserverSpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A167EB168071F300F31E69 /* AIOObserverSpec.rb */; };
+		E9D6A44B16C519C500E53F61 /* AIOBooleanToNumberTransformerSpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A167ED168071F300F31E69 /* AIOBooleanToNumberTransformerSpec.rb */; };
+		E9D6A44C16C519C500E53F61 /* AIOIntegerToStringTransformerSpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E97991081689DB1B00E14608 /* AIOIntegerToStringTransformerSpec.rb */; };
+		E9D6A44D16C519C500E53F61 /* AIOAPISpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E93058A7165F73BD00794635 /* AIOAPISpec.rb */; };
+		E9D6A44E16C519C500E53F61 /* AIOChildProcessSpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E90EF6D5169D6CCA00A819CC /* AIOChildProcessSpec.rb */; };
+		E9D6A44F16C519C500E53F61 /* AIOJobManagerSpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B6D0F6166E54730088AC85 /* AIOJobManagerSpec.rb */; };
+		E9D6A45016C519C500E53F61 /* AIOJobSpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B6D0F7166E54730088AC85 /* AIOJobSpec.rb */; };
+		E9D6A45116C519C500E53F61 /* AIOSSHKeyPairSpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9975D5B1679CA0C00A6950A /* AIOSSHKeyPairSpec.rb */; };
+		E9D6A45216C519C500E53F61 /* SpecHelper.rb in Resources */ = {isa = PBXBuildFile; fileRef = E982FC40164AC00D00CA54BA /* SpecHelper.rb */; };
+		E9D6A45416C51E9700E53F61 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9D6A45316C51E6000E53F61 /* rb_main.rb */; };
 		E9E19FDE164259B80058706D /* App.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E19FDD164259B80058706D /* App.xib */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +241,13 @@
 			remoteInfo = ActionMac;
 		};
 		E9480E0D165E1C3800FE5B81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E92BF321164253AD00862CF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E90FD6FB165DFC9A00B09052;
+			remoteInfo = GenerateInfoPlistHeader;
+		};
+		E9D6A3D916C516C200E53F61 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E92BF321164253AD00862CF4 /* Project object */;
 			proxyType = 1;
@@ -254,6 +373,11 @@
 		E9BC81281650FC2700A21D88 /* WelcomeWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeWindow.xib; sourceTree = "<group>"; };
 		E9BF1AAE1653EE840067DFC9 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
 		E9D4D9B716773AA300F4EF18 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
+		E9D6A3CB16C5139F00E53F61 /* SpecAppDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = SpecAppDelegate.rb; sourceTree = "<group>"; };
+		E9D6A3D016C514DC00E53F61 /* InfoPlist-test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InfoPlist-test.h"; sourceTree = "<group>"; };
+		E9D6A3D116C5158B00E53F61 /* Spec.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Spec.xib; sourceTree = "<group>"; };
+		E9D6A44216C516C200E53F61 /* Specs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Specs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9D6A45316C51E6000E53F61 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		E9E19FDD164259B80058706D /* App.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = App.xib; sourceTree = "<group>"; };
 		E9E19FE1164259D30058706D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9E19FE616425A030058706D /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
@@ -269,6 +393,18 @@
 				E9BF1AAF1653EE840067DFC9 /* MacRuby.framework in Frameworks */,
 				E9987E01164BADE900B762FE /* Security.framework in Frameworks */,
 				E90FD706165E039A00B09052 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9D6A3DD16C516C200E53F61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9D6A3DE16C516C200E53F61 /* Foundation.framework in Frameworks */,
+				E9D6A3DF16C516C200E53F61 /* Cocoa.framework in Frameworks */,
+				E9D6A3E016C516C200E53F61 /* MacRuby.framework in Frameworks */,
+				E9D6A3E116C516C200E53F61 /* Security.framework in Frameworks */,
+				E9D6A3E216C516C200E53F61 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +444,7 @@
 				E90FD702165DFCF900B09052 /* InfoPlist.h */,
 				E9480E0B165E1BD000FE5B81 /* InfoPlist-development.h */,
 				E9480E0C165E1BD000FE5B81 /* InfoPlist-production.h */,
+				E9D6A3D016C514DC00E53F61 /* InfoPlist-test.h */,
 				E90FD703165DFF5400B09052 /* AIOSettings.rb */,
 				E93058B81663950600794635 /* AIOConstants.rb */,
 				E96BC69B165F35840016A467 /* environment.rb */,
@@ -379,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				E92BF32A164253AD00862CF4 /* Action.IO.app */,
+				E9D6A44216C516C200E53F61 /* Specs.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -427,6 +565,9 @@
 				E96BC697165E27E20016A467 /* support */,
 				E904BC60165116DD00DA5436 /* lib */,
 				E982FC40164AC00D00CA54BA /* SpecHelper.rb */,
+				E9D6A3CB16C5139F00E53F61 /* SpecAppDelegate.rb */,
+				E9D6A3D116C5158B00E53F61 /* Spec.xib */,
+				E9D6A45316C51E6000E53F61 /* rb_main.rb */,
 			);
 			path = spec;
 			sourceTree = "<group>";
@@ -720,6 +861,25 @@
 			productReference = E92BF32A164253AD00862CF4 /* Action.IO.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E9D6A3D716C516C200E53F61 /* Specs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9D6A43F16C516C200E53F61 /* Build configuration list for PBXNativeTarget "Specs" */;
+			buildPhases = (
+				E9D6A3DA16C516C200E53F61 /* Sources */,
+				E9D6A3DD16C516C200E53F61 /* Frameworks */,
+				E9D6A3E316C516C200E53F61 /* Resources */,
+				E9D6A43E16C516C200E53F61 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E9D6A3D816C516C200E53F61 /* PBXTargetDependency */,
+			);
+			name = Specs;
+			productName = ActionMac;
+			productReference = E9D6A44216C516C200E53F61 /* Specs.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -744,6 +904,7 @@
 				E92BF329164253AD00862CF4 /* Action.IO */,
 				E90FD6FB165DFC9A00B09052 /* GenerateInfoPlistHeader */,
 				E92BF332164253AE00862CF4 /* Deployment */,
+				E9D6A3D716C516C200E53F61 /* Specs */,
 			);
 		};
 /* End PBXProject section */
@@ -846,6 +1007,118 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E9D6A3E316C516C200E53F61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9D6A44416C5174C00E53F61 /* Spec.xib in Resources */,
+				E9D6A45416C51E9700E53F61 /* rb_main.rb in Resources */,
+				E9D6A44516C5193300E53F61 /* SpecAppDelegate.rb in Resources */,
+				E9D6A44616C519C500E53F61 /* AIOCollectionSpec.rb in Resources */,
+				E9D6A44716C519C500E53F61 /* AIOModelSpec.rb in Resources */,
+				E9D6A44816C519C500E53F61 /* FakeAIOSettings.rb in Resources */,
+				E9D6A44916C519C500E53F61 /* Kernel+AIOSpec.rb in Resources */,
+				E9D6A44A16C519C500E53F61 /* AIOObserverSpec.rb in Resources */,
+				E9D6A44B16C519C500E53F61 /* AIOBooleanToNumberTransformerSpec.rb in Resources */,
+				E9D6A44C16C519C500E53F61 /* AIOIntegerToStringTransformerSpec.rb in Resources */,
+				E9D6A44D16C519C500E53F61 /* AIOAPISpec.rb in Resources */,
+				E9D6A44E16C519C500E53F61 /* AIOChildProcessSpec.rb in Resources */,
+				E9D6A44F16C519C500E53F61 /* AIOJobManagerSpec.rb in Resources */,
+				E9D6A45016C519C500E53F61 /* AIOJobSpec.rb in Resources */,
+				E9D6A45116C519C500E53F61 /* AIOSSHKeyPairSpec.rb in Resources */,
+				E9D6A45216C519C500E53F61 /* SpecHelper.rb in Resources */,
+				E9D6A3E516C516C200E53F61 /* AIOAppController.rb in Resources */,
+				E9D6A3E616C516C200E53F61 /* App.xib in Resources */,
+				E9D6A3E716C516C200E53F61 /* status-item-icon-highlighted.png in Resources */,
+				E9D6A3E816C516C200E53F61 /* status-item-icon-highlighted@2x.png in Resources */,
+				E9D6A3E916C516C200E53F61 /* status-item-icon.png in Resources */,
+				E9D6A3EA16C516C200E53F61 /* status-item-icon@2x.png in Resources */,
+				E9D6A3EB16C516C200E53F61 /* AIOWelcomeWindowController.rb in Resources */,
+				E9D6A3EC16C516C200E53F61 /* WelcomeWindow.xib in Resources */,
+				E9D6A3ED16C516C200E53F61 /* AIOWelcomeViewController.rb in Resources */,
+				E9D6A3EE16C516C200E53F61 /* AIOSignInViewController.rb in Resources */,
+				E9D6A3EF16C516C200E53F61 /* AIOSignUpViewController.rb in Resources */,
+				E9D6A3F016C516C200E53F61 /* WelcomeView.xib in Resources */,
+				E9D6A3F116C516C200E53F61 /* SignInView.xib in Resources */,
+				E9D6A3F216C516C200E53F61 /* SignUpView.xib in Resources */,
+				E9D6A3F316C516C200E53F61 /* AIOSignUpView.rb in Resources */,
+				E9D6A3F416C516C200E53F61 /* AIOSettings.rb in Resources */,
+				E9D6A3F516C516C200E53F61 /* environment.rb in Resources */,
+				E9D6A3F616C516C200E53F61 /* AIOAPI.rb in Resources */,
+				E9D6A3F716C516C200E53F61 /* AIOConstants.rb in Resources */,
+				E9D6A3F816C516C200E53F61 /* AIOStatusMenuController.rb in Resources */,
+				E9D6A3F916C516C200E53F61 /* AIOCollection.rb in Resources */,
+				E9D6A3FA16C516C200E53F61 /* AIOModel.rb in Resources */,
+				E9D6A3FB16C516C200E53F61 /* state-yellow.png in Resources */,
+				E9D6A3FC16C516C200E53F61 /* state-yellow@2x.png in Resources */,
+				E9D6A3FD16C516C200E53F61 /* state-green.png in Resources */,
+				E9D6A3FE16C516C200E53F61 /* state-green@2x.png in Resources */,
+				E9D6A3FF16C516C200E53F61 /* state-red.png in Resources */,
+				E9D6A40016C516C200E53F61 /* state-red@2x.png in Resources */,
+				E9D6A40116C516C200E53F61 /* state-gray.png in Resources */,
+				E9D6A40216C516C200E53F61 /* state-gray@2x.png in Resources */,
+				E9D6A40316C516C200E53F61 /* AIOJob.rb in Resources */,
+				E9D6A40416C516C200E53F61 /* AIOJobManager.rb in Resources */,
+				E9D6A40516C516C200E53F61 /* AIOSignInView.rb in Resources */,
+				E9D6A40616C516C200E53F61 /* AIOPusher.rb in Resources */,
+				E9D6A40716C516C200E53F61 /* aio.js in Resources */,
+				E9D6A40816C516C200E53F61 /* pusher.min.js in Resources */,
+				E9D6A40916C516C200E53F61 /* AIOAppDelegate.rb in Resources */,
+				E9D6A40A16C516C200E53F61 /* StatusMenu.xib in Resources */,
+				E9D6A40B16C516C200E53F61 /* AIOBoxMenuController.rb in Resources */,
+				E9D6A40C16C516C200E53F61 /* BoxMenu.xib in Resources */,
+				E9D6A40D16C516C200E53F61 /* PreferencesWindow.xib in Resources */,
+				E9D6A40E16C516C200E53F61 /* GeneralPreferencesView.xib in Resources */,
+				E9D6A40F16C516C200E53F61 /* AccountPreferencesView.xib in Resources */,
+				E9D6A41016C516C200E53F61 /* AIOPreferencesWindowController.rb in Resources */,
+				E9D6A41116C516C200E53F61 /* AIOAccountPreferencesViewController.rb in Resources */,
+				E9D6A41216C516C200E53F61 /* AIOGeneralPreferencesViewController.rb in Resources */,
+				E9D6A41316C516C200E53F61 /* ssh-key.png in Resources */,
+				E9D6A41416C516C200E53F61 /* ssh-key@2x.png in Resources */,
+				E9D6A41516C516C200E53F61 /* AIOSSHKeysPreferencesViewController.rb in Resources */,
+				E9D6A41616C516C200E53F61 /* SSHKeysPreferencesView.xib in Resources */,
+				E9D6A41716C516C200E53F61 /* AIOSSHKeyPair.rb in Resources */,
+				E9D6A41816C516C200E53F61 /* AIOSSHKeyPairWindowController.rb in Resources */,
+				E9D6A41916C516C200E53F61 /* SSHKeyPairWindow.xib in Resources */,
+				E9D6A41A16C516C200E53F61 /* Kernel+AIO.rb in Resources */,
+				E9D6A41B16C516C200E53F61 /* NSObject+AIO.rb in Resources */,
+				E9D6A41C16C516C200E53F61 /* NSViewController+AIO.rb in Resources */,
+				E9D6A41D16C516C200E53F61 /* AIOBooleanToNumberTransformer.rb in Resources */,
+				E9D6A41E16C516C200E53F61 /* AIOStringToNSImageTransformer.rb in Resources */,
+				E9D6A41F16C516C200E53F61 /* AIOObserver.rb in Resources */,
+				E9D6A42016C516C200E53F61 /* AIOSSHKeyPairUI.rb in Resources */,
+				E9D6A42116C516C200E53F61 /* TunnelingPreferencesView.xib in Resources */,
+				E9D6A42216C516C200E53F61 /* AIOTunnelingPreferencesViewController.rb in Resources */,
+				E9D6A42316C516C200E53F61 /* AIOBox.rb in Resources */,
+				E9D6A42416C516C200E53F61 /* AIOBoxCollection.rb in Resources */,
+				E9D6A42516C516C200E53F61 /* AIOPublicKey.rb in Resources */,
+				E9D6A42616C516C200E53F61 /* AIOPublicKeyCollection.rb in Resources */,
+				E9D6A42716C516C200E53F61 /* AIOUser.rb in Resources */,
+				E9D6A42816C516C200E53F61 /* AIOBoxSSHTunnels.rb in Resources */,
+				E9D6A42916C516C200E53F61 /* AIOIntegerToStringTransformer.rb in Resources */,
+				E9D6A42A16C516C200E53F61 /* AIOKeyValueStore.rb in Resources */,
+				E9D6A42B16C516C200E53F61 /* AIOSSHTunnel.rb in Resources */,
+				E9D6A42C16C516C200E53F61 /* AIOChildProcess.rb in Resources */,
+				E9D6A42D16C516C200E53F61 /* AIOSSHTunnelTask.rb in Resources */,
+				E9D6A42E16C516C200E53F61 /* AIOTaskManager.rb in Resources */,
+				E9D6A42F16C516C200E53F61 /* AIOTask.rb in Resources */,
+				E9D6A43016C516C200E53F61 /* sync@2x.png in Resources */,
+				E9D6A43116C516C200E53F61 /* sync.png in Resources */,
+				E9D6A43216C516C200E53F61 /* FileSyncPreferencesView.xib in Resources */,
+				E9D6A43316C516C200E53F61 /* AIOFileSyncPreferencesViewController.rb in Resources */,
+				E9D6A43416C516C200E53F61 /* AIOBoxFileSync.rb in Resources */,
+				E9D6A43516C516C200E53F61 /* AIOFileSyncTask.rb in Resources */,
+				E9D6A43616C516C200E53F61 /* actionio-unison in Resources */,
+				E9D6A43716C516C200E53F61 /* ActionAppIcon.icns in Resources */,
+				E9D6A43816C516C200E53F61 /* ActionFolderIcon.icns in Resources */,
+				E9D6A43916C516C200E53F61 /* status-item-icon-gray.png in Resources */,
+				E9D6A43A16C516C200E53F61 /* status-item-icon-gray@2x.png in Resources */,
+				E9D6A43B16C516C200E53F61 /* Gemfile.lock in Resources */,
+				E9D6A43C16C516C200E53F61 /* Gemfile in Resources */,
+				E9D6A43D16C516C200E53F61 /* AIONotifier.rb in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -874,7 +1147,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "RESOURCES_FOLDER_PATH=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\"\n\n# copy bundler bundle\nmkdir -p $RESOURCES_FOLDER_PATH/.bundle\nmkdir -p $RESOURCES_FOLDER_PATH/vendor\ncp -PR $SRCROOT/.bundle/config $RESOURCES_FOLDER_PATH/.bundle\ncp -PR $SRCROOT/vendor/bundle $RESOURCES_FOLDER_PATH/vendor\n\n# create a symlink for ssh\nACTIONIO_SSH_PATH=\"$RESOURCES_FOLDER_PATH/actionio-ssh\"\nrm -f $ACTIONIO_SSH_PATH\nln -s /usr/bin/ssh $ACTIONIO_SSH_PATH\n\n# codesign fsevent_watch\nFSEVENT_BIN_PATH=\"$RESOURCES_FOLDER_PATH/vendor/bundle/macruby/1.9.2/gems/rb-fsevent-0.9.3/bin/fsevent_watch\"\ncodesign -f -s \"Developer ID Application: Jihoon Kim\" $FSEVENT_BIN_PATH\n";
+			shellScript = "RESOURCES_FOLDER_PATH=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\"\n\n# copy bundler bundle\nmkdir -p \"$RESOURCES_FOLDER_PATH/.bundle\"\nmkdir -p \"$RESOURCES_FOLDER_PATH/vendor\"\ncp -PR \"$SRCROOT/.bundle/config\" \"$RESOURCES_FOLDER_PATH/.bundle\"\ncp -PR \"$SRCROOT/vendor/bundle\" \"$RESOURCES_FOLDER_PATH/vendor\"\n\n# create a symlink for ssh\nACTIONIO_SSH_PATH=\"$RESOURCES_FOLDER_PATH/actionio-ssh\"\nrm -f \"$ACTIONIO_SSH_PATH\"\nln -s /usr/bin/ssh \"$ACTIONIO_SSH_PATH\"\n\n# codesign fsevent_watch\nFSEVENT_BIN_PATH=\"$RESOURCES_FOLDER_PATH/vendor/bundle/macruby/1.9.2/gems/rb-fsevent-0.9.3/bin/fsevent_watch\"\ncodesign -f -s \"Developer ID Application: Jihoon Kim\" \"$FSEVENT_BIN_PATH\"\n";
+		};
+		E9D6A43E16C516C200E53F61 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "RESOURCES_FOLDER_PATH=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\"\n\n# copy bundler bundle\nmkdir -p \"$RESOURCES_FOLDER_PATH/.bundle\"\nmkdir -p \"$RESOURCES_FOLDER_PATH/vendor\"\ncp -PR \"$SRCROOT/.bundle/config\" \"$RESOURCES_FOLDER_PATH/.bundle\"\ncp -PR \"$SRCROOT/vendor/bundle\" \"$RESOURCES_FOLDER_PATH/vendor\"\n\n# create a symlink for ssh\nACTIONIO_SSH_PATH=\"$RESOURCES_FOLDER_PATH/actionio-ssh\"\nrm -f \"$ACTIONIO_SSH_PATH\"\nln -s /usr/bin/ssh \"$ACTIONIO_SSH_PATH\"\n\n# codesign fsevent_watch\nFSEVENT_BIN_PATH=\"$RESOURCES_FOLDER_PATH/vendor/bundle/macruby/1.9.2/gems/rb-fsevent-0.9.3/bin/fsevent_watch\"\ncodesign -f -s \"Developer ID Application: Jihoon Kim\" \"$FSEVENT_BIN_PATH\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -885,6 +1171,15 @@
 			files = (
 				E92BF33C164253AE00862CF4 /* main.m in Sources */,
 				E9987DFF164BADDC00B762FE /* SSKeychain.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9D6A3DA16C516C200E53F61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9D6A3DB16C516C200E53F61 /* main.m in Sources */,
+				E9D6A3DC16C516C200E53F61 /* SSKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -900,6 +1195,11 @@
 			isa = PBXTargetDependency;
 			target = E90FD6FB165DFC9A00B09052 /* GenerateInfoPlistHeader */;
 			targetProxy = E9480E0D165E1C3800FE5B81 /* PBXContainerItemProxy */;
+		};
+		E9D6A3D816C516C200E53F61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E90FD6FB165DFC9A00B09052 /* GenerateInfoPlistHeader */;
+			targetProxy = E9D6A3D916C516C200E53F61 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -984,6 +1284,7 @@
 			buildSettings = {
 				AIO_ENV = development;
 				AIO_HOST = "https://dev.action.io:5000";
+				AIO_MAIN_NIB = App;
 				ARCHS = x86_64;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1008,6 +1309,7 @@
 			buildSettings = {
 				AIO_ENV = production;
 				AIO_HOST = "https://www.action.io";
+				AIO_MAIN_NIB = App;
 				ARCHS = x86_64;
 				CODE_SIGN_IDENTITY = "Developer ID Application: Jihoon Kim";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1039,6 +1341,54 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+			};
+			name = Release;
+		};
+		E9D6A44016C516C200E53F61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AIO_ENV = test;
+				AIO_HOST = "https://dev.action.io:5000";
+				AIO_MAIN_NIB = Spec;
+				ARCHS = x86_64;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+					/Library/Frameworks,
+				);
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = app/Prefix.pch;
+				INFOPLIST_FILE = config/Info.plist;
+				INFOPLIST_PREFIX_HEADER = config/InfoPlist.h;
+				INFOPLIST_PREPROCESS = YES;
+				PRODUCT_NAME = Specs;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E9D6A44116C516C200E53F61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AIO_ENV = test;
+				AIO_HOST = "https://dev.action.io:5000";
+				AIO_MAIN_NIB = Spec;
+				ARCHS = x86_64;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+					/Library/Frameworks,
+				);
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = app/Prefix.pch;
+				INFOPLIST_FILE = config/Info.plist;
+				INFOPLIST_PREFIX_HEADER = config/InfoPlist.h;
+				INFOPLIST_PREPROCESS = YES;
+				PRODUCT_NAME = Specs;
+				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
@@ -1077,6 +1427,15 @@
 			buildConfigurations = (
 				E92BF34D164253AE00862CF4 /* Debug */,
 				E92BF34E164253AE00862CF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9D6A43F16C516C200E53F61 /* Build configuration list for PBXNativeTarget "Specs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9D6A44016C516C200E53F61 /* Debug */,
+				E9D6A44116C516C200E53F61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

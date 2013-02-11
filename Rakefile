@@ -3,16 +3,13 @@ require 'rake/testtask'
 
 desc 'Run all tests'
 task :test do
-  require 'rubygems'
-  require 'mac_bacon'
-  dir = File.dirname(__FILE__)
-  require "#{dir}/spec/SpecHelper"
-
-  files = Dir.glob("#{dir}/spec/**/*Spec.rb")
-  files.each { |f| load f }
-
-  Bacon.extend Bacon::TestUnitOutput
-  Bacon.run
+  output = `xcodebuild -scheme Specs build`
+  if output.include? '** BUILD SUCCEEDED **'
+    app = output[/^Touch (.*\.app)$/,1]
+    system "#{app}/Contents/MacOS/Specs"
+  else
+    puts output
+  end
 end
 
 task default: :test
