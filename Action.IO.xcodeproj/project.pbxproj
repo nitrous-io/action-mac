@@ -116,6 +116,10 @@
 		E9BC81171650FB0200A21D88 /* AIOWelcomeWindowController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9BC81161650FB0200A21D88 /* AIOWelcomeWindowController.rb */; };
 		E9BC812C1650FC2700A21D88 /* WelcomeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9BC81281650FC2700A21D88 /* WelcomeWindow.xib */; };
 		E9BF1AAF1653EE840067DFC9 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BF1AAE1653EE840067DFC9 /* MacRuby.framework */; };
+		E9D4565D16CCFCFA0064FB21 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D4565C16CCFCFA0064FB21 /* Sparkle.framework */; };
+		E9D4565E16CCFCFA0064FB21 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D4565C16CCFCFA0064FB21 /* Sparkle.framework */; };
+		E9D4565F16CCFD120064FB21 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E9D4565C16CCFCFA0064FB21 /* Sparkle.framework */; };
+		E9D4566016CCFD150064FB21 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E9D4565C16CCFCFA0064FB21 /* Sparkle.framework */; };
 		E9D4D9B816773AA300F4EF18 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D4D9B716773AA300F4EF18 /* PreferencesWindow.xib */; };
 		E9D6A3DB16C516C200E53F61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E92BF33B164253AE00862CF4 /* main.m */; };
 		E9D6A3DC16C516C200E53F61 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = E9987DFE164BADDC00B762FE /* SSKeychain.m */; };
@@ -256,6 +260,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E914280E16C94276004809EF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E9D4565F16CCFD120064FB21 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E914281016C9428E004809EF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E9D4566016CCFD150064FB21 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E902D68416B14C80007CFEE1 /* ActionAppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ActionAppIcon.icns; sourceTree = "<group>"; };
 		E90DD0EB16BA198E000B5A36 /* ActionFolderIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ActionFolderIcon.icns; sourceTree = "<group>"; };
@@ -372,6 +399,8 @@
 		E9BC81161650FB0200A21D88 /* AIOWelcomeWindowController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOWelcomeWindowController.rb; sourceTree = "<group>"; };
 		E9BC81281650FC2700A21D88 /* WelcomeWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeWindow.xib; sourceTree = "<group>"; };
 		E9BF1AAE1653EE840067DFC9 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
+		E9D4565C16CCFCFA0064FB21 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = vendor/frameworks/Sparkle.framework; sourceTree = "<group>"; };
+		E9D4566116CD2AF40064FB21 /* VERSION */ = {isa = PBXFileReference; lastKnownFileType = text; path = VERSION; sourceTree = "<group>"; };
 		E9D4D9B716773AA300F4EF18 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
 		E9D6A3CB16C5139F00E53F61 /* SpecAppDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = SpecAppDelegate.rb; sourceTree = "<group>"; };
 		E9D6A3D016C514DC00E53F61 /* InfoPlist-test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InfoPlist-test.h"; sourceTree = "<group>"; };
@@ -393,6 +422,7 @@
 				E9BF1AAF1653EE840067DFC9 /* MacRuby.framework in Frameworks */,
 				E9987E01164BADE900B762FE /* Security.framework in Frameworks */,
 				E90FD706165E039A00B09052 /* WebKit.framework in Frameworks */,
+				E9D4565D16CCFCFA0064FB21 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +435,7 @@
 				E9D6A3E016C516C200E53F61 /* MacRuby.framework in Frameworks */,
 				E9D6A3E116C516C200E53F61 /* Security.framework in Frameworks */,
 				E9D6A3E216C516C200E53F61 /* WebKit.framework in Frameworks */,
+				E9D4565E16CCFCFA0064FB21 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +535,7 @@
 				E982FC44164AC09800CA54BA /* Rakefile */,
 				E93D277016BA6044006C0A66 /* Gemfile */,
 				E93D276E16BA6039006C0A66 /* Gemfile.lock */,
+				E9D4566116CD2AF40064FB21 /* VERSION */,
 				E90FD70E165E143500B09052 /* README.md */,
 				E902D68416B14C80007CFEE1 /* ActionAppIcon.icns */,
 				E9987DFA164BADBA00B762FE /* vendor */,
@@ -529,6 +561,7 @@
 				E9BF1AAE1653EE840067DFC9 /* MacRuby.framework */,
 				E9987E00164BADE900B762FE /* Security.framework */,
 				E90FD705165E039A00B09052 /* WebKit.framework */,
+				E9D4565C16CCFCFA0064FB21 /* Sparkle.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -849,6 +882,7 @@
 				E92BF326164253AD00862CF4 /* Sources */,
 				E92BF327164253AD00862CF4 /* Frameworks */,
 				E92BF328164253AD00862CF4 /* Resources */,
+				E914280E16C94276004809EF /* CopyFiles */,
 				E91F647716A4614500E797BC /* ShellScript */,
 			);
 			buildRules = (
@@ -868,6 +902,7 @@
 				E9D6A3DA16C516C200E53F61 /* Sources */,
 				E9D6A3DD16C516C200E53F61 /* Frameworks */,
 				E9D6A3E316C516C200E53F61 /* Resources */,
+				E914281016C9428E004809EF /* CopyFiles */,
 				E9D6A43E16C516C200E53F61 /* ShellScript */,
 			);
 			buildRules = (
@@ -1134,7 +1169,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "git=\"/usr/bin/env git\"\ndate=`date`\necho \"/* Generated at $date */\" > config/InfoPlist.h\n\nversion=`$git describe --always`\necho \"#define AIO_GIT_HASH $version\" >> config/InfoPlist.h\n\nif [ $AIO_ENV == 'production' ]; then\n  echo \"#define AIO_BUNDLE_ID io.action.mac-app\" >> config/InfoPlist.h\nelse\n  echo \"#define AIO_BUNDLE_ID io.action.mac-app-$AIO_ENV\" >> config/InfoPlist.h\nfi\n\ncat \"config/InfoPlist-$AIO_ENV.h\" >> config/InfoPlist.h\n\ntouch config/Info.plist";
+			shellScript = "git=\"/usr/bin/env git\"\ndate=`date`\necho \"/* Generated at $date */\" > config/InfoPlist.h\n\nversion=`cat VERSION`\necho \"#define AIO_VERSION $version\" >> config/InfoPlist.h\n\ngit_hash=`$git describe --always`\necho \"#define AIO_GIT_HASH $git_hash\" >> config/InfoPlist.h\n\nif [ $AIO_ENV == 'production' ]; then\n  echo \"#define AIO_BUNDLE_ID io.action.mac-app\" >> config/InfoPlist.h\nelse\n  echo \"#define AIO_BUNDLE_ID io.action.mac-app-$AIO_ENV\" >> config/InfoPlist.h\nfi\n\ncat \"config/InfoPlist-$AIO_ENV.h\" >> config/InfoPlist.h\n\ntouch config/Info.plist";
 		};
 		E91F647716A4614500E797BC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1247,7 +1282,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
@@ -1273,7 +1308,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
 			};
@@ -1284,7 +1319,7 @@
 			buildSettings = {
 				AIO_ENV = development;
 				AIO_HOST = "https://dev.action.io:5000";
-				AIO_MAIN_NIB = App;
+				AIO_UPDATE_FEED_URL = "https://dev.action.io:5000/mac/appcast.xml";
 				ARCHS = x86_64;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1292,6 +1327,7 @@
 					"$(inherited)",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
 					/Library/Frameworks,
+					"\"$(SRCROOT)/vendor/frameworks\"",
 				);
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1309,7 +1345,7 @@
 			buildSettings = {
 				AIO_ENV = production;
 				AIO_HOST = "https://www.action.io";
-				AIO_MAIN_NIB = App;
+				AIO_UPDATE_FEED_URL = "https://www.action.io/mac/appcast.xml";
 				ARCHS = x86_64;
 				CODE_SIGN_IDENTITY = "Developer ID Application: Jihoon Kim";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1317,6 +1353,7 @@
 					"$(inherited)",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
 					/Library/Frameworks,
+					"\"$(SRCROOT)/vendor/frameworks\"",
 				);
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1349,13 +1386,14 @@
 			buildSettings = {
 				AIO_ENV = test;
 				AIO_HOST = "https://dev.action.io:5000";
-				AIO_MAIN_NIB = Spec;
+				AIO_UPDATE_FEED_URL = "https://dev.action.io:5000/mac/updates.xml";
 				ARCHS = x86_64;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
 					/Library/Frameworks,
+					"\"$(SRCROOT)/vendor/frameworks\"",
 				);
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1373,13 +1411,14 @@
 			buildSettings = {
 				AIO_ENV = test;
 				AIO_HOST = "https://dev.action.io:5000";
-				AIO_MAIN_NIB = Spec;
+				AIO_UPDATE_FEED_URL = "https://dev.action.io:5000/mac/updates.xml";
 				ARCHS = x86_64;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
 					/Library/Frameworks,
+					"\"$(SRCROOT)/vendor/frameworks\"",
 				);
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

@@ -60,18 +60,21 @@ class AIOStatusMenuController
 
   def fetch_current_user
     AIOApp.jobs.add_new 'current_user.fetch' do
+      AIOLog 'fetching current_user...'
       AIOApp.current_user.fetch
     end
   end
 
   def fetch_boxes
     AIOApp.jobs.add_new 'boxes.fetch' do
+      AIOLog 'fetching boxes...'
       AIOApp.boxes.fetch
     end
   end
 
   def fetch_public_keys
     AIOApp.jobs.add_new 'public_keys.fetch' do
+      AIOLog 'fetching public keys...'
       AIOApp.public_keys.fetch
     end
   end

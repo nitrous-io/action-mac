@@ -16,7 +16,9 @@ class AIOAPI
   def initialize
     options = { site: AIOSettings.host }
     # disable ssl cert checking for development
-    options[:ssl] = { verify_mode: OpenSSL::SSL::VERIFY_NONE } if AIOSettings.env == 'development'
+    if %w(development test).include? AIOSettings.env
+      options[:ssl] = { verify: false }
+    end
     @client = OAuth2::Client.new AIOSettings.oauth_client_id, AIOSettings.oauth_client_secret, options
     @signed_in = false
   end
@@ -28,6 +30,7 @@ class AIOAPI
 
   def request(verb, path, options={})
     return unless @token
+    AIOLog "request: #{verb} #{path}"
     options = { parse: :json }.merge options
     options[:headers] ||= {}
     options[:headers]['User-Agent'] = AIOSettings.user_agent

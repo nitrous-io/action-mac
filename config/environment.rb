@@ -36,7 +36,9 @@ require 'faraday/middleware'
 require 'faraday/adapter'
 require 'faraday/error'
 require 'faraday/request/url_encoded'
-require 'faraday/adapter/net_http'
+require 'faraday/adapter/excon'
+
+Faraday.default_adapter = :excon
 
 require 'json'
 require 'multi_json'

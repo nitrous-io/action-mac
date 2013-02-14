@@ -14,6 +14,12 @@
 	<string>AIO_OAUTH_CLIENT_SECRET</string>
 	<key>AIOPusherKey</key>
 	<string>AIO_PUSHER_KEY</string>
+	<key>SUFeedURL</key>
+	<string>${AIO_UPDATE_FEED_URL}</string>
+	<key>SUEnableSystemProfiling</key>
+	<true/>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -29,11 +35,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1.0</string>
+	<string>AIO_VERSION</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>AIO_VERSION</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.developer-tools</string>
 	<key>LSMinimumSystemVersion</key>
@@ -43,7 +49,7 @@
 	<key>NSHighResolutionCapable</key>
 	<true/>
 	<key>NSMainNibFile</key>
-	<string>${AIO_MAIN_NIB}</string>
+	<string>AIO_MAIN_NIB</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>
