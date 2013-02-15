@@ -37,6 +37,22 @@ class AIOBoxMenuController
     end
   end
 
+  def tunneling_enable_tunneling(sender)
+    @box.ssh_tunnels.enabled = true
+  end
+
+  def tunneling_disable_tunneling(sender)
+    @box.ssh_tunnels.enabled = false
+  end
+
+  def file_sync_enable_file_sync(sender)
+    @box.file_sync.enabled = true
+  end
+
+  def file_sync_disable_file_sync(sender)
+    @box.file_sync.enabled = false
+  end
+
   def file_sync_sync_now(sender)
     @box.file_sync.file_sync_task.do_sync
   end

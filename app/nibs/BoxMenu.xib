@@ -112,6 +112,32 @@
 												<reference key="NSOnImage" ref="469545071"/>
 												<reference key="NSMixedImage" ref="318561862"/>
 											</object>
+											<object class="NSMenuItem" id="694691325">
+												<reference key="NSMenu" ref="354125429"/>
+												<bool key="NSIsDisabled">YES</bool>
+												<bool key="NSIsSeparator">YES</bool>
+												<string key="NSTitle"/>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="469545071"/>
+												<reference key="NSMixedImage" ref="318561862"/>
+											</object>
+											<object class="NSMenuItem" id="847572701">
+												<reference key="NSMenu" ref="354125429"/>
+												<string key="NSTitle">Enable Tunneling</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="469545071"/>
+												<reference key="NSMixedImage" ref="318561862"/>
+											</object>
+											<object class="NSMenuItem" id="142588415">
+												<reference key="NSMenu" ref="354125429"/>
+												<string key="NSTitle">Disable Tunneling</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="469545071"/>
+												<reference key="NSMixedImage" ref="318561862"/>
+											</object>
 										</array>
 									</object>
 								</object>
@@ -146,8 +172,35 @@
 												<reference key="NSOnImage" ref="469545071"/>
 												<reference key="NSMixedImage" ref="318561862"/>
 											</object>
+											<object class="NSMenuItem" id="644542434">
+												<reference key="NSMenu" ref="462810163"/>
+												<string key="NSTitle">Enable File Sync</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="469545071"/>
+												<reference key="NSMixedImage" ref="318561862"/>
+											</object>
+											<object class="NSMenuItem" id="699855070">
+												<reference key="NSMenu" ref="462810163"/>
+												<string key="NSTitle">Disable File Sync</string>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="469545071"/>
+												<reference key="NSMixedImage" ref="318561862"/>
+											</object>
+											<object class="NSMenuItem" id="415345068">
+												<reference key="NSMenu" ref="462810163"/>
+												<bool key="NSIsDisabled">YES</bool>
+												<bool key="NSIsSeparator">YES</bool>
+												<string key="NSTitle"/>
+												<string key="NSKeyEquiv"/>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="469545071"/>
+												<reference key="NSMixedImage" ref="318561862"/>
+											</object>
 											<object class="NSMenuItem" id="514228333">
 												<reference key="NSMenu" ref="462810163"/>
+												<bool key="NSIsDisabled">YES</bool>
 												<string key="NSTitle">Sync Now</string>
 												<string key="NSKeyEquiv"/>
 												<int key="NSMnemonicLoc">2147483647</int>
@@ -254,6 +307,38 @@
 						<reference key="destination" ref="514228333"/>
 					</object>
 					<int key="connectionID">122</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">tunneling_enable_tunneling:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="847572701"/>
+					</object>
+					<int key="connectionID">142</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">tunneling_disable_tunneling:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="142588415"/>
+					</object>
+					<int key="connectionID">143</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">file_sync_enable_file_sync:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="644542434"/>
+					</object>
+					<int key="connectionID">144</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">file_sync_disable_file_sync:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="699855070"/>
+					</object>
+					<int key="connectionID">145</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -636,6 +721,78 @@
 					</object>
 					<int key="connectionID">135</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: box.ssh_tunnels.enabled</string>
+						<reference key="source" ref="847572701"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="847572701"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: box.ssh_tunnels.enabled</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">box.ssh_tunnels.enabled</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">163</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: box.ssh_tunnels.enabled</string>
+						<reference key="source" ref="142588415"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="142588415"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: box.ssh_tunnels.enabled</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">box.ssh_tunnels.enabled</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">166</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: box.file_sync.enabled</string>
+						<reference key="source" ref="644542434"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="644542434"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: box.file_sync.enabled</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">box.file_sync.enabled</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">154</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: box.file_sync.enabled</string>
+						<reference key="source" ref="699855070"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="699855070"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: box.file_sync.enabled</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">box.file_sync.enabled</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">150</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -749,6 +906,9 @@
 						<reference key="object" ref="354125429"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="216573530"/>
+							<reference ref="694691325"/>
+							<reference ref="847572701"/>
+							<reference ref="142588415"/>
 						</array>
 						<reference key="parent" ref="683698313"/>
 					</object>
@@ -772,6 +932,9 @@
 							<reference ref="818543774"/>
 							<reference ref="514228333"/>
 							<reference ref="250726493"/>
+							<reference ref="644542434"/>
+							<reference ref="415345068"/>
+							<reference ref="699855070"/>
 						</array>
 						<reference key="parent" ref="666770918"/>
 					</object>
@@ -790,6 +953,36 @@
 						<reference key="object" ref="250726493"/>
 						<reference key="parent" ref="462810163"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">136</int>
+						<reference key="object" ref="694691325"/>
+						<reference key="parent" ref="354125429"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">137</int>
+						<reference key="object" ref="847572701"/>
+						<reference key="parent" ref="354125429"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">138</int>
+						<reference key="object" ref="142588415"/>
+						<reference key="parent" ref="354125429"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">139</int>
+						<reference key="object" ref="644542434"/>
+						<reference key="parent" ref="462810163"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">140</int>
+						<reference key="object" ref="415345068"/>
+						<reference key="parent" ref="462810163"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">141</int>
+						<reference key="object" ref="699855070"/>
+						<reference key="parent" ref="462810163"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -801,6 +994,12 @@
 				<string key="107.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="120.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="121.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="136.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="137.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="138.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="139.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="140.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="141.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="30.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -820,7 +1019,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">135</int>
+			<int key="maxID">166</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -828,14 +1027,26 @@
 					<string key="className">AIOBoxMenuController</string>
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="file_sync_disable_file_sync:">id</string>
+						<string key="file_sync_enable_file_sync:">id</string>
 						<string key="file_sync_sync_now:">id</string>
 						<string key="open_shell:">id</string>
 						<string key="open_web_ide:">id</string>
 						<string key="restart:">id</string>
 						<string key="shut_down:">id</string>
 						<string key="start:">id</string>
+						<string key="tunneling_disable_tunneling:">id</string>
+						<string key="tunneling_enable_tunneling:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="file_sync_disable_file_sync:">
+							<string key="name">file_sync_disable_file_sync:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="file_sync_enable_file_sync:">
+							<string key="name">file_sync_enable_file_sync:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="file_sync_sync_now:">
 							<string key="name">file_sync_sync_now:</string>
 							<string key="candidateClassName">id</string>
@@ -858,6 +1069,14 @@
 						</object>
 						<object class="IBActionInfo" key="start:">
 							<string key="name">start:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="tunneling_disable_tunneling:">
+							<string key="name">tunneling_disable_tunneling:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="tunneling_enable_tunneling:">
+							<string key="name">tunneling_enable_tunneling:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
