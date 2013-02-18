@@ -17,6 +17,11 @@ class AIOGeneralPreferencesViewController < NSViewController
     stop_observing self, 'debug_enabled'
   end
 
+  def did_click_licenses_button(sender)
+    @licences_window_controller ||= AIOLicensesWindowController.new
+    @licences_window_controller.show_window
+  end
+
   private
   def debug_enabled_did_change(value, change)
     AIOStore.write 'debug', value

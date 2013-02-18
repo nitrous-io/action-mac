@@ -120,6 +120,12 @@
 		E9D4565E16CCFCFA0064FB21 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D4565C16CCFCFA0064FB21 /* Sparkle.framework */; };
 		E9D4565F16CCFD120064FB21 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E9D4565C16CCFCFA0064FB21 /* Sparkle.framework */; };
 		E9D4566016CCFD150064FB21 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E9D4565C16CCFCFA0064FB21 /* Sparkle.framework */; };
+		E9D4566316D23CDC0064FB21 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E9D4566216D23CDC0064FB21 /* LICENSE */; };
+		E9D4566416D245140064FB21 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E9D4566216D23CDC0064FB21 /* LICENSE */; };
+		E9D4566616D247D50064FB21 /* LicensesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D4566516D247D50064FB21 /* LicensesWindow.xib */; };
+		E9D4566716D247D50064FB21 /* LicensesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D4566516D247D50064FB21 /* LicensesWindow.xib */; };
+		E9D4566916D248F90064FB21 /* AIOLicensesWindowController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9D4566816D248F90064FB21 /* AIOLicensesWindowController.rb */; };
+		E9D4566A16D248F90064FB21 /* AIOLicensesWindowController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9D4566816D248F90064FB21 /* AIOLicensesWindowController.rb */; };
 		E9D4D9B816773AA300F4EF18 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D4D9B716773AA300F4EF18 /* PreferencesWindow.xib */; };
 		E9D6A3DB16C516C200E53F61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E92BF33B164253AE00862CF4 /* main.m */; };
 		E9D6A3DC16C516C200E53F61 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = E9987DFE164BADDC00B762FE /* SSKeychain.m */; };
@@ -401,6 +407,9 @@
 		E9BF1AAE1653EE840067DFC9 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
 		E9D4565C16CCFCFA0064FB21 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = vendor/frameworks/Sparkle.framework; sourceTree = "<group>"; };
 		E9D4566116CD2AF40064FB21 /* VERSION */ = {isa = PBXFileReference; lastKnownFileType = text; path = VERSION; sourceTree = "<group>"; };
+		E9D4566216D23CDC0064FB21 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E9D4566516D247D50064FB21 /* LicensesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LicensesWindow.xib; sourceTree = "<group>"; };
+		E9D4566816D248F90064FB21 /* AIOLicensesWindowController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOLicensesWindowController.rb; sourceTree = "<group>"; };
 		E9D4D9B716773AA300F4EF18 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
 		E9D6A3CB16C5139F00E53F61 /* SpecAppDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = SpecAppDelegate.rb; sourceTree = "<group>"; };
 		E9D6A3D016C514DC00E53F61 /* InfoPlist-test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InfoPlist-test.h"; sourceTree = "<group>"; };
@@ -533,6 +542,7 @@
 				E90FD6F4165DD94600B09052 /* config */,
 				E982FC3F164ABFF800CA54BA /* spec */,
 				E982FC44164AC09800CA54BA /* Rakefile */,
+				E9D4566216D23CDC0064FB21 /* LICENSE */,
 				E93D277016BA6044006C0A66 /* Gemfile */,
 				E93D276E16BA6039006C0A66 /* Gemfile.lock */,
 				E9D4566116CD2AF40064FB21 /* VERSION */,
@@ -788,6 +798,7 @@
 				E96795841667182B00703E49 /* AIOStatusMenuController.rb */,
 				E99576B41670F4B30069C9B4 /* AIOBoxMenuController.rb */,
 				E9A167CF167F8ED600F31E69 /* AIOSSHKeyPairWindowController.rb */,
+				E9D4566816D248F90064FB21 /* AIOLicensesWindowController.rb */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -833,6 +844,7 @@
 				E99576AC1670A8CC0069C9B4 /* StatusMenu.xib */,
 				E97537EA16724B050030B15B /* BoxMenu.xib */,
 				E9A167D1167F8EE400F31E69 /* SSHKeyPairWindow.xib */,
+				E9D4566516D247D50064FB21 /* LicensesWindow.xib */,
 			);
 			path = nibs;
 			sourceTree = "<group>";
@@ -1039,6 +1051,9 @@
 				E93D276F16BA6039006C0A66 /* Gemfile.lock in Resources */,
 				E93D277116BA6044006C0A66 /* Gemfile in Resources */,
 				E9675BC816BBCD1300954BF1 /* AIONotifier.rb in Resources */,
+				E9D4566316D23CDC0064FB21 /* LICENSE in Resources */,
+				E9D4566616D247D50064FB21 /* LicensesWindow.xib in Resources */,
+				E9D4566916D248F90064FB21 /* AIOLicensesWindowController.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1150,7 +1165,10 @@
 				E9D6A43A16C516C200E53F61 /* status-item-icon-gray@2x.png in Resources */,
 				E9D6A43B16C516C200E53F61 /* Gemfile.lock in Resources */,
 				E9D6A43C16C516C200E53F61 /* Gemfile in Resources */,
+				E9D4566416D245140064FB21 /* LICENSE in Resources */,
 				E9D6A43D16C516C200E53F61 /* AIONotifier.rb in Resources */,
+				E9D4566716D247D50064FB21 /* LicensesWindow.xib in Resources */,
+				E9D4566A16D248F90064FB21 /* AIOLicensesWindowController.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
