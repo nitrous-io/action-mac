@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
-		<string key="IBDocument.SystemVersion">12C2034</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.SystemVersion">12D78</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">2844</string>
+			<string key="NS.object.0">3084</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSBox</string>
@@ -37,7 +37,7 @@
 				<string key="NSClassName">NSApplication</string>
 			</object>
 			<object class="NSView" id="390297707">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">256</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="NSButton" id="214557753">
@@ -45,8 +45,6 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{375, 12}, {91, 32}}</string>
 						<reference key="NSSuperview" ref="390297707"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="505335883">
 							<int key="NSCellFlags">67108864</int>
@@ -80,15 +78,14 @@
 										<int key="NSvFlags">268</int>
 										<string key="NSFrame">{{15, 177}, {294, 68}}</string>
 										<reference key="NSSuperview" ref="331502770"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="807453669"/>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSTextFieldCell" key="NSCell" id="762071103">
 											<int key="NSCellFlags">67108864</int>
 											<int key="NSCellFlags2">272629760</int>
-											<string type="base64-UTF8" key="NSContents">VGhhbmsgeW91IGZvciB5b3VyIGludGVyZXN0IGluIEFjdGlvbi5JTy4KCkEgd2ViIHBhZ2Ugc2hvd2lu
-ZyBob3cgeW91IGNhbiBzaWduIHVwIGZvciBhbiBBY3Rpb24uSU8gYWNjb3VudCB3aWxsIG9wZW4gc2hv
-cnRseS4</string>
+											<string type="base64-UTF8" key="NSContents">VGhhbmsgeW91IGZvciB5b3VyIGludGVyZXN0IGluIE5pdHJvdXMuSU8uCgpBIHdlYiBwYWdlIHNob3dp
+bmcgaG93IHlvdSBjYW4gc2lnbiB1cCBmb3IgYW4gTml0cm91cy5JTyBhY2NvdW50IHdpbGwgb3BlbiBz
+aG9ydGx5Lg</string>
 											<object class="NSFont" key="NSSupport">
 												<string key="NSName">LucidaGrande</string>
 												<double key="NSSize">13</double>
@@ -121,7 +118,6 @@ cnRseS4</string>
 										<int key="NSvFlags">268</int>
 										<string key="NSFrame">{{18, 139}, {89, 19}}</string>
 										<reference key="NSSuperview" ref="331502770"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="214557753"/>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSButtonCell" key="NSCell" id="434218474">
@@ -146,13 +142,11 @@ cnRseS4</string>
 								</array>
 								<string key="NSFrame">{{1, 1}, {324, 258}}</string>
 								<reference key="NSSuperview" ref="306038360"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="415948055"/>
 							</object>
 						</array>
 						<string key="NSFrame">{{137, 56}, {326, 260}}</string>
 						<reference key="NSSuperview" ref="390297707"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="331502770"/>
 						<string key="NSOffsets">{0, 0}</string>
 						<object class="NSTextFieldCell" key="NSTitleCell">
@@ -186,8 +180,6 @@ cnRseS4</string>
 					</object>
 				</array>
 				<string key="NSFrameSize">{480, 334}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="306038360"/>
 			</object>
 		</array>

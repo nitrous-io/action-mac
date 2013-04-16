@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
-		<string key="IBDocument.SystemVersion">12C2034</string>
+		<string key="IBDocument.SystemVersion">12D78</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			<string key="NS.object.0">3084</string>
@@ -37,7 +37,7 @@
 				<array class="NSMutableArray" key="NSMenuItems">
 					<object class="NSMenuItem" id="1022920977">
 						<reference key="NSMenu" ref="828852386"/>
-						<string key="NSTitle">Open Action.IO Website...</string>
+						<string key="NSTitle">Open Nitrous.IO Website...</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<object class="NSCustomResource" key="NSOnImage" id="51090470">
@@ -51,7 +51,7 @@
 					</object>
 					<object class="NSMenuItem" id="861951041">
 						<reference key="NSMenu" ref="828852386"/>
-						<string key="NSTitle">Open Action.IO Folder...</string>
+						<string key="NSTitle">Open Nitrous.IO Folder...</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="51090470"/>
@@ -115,7 +115,7 @@
 					</object>
 					<object class="NSMenuItem" id="232468409">
 						<reference key="NSMenu" ref="828852386"/>
-						<string key="NSTitle">Quit Action.IO</string>
+						<string key="NSTitle">Quit Nitrous.IO</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="51090470"/>

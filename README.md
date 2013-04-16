@@ -1,4 +1,4 @@
-# Action.IO Client for Mac
+# Nitrous.IO Client for Mac
 
 ## Install Gems
 

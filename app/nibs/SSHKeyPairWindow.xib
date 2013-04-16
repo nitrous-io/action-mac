@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
-		<string key="IBDocument.SystemVersion">12C2034</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.SystemVersion">12D78</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">2844</string>
+			<string key="NS.object.0">3084</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSButton</string>
@@ -42,17 +42,15 @@
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{196, 700}, {554, 148}}</string>
 				<int key="NSWTFlags">611845120</int>
-				<string key="NSWindowTitle">Action.IO</string>
+				<string key="NSWindowTitle">Nitrous.IO</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
 				<object class="NSView" key="NSWindowView" id="710799192">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews"/>
 					<string key="NSFrameSize">{554, 148}</string>
-					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 					<string key="NSReuseIdentifierKey">_NS:20</string>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1058}}</string>
@@ -60,7 +58,7 @@
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSView" id="837741807">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">256</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="NSTextField" id="944887305">
@@ -68,14 +66,13 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{17, 111}, {520, 17}}</string>
 						<reference key="NSSuperview" ref="837741807"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="732149476"/>
 						<string key="NSReuseIdentifierKey">_NS:1535</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="1060349094">
 							<int key="NSCellFlags">68157504</int>
 							<int key="NSCellFlags2">4195328</int>
-							<string key="NSContents">Action.IO for Mac could not find an existing SSH keypair on this computer.</string>
+							<string key="NSContents">Nitrous.IO for Mac could not find an existing SSH keypair on this computer.</string>
 							<object class="NSFont" key="NSSupport" id="219992375">
 								<string key="NSName">LucidaGrande-Bold</string>
 								<double key="NSSize">13</double>
@@ -109,7 +106,6 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{443, 13}, {97, 32}}</string>
 						<reference key="NSSuperview" ref="837741807"/>
-						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="988655957">
@@ -137,14 +133,13 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{17, 59}, {520, 14}}</string>
 						<reference key="NSSuperview" ref="837741807"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="481725255"/>
 						<string key="NSReuseIdentifierKey">_NS:1535</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="252846062">
 							<int key="NSCellFlags">67108864</int>
 							<int key="NSCellFlags2">4194304</int>
-							<string key="NSContents">This is required to establish a secure communication channel with your Action.IO boxes.</string>
+							<string key="NSContents">This is required to establish a secure communication channel with your Nitrous.IO boxes.</string>
 							<object class="NSFont" key="NSSupport" id="26">
 								<string key="NSName">LucidaGrande</string>
 								<double key="NSSize">11</double>
@@ -162,14 +157,13 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{14, 13}, {130, 32}}</string>
 						<reference key="NSSuperview" ref="837741807"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1006713196"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="864959061">
 							<int key="NSCellFlags">67108864</int>
 							<int key="NSCellFlags2">134217728</int>
-							<string key="NSContents">Quit Action.IO</string>
+							<string key="NSContents">Quit Nitrous.IO</string>
 							<reference key="NSSupport" ref="377302125"/>
 							<string key="NSCellIdentifier">_NS:9</string>
 							<reference key="NSControlView" ref="481725255"/>
@@ -187,14 +181,13 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{17, 86}, {520, 17}}</string>
 						<reference key="NSSuperview" ref="837741807"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="778848385"/>
 						<string key="NSReuseIdentifierKey">_NS:1535</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="718096293">
 							<int key="NSCellFlags">68157504</int>
 							<int key="NSCellFlags2">272630784</int>
-							<string key="NSContents">Would you like to generate one and register it with Action.IO?</string>
+							<string key="NSContents">Would you like to generate one and register it with Nitrous.IO?</string>
 							<reference key="NSSupport" ref="219992375"/>
 							<string key="NSCellIdentifier">_NS:1535</string>
 							<reference key="NSControlView" ref="732149476"/>
@@ -208,7 +201,6 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{425, 22}, {16, 16}}</string>
 						<reference key="NSSuperview" ref="837741807"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="47153961"/>
 						<string key="NSReuseIdentifierKey">_NS:945</string>
 						<int key="NSpiFlags">28938</int>
@@ -216,13 +208,11 @@
 					</object>
 				</array>
 				<string key="NSFrameSize">{554, 148}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="944887305"/>
 				<string key="NSReuseIdentifierKey">_NS:20</string>
 			</object>
 			<object class="NSView" id="66439874">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">256</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="NSTextField" id="96228335">
@@ -230,14 +220,13 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{17, 111}, {470, 17}}</string>
 						<reference key="NSSuperview" ref="66439874"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="568117712"/>
 						<string key="NSReuseIdentifierKey">_NS:1535</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="103335247">
 							<int key="NSCellFlags">67108864</int>
 							<int key="NSCellFlags2">4194304</int>
-							<string key="NSContents">This computer’s SSH public key is not yet registered with Action.IO.</string>
+							<string key="NSContents">This computer’s SSH public key is not yet registered with Nitrous.IO.</string>
 							<reference key="NSSupport" ref="219992375"/>
 							<string key="NSCellIdentifier">_NS:1535</string>
 							<reference key="NSControlView" ref="96228335"/>
@@ -251,7 +240,6 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{448, 13}, {92, 32}}</string>
 						<reference key="NSSuperview" ref="66439874"/>
-						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="502145042">
@@ -275,14 +263,13 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{17, 59}, {520, 14}}</string>
 						<reference key="NSSuperview" ref="66439874"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="569456324"/>
 						<string key="NSReuseIdentifierKey">_NS:1535</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="187564779">
 							<int key="NSCellFlags">67108864</int>
 							<int key="NSCellFlags2">4194304</int>
-							<string key="NSContents">This is required to establish a secure communication channel with your Action.IO boxes.</string>
+							<string key="NSContents">This is required to establish a secure communication channel with your Nitrous.IO boxes.</string>
 							<reference key="NSSupport" ref="26"/>
 							<string key="NSCellIdentifier">_NS:1535</string>
 							<reference key="NSControlView" ref="498178725"/>
@@ -296,7 +283,6 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{430, 22}, {16, 16}}</string>
 						<reference key="NSSuperview" ref="66439874"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="728181761"/>
 						<string key="NSReuseIdentifierKey">_NS:945</string>
 						<int key="NSpiFlags">28938</int>
@@ -307,14 +293,13 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{17, 86}, {470, 17}}</string>
 						<reference key="NSSuperview" ref="66439874"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="498178725"/>
 						<string key="NSReuseIdentifierKey">_NS:1535</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="451983036">
 							<int key="NSCellFlags">68157504</int>
 							<int key="NSCellFlags2">272630784</int>
-							<string key="NSContents">Would you like to have it registered with Action.IO?</string>
+							<string key="NSContents">Would you like to have it registered with Nitrous.IO?</string>
 							<reference key="NSSupport" ref="219992375"/>
 							<string key="NSCellIdentifier">_NS:1535</string>
 							<reference key="NSControlView" ref="568117712"/>
@@ -328,14 +313,13 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{14, 13}, {130, 32}}</string>
 						<reference key="NSSuperview" ref="66439874"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="719435863"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="164299309">
 							<int key="NSCellFlags">67108864</int>
 							<int key="NSCellFlags2">134217728</int>
-							<string key="NSContents">Quit Action.IO</string>
+							<string key="NSContents">Quit Nitrous.IO</string>
 							<reference key="NSSupport" ref="377302125"/>
 							<string key="NSCellIdentifier">_NS:9</string>
 							<reference key="NSControlView" ref="569456324"/>
@@ -350,8 +334,6 @@
 					</object>
 				</array>
 				<string key="NSFrameSize">{554, 148}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="96228335"/>
 				<string key="NSReuseIdentifierKey">_NS:20</string>
 			</object>

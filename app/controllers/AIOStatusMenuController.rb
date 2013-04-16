@@ -21,7 +21,7 @@ class AIOStatusMenuController
     @status_item.setHighlightMode true
     @status_item.setImage NSImage.imageNamed('status-item-icon-gray')
     @status_item.setAlternateImage NSImage.imageNamed('status-item-icon-highlighted')
-    @status_item.setToolTip 'Action.IO'
+    @status_item.setToolTip 'Nitrous.IO'
     @status_item.setMenu @menu
 
     observe(AIOApp, 'boxes.content') { |v,c| boxes_content_did_change v,c }

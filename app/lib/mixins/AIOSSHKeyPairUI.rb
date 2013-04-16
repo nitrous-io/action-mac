@@ -31,7 +31,7 @@ module AIOSSHKeyPairUI
                 when AIOSSHKeyPair::PassphraseRequiredError
                   prompt_user_for_password
                 when AIOPublicKeyCollection::PublicKeyAlreadyRegisteredError
-                  "Public key is already registered with Action.IO." unless ignore_already_registered
+                  "Public key is already registered with Nitrous.IO." unless ignore_already_registered
                 when AIOPublicKeyCollection::PublicKeyInvalidError
                   "Public key is invalid."
                 when OpenSSL::PKey::PKeyError

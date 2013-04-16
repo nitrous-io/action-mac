@@ -318,7 +318,7 @@
 		E91F647C16A9448800E797BC /* sync@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sync@2x.png"; sourceTree = "<group>"; };
 		E91F647D16A9448900E797BC /* sync.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sync.png; sourceTree = "<group>"; };
 		E91F648016A945B700E797BC /* FileSyncPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileSyncPreferencesView.xib; sourceTree = "<group>"; };
-		E92BF32A164253AD00862CF4 /* Action.IO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Action.IO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E92BF32A164253AD00862CF4 /* Nitrous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nitrous.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92BF32E164253AD00862CF4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E92BF33B164253AE00862CF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E92BF343164253AE00862CF4 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
@@ -557,7 +557,7 @@
 		E92BF32B164253AD00862CF4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E92BF32A164253AD00862CF4 /* Action.IO.app */,
+				E92BF32A164253AD00862CF4 /* Nitrous.app */,
 				E9D6A44216C516C200E53F61 /* Specs.app */,
 			);
 			name = Products;
@@ -887,9 +887,9 @@
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
-		E92BF329164253AD00862CF4 /* Action.IO */ = {
+		E92BF329164253AD00862CF4 /* Nitrous.IO */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E92BF349164253AE00862CF4 /* Build configuration list for PBXNativeTarget "Action.IO" */;
+			buildConfigurationList = E92BF349164253AE00862CF4 /* Build configuration list for PBXNativeTarget "Nitrous.IO" */;
 			buildPhases = (
 				E92BF326164253AD00862CF4 /* Sources */,
 				E92BF327164253AD00862CF4 /* Frameworks */,
@@ -902,9 +902,9 @@
 			dependencies = (
 				E9480E0E165E1C3800FE5B81 /* PBXTargetDependency */,
 			);
-			name = Action.IO;
+			name = Nitrous.IO;
 			productName = ActionMac;
-			productReference = E92BF32A164253AD00862CF4 /* Action.IO.app */;
+			productReference = E92BF32A164253AD00862CF4 /* Nitrous.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E9D6A3D716C516C200E53F61 /* Specs */ = {
@@ -935,7 +935,7 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 			};
-			buildConfigurationList = E92BF324164253AD00862CF4 /* Build configuration list for PBXProject "Action.IO" */;
+			buildConfigurationList = E92BF324164253AD00862CF4 /* Build configuration list for PBXProject "Nitrous.IO" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -948,7 +948,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E92BF329164253AD00862CF4 /* Action.IO */,
+				E92BF329164253AD00862CF4 /* Nitrous.IO */,
 				E90FD6FB165DFC9A00B09052 /* GenerateInfoPlistHeader */,
 				E92BF332164253AE00862CF4 /* Deployment */,
 				E9D6A3D716C516C200E53F61 /* Specs */,
@@ -1187,7 +1187,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "git=\"/usr/bin/env git\"\ndate=`date`\necho \"/* Generated at $date */\" > config/InfoPlist.h\n\nversion=`cat VERSION`\necho \"#define AIO_VERSION $version\" >> config/InfoPlist.h\n\ngit_hash=`$git describe --always`\necho \"#define AIO_GIT_HASH $git_hash\" >> config/InfoPlist.h\n\nif [ $AIO_ENV == 'production' ]; then\n  echo \"#define AIO_BUNDLE_ID io.action.mac-app\" >> config/InfoPlist.h\nelse\n  echo \"#define AIO_BUNDLE_ID io.action.mac-app-$AIO_ENV\" >> config/InfoPlist.h\nfi\n\ncat \"config/InfoPlist-$AIO_ENV.h\" >> config/InfoPlist.h\n\ntouch config/Info.plist";
+			shellScript = "git=\"/usr/bin/env git\"\ndate=`date`\necho \"/* Generated at $date */\" > config/InfoPlist.h\n\nversion=`cat VERSION`\necho \"#define AIO_VERSION $version\" >> config/InfoPlist.h\n\ngit_hash=`$git describe --always`\necho \"#define AIO_GIT_HASH $git_hash\" >> config/InfoPlist.h\n\nif [ $AIO_ENV == 'production' ]; then\n  echo \"#define AIO_BUNDLE_ID io.nitrous.mac-app\" >> config/InfoPlist.h\nelse\n  echo \"#define AIO_BUNDLE_ID io.nitrous.mac-app-$AIO_ENV\" >> config/InfoPlist.h\nfi\n\ncat \"config/InfoPlist-$AIO_ENV.h\" >> config/InfoPlist.h\n\ntouch config/Info.plist";
 		};
 		E91F647716A4614500E797BC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1200,7 +1200,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "RESOURCES_FOLDER_PATH=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\"\n\n# copy bundler bundle\nmkdir -p \"$RESOURCES_FOLDER_PATH/.bundle\"\nmkdir -p \"$RESOURCES_FOLDER_PATH/vendor\"\ncp -PR \"$SRCROOT/.bundle/config\" \"$RESOURCES_FOLDER_PATH/.bundle\"\ncp -PR \"$SRCROOT/vendor/bundle\" \"$RESOURCES_FOLDER_PATH/vendor\"\n\n# create a symlink for ssh\nACTIONIO_SSH_PATH=\"$RESOURCES_FOLDER_PATH/actionio-ssh\"\nrm -f \"$ACTIONIO_SSH_PATH\"\nln -s /usr/bin/ssh \"$ACTIONIO_SSH_PATH\"\n\n# codesign fsevent_watch\nFSEVENT_BIN_PATH=\"$RESOURCES_FOLDER_PATH/vendor/bundle/macruby/1.9.2/gems/rb-fsevent-0.9.3/bin/fsevent_watch\"\ncodesign -f -s \"Developer ID Application: Jihoon Kim\" \"$FSEVENT_BIN_PATH\"\n";
+			shellScript = "RESOURCES_FOLDER_PATH=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH\"\n\necho $RESOURCES_FOLDER_PATH\n\n# copy bundler bundle\nmkdir -p \"$RESOURCES_FOLDER_PATH/.bundle\"\nmkdir -p \"$RESOURCES_FOLDER_PATH/vendor\"\ncp -PR \"$SRCROOT/.bundle/config\" \"$RESOURCES_FOLDER_PATH/.bundle\"\ncp -PR \"$SRCROOT/vendor/bundle\" \"$RESOURCES_FOLDER_PATH/vendor\"\n\n# create a symlink for ssh\nACTIONIO_SSH_PATH=\"$RESOURCES_FOLDER_PATH/actionio-ssh\"\nrm -f \"$ACTIONIO_SSH_PATH\"\nln -s /usr/bin/ssh \"$ACTIONIO_SSH_PATH\"\n\n# codesign fsevent_watch\nFSEVENT_BIN_PATH=\"$RESOURCES_FOLDER_PATH/vendor/bundle/macruby/1.9.2/gems/rb-fsevent-0.9.3/bin/fsevent_watch\"\ncodesign -f -s \"Developer ID Application: Jihoon Kim\" \"$FSEVENT_BIN_PATH\"\n";
 		};
 		E9D6A43E16C516C200E53F61 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1241,7 +1241,7 @@
 /* Begin PBXTargetDependency section */
 		E92BF334164253AE00862CF4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E92BF329164253AD00862CF4 /* Action.IO */;
+			target = E92BF329164253AD00862CF4 /* Nitrous.IO */;
 			targetProxy = E92BF333164253AE00862CF4 /* PBXContainerItemProxy */;
 		};
 		E9480E0E165E1C3800FE5B81 /* PBXTargetDependency */ = {
@@ -1302,6 +1302,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Nitrous;
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
 			};
@@ -1327,6 +1328,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = Nitrous;
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
 			};
@@ -1336,8 +1338,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				AIO_ENV = development;
-				AIO_HOST = "https://dev.action.io:5000";
-				AIO_UPDATE_FEED_URL = "https://dev.action.io:5000/mac/appcast.xml";
+				AIO_HOST = "https://dev.nitrous.io:5000";
+				AIO_UPDATE_FEED_URL = "https://dev.nitrous.io:5000/mac/appcast.xml";
 				ARCHS = x86_64;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1353,7 +1355,7 @@
 				INFOPLIST_FILE = config/Info.plist;
 				INFOPLIST_PREFIX_HEADER = config/InfoPlist.h;
 				INFOPLIST_PREPROCESS = YES;
-				PRODUCT_NAME = Action.IO;
+				PRODUCT_NAME = Nitrous;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1362,8 +1364,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				AIO_ENV = production;
-				AIO_HOST = "https://www.action.io";
-				AIO_UPDATE_FEED_URL = "https://www.action.io/mac/appcast.xml";
+				AIO_HOST = "https://www.nitrous.io";
+				AIO_UPDATE_FEED_URL = "https://www.nitrous.io/mac/appcast.xml";
 				ARCHS = x86_64;
 				CODE_SIGN_IDENTITY = "Developer ID Application: Jihoon Kim";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1379,7 +1381,7 @@
 				INFOPLIST_FILE = config/Info.plist;
 				INFOPLIST_PREFIX_HEADER = config/InfoPlist.h;
 				INFOPLIST_PREPROCESS = YES;
-				PRODUCT_NAME = Action.IO;
+				PRODUCT_NAME = Nitrous;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1389,6 +1391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				PRODUCT_NAME = Nitrous;
 			};
 			name = Debug;
 		};
@@ -1396,6 +1399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				PRODUCT_NAME = Nitrous;
 			};
 			name = Release;
 		};
@@ -1403,8 +1407,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				AIO_ENV = test;
-				AIO_HOST = "https://dev.action.io:5000";
-				AIO_UPDATE_FEED_URL = "https://dev.action.io:5000/mac/updates.xml";
+				AIO_HOST = "https://dev.nitrous.io:5000";
+				AIO_UPDATE_FEED_URL = "https://dev.nitrous.io:5000/mac/updates.xml";
 				ARCHS = x86_64;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1428,8 +1432,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				AIO_ENV = test;
-				AIO_HOST = "https://dev.action.io:5000";
-				AIO_UPDATE_FEED_URL = "https://dev.action.io:5000/mac/updates.xml";
+				AIO_HOST = "https://dev.nitrous.io:5000";
+				AIO_UPDATE_FEED_URL = "https://dev.nitrous.io:5000/mac/updates.xml";
 				ARCHS = x86_64;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1461,7 +1465,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E92BF324164253AD00862CF4 /* Build configuration list for PBXProject "Action.IO" */ = {
+		E92BF324164253AD00862CF4 /* Build configuration list for PBXProject "Nitrous.IO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E92BF347164253AE00862CF4 /* Debug */,
@@ -1470,7 +1474,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E92BF349164253AE00862CF4 /* Build configuration list for PBXNativeTarget "Action.IO" */ = {
+		E92BF349164253AE00862CF4 /* Build configuration list for PBXNativeTarget "Nitrous.IO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E92BF34A164253AE00862CF4 /* Debug */,

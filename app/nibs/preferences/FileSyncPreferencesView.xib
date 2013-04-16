@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
-		<string key="IBDocument.SystemVersion">12C2034</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.SystemVersion">12D78</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">2844</string>
+			<string key="NS.object.0">3084</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSArrayController</string>
@@ -47,7 +47,7 @@
 				<string key="NSClassName">NSApplication</string>
 			</object>
 			<object class="NSView" id="623893369">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">256</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="NSScrollView" id="852901676">
@@ -64,8 +64,7 @@
 										<array class="NSMutableArray" key="NSSubviews"/>
 										<string key="NSFrameSize">{148, 162}</string>
 										<reference key="NSSuperview" ref="1034751626"/>
-										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="365740770"/>
+										<reference key="NSNextKeyView" ref="250314895"/>
 										<string key="NSReuseIdentifierKey">_NS:13</string>
 										<bool key="NSEnabled">YES</bool>
 										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -75,7 +74,6 @@
 											<int key="NSvFlags">256</int>
 											<string key="NSFrameSize">{148, 17}</string>
 											<reference key="NSSuperview" ref="250314895"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="149509055"/>
 											<reference key="NSTableView" ref="492788146"/>
 										</object>
@@ -84,7 +82,6 @@
 											<int key="NSvFlags">-2147483392</int>
 											<string key="NSFrame">{{224, 0}, {16, 17}}</string>
 											<reference key="NSSuperview" ref="852901676"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="1034751626"/>
 											<string key="NSReuseIdentifierKey">_NS:19</string>
 										</object>
@@ -176,7 +173,6 @@
 								</array>
 								<string key="NSFrame">{{1, 17}, {148, 162}}</string>
 								<reference key="NSSuperview" ref="852901676"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="492788146"/>
 								<string key="NSReuseIdentifierKey">_NS:11</string>
 								<reference key="NSDocView" ref="492788146"/>
@@ -188,7 +184,6 @@
 								<int key="NSvFlags">-2147483392</int>
 								<string key="NSFrame">{{224, 17}, {15, 102}}</string>
 								<reference key="NSSuperview" ref="852901676"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="791924069"/>
 								<string key="NSReuseIdentifierKey">_NS:58</string>
 								<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -201,7 +196,6 @@
 								<int key="NSvFlags">-2147483392</int>
 								<string key="NSFrame">{{1, 287}, {148, 15}}</string>
 								<reference key="NSSuperview" ref="852901676"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="882405409"/>
 								<string key="NSReuseIdentifierKey">_NS:60</string>
 								<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -218,7 +212,6 @@
 								</array>
 								<string key="NSFrame">{{1, 0}, {148, 17}}</string>
 								<reference key="NSSuperview" ref="852901676"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="332527826"/>
 								<reference key="NSDocView" ref="332527826"/>
 								<reference key="NSBGColor" ref="70864335"/>
@@ -228,15 +221,13 @@
 						</array>
 						<string key="NSFrame">{{20, 20}, {150, 180}}</string>
 						<reference key="NSSuperview" ref="623893369"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="250314895"/>
+						<reference key="NSNextKeyView" ref="1034751626"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<int key="NSsFlags">133682</int>
 						<reference key="NSVScroller" ref="365740770"/>
 						<reference key="NSHScroller" ref="791924069"/>
 						<reference key="NSContentView" ref="1034751626"/>
 						<reference key="NSHeaderClipView" ref="250314895"/>
-						<reference key="NSCornerView" ref="149509055"/>
 						<bytes key="NSScrollAmts">QSAAAEEgAABBmAAAQZgAAA</bytes>
 						<double key="NSMinMagnification">0.25</double>
 						<double key="NSMaxMagnification">4</double>
@@ -255,7 +246,6 @@
 										<int key="NSvFlags">268</int>
 										<string key="NSFrame">{{16, 151}, {195, 18}}</string>
 										<reference key="NSSuperview" ref="142512498"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="805990823"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="NSEnabled">YES</bool>
@@ -287,14 +277,13 @@
 										<int key="NSvFlags">268</int>
 										<string key="NSFrame">{{15, 88}, {376, 51}}</string>
 										<reference key="NSSuperview" ref="142512498"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="1021839191"/>
 										<string key="NSReuseIdentifierKey">_NS:1535</string>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSTextFieldCell" key="NSCell" id="495285816">
 											<int key="NSCellFlags">67108864</int>
 											<int key="NSCellFlags2">4194304</int>
-											<string key="NSContents">If enabled, Action.IO for Mac will synchronize a folder named “workspace” in your box with a folder with the name of your box in your local Action.IO folder.</string>
+											<string key="NSContents">If enabled, Nitrous.IO for Mac will synchronize a folder named “workspace” in your box with a folder with the name of your box in your local Nitrous.IO folder.</string>
 											<reference key="NSSupport" ref="506143053"/>
 											<string key="NSCellIdentifier">_NS:1535</string>
 											<reference key="NSControlView" ref="805990823"/>
@@ -313,8 +302,6 @@
 										<int key="NSvFlags">268</int>
 										<string key="NSFrame">{{370, 11}, {25, 25}}</string>
 										<reference key="NSSuperview" ref="142512498"/>
-										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView"/>
 										<string key="NSReuseIdentifierKey">_NS:1598</string>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSButtonCell" key="NSCell" id="709071717">
@@ -336,14 +323,12 @@
 								</array>
 								<string key="NSFrame">{{1, 1}, {406, 184}}</string>
 								<reference key="NSSuperview" ref="882405409"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="206553698"/>
 								<string key="NSReuseIdentifierKey">_NS:11</string>
 							</object>
 						</array>
 						<string key="NSFrame">{{175, 16}, {408, 186}}</string>
 						<reference key="NSSuperview" ref="623893369"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="142512498"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="NSOffsets">{0, 0}</string>
@@ -382,7 +367,6 @@
 										<int key="NSvFlags">268</int>
 										<string key="NSFrame">{{179, 7}, {146, 26}}</string>
 										<reference key="NSSuperview" ref="1027507690"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="852901676"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="NSEnabled">YES</bool>
@@ -457,14 +441,13 @@
 										<int key="NSvFlags">268</int>
 										<string key="NSFrame">{{9, 12}, {168, 18}}</string>
 										<reference key="NSSuperview" ref="1027507690"/>
-										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="811771378"/>
 										<string key="NSReuseIdentifierKey">_NS:1535</string>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSTextFieldCell" key="NSCell" id="767704381">
 											<int key="NSCellFlags">67108928</int>
 											<int key="NSCellFlags2">272631808</int>
-											<string key="NSContents">Action.IO Folder Location:</string>
+											<string key="NSContents">Nitrous.IO Folder Location:</string>
 											<reference key="NSSupport" ref="506143053"/>
 											<string key="NSCellIdentifier">_NS:1535</string>
 											<reference key="NSControlView" ref="746946490"/>
@@ -476,14 +459,12 @@
 								</array>
 								<string key="NSFrame">{{1, 1}, {564, 40}}</string>
 								<reference key="NSSuperview" ref="926619029"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="746946490"/>
 								<string key="NSReuseIdentifierKey">_NS:11</string>
 							</object>
 						</array>
 						<string key="NSFrame">{{17, 204}, {566, 42}}</string>
 						<reference key="NSSuperview" ref="623893369"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1027507690"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="NSOffsets">{0, 0}</string>
@@ -506,8 +487,6 @@
 					</object>
 				</array>
 				<string key="NSFrameSize">{600, 264}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="926619029"/>
 			</object>
 			<object class="NSArrayController" id="184843208">
