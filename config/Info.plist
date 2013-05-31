@@ -25,7 +25,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>ActionAppIcon</string>
+	<string>NitrousAppIcon</string>
 	<key>CFBundleIdentifier</key>
 	<string>AIO_BUNDLE_ID</string>
 	<key>CFBundleInfoDictionaryVersion</key>

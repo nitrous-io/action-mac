@@ -21,7 +21,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		E902D68516B14C80007CFEE1 /* ActionAppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E902D68416B14C80007CFEE1 /* ActionAppIcon.icns */; };
 		E90DD0EC16BA198E000B5A36 /* ActionFolderIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E90DD0EB16BA198E000B5A36 /* ActionFolderIcon.icns */; };
 		E90DD0F016BA2CDA000B5A36 /* status-item-icon-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = E90DD0EE16BA2CDA000B5A36 /* status-item-icon-gray.png */; };
 		E90DD0F116BA2CDA000B5A36 /* status-item-icon-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E90DD0EF16BA2CDA000B5A36 /* status-item-icon-gray@2x.png */; };
@@ -64,6 +63,8 @@
 		E96795851667182B00703E49 /* AIOStatusMenuController.rb in Resources */ = {isa = PBXBuildFile; fileRef = E96795841667182B00703E49 /* AIOStatusMenuController.rb */; };
 		E967959116686F7D00703E49 /* AIOCollection.rb in Resources */ = {isa = PBXBuildFile; fileRef = E967958F16686F7D00703E49 /* AIOCollection.rb */; };
 		E967959216686F7D00703E49 /* AIOModel.rb in Resources */ = {isa = PBXBuildFile; fileRef = E967959016686F7D00703E49 /* AIOModel.rb */; };
+		E969AD6B175824580057ADD7 /* NitrousAppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E969AD6A175824580057ADD7 /* NitrousAppIcon.icns */; };
+		E969AD6C1758245A0057ADD7 /* NitrousAppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E969AD6A175824580057ADD7 /* NitrousAppIcon.icns */; };
 		E96BC69C165F35840016A467 /* environment.rb in Resources */ = {isa = PBXBuildFile; fileRef = E96BC69B165F35840016A467 /* environment.rb */; };
 		E97537EB16724B050030B15B /* BoxMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97537EA16724B050030B15B /* BoxMenu.xib */; };
 		E97991061689DB0C00E14608 /* AIOIntegerToStringTransformer.rb in Resources */ = {isa = PBXBuildFile; fileRef = E97991051689DB0C00E14608 /* AIOIntegerToStringTransformer.rb */; };
@@ -216,7 +217,6 @@
 		E9D6A43416C516C200E53F61 /* AIOBoxFileSync.rb in Resources */ = {isa = PBXBuildFile; fileRef = E91C4ECD16AD1E6300E4D417 /* AIOBoxFileSync.rb */; };
 		E9D6A43516C516C200E53F61 /* AIOFileSyncTask.rb in Resources */ = {isa = PBXBuildFile; fileRef = E91C4ED016AD269300E4D417 /* AIOFileSyncTask.rb */; };
 		E9D6A43616C516C200E53F61 /* actionio-unison in Resources */ = {isa = PBXBuildFile; fileRef = E91C4ED216AD53BA00E4D417 /* actionio-unison */; };
-		E9D6A43716C516C200E53F61 /* ActionAppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E902D68416B14C80007CFEE1 /* ActionAppIcon.icns */; };
 		E9D6A43816C516C200E53F61 /* ActionFolderIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E90DD0EB16BA198E000B5A36 /* ActionFolderIcon.icns */; };
 		E9D6A43916C516C200E53F61 /* status-item-icon-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = E90DD0EE16BA2CDA000B5A36 /* status-item-icon-gray.png */; };
 		E9D6A43A16C516C200E53F61 /* status-item-icon-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E90DD0EF16BA2CDA000B5A36 /* status-item-icon-gray@2x.png */; };
@@ -290,7 +290,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E902D68416B14C80007CFEE1 /* ActionAppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ActionAppIcon.icns; sourceTree = "<group>"; };
 		E90DD0EB16BA198E000B5A36 /* ActionFolderIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ActionFolderIcon.icns; sourceTree = "<group>"; };
 		E90DD0EE16BA2CDA000B5A36 /* status-item-icon-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon-gray.png"; sourceTree = "<group>"; };
 		E90DD0EF16BA2CDA000B5A36 /* status-item-icon-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon-gray@2x.png"; sourceTree = "<group>"; };
@@ -344,6 +343,7 @@
 		E96795841667182B00703E49 /* AIOStatusMenuController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOStatusMenuController.rb; sourceTree = "<group>"; };
 		E967958F16686F7D00703E49 /* AIOCollection.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOCollection.rb; sourceTree = "<group>"; };
 		E967959016686F7D00703E49 /* AIOModel.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOModel.rb; sourceTree = "<group>"; };
+		E969AD6A175824580057ADD7 /* NitrousAppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = NitrousAppIcon.icns; sourceTree = "<group>"; };
 		E96BC698165E27E20016A467 /* FakeAIOSettings.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = FakeAIOSettings.rb; sourceTree = "<group>"; };
 		E96BC69B165F35840016A467 /* environment.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = environment.rb; sourceTree = "<group>"; };
 		E97537EA16724B050030B15B /* BoxMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoxMenu.xib; sourceTree = "<group>"; };
@@ -547,7 +547,7 @@
 				E93D276E16BA6039006C0A66 /* Gemfile.lock */,
 				E9D4566116CD2AF40064FB21 /* VERSION */,
 				E90FD70E165E143500B09052 /* README.md */,
-				E902D68416B14C80007CFEE1 /* ActionAppIcon.icns */,
+				E969AD6A175824580057ADD7 /* NitrousAppIcon.icns */,
 				E9987DFA164BADBA00B762FE /* vendor */,
 				E92BF32D164253AD00862CF4 /* Frameworks */,
 				E92BF32B164253AD00862CF4 /* Products */,
@@ -1044,7 +1044,6 @@
 				E91C4ECE16AD1E6300E4D417 /* AIOBoxFileSync.rb in Resources */,
 				E91C4ED116AD269300E4D417 /* AIOFileSyncTask.rb in Resources */,
 				E91C4ED316AD53BA00E4D417 /* actionio-unison in Resources */,
-				E902D68516B14C80007CFEE1 /* ActionAppIcon.icns in Resources */,
 				E90DD0EC16BA198E000B5A36 /* ActionFolderIcon.icns in Resources */,
 				E90DD0F016BA2CDA000B5A36 /* status-item-icon-gray.png in Resources */,
 				E90DD0F116BA2CDA000B5A36 /* status-item-icon-gray@2x.png in Resources */,
@@ -1054,6 +1053,7 @@
 				E9D4566316D23CDC0064FB21 /* LICENSE in Resources */,
 				E9D4566616D247D50064FB21 /* LicensesWindow.xib in Resources */,
 				E9D4566916D248F90064FB21 /* AIOLicensesWindowController.rb in Resources */,
+				E969AD6B175824580057ADD7 /* NitrousAppIcon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1159,7 +1159,6 @@
 				E9D6A43416C516C200E53F61 /* AIOBoxFileSync.rb in Resources */,
 				E9D6A43516C516C200E53F61 /* AIOFileSyncTask.rb in Resources */,
 				E9D6A43616C516C200E53F61 /* actionio-unison in Resources */,
-				E9D6A43716C516C200E53F61 /* ActionAppIcon.icns in Resources */,
 				E9D6A43816C516C200E53F61 /* ActionFolderIcon.icns in Resources */,
 				E9D6A43916C516C200E53F61 /* status-item-icon-gray.png in Resources */,
 				E9D6A43A16C516C200E53F61 /* status-item-icon-gray@2x.png in Resources */,
@@ -1169,6 +1168,7 @@
 				E9D6A43D16C516C200E53F61 /* AIONotifier.rb in Resources */,
 				E9D4566716D247D50064FB21 /* LicensesWindow.xib in Resources */,
 				E9D4566A16D248F90064FB21 /* AIOLicensesWindowController.rb in Resources */,
+				E969AD6C1758245A0057ADD7 /* NitrousAppIcon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
