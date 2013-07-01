@@ -13,6 +13,7 @@ class AIOSignInViewController < NSViewController
     concurrent_queue do
       begin
         AIOApp.api.sign_in @username, @password
+        AIOApp.welcome_window_controller.show_tour_part_one_view
       rescue => e
         err_msg = e.message.lines.first.strip
         if err_msg.include? 'invalid_resource_owner'

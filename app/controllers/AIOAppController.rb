@@ -107,11 +107,10 @@ class AIOAppController
     end
   end
 
-  def switch_view_on_sign_in_or_out(value, change)
+  def switch_view_on_sign_in_or_out(signed_in, change)
     Dispatch::Queue.main.async do
       reset
-      if value
-        close_welcome_window
+      if signed_in
         show_status_menu
       else
         remove_status_menu
