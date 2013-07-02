@@ -34,7 +34,7 @@ class AIOAppController
     observe(self, 'pusher.ready'   ) { |v,c| connect_to_pusher_when_ready  v,c }
 
     begin
-      @api.sign_in
+      @api.sign_in_with_keychain
     rescue AIOAPI::KeychainError => e
       show_keychain_error
     end

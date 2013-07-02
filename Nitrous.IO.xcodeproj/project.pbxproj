@@ -21,6 +21,28 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		E9050FA217828BFF00CC714C /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = E9050F9217828BFF00CC714C /* ASIDataCompressor.m */; };
+		E9050FA317828BFF00CC714C /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = E9050F9217828BFF00CC714C /* ASIDataCompressor.m */; };
+		E9050FA417828BFF00CC714C /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = E9050F9417828BFF00CC714C /* ASIDataDecompressor.m */; };
+		E9050FA517828BFF00CC714C /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = E9050F9417828BFF00CC714C /* ASIDataDecompressor.m */; };
+		E9050FA617828BFF00CC714C /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E9050F9617828BFF00CC714C /* ASIDownloadCache.m */; };
+		E9050FA717828BFF00CC714C /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E9050F9617828BFF00CC714C /* ASIDownloadCache.m */; };
+		E9050FA817828BFF00CC714C /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9050F9817828BFF00CC714C /* ASIFormDataRequest.m */; };
+		E9050FA917828BFF00CC714C /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9050F9817828BFF00CC714C /* ASIFormDataRequest.m */; };
+		E9050FAA17828BFF00CC714C /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9050F9A17828BFF00CC714C /* ASIHTTPRequest.m */; };
+		E9050FAB17828BFF00CC714C /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9050F9A17828BFF00CC714C /* ASIHTTPRequest.m */; };
+		E9050FAC17828BFF00CC714C /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E9050F9E17828BFF00CC714C /* ASIInputStream.m */; };
+		E9050FAD17828BFF00CC714C /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E9050F9E17828BFF00CC714C /* ASIInputStream.m */; };
+		E9050FAE17828BFF00CC714C /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E9050FA017828BFF00CC714C /* ASINetworkQueue.m */; };
+		E9050FAF17828BFF00CC714C /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E9050FA017828BFF00CC714C /* ASINetworkQueue.m */; };
+		E9050FB617828CA900CC714C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9050FB417828C8F00CC714C /* libz.dylib */; };
+		E9050FB717828CA900CC714C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9050FB217828C5A00CC714C /* SystemConfiguration.framework */; };
+		E9050FB817828CAD00CC714C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9050FB417828C8F00CC714C /* libz.dylib */; };
+		E9050FB917828CAD00CC714C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9050FB217828C5A00CC714C /* SystemConfiguration.framework */; };
+		E9050FC417828EDF00CC714C /* AIOOAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = E9050FC317828EDF00CC714C /* AIOOAuth.m */; };
+		E9050FC517828EDF00CC714C /* AIOOAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = E9050FC317828EDF00CC714C /* AIOOAuth.m */; };
+		E9050FC81782940900CC714C /* AIOOAuthResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E9050FC71782940900CC714C /* AIOOAuthResponse.m */; };
+		E9050FC91782940900CC714C /* AIOOAuthResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E9050FC71782940900CC714C /* AIOOAuthResponse.m */; };
 		E90DD0EC16BA198E000B5A36 /* ActionFolderIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E90DD0EB16BA198E000B5A36 /* ActionFolderIcon.icns */; };
 		E90DD0F016BA2CDA000B5A36 /* status-item-icon-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = E90DD0EE16BA2CDA000B5A36 /* status-item-icon-gray.png */; };
 		E90DD0F116BA2CDA000B5A36 /* status-item-icon-gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E90DD0EF16BA2CDA000B5A36 /* status-item-icon-gray@2x.png */; };
@@ -260,7 +282,6 @@
 		E9D6A44A16C519C500E53F61 /* AIOObserverSpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A167EB168071F300F31E69 /* AIOObserverSpec.rb */; };
 		E9D6A44B16C519C500E53F61 /* AIOBooleanToNumberTransformerSpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9A167ED168071F300F31E69 /* AIOBooleanToNumberTransformerSpec.rb */; };
 		E9D6A44C16C519C500E53F61 /* AIOIntegerToStringTransformerSpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E97991081689DB1B00E14608 /* AIOIntegerToStringTransformerSpec.rb */; };
-		E9D6A44D16C519C500E53F61 /* AIOAPISpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E93058A7165F73BD00794635 /* AIOAPISpec.rb */; };
 		E9D6A44E16C519C500E53F61 /* AIOChildProcessSpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E90EF6D5169D6CCA00A819CC /* AIOChildProcessSpec.rb */; };
 		E9D6A44F16C519C500E53F61 /* AIOJobManagerSpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B6D0F6166E54730088AC85 /* AIOJobManagerSpec.rb */; };
 		E9D6A45016C519C500E53F61 /* AIOJobSpec.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9B6D0F7166E54730088AC85 /* AIOJobSpec.rb */; };
@@ -304,6 +325,31 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E9050F9017828BFF00CC714C /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = Classes/ASICacheDelegate.h; sourceTree = "<group>"; };
+		E9050F9117828BFF00CC714C /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDataCompressor.h; path = Classes/ASIDataCompressor.h; sourceTree = "<group>"; };
+		E9050F9217828BFF00CC714C /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIDataCompressor.m; path = Classes/ASIDataCompressor.m; sourceTree = "<group>"; };
+		E9050F9317828BFF00CC714C /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDataDecompressor.h; path = Classes/ASIDataDecompressor.h; sourceTree = "<group>"; };
+		E9050F9417828BFF00CC714C /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIDataDecompressor.m; path = Classes/ASIDataDecompressor.m; sourceTree = "<group>"; };
+		E9050F9517828BFF00CC714C /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDownloadCache.h; path = Classes/ASIDownloadCache.h; sourceTree = "<group>"; };
+		E9050F9617828BFF00CC714C /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIDownloadCache.m; path = Classes/ASIDownloadCache.m; sourceTree = "<group>"; };
+		E9050F9717828BFF00CC714C /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIFormDataRequest.h; path = Classes/ASIFormDataRequest.h; sourceTree = "<group>"; };
+		E9050F9817828BFF00CC714C /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIFormDataRequest.m; path = Classes/ASIFormDataRequest.m; sourceTree = "<group>"; };
+		E9050F9917828BFF00CC714C /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequest.h; path = Classes/ASIHTTPRequest.h; sourceTree = "<group>"; };
+		E9050F9A17828BFF00CC714C /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIHTTPRequest.m; path = Classes/ASIHTTPRequest.m; sourceTree = "<group>"; };
+		E9050F9B17828BFF00CC714C /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequestConfig.h; path = Classes/ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		E9050F9C17828BFF00CC714C /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequestDelegate.h; path = Classes/ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		E9050F9D17828BFF00CC714C /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIInputStream.h; path = Classes/ASIInputStream.h; sourceTree = "<group>"; };
+		E9050F9E17828BFF00CC714C /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIInputStream.m; path = Classes/ASIInputStream.m; sourceTree = "<group>"; };
+		E9050F9F17828BFF00CC714C /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINetworkQueue.h; path = Classes/ASINetworkQueue.h; sourceTree = "<group>"; };
+		E9050FA017828BFF00CC714C /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINetworkQueue.m; path = Classes/ASINetworkQueue.m; sourceTree = "<group>"; };
+		E9050FA117828BFF00CC714C /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = Classes/ASIProgressDelegate.h; sourceTree = "<group>"; };
+		E9050FB217828C5A00CC714C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E9050FB417828C8F00CC714C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		E9050FC217828EDF00CC714C /* AIOOAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIOOAuth.h; sourceTree = "<group>"; };
+		E9050FC317828EDF00CC714C /* AIOOAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIOOAuth.m; sourceTree = "<group>"; };
+		E9050FC61782940900CC714C /* AIOOAuthResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIOOAuthResponse.h; sourceTree = "<group>"; };
+		E9050FC71782940900CC714C /* AIOOAuthResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIOOAuthResponse.m; sourceTree = "<group>"; };
+		E9050FCA1782BBAB00CC714C /* AIOMacRubyHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIOMacRubyHelper.h; sourceTree = "<group>"; };
 		E90DD0EB16BA198E000B5A36 /* ActionFolderIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ActionFolderIcon.icns; sourceTree = "<group>"; };
 		E90DD0EE16BA2CDA000B5A36 /* status-item-icon-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon-gray.png"; sourceTree = "<group>"; };
 		E90DD0EF16BA2CDA000B5A36 /* status-item-icon-gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-item-icon-gray@2x.png"; sourceTree = "<group>"; };
@@ -345,7 +391,6 @@
 		E92BF33B164253AE00862CF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E92BF343164253AE00862CF4 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		E92BF345164253AE00862CF4 /* AIOAppController.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOAppController.rb; sourceTree = "<group>"; };
-		E93058A7165F73BD00794635 /* AIOAPISpec.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AIOAPISpec.rb; sourceTree = "<group>"; };
 		E93058A8165F73CB00794635 /* AIOAPI.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOAPI.rb; sourceTree = "<group>"; };
 		E93058B81663950600794635 /* AIOConstants.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = AIOConstants.rb; sourceTree = "<group>"; };
 		E93D276E16BA6039006C0A66 /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
@@ -461,6 +506,8 @@
 				E9987E01164BADE900B762FE /* Security.framework in Frameworks */,
 				E90FD706165E039A00B09052 /* WebKit.framework in Frameworks */,
 				E9D4565D16CCFCFA0064FB21 /* Sparkle.framework in Frameworks */,
+				E9050FB617828CA900CC714C /* libz.dylib in Frameworks */,
+				E9050FB717828CA900CC714C /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +521,8 @@
 				E9D6A3E116C516C200E53F61 /* Security.framework in Frameworks */,
 				E9D6A3E216C516C200E53F61 /* WebKit.framework in Frameworks */,
 				E9D4565E16CCFCFA0064FB21 /* Sparkle.framework in Frameworks */,
+				E9050FB817828CAD00CC714C /* libz.dylib in Frameworks */,
+				E9050FB917828CAD00CC714C /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,13 +535,48 @@
 				E9A167E8168071F300F31E69 /* extensions */,
 				E9A167EA168071F300F31E69 /* mixins */,
 				E9A167EC168071F300F31E69 /* transformers */,
-				E93058A7165F73BD00794635 /* AIOAPISpec.rb */,
 				E90EF6D5169D6CCA00A819CC /* AIOChildProcessSpec.rb */,
 				E9B6D0F6166E54730088AC85 /* AIOJobManagerSpec.rb */,
 				E9B6D0F7166E54730088AC85 /* AIOJobSpec.rb */,
 				E9975D5B1679CA0C00A6950A /* AIOSSHKeyPairSpec.rb */,
 			);
 			path = lib;
+			sourceTree = "<group>";
+		};
+		E9050F8F17828BCC00CC714C /* asi-http-request */ = {
+			isa = PBXGroup;
+			children = (
+				E9050F9017828BFF00CC714C /* ASICacheDelegate.h */,
+				E9050F9117828BFF00CC714C /* ASIDataCompressor.h */,
+				E9050F9217828BFF00CC714C /* ASIDataCompressor.m */,
+				E9050F9317828BFF00CC714C /* ASIDataDecompressor.h */,
+				E9050F9417828BFF00CC714C /* ASIDataDecompressor.m */,
+				E9050F9517828BFF00CC714C /* ASIDownloadCache.h */,
+				E9050F9617828BFF00CC714C /* ASIDownloadCache.m */,
+				E9050F9717828BFF00CC714C /* ASIFormDataRequest.h */,
+				E9050F9817828BFF00CC714C /* ASIFormDataRequest.m */,
+				E9050F9917828BFF00CC714C /* ASIHTTPRequest.h */,
+				E9050F9A17828BFF00CC714C /* ASIHTTPRequest.m */,
+				E9050F9B17828BFF00CC714C /* ASIHTTPRequestConfig.h */,
+				E9050F9C17828BFF00CC714C /* ASIHTTPRequestDelegate.h */,
+				E9050F9D17828BFF00CC714C /* ASIInputStream.h */,
+				E9050F9E17828BFF00CC714C /* ASIInputStream.m */,
+				E9050F9F17828BFF00CC714C /* ASINetworkQueue.h */,
+				E9050FA017828BFF00CC714C /* ASINetworkQueue.m */,
+				E9050FA117828BFF00CC714C /* ASIProgressDelegate.h */,
+			);
+			path = "asi-http-request";
+			sourceTree = "<group>";
+		};
+		E9050FBE17828E9200CC714C /* oauth */ = {
+			isa = PBXGroup;
+			children = (
+				E9050FC217828EDF00CC714C /* AIOOAuth.h */,
+				E9050FC317828EDF00CC714C /* AIOOAuth.m */,
+				E9050FC61782940900CC714C /* AIOOAuthResponse.h */,
+				E9050FC71782940900CC714C /* AIOOAuthResponse.m */,
+			);
+			path = oauth;
 			sourceTree = "<group>";
 		};
 		E90EF6FF169EB24E00A819CC /* tasks */ = {
@@ -612,6 +696,8 @@
 		E92BF32D164253AD00862CF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9050FB417828C8F00CC714C /* libz.dylib */,
+				E9050FB217828C5A00CC714C /* SystemConfiguration.framework */,
 				E99576B81672155B0069C9B4 /* Foundation.framework */,
 				E92BF32E164253AD00862CF4 /* Cocoa.framework */,
 				E9BF1AAE1653EE840067DFC9 /* MacRuby.framework */,
@@ -644,6 +730,7 @@
 		E967958C16673FCE00703E49 /* submodules */ = {
 			isa = PBXGroup;
 			children = (
+				E9050F8F17828BCC00CC714C /* asi-http-request */,
 				E9987DFC164BADC500B762FE /* sskeychain */,
 			);
 			path = submodules;
@@ -874,10 +961,12 @@
 		E9E19FD0164259220058706D /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				E9050FBE17828E9200CC714C /* oauth */,
 				E9A167D71680717500F31E69 /* extensions */,
 				E9A167D81680717500F31E69 /* mixins */,
 				E90EF6FF169EB24E00A819CC /* tasks */,
 				E9A167D91680717500F31E69 /* transformers */,
+				E9050FCA1782BBAB00CC714C /* AIOMacRubyHelper.h */,
 				E93058A8165F73CB00794635 /* AIOAPI.rb */,
 				E9B6D0F8166E54940088AC85 /* AIOJob.rb */,
 				E9B6D0F9166E54940088AC85 /* AIOJobManager.rb */,
@@ -1153,7 +1242,6 @@
 				E9D6A44A16C519C500E53F61 /* AIOObserverSpec.rb in Resources */,
 				E9D6A44B16C519C500E53F61 /* AIOBooleanToNumberTransformerSpec.rb in Resources */,
 				E9D6A44C16C519C500E53F61 /* AIOIntegerToStringTransformerSpec.rb in Resources */,
-				E9D6A44D16C519C500E53F61 /* AIOAPISpec.rb in Resources */,
 				E9D6A44E16C519C500E53F61 /* AIOChildProcessSpec.rb in Resources */,
 				E9D6A44F16C519C500E53F61 /* AIOJobManagerSpec.rb in Resources */,
 				E9D6A45016C519C500E53F61 /* AIOJobSpec.rb in Resources */,
@@ -1346,6 +1434,15 @@
 			files = (
 				E92BF33C164253AE00862CF4 /* main.m in Sources */,
 				E9987DFF164BADDC00B762FE /* SSKeychain.m in Sources */,
+				E9050FA217828BFF00CC714C /* ASIDataCompressor.m in Sources */,
+				E9050FA417828BFF00CC714C /* ASIDataDecompressor.m in Sources */,
+				E9050FA617828BFF00CC714C /* ASIDownloadCache.m in Sources */,
+				E9050FA817828BFF00CC714C /* ASIFormDataRequest.m in Sources */,
+				E9050FAA17828BFF00CC714C /* ASIHTTPRequest.m in Sources */,
+				E9050FAC17828BFF00CC714C /* ASIInputStream.m in Sources */,
+				E9050FAE17828BFF00CC714C /* ASINetworkQueue.m in Sources */,
+				E9050FC417828EDF00CC714C /* AIOOAuth.m in Sources */,
+				E9050FC81782940900CC714C /* AIOOAuthResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1355,6 +1452,15 @@
 			files = (
 				E9D6A3DB16C516C200E53F61 /* main.m in Sources */,
 				E9D6A3DC16C516C200E53F61 /* SSKeychain.m in Sources */,
+				E9050FA317828BFF00CC714C /* ASIDataCompressor.m in Sources */,
+				E9050FA517828BFF00CC714C /* ASIDataDecompressor.m in Sources */,
+				E9050FA717828BFF00CC714C /* ASIDownloadCache.m in Sources */,
+				E9050FA917828BFF00CC714C /* ASIFormDataRequest.m in Sources */,
+				E9050FAB17828BFF00CC714C /* ASIHTTPRequest.m in Sources */,
+				E9050FAD17828BFF00CC714C /* ASIInputStream.m in Sources */,
+				E9050FAF17828BFF00CC714C /* ASINetworkQueue.m in Sources */,
+				E9050FC517828EDF00CC714C /* AIOOAuth.m in Sources */,
+				E9050FC91782940900CC714C /* AIOOAuthResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

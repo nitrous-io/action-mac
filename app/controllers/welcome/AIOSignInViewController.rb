@@ -10,24 +10,22 @@ class AIOSignInViewController < NSViewController
 
   def did_click_sign_in_button(sender)
     self.loading = true
-    concurrent_queue do
-      begin
-        AIOApp.api.sign_in @username, @password
+    AIOApp.api.sign_in(@username, @password, -> (err) {
+      if err
+        err_msg = if err.kind_of? NSError
+          m = err.localizedDescription
+          m == 'Authentication needed' ? 'The username or password you entered is incorrect.' : m
+        elsif err.kind_of? AIOAPI::KeychainError
+          'Could not access keychain. Is your keychain locked?'
+        else
+          err.description
+        end
+        NSBeginCriticalAlertSheet 'Error', 'Okay', nil, nil, self.view.window, nil, nil, nil, nil, "%@", err_msg
+      else
         AIOApp.welcome_window_controller.show_tour_part_one_view
-      rescue => e
-        err_msg = e.message.lines.first.strip
-        if err_msg.include? 'invalid_resource_owner'
-          err_msg = 'The username or password you entered is incorrect.'
-        elsif e.kind_of? AIOAPI::KeychainError
-          err_msg = 'Could not access keychain. Is your keychain locked?'
-        end
-        Dispatch::Queue.main.async do
-          NSBeginCriticalAlertSheet 'Error', 'Okay', nil, nil, self.view.window, nil, nil, nil, nil, "%@", err_msg
-        end
-      ensure
-        self.loading = false
       end
-    end
+      self.loading = false
+    })
   end
 
   def did_click_go_back_button(sender)

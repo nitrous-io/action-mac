@@ -9,23 +9,26 @@ class AIOAPI
 
   class KeychainError < StandardError; end
 
-  attr_reader :client
+  attr_reader :client, :oauth
   attr_accessor :token, :username
   attr_accessor :signed_in
 
   def initialize
+    @signed_in = false
+    # old--
     options = { site: AIOSettings.host }
     # disable ssl cert checking for development
     if %w(development test).include? AIOSettings.env
       options[:ssl] = { verify: false }
     end
     @client = OAuth2::Client.new AIOSettings.oauth_client_id, AIOSettings.oauth_client_secret, options
-    @signed_in = false
-  end
 
-  def obtain_access_token(username, password)
-    self.username = username
-    self.token = @client.password.get_token(username, password, parse: :json, scope: SCOPES)
+    # new--
+    @oauth = AIOOAuth.alloc.initWithHost(AIOSettings.host, clientID: AIOSettings.oauth_client_id, clientSecret: AIOSettings.oauth_client_secret)
+    @oauth.setUserAgent(AIOSettings.user_agent)
+    if %w(development test).include? AIOSettings.env
+      @oauth.setVerifySSL 0
+    end
   end
 
   def request(verb, path, options={})
@@ -52,13 +55,27 @@ class AIOAPI
     end
   end
 
-  def sign_in(username=nil, password=nil)
-    if username && password
-      obtain_access_token username, password
-      write_access_token_to_keychain
-    else
-      read_access_token_from_keychain
-    end
+  def sign_in(username=nil, password=nil, callback=nil)
+    @oauth.obtainAccessTokenWithUsername(username, password: password, success: -> (access_token, response) {
+      self.username = username
+      self.token = OAuth2::AccessToken.new @client, access_token
+      begin
+        write_access_token_to_keychain
+      rescue => err
+        self.signed_in = false
+        callback.call(err)
+      else
+        self.signed_in = true
+        callback.call(nil)
+      end
+    }, failure: -> (err, response) {
+      self.signed_in = false
+      callback.call(err)
+    })
+  end
+
+  def sign_in_with_keychain
+    read_access_token_from_keychain
     self.signed_in = !self.token.nil?
   end
 

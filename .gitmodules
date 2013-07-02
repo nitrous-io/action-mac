@@ -1,3 +1,6 @@
 [submodule "vendor/submodules/sskeychain"]
 	path = vendor/submodules/sskeychain
 	url = git@github.com:action-io/sskeychain.git
+[submodule "vendor/submodules/asi-http-request"]
+	path = vendor/submodules/asi-http-request
+	url = git@github.com:petejkim/asi-http-request.git
