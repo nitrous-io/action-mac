@@ -63,7 +63,7 @@ class AIOPusher
     Dispatch::Queue.main.async do
       aio = eval_js 'aio'
       aio.setValue AIOApp.current_user.id, forKey: 'userId'
-      aio.setValue AIOApp.api.token.token, forKey: 'oAuthToken'
+      aio.setValue AIOApp.api.oauth.accessToken, forKey: 'oAuthToken'
       eval_js 'aio.connect()'
     end
   end

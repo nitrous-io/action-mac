@@ -13,14 +13,16 @@ class AIOUser < AIOModel
   end
 
   def clear
+    self.id        = nil
     self.username  = nil
     self.email     = nil
     self.full_name = nil
   end
 
-  def fetch
-    if response = api.request(:get, '/user')
-      update_attributes response.parsed['user']
+  def fetch(&block)
+    api.request(:get, '/user') do |err, response|
+      update_attributes response.json['user'] unless err
+      block.call(err, response) if block
     end
   end
 end

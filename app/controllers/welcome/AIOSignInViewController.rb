@@ -10,11 +10,13 @@ class AIOSignInViewController < NSViewController
 
   def did_click_sign_in_button(sender)
     self.loading = true
-    AIOApp.api.sign_in(@username, @password, -> (err) {
+    AIOApp.api.sign_in(@username, @password) do |err, response|
       if err
         err_msg = if err.kind_of? NSError
           m = err.localizedDescription
-          m == 'Authentication needed' ? 'The username or password you entered is incorrect.' : m
+          if err.domain == 'AIOOAuthErrorDomain' && err.code == 0 # AIOOAuthErrorCodeIncorrectLogin
+            m = 'The username or password you entered is incorrect.'
+          end
         elsif err.kind_of? AIOAPI::KeychainError
           'Could not access keychain. Is your keychain locked?'
         else
@@ -25,7 +27,7 @@ class AIOSignInViewController < NSViewController
         AIOApp.welcome_window_controller.show_tour_part_one_view
       end
       self.loading = false
-    })
+    end
   end
 
   def did_click_go_back_button(sender)

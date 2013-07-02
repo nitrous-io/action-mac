@@ -10,7 +10,9 @@
   self = [super init];
   if (self) {
     self.statusCode = statusCode;
-    self.json = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+    if (data) {
+      self.json = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+    }
   }
   return self;
 }

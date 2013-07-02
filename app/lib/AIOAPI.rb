@@ -10,8 +10,7 @@ class AIOAPI
   class KeychainError < StandardError; end
 
   attr_reader :client, :oauth
-  attr_accessor :token, :username
-  attr_accessor :signed_in
+  attr_accessor :token, :username, :signed_in
 
   def initialize
     @signed_in = false
@@ -31,7 +30,7 @@ class AIOAPI
     end
   end
 
-  def request(verb, path, options={})
+  def old_request(verb, path, options={})
     return unless @token
     AIOLog "request: #{verb} #{path}"
     options = { parse: :json }.merge options
@@ -49,13 +48,22 @@ class AIOAPI
     raise e
   end
 
-  def obtain_sign_in_token
-    if response = request(:get, '/user/sign_in_token')
-      response.parsed['sign_in_token']
-    end
+  def request(verb, path, options={}, &block)
+    return unless @oauth.accessToken
+    AIOLog "request: #{verb} #{path}"
+    @oauth.request(verb.to_s, path: path, options: options, success: -> (response) {
+      AIOLog "success: #{path} : #{response.json}"
+      block.call nil, response if block
+    }, failure: -> (err, response) {
+      AIOLog "fail: #{path} : #{err} #{response.json}"
+      if err.domain == 'AIOOAuthErrorDomain' && err.code == 1 # AIOOAuthErrorCodeInvalidAccessToken
+        self.token = nil
+      end
+      block.call err, response if block
+    })
   end
 
-  def sign_in(username=nil, password=nil, callback=nil)
+  def sign_in(username=nil, password=nil, &block)
     @oauth.obtainAccessTokenWithUsername(username, password: password, success: -> (access_token, response) {
       self.username = username
       self.token = OAuth2::AccessToken.new @client, access_token
@@ -63,14 +71,14 @@ class AIOAPI
         write_access_token_to_keychain
       rescue => err
         self.signed_in = false
-        callback.call(err)
+        block.call err, response if block
       else
         self.signed_in = true
-        callback.call(nil)
+        block.call nil, response if block
       end
     }, failure: -> (err, response) {
       self.signed_in = false
-      callback.call(err)
+      block.call err, response if block
     })
   end
 
@@ -80,14 +88,20 @@ class AIOAPI
   end
 
   def sign_out
-    remove_access_token_from_keychain
     self.signed_in = false
+    remove_access_token_from_keychain
+    @oauth.accessToken = nil
+    self.token = nil
   end
 
   def sign_in_to_actionio_web_app_and_open(url='/')
-    if token = obtain_sign_in_token
-      Dispatch::Queue.main.async do
-        open_url "#{AIOSettings.host}/users/sign_in_with_token?sign_in_token=#{CGI.escape token}&redirect_to=#{CGI.escape url}"
+    request(:get, '/user/sign_in_token') do |err, response|
+      if err
+        return
+      elsif token = response.json['sign_in_token']
+        Dispatch::Queue.main.async do
+          open_url "#{AIOSettings.host}/users/sign_in_with_token?sign_in_token=#{CGI.escape token}&redirect_to=#{CGI.escape url}"
+        end
       end
     end
   end
@@ -113,6 +127,7 @@ class AIOAPI
       if token_string = SSKeychain.passwordForService(service, account: account, error: error_ptr)
         self.username = account
         self.token = OAuth2::AccessToken.new @client, token_string
+        @oauth.accessToken = token_string
       end
       error = error_ptr[0]
       if error && error.code != ErrSecItemNotFound

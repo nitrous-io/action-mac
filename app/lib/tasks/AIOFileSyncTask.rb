@@ -186,7 +186,6 @@ class AIOFileSyncTask < AIOTask
       file_events: true
     }
     @fsevent.watch @local_path, options do |directories|
-      p directories
       do_sync
     end
     @fsevent.run unless @should_stop_monitoring

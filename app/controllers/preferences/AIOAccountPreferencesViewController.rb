@@ -7,6 +7,6 @@ class AIOAccountPreferencesViewController < NSViewController
   end
 
   def did_click_sign_out_button(sender)
-    AIOApp.api.token = nil
+    AIOApp.sign_out
   end
 end

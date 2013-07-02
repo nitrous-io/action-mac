@@ -12,7 +12,7 @@ class AIOPublicKeyCollection < AIOCollection
   def register(public_key_data)
     return unless public_key_data
     begin
-      response = api.request(:post, resource_path, params: { public_key: { key: public_key_data } })
+      response = api.old_request(:post, resource_path, params: { public_key: { key: public_key_data } })
       if response.status == 201 && (attrs = response.parsed['public_key'])
         public_key = model.new
         public_key.update_attributes attrs

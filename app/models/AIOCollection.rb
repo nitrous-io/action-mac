@@ -52,35 +52,37 @@ class AIOCollection
     models.find { |o| o.id == id }
   end
 
-  def fetch
-    begin
-      if response = api.request(:get, resource_path)
-        model_attrs = response.parsed[json_root]
-        new_ids = model_attrs.map { |o| o['id'] }
-
-        old_objects = models
-        old_ids = old_objects.map(&:id)
-        deleted_ids = old_ids - new_ids
-        removed_objects = old_objects.select { |o| deleted_ids.include? o.id }
-
-        new_objects = []
-
-        model_attrs.each do |attr|
-          if obj = find_by_id(attr['id'])
-            obj.update_attributes attr
-          else
-            new_objects.push model.new(attr)
-          end
-        end
-
-        add_objects new_objects
-        remove_objects removed_objects
+  def fetch(&block)
+    api.request(:get, resource_path) do |err, response|
+      if err
+        self.last_fetch_error = err
+        block.call(err, response) if block
+        return
       end
-    rescue => e
-      self.last_fetch_error = e
-      raise e
-    else
+
+      model_attrs = response.json[json_root]
+      new_ids = model_attrs.map { |o| o['id'] }
+
+      old_objects = models
+      old_ids = old_objects.map(&:id)
+      deleted_ids = old_ids - new_ids
+      removed_objects = old_objects.select { |o| deleted_ids.include? o.id }
+
+      new_objects = []
+
+      model_attrs.each do |attr|
+        if obj = find_by_id(attr['id'])
+          obj.update_attributes attr
+        else
+          new_objects.push model.new(attr)
+        end
+      end
+
+      add_objects new_objects
+      remove_objects removed_objects
+
       self.last_fetch_error = nil
+      block.call(nil, response) if block
     end
   end
 end

@@ -3,7 +3,7 @@ require 'AIOObserver'
 class AIOAppController
   include AIOObserver
 
-  attr_accessor :status_menu_controller, :welcome_window_controller, :preferences_window_controller
+  attr_accessor :status_menu_controller, :welcome_window_controller, :preferences_window_controller, :ssh_key_pair_window_controller
   attr_accessor :notifier, :task_manager, :api, :pusher, :jobs, :ssh_key_pair
   attr_accessor :current_user, :boxes, :public_keys
 
@@ -28,30 +28,25 @@ class AIOAppController
     self.public_keys = AIOPublicKeyCollection.new
     self.current_user = AIOUser.new
 
-    observe(self, 'api.token'      ) { |v,c| sign_out_if_token_becomes_nil v,c }
-    observe(self, 'api.signed_in'  ) { |v,c| switch_view_on_sign_in_or_out v,c }
-    observe(self, 'current_user.id') { |v,c| connect_to_pusher_when_ready  v,c }
-    observe(self, 'pusher.ready'   ) { |v,c| connect_to_pusher_when_ready  v,c }
+    observe(self, 'api.signed_in'  ) { |v,c| did_sign_in                v,c }
+    observe(self, 'current_user.id') { |v,c| did_fetch_current_user     v,c }
+    observe(self, 'pusher.ready'   ) { |v,c| connect_to_pusher_if_ready v,c }
+    observe(self, 'api.oauth.accessToken') { |v,c| access_token_did_change v,c }
 
-    begin
-      @api.sign_in_with_keychain
-    rescue AIOAPI::KeychainError => e
-      show_keychain_error
-    end
-
-    open_welcome_window unless @api.token
+    sign_in_with_keychain
+    open_welcome_window unless g('api.signed_in')
   end
 
   def finalize
     stop_job_timer
-    stop_observing self, 'api.token'
     stop_observing self, 'api.signed_in'
     stop_observing self, 'current_user.id'
     stop_observing self, 'pusher.ready'
+    stop_observing self, 'api.oauth.accessToken'
   end
 
   def connected
-    g('current_user.id') && g('pusher.ready') && g('boxes.last_fetch_error').nil?
+    !g('current_user.id').nil? && g('pusher.ready') && g('boxes.last_fetch_error').nil?
   end
 
   def open_welcome_window
@@ -94,24 +89,32 @@ class AIOAppController
     @task_manager.kill_all if @task_manager
   end
 
-  private
-  def sign_out_if_token_becomes_nil(value, change)
-    if value.nil?
-      begin
-        @api.sign_out
-      rescue AIOAPI::KeychainError => e
-        Dispatch::Queue.main.async do
-          show_keychain_error
-        end
+  def sign_in_with_keychain
+    begin
+      @api.sign_in_with_keychain
+    rescue AIOAPI::KeychainError => e
+      show_keychain_error
+    end
+  end
+
+  def sign_out
+    begin
+      @api.sign_out
+      reset
+    rescue AIOAPI::KeychainError => e
+      Dispatch::Queue.main.async do
+        show_keychain_error
       end
     end
   end
 
-  def switch_view_on_sign_in_or_out(signed_in, change)
+  private
+  def did_sign_in(value, change)
     Dispatch::Queue.main.async do
       reset
-      if signed_in
+      if value # signed in?
         show_status_menu
+        fetch_current_user
       else
         remove_status_menu
         close_preferences_window
@@ -120,13 +123,55 @@ class AIOAppController
     end
   end
 
-  def connect_to_pusher_when_ready(value, change)
+  def fetch_current_user
+    if g('api.signed_in')
+      AIOApp.current_user.fetch do |err, response|
+        if err
+          Dispatch::Queue.main.after(RETRY_REQUEST_INTERVAL) { fetch_current_user }
+        end
+      end
+    end
+  end
+
+  def fetch_public_keys
+    if g('api.signed_in') && g('current_user.id')
+      AIOApp.public_keys.fetch do |err, response|
+        return if err
+        check_whether_public_key_is_registered
+      end
+    end
+  end
+
+  def fetch_boxes
+    if g('api.signed_in') && g('current_user.id')
+      AIOApp.boxes.fetch do |err, response|
+        # poll for changes
+        Dispatch::Queue.main.after(BOXES_FETCHING_INTERVAL) { fetch_boxes }
+      end
+    end
+  end
+
+  def did_fetch_current_user(value, change)
+    if value # current_user.id
+      fetch_public_keys
+      fetch_boxes
+    end
+    connect_to_pusher_if_ready(value, change)
+  end
+
+  def connect_to_pusher_if_ready(value, change)
     Dispatch::Queue.main.async do
-      if g('pusher.ready') && g('current_user.id')
+      if g('api.signed_in') && g('pusher.ready') && g('current_user.id')
         @pusher.connect
       else
         @pusher.disconnect
       end
+    end
+  end
+
+  def access_token_did_change(value, change)
+    if value == nil && g('api.signed_in')
+      sign_out
     end
   end
 
@@ -158,5 +203,27 @@ class AIOAppController
   def stop_job_timer
     @job_timer.invalidate if @job_timer
     @job_timer = nil
+  end
+
+  def check_whether_public_key_is_registered
+    ssh_key_pair = AIOApp.ssh_key_pair
+    ssh_key_pair.find_keys
+
+    if ssh_key_pair.private_key_path.nil?
+      Dispatch::Queue.main.async do
+        self.ssh_key_pair_window_controller = AIOSSHKeyPairWindowController.new
+        @ssh_key_pair_window_controller.show_generate_keypair_window
+      end
+      return
+    end
+    if ssh_key_pair.public_key_path
+      ssh_key_pair.read_public_key
+      md5_fingerprint = ssh_key_pair.public_key_md5_fingerprint
+      return if AIOApp.public_keys.models.find { |k| k.md5_fingerprint == md5_fingerprint }
+    end
+    Dispatch::Queue.main.async do
+      self.ssh_key_pair_window_controller = AIOSSHKeyPairWindowController.new
+      @ssh_key_pair_window_controller.show_register_keypair_window
+    end
   end
 end
