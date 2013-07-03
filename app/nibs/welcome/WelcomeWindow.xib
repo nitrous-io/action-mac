@@ -35,7 +35,7 @@
 			<object class="NSWindowTemplate" id="384712003">
 				<int key="NSWindowStyleMask">3</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{196, 700}, {580, 500}}</string>
+				<string key="NSWindowRect">{{676, 444}, {580, 500}}</string>
 				<int key="NSWTFlags">611845120</int>
 				<string key="NSWindowTitle">Nitrous.IO for Mac Beta</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -47,7 +47,6 @@
 					<string key="NSFrameSize">{580, 500}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
-					<reference key="NSNextKeyView"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1058}}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
