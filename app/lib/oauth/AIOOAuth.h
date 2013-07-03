@@ -7,7 +7,8 @@ extern NSString * const AIOOAuthErrorDomain;
 typedef NS_ENUM(NSUInteger, AIOOAuthErrorCode) {
   AIOOAuthErrorCodeIncorrectLogin = 0,
   AIOOAuthErrorCodeNoAccessToken = 1,
-  AIOOAuthErrorCodeInvalidAccessToken = 2
+  AIOOAuthErrorCodeInvalidAccessToken = 2,
+  AIOOAuthErrorCodeFailedRequest = 3
 };
 
 @interface AIOOAuth : NSObject

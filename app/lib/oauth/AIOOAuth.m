@@ -11,7 +11,8 @@ NSString * const AIOOAuthErrorDomain = @"AIOOAuthErrorDomain";
 
 static NSError *AIOOAuthIncorrectLoginError,
                *AIOOAuthNoAccessTokenError,
-               *AIOOAuthInvalidAccessTokenError;
+               *AIOOAuthInvalidAccessTokenError,
+               *AIOOAuthFailedRequestError;
 
 @interface AIOOAuth ()
 
@@ -26,6 +27,7 @@ static NSError *AIOOAuthIncorrectLoginError,
     AIOOAuthIncorrectLoginError     = [NSError errorWithDomain:AIOOAuthErrorDomain code:AIOOAuthErrorCodeIncorrectLogin     userInfo:nil];
     AIOOAuthNoAccessTokenError      = [NSError errorWithDomain:AIOOAuthErrorDomain code:AIOOAuthErrorCodeNoAccessToken      userInfo:nil];
     AIOOAuthInvalidAccessTokenError = [NSError errorWithDomain:AIOOAuthErrorDomain code:AIOOAuthErrorCodeInvalidAccessToken userInfo:nil];
+    AIOOAuthFailedRequestError      = [NSError errorWithDomain:AIOOAuthErrorDomain code:AIOOAuthErrorCodeFailedRequest      userInfo:nil];
   }
 }
 
@@ -65,8 +67,12 @@ static NSError *AIOOAuthIncorrectLoginError,
 
   [request setCompletionBlock:^{
     AIOOAuthResponse *response = [[AIOOAuthResponse alloc] initWithStatusCode:request.responseStatusCode data:request.responseData];
-    self.accessToken = response.json[@"access_token"];
-    AIOCallBlock(successCallback, _accessToken, response);
+    if(response.statusCode >= 200 && response.statusCode < 300) {
+      self.accessToken = response.json[@"access_token"];
+      AIOCallBlock(successCallback, _accessToken, response);
+    } else {
+      AIOCallBlock(failureCallback, AIOOAuthFailedRequestError, response);
+    }
   }];
   [request setFailedBlock:^{
     AIOOAuthResponse *response = [[AIOOAuthResponse alloc] initWithStatusCode:request.responseStatusCode data:request.responseData];
@@ -101,10 +107,20 @@ static NSError *AIOOAuthIncorrectLoginError,
   __block ASIHTTPRequest *request;
 
   if ([verb isEqualToString:@"GET"]) {
+    // doesn't support query string params atm 'cause it hasn't been needed so far
     request = [ASIHTTPRequest requestWithURL:url];
   } else {
     request = [ASIFormDataRequest requestWithURL:url];
     request.requestMethod = verb;
+
+    NSDictionary *params = options[@"params"];
+    if(params) {
+      [params enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if ([key isKindOfClass:[NSString class]] && [obj isKindOfClass:[NSString class]]) {
+          [(ASIFormDataRequest *)request addPostValue:obj forKey:key];
+        }
+      }];
+    }
   }
 
   request.userAgentString = _userAgent;
@@ -113,7 +129,11 @@ static NSError *AIOOAuthIncorrectLoginError,
 
   [request setCompletionBlock:^{
     AIOOAuthResponse *response = [[AIOOAuthResponse alloc] initWithStatusCode:request.responseStatusCode data:request.responseData];
-    AIOCallBlock(successCallback, response);
+    if(response.statusCode >= 200 && response.statusCode < 300) {
+      AIOCallBlock(successCallback, response);
+    } else {
+      AIOCallBlock(failureCallback, AIOOAuthFailedRequestError, response);
+    }
   }];
   [request setFailedBlock:^{
     AIOOAuthResponse *response = [[AIOOAuthResponse alloc] initWithStatusCode:request.responseStatusCode data:request.responseData];

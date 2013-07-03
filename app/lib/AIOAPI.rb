@@ -52,10 +52,10 @@ class AIOAPI
     return unless @oauth.accessToken
     AIOLog "request: #{verb} #{path}"
     @oauth.request(verb.to_s, path: path, options: options, success: -> (response) {
-      AIOLog "success: #{path} : #{response.json}"
+      AIOLog "success: #{response.statusCode} #{path} : #{response.json}"
       block.call nil, response if block
     }, failure: -> (err, response) {
-      AIOLog "fail: #{path} : #{err} #{response.json}"
+      AIOLog "fail: #{response.statusCode} #{path} : #{err} #{response.json}"
       if err.domain == 'AIOOAuthErrorDomain' && err.code == 1 # AIOOAuthErrorCodeInvalidAccessToken
         self.token = nil
       end
