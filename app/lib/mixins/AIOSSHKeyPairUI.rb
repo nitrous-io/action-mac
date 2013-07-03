@@ -25,27 +25,38 @@ module AIOSSHKeyPairUI
     ssh_key_pair = AIOApp.ssh_key_pair
     begin
       ssh_key_pair.read_public_key passphrase
-      AIOApp.public_keys.register ssh_key_pair.public_key
-    rescue => e
-      err_msg = case e
+    rescue => err
+      err_msg = case err
                 when AIOSSHKeyPair::PassphraseRequiredError
                   prompt_user_for_password
-                when AIOPublicKeyCollection::PublicKeyAlreadyRegisteredError
-                  "Public key is already registered with Nitrous.IO." unless ignore_already_registered
-                when AIOPublicKeyCollection::PublicKeyInvalidError
-                  "Public key is invalid."
                 when OpenSSL::PKey::PKeyError
                   "Incorrect passphrase or invalid SSH keypair."
                 else
-                  e.message.strip
+                  err.message.strip
                 end
       show_error_message err_msg if err_msg
-    ensure
       self.registering = false
-      if e.nil? || e.kind_of?(AIOPublicKeyCollection::PublicKeyAlreadyRegisteredError)
-        if respond_to? :ssh_key_pair_did_register
-          ssh_key_pair_did_register
+    else
+      AIOApp.public_keys.register(ssh_key_pair.public_key) do |err, response|
+        if err
+          err_msg = case err
+                    when AIOPublicKeyCollection::PublicKeyAlreadyRegisteredError
+                      "Public key is already registered with Nitrous.IO." unless ignore_already_registered
+                    when AIOPublicKeyCollection::PublicKeyInvalidError
+                      "Public key is invalid."
+                    when NSError
+                      err.localizedDescription
+                    else
+                      err.description
+                    end
+          show_error_message err_msg if err_msg
         end
+        if (err.nil? || err.kind_of?(AIOPublicKeyCollection::PublicKeyAlreadyRegisteredError))
+          if respond_to? :ssh_key_pair_did_register
+            ssh_key_pair_did_register
+          end
+        end
+        self.registering = false
       end
     end
   end
