@@ -1,5 +1,4 @@
 framework 'Security'
-require 'oauth2'
 require 'cgi'
 
 class AIOAPI
@@ -9,43 +8,17 @@ class AIOAPI
 
   class KeychainError < StandardError; end
 
-  attr_reader :client, :oauth
-  attr_accessor :token, :username, :signed_in
+  attr_reader :oauth
+  attr_accessor :username, :signed_in
 
   def initialize
     @signed_in = false
-    # old--
-    options = { site: AIOSettings.host }
-    # disable ssl cert checking for development
-    if %w(development test).include? AIOSettings.env
-      options[:ssl] = { verify: false }
-    end
-    @client = OAuth2::Client.new AIOSettings.oauth_client_id, AIOSettings.oauth_client_secret, options
 
-    # new--
     @oauth = AIOOAuth.alloc.initWithHost(AIOSettings.host, clientID: AIOSettings.oauth_client_id, clientSecret: AIOSettings.oauth_client_secret)
     @oauth.setUserAgent(AIOSettings.user_agent)
     if %w(development test).include? AIOSettings.env
       @oauth.setVerifySSL 0
     end
-  end
-
-  def old_request(verb, path, options={})
-    return unless @token
-    AIOLog "request: #{verb} #{path}"
-    options = { parse: :json }.merge options
-    options[:headers] ||= {}
-    options[:headers]['User-Agent'] = AIOSettings.user_agent
-    response = @token.request verb.to_sym, "#{API_PATH_PREFIX}#{path}", options
-  rescue OAuth2::Error => e
-    response = e.response
-    if response.status == 401 # token is invalid. destroy it.
-      self.token = nil
-    else
-      raise e
-    end
-  rescue => e
-    raise e
   end
 
   def request(verb, path, options={}, &block)
@@ -56,9 +29,6 @@ class AIOAPI
       block.call nil, response if block
     }, failure: -> (err, response) {
       AIOLog "fail: #{response.statusCode} #{path} : #{err} #{response.json}"
-      if err.domain == 'AIOOAuthErrorDomain' && err.code == 1 # AIOOAuthErrorCodeInvalidAccessToken
-        self.token = nil
-      end
       block.call err, response if block
     })
   end
@@ -66,7 +36,6 @@ class AIOAPI
   def sign_in(username=nil, password=nil, &block)
     @oauth.obtainAccessTokenWithUsername(username, password: password, success: -> (access_token, response) {
       self.username = username
-      self.token = OAuth2::AccessToken.new @client, access_token
       begin
         write_access_token_to_keychain
       rescue => err
@@ -84,14 +53,13 @@ class AIOAPI
 
   def sign_in_with_keychain
     read_access_token_from_keychain
-    self.signed_in = !self.token.nil?
+    self.signed_in = !@oauth.accessToken.nil?
   end
 
   def sign_out
     self.signed_in = false
     remove_access_token_from_keychain
     @oauth.accessToken = nil
-    self.token = nil
   end
 
   def sign_in_to_actionio_web_app_and_open(url='/')
@@ -108,11 +76,11 @@ class AIOAPI
 
   private
   def write_access_token_to_keychain
-    if token
+    if token = @oauth.accessToken
       AIOStore.write USERNAME_KEY, @username
 
       error_ptr = Pointer.new :object
-      SSKeychain.setPassword token.token, forService: AIOSettings.keychain_service_name, account: @username, error: error_ptr
+      SSKeychain.setPassword token, forService: AIOSettings.keychain_service_name, account: @username, error: error_ptr
       if error = error_ptr[0]
         raise KeychainError, error.localizedDescription
       end
@@ -126,7 +94,6 @@ class AIOAPI
       error = nil
       if token_string = SSKeychain.passwordForService(service, account: account, error: error_ptr)
         self.username = account
-        self.token = OAuth2::AccessToken.new @client, token_string
         @oauth.accessToken = token_string
       end
       error = error_ptr[0]

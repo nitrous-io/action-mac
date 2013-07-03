@@ -24,22 +24,3 @@ Bundler.require
 
 require 'Kernel+AIO'
 require 'NSObject+AIO'
-
-# preload some autoloaded libraries to be thread-safe
-require 'faraday'
-require 'faraday/utils'
-require 'faraday/connection'
-require 'faraday/builder'
-require 'faraday/request'
-require 'faraday/response'
-require 'faraday/middleware'
-require 'faraday/adapter'
-require 'faraday/error'
-require 'faraday/request/url_encoded'
-require 'faraday/adapter/excon'
-
-Faraday.default_adapter = :excon
-
-require 'json'
-require 'multi_json'
-MultiJson.adapter
