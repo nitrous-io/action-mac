@@ -17,11 +17,13 @@ class AIOSignInViewController < NSViewController
           if err.domain == 'AIOOAuthErrorDomain' && err.code == 0 # AIOOAuthErrorCodeIncorrectLogin
             m = 'The username or password you entered is incorrect.'
           end
+          m
         elsif err.kind_of? AIOAPI::KeychainError
           'Could not access keychain. Is your keychain locked?'
         else
           err.description
         end
+        err_msg ||= 'Unable to connect to Nitrous.IO, please check your Internet connection and try again.'
         NSBeginCriticalAlertSheet 'Error', 'Okay', nil, nil, self.view.window, nil, nil, nil, nil, "%@", err_msg
       else
         AIOApp.welcome_window_controller.show_tour_part_one_view

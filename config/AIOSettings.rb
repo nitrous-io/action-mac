@@ -13,7 +13,7 @@ AIOSettings = OpenStruct.new(
   oauth_client_secret: info['AIOOAuthClientSecret'],
   keychain_service_name: info['CFBundleName'] + (env != 'production' ? " (#{env})" : ''),
   pusher_key: info['AIOPusherKey'],
+  mixpanel_token: info['AIOMixPanelToken'],
   version: "v#{info['CFBundleShortVersionString']} (#{info['AIOGitHash']})",
-  user_agent: "NitrousIO/#{info['CFBundleShortVersionString']} (#{system_version['ProductName']}; #{system_version['ProductVersion']} #{system_version['ProductBuildVersion']}; #{NSLocale.currentLocale.localeIdentifier}) action-mac/#{info['AIOGitHash']}"
+  user_agent: "NitrousIOMac/#{info['CFBundleShortVersionString']} (#{system_version['ProductName']}; #{system_version['ProductVersion']} #{system_version['ProductBuildVersion']}; #{NSLocale.currentLocale.localeIdentifier}) action-mac/#{info['AIOGitHash']}"
 ) unless defined?(AIOSettings)
-

@@ -289,6 +289,10 @@
 		E9D6A45216C519C500E53F61 /* SpecHelper.rb in Resources */ = {isa = PBXBuildFile; fileRef = E982FC40164AC00D00CA54BA /* SpecHelper.rb */; };
 		E9D6A45416C51E9700E53F61 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = E9D6A45316C51E6000E53F61 /* rb_main.rb */; };
 		E9E19FDE164259B80058706D /* App.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E19FDD164259B80058706D /* App.xib */; };
+		E9E9458E178B420D00007F98 /* AIOMixPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E9458D178B420D00007F98 /* AIOMixPanel.m */; };
+		E9E9458F178B420D00007F98 /* AIOMixPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E9458D178B420D00007F98 /* AIOMixPanel.m */; };
+		E9E94594178B4C0400007F98 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E94593178B4C0400007F98 /* Base64.m */; };
+		E9E94595178B4C0400007F98 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E94593178B4C0400007F98 /* Base64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -493,6 +497,12 @@
 		E9E19FDD164259B80058706D /* App.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = App.xib; sourceTree = "<group>"; };
 		E9E19FE1164259D30058706D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9E19FE616425A030058706D /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		E9E9458C178B420D00007F98 /* AIOMixPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIOMixPanel.h; sourceTree = "<group>"; };
+		E9E9458D178B420D00007F98 /* AIOMixPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIOMixPanel.m; sourceTree = "<group>"; };
+		E9E94590178B458500007F98 /* AIOUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIOUser.h; sourceTree = "<group>"; };
+		E9E94591178B46DF00007F98 /* AIOModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIOModel.h; sourceTree = "<group>"; };
+		E9E94592178B4C0400007F98 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		E9E94593178B4C0400007F98 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -500,10 +510,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9987E01164BADE900B762FE /* Security.framework in Frameworks */,
 				E99576B91672155B0069C9B4 /* Foundation.framework in Frameworks */,
 				E92BF32F164253AD00862CF4 /* Cocoa.framework in Frameworks */,
 				E9BF1AAF1653EE840067DFC9 /* MacRuby.framework in Frameworks */,
-				E9987E01164BADE900B762FE /* Security.framework in Frameworks */,
 				E90FD706165E039A00B09052 /* WebKit.framework in Frameworks */,
 				E9D4565D16CCFCFA0064FB21 /* Sparkle.framework in Frameworks */,
 				E9050FB617828CA900CC714C /* libz.dylib in Frameworks */,
@@ -866,6 +876,7 @@
 		E9A168081683200100F31E69 /* user */ = {
 			isa = PBXGroup;
 			children = (
+				E9E94590178B458500007F98 /* AIOUser.h */,
 				E9A168091683200100F31E69 /* AIOUser.rb */,
 			);
 			path = user;
@@ -976,6 +987,10 @@
 				E97991091695A10600E14608 /* AIOKeyValueStore.rb */,
 				E90EF6D3169C11AD00A819CC /* AIOChildProcess.rb */,
 				E9675BC716BBCD1300954BF1 /* AIONotifier.rb */,
+				E9E9458C178B420D00007F98 /* AIOMixPanel.h */,
+				E9E9458D178B420D00007F98 /* AIOMixPanel.m */,
+				E9E94592178B4C0400007F98 /* Base64.h */,
+				E9E94593178B4C0400007F98 /* Base64.m */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -983,6 +998,7 @@
 		E9E19FD2164259220058706D /* models */ = {
 			isa = PBXGroup;
 			children = (
+				E9E94591178B46DF00007F98 /* AIOModel.h */,
 				E967959016686F7D00703E49 /* AIOModel.rb */,
 				E967958F16686F7D00703E49 /* AIOCollection.rb */,
 				E9A168081683200100F31E69 /* user */,
@@ -1443,6 +1459,8 @@
 				E9050FAE17828BFF00CC714C /* ASINetworkQueue.m in Sources */,
 				E9050FC417828EDF00CC714C /* AIOOAuth.m in Sources */,
 				E9050FC81782940900CC714C /* AIOOAuthResponse.m in Sources */,
+				E9E9458E178B420D00007F98 /* AIOMixPanel.m in Sources */,
+				E9E94594178B4C0400007F98 /* Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1461,6 +1479,8 @@
 				E9050FAF17828BFF00CC714C /* ASINetworkQueue.m in Sources */,
 				E9050FC517828EDF00CC714C /* AIOOAuth.m in Sources */,
 				E9050FC91782940900CC714C /* AIOOAuthResponse.m in Sources */,
+				E9E9458F178B420D00007F98 /* AIOMixPanel.m in Sources */,
+				E9E94595178B4C0400007F98 /* Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

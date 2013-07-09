@@ -21,4 +21,8 @@ class AIOModel
   def <=>(other_obj)
     id <=> other_obj.id
   end
+
+  def objectId # id is a reserved keyword in obj-c
+    @id
+  end
 end

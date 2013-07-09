@@ -12,6 +12,8 @@ class AIOAppController
   def initialize
     Kernel.const_set :AIOApp, self
 
+    AIOMixPanel.setToken AIOSettings.mixpanel_token
+
     self.notifier = AIONotifier.new
     self.task_manager = AIOTaskManager.new
     self.api = AIOAPI.new
@@ -153,6 +155,10 @@ class AIOAppController
 
   def did_fetch_current_user(value, change)
     if value # current_user.id
+      Dispatch::Queue.main.async do
+        AIOMixPanel.setCurrentUser @current_user
+        AIOMixPanel.track 'Mac App Signed In'
+      end
       fetch_public_keys
       fetch_boxes
     end

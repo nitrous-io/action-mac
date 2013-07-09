@@ -10,28 +10,43 @@ class AIOBoxMenuController
   end
 
   def open_shell(sender)
+    Dispatch::Queue.main.async do
+      AIOMixPanel.track('Mac App Opened Shell', properties: { 'box_id' => @box.id })
+    end
     open_url @box.ssh_uri
   end
 
   def open_web_ide(sender)
+    Dispatch::Queue.main.async do
+      AIOMixPanel.track('Mac App Opened Web IDE', properties: { 'box_id' => @box.id })
+    end
     concurrent_queue do
       AIOApp.api.sign_in_to_actionio_web_app_and_open @box.web_ide_path
     end
   end
 
   def start(sender)
+    Dispatch::Queue.main.async do
+      AIOMixPanel.track('Mac App Started Box', properties: { 'box_id' => @box.id })
+    end
     concurrent_queue do
       @box.start
     end
   end
 
   def restart(sender)
+    Dispatch::Queue.main.async do
+      AIOMixPanel.track('Mac App Restarted Box', properties: { 'box_id' => @box.id })
+    end
     concurrent_queue do
       @box.restart
     end
   end
 
   def shut_down(sender)
+    Dispatch::Queue.main.async do
+      AIOMixPanel.track('Mac App Shut Down Box', properties: { 'box_id' => @box.id })
+    end
     concurrent_queue do
       @box.shut_down
     end
@@ -54,6 +69,9 @@ class AIOBoxMenuController
   end
 
   def file_sync_sync_now(sender)
+    Dispatch::Queue.main.async do
+      AIOMixPanel.track('Mac App Forced File Sync', properties: { 'box_id' => @box.id })
+    end
     @box.file_sync.file_sync_task.do_sync
   end
 end

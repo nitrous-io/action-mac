@@ -178,6 +178,9 @@ class AIOFileSyncTask < AIOTask
   end
 
   def watch_fsevent
+    Dispatch::Queue.main.async do
+      AIOMixPanel.track('Mac App File Sync Started Monitoring', properties: { 'box_id' => @file_sync.box.id })
+    end
     @fsevent = FSEvent.new
     options = {
       latency: 1.0,
@@ -192,7 +195,12 @@ class AIOFileSyncTask < AIOTask
   end
 
   def stop_fsevent
-    @fsevent.stop if @fsevent
+    if @fsevent
+      @fsevent.stop
+      Dispatch::Queue.main.async do
+        AIOMixPanel.track('Mac App File Sync Stopped Monitoring', properties: { 'box_id' => @file_sync.box.id })
+      end
+    end
     @fsevent = nil
   end
 
@@ -227,6 +235,9 @@ class AIOFileSyncTask < AIOTask
       if match = text.match(/Synchronization complete at .+ \(([\d,]) item transferred/)
         file_count = match[1].to_i
         AIOApp.notifier.notify @file_sync.box.name, nil, "Sync Complete: #{file_count} item#{file_count > 1 ? 's' : nil} transferred."
+        Dispatch::Queue.main.async do
+          AIOMixPanel.track('Mac App File Sync Performed', properties: { 'box_id' => @file_sync.box.id })
+        end
       end
     end
   end

@@ -106,12 +106,20 @@ class AIOSSHTunnelTask < AIOTask
   def kill
     @should_restart = false
     super
+    if self.state != STATE_DISCONNECTED
+      Dispatch::Queue.main.async do
+        AIOMixPanel.track('Mac App SSH Tunnel Destroyed', properties: { 'box_id' => @ssh_tunnels.box.id })
+      end
+    end
     self.state = STATE_DISCONNECTED
   end
 
   def restart
     self.state = STATE_DISCONNECTED
     super
+    Dispatch::Queue.main.async do
+      AIOMixPanel.track('Mac App SSH Tunnel Established', properties: { 'box_id' => @ssh_tunnels.box.id })
+    end
   end
 
   def child_process_did_write_to_stdout(text)

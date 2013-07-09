@@ -37,18 +37,27 @@ class AIOStatusMenuController
   end
 
   def did_click_open_action_io_website_menu_item(sender)
+    Dispatch::Queue.main.async do
+      AIOMixPanel.track 'Mac App Opened Website'
+    end
     concurrent_queue do
       AIOApp.api.sign_in_to_actionio_web_app_and_open '/'
     end
   end
 
   def did_click_open_action_io_folder_menu_item(sender)
+    Dispatch::Queue.main.async do
+      AIOMixPanel.track 'Mac App Opened Folder'
+    end
     folder_path = File.join Dir.home, FILE_SYNC_FOLDER_NAME
     folder_path_url = NSURL.fileURLWithPath folder_path, isDirectory: true
     NSWorkspace.sharedWorkspace.openURL folder_path_url
   end
 
   def did_click_preferences_menu_item(sender)
+    Dispatch::Queue.main.async do
+      AIOMixPanel.track 'Mac App Opened Preferences'
+    end
     AIOApp.open_preferences_window
   end
 

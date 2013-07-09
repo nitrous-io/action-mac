@@ -25,4 +25,8 @@ class AIOUser < AIOModel
       block.call(err, response) if block
     end
   end
+
+  def fullName
+    @full_name
+  end
 end
