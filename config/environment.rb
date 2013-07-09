@@ -8,6 +8,14 @@ if AIOStore.read('debug').nil?
   AIOStore.write 'debug', true
 end
 
+add_as_login_item = AIOStore.read('add_as_login_item')
+if add_as_login_item
+  AIOLoginItem.addAppToLoginItems
+elsif add_as_login_item.nil?
+  AIOStore.write 'add_as_login_item', true
+  AIOLoginItem.addAppToLoginItems
+end
+
 def AIOLog(message=nil)
   if message && AIOStore.read('debug')
     NSLog message.kind_of?(String) ? message : message.inspect

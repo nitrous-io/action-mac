@@ -293,6 +293,8 @@
 		E9E9458F178B420D00007F98 /* AIOMixPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E9458D178B420D00007F98 /* AIOMixPanel.m */; };
 		E9E94594178B4C0400007F98 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E94593178B4C0400007F98 /* Base64.m */; };
 		E9E94595178B4C0400007F98 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E94593178B4C0400007F98 /* Base64.m */; };
+		E9E94598178B9EC100007F98 /* AIOLoginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E94597178B9EC100007F98 /* AIOLoginItem.m */; };
+		E9E94599178B9EC100007F98 /* AIOLoginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E94597178B9EC100007F98 /* AIOLoginItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -503,6 +505,8 @@
 		E9E94591178B46DF00007F98 /* AIOModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIOModel.h; sourceTree = "<group>"; };
 		E9E94592178B4C0400007F98 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		E9E94593178B4C0400007F98 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		E9E94596178B9EC000007F98 /* AIOLoginItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIOLoginItem.h; sourceTree = "<group>"; };
+		E9E94597178B9EC100007F98 /* AIOLoginItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIOLoginItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -991,6 +995,8 @@
 				E9E9458D178B420D00007F98 /* AIOMixPanel.m */,
 				E9E94592178B4C0400007F98 /* Base64.h */,
 				E9E94593178B4C0400007F98 /* Base64.m */,
+				E9E94596178B9EC000007F98 /* AIOLoginItem.h */,
+				E9E94597178B9EC100007F98 /* AIOLoginItem.m */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -1461,6 +1467,7 @@
 				E9050FC81782940900CC714C /* AIOOAuthResponse.m in Sources */,
 				E9E9458E178B420D00007F98 /* AIOMixPanel.m in Sources */,
 				E9E94594178B4C0400007F98 /* Base64.m in Sources */,
+				E9E94598178B9EC100007F98 /* AIOLoginItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1481,6 +1488,7 @@
 				E9050FC91782940900CC714C /* AIOOAuthResponse.m in Sources */,
 				E9E9458F178B420D00007F98 /* AIOMixPanel.m in Sources */,
 				E9E94595178B4C0400007F98 /* Base64.m in Sources */,
+				E9E94599178B9EC100007F98 /* AIOLoginItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
