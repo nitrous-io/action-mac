@@ -11,7 +11,7 @@ class AIONotifier
   end
 
   def notify(title, subtitle=nil, informative_text=nil)
-    if @user_notification_center
+    if @user_notification_center && AIOStore.read('show_desktop_notifications')
       notification = NSUserNotification.new
       notification.setTitle title
       notification.setSubtitle subtitle

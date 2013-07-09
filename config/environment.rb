@@ -16,6 +16,10 @@ elsif add_as_login_item.nil?
   AIOLoginItem.addAppToLoginItems
 end
 
+if AIOStore.read('show_desktop_notifications').nil?
+  AIOStore.write 'show_desktop_notifications', true
+end
+
 def AIOLog(message=nil)
   if message && AIOStore.read('debug')
     NSLog message.kind_of?(String) ? message : message.inspect
