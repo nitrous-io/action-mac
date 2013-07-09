@@ -5,7 +5,7 @@ require 'AIOKeyValueStore'
 Kernel.const_set :AIOStore, AIOKeyValueStore.new
 
 if AIOStore.read('debug').nil?
-  AIOStore.write 'debug', true
+  AIOStore.write 'debug', false
 end
 
 add_as_login_item = AIOStore.read('add_as_login_item')
