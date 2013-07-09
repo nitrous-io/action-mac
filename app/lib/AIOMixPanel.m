@@ -36,7 +36,7 @@ static NSDictionary *DefaultProperties = nil;
 }
 
 + (void)track:(NSString *)eventName properties:(NSDictionary *)properties {
-  if (!_user || !_token) {
+  if (!_user || !_token || !_user.username || !_user.email) {
     return;
   }
 

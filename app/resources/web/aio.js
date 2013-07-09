@@ -57,6 +57,10 @@
           self.postNotification('aio:pusher', 'unavailable');
         });
 
+        self.pusher.connection.bind('failed', function() {
+          self.postNotification('aio:pusher', 'failed');
+        });
+
         self.pusher.connection.bind('disconnected', function() {
           self.postNotification('aio:pusher', 'disconnected');
         });
