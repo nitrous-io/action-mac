@@ -14,6 +14,9 @@ module AIOSSHKeyPairUI
       err_msg = e.message.strip
       show_error_message err_msg
     else
+      Dispatch::Queue.main.async do
+        AIOMixPanel.track 'Mac App Generated SSH Key Pair'
+      end
       read_and_register_public_key if register
     ensure
       self.generating = false
@@ -50,6 +53,11 @@ module AIOSSHKeyPairUI
                       err.description
                     end
           show_error_message err_msg if err_msg
+        end
+        if err.nil?
+          Dispatch::Queue.main.async do
+            AIOMixPanel.track 'Mac App Registered SSH Key Pair'
+          end
         end
         if (err.nil? || err.kind_of?(AIOPublicKeyCollection::PublicKeyAlreadyRegisteredError))
           if respond_to? :ssh_key_pair_did_register
