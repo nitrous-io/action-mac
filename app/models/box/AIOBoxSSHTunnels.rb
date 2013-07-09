@@ -6,7 +6,7 @@ class AIOBoxSSHTunnels
   DESTINATION_PORT_KEY = 'destination_port'
 
   attr_accessor :box
-  attr_accessor :local_tunnels, :remote_tunnels
+  attr_accessor :local_tunnels
   attr_accessor :ssh_tunnel_task
   attr_accessor :enabled
 
@@ -14,9 +14,7 @@ class AIOBoxSSHTunnels
     self.enabled = false
     self.box = box
     load_data
-    %w(local_tunnels remote_tunnels).each do |t|
-      observe(self, t, initial: true) { |v,c| tunnels_array_did_change v,c }
-    end
+    observe(self, 'local_tunnels', initial: true) { |v,c| tunnels_array_did_change v,c }
     observe(self, 'enabled', initial: true) { |v,c| enabled_did_change v,c }
     observe(@box, 'state',   initial: true) { |v,c| box_state_did_change v,c }
     observe(AIOApp, 'connected') { |v,c| connected_did_change v,c }
@@ -27,7 +25,6 @@ class AIOBoxSSHTunnels
 
   def finalize
     stop_observing self, 'local_tunnels'
-    stop_observing self, 'remote_tunnels'
     stop_observing self, 'enabled'
     stop_observing @box, 'state'
     stop_observing AIOApp, 'connected'
@@ -37,12 +34,10 @@ class AIOBoxSSHTunnels
   def load_data
     self.enabled = AIOStore.read(tunnels_enabled_key) || false
     self.local_tunnels  = parse_tunnels_hash_array(AIOStore.read local_tunnels_key)  || []
-    self.remote_tunnels = parse_tunnels_hash_array(AIOStore.read remote_tunnels_key) || []
   end
 
   def save_tunnels
     AIOStore.write local_tunnels_key, tunnel_objects_to_hash_array(self.local_tunnels)
-    AIOStore.write remote_tunnels_key, tunnel_objects_to_hash_array(self.remote_tunnels)
   end
 
   def enabled_did_change(value, change)
@@ -76,13 +71,9 @@ class AIOBoxSSHTunnels
     "user:#{AIOApp.current_user.id}:box:#{@box.id}:local_tunnels" if @box
   end
 
-  def remote_tunnels_key
-    "user:#{AIOApp.current_user.id}:box:#{@box.id}:remote_tunnels" if @box
-  end
-
   def parse_tunnels_hash_array(tunnels_array)
     tunnels_array.map do |tun|
-      AIOSSHTunnel.new tun[ORIGIN_PORT_KEY], tun[DESTINATION_HOST_KEY], tun[DESTINATION_PORT_KEY]
+      AIOSSHTunnel.new tun[ORIGIN_PORT_KEY]
     end if tunnels_array
   end
 

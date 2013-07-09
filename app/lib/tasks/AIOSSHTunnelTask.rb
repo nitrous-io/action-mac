@@ -76,12 +76,6 @@ class AIOSSHTunnelTask < AIOTask
       end
     end.flatten.compact)
 
-    args.concat(@ssh_tunnels.remote_tunnels.map do |tun|
-      if tun.origin_port && tun.destination_host && tun.destination_port
-        ['-R', "#{tun.origin_port}/#{sanitize tun.destination_host}/#{tun.destination_port}"]
-      end
-    end.flatten.compact)
-
     resource_path = NSBundle.mainBundle.resourcePath.fileSystemRepresentation
 
     AIOLog 'ssh tunneling: running child process'
@@ -151,7 +145,7 @@ class AIOSSHTunnelTask < AIOTask
       when /Entering interactive session/
         self.state = STATE_CONNECTED
         self.last_error_message = nil
-        AIOApp.notifier.notify @ssh_tunnels.box.name, nil, 'Tunnel connection established.'
+        AIOApp.notifier.notify @ssh_tunnels.box.name, nil, 'Port forwarding connection established.'
       when /cannot listen to port/
         self.state = STATE_ERROR
         port = text[/cannot listen to port: (\d+)/, 1]
@@ -177,7 +171,7 @@ class AIOSSHTunnelTask < AIOTask
     end
 
     if @last_error_message
-      AIOApp.notifier.notify @ssh_tunnels.box.name, nil, "Tunneling Error: #{@last_error_message}"
+      AIOApp.notifier.notify @ssh_tunnels.box.name, nil, "Port Forwarding Error: #{@last_error_message}"
     end
   end
 
